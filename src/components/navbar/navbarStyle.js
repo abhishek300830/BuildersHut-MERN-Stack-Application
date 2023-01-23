@@ -1,29 +1,29 @@
 import styled from "styled-components";
 
-const navbar_color="#54555e";
+const navbar_color="#d72f43";
 export const NavbarDiv=styled.div`
 
     div.main{
         width: 100%;
-        height: 2%;
+        height: 5%;
         position: fixed;
         background-color: ${navbar_color};
         display: grid;
-        grid-template-columns: 47% 6% 47%;
-        border-bottom-right-radius:10px;
-        border-bottom-left-radius:10px;
+        grid-template-columns: 45% 10% 45%;
+        border-bottom-right-radius:50px;
+        border-bottom-left-radius:50px;
 
         div.mid{
             height: 100%;
             background-color: ${navbar_color};
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
             padding: 2%;
 
             img.logo{
                 position: relative;
-                width: 40%;
-                margin-left: 30%;
+                width: 50%;
+                margin-left: 25%;
                 margin-top:0.5%;
                 transition: 0.5s;
             }
