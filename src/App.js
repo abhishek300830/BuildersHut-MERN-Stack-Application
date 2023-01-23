@@ -16,7 +16,7 @@ function App() {
       <Navbar/>
       
       <AppDiv>
-       <Practice/>
+       {/* <Practice/> */}
           
 
       </AppDiv>

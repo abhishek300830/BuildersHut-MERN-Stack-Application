@@ -1,39 +1,61 @@
 import styled from "styled-components";
 
-const navbar_color="#d72f43";
+const navbar_color="#d1d1d1";
 export const NavbarDiv=styled.div`
 
     div.main{
+        margin-top: -1%;
         width: 100%;
         height: 5%;
         position: fixed;
-        background-color: ${navbar_color};
+        background-color: transparent;
         display: grid;
-        grid-template-columns: 45% 10% 45%;
-        border-bottom-right-radius:50px;
-        border-bottom-left-radius:50px;
+        grid-template-columns: 43% 15% 43%;
+        /* border-bottom-right-radius:50px; */
+        /* border-bottom-left-radius:50px; */
 
         div.mid{
-            height: 100%;
             background-color: ${navbar_color};
-            border-bottom-left-radius: 80px;
-            border-bottom-right-radius: 80px;
             padding: 2%;
-
-            img.logo{
-                position: relative;
-                width: 50%;
-                margin-left: 25%;
-                margin-top:0.5%;
-                transition: 0.5s;
-            }
-            img.logo:hover{
+            margin-top: 5%;
+            position: relative;
+            text-align: center;
+            border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+            img.hut2{
                 width: 45%;
-                margin-left: 28%;
-                cursor:pointer;
-                margin-top: 0.5%;
+                transition: 1s;
+            }
+            img.aari{
+                width: 15%;
+                position: absolute;
+                margin-left: -27%;
+                margin-top: 9%;
+                transition: 1s;
+            }
+            img.hathoda{
+                width: 7%;
+                position: absolute;
+                margin-left: -24%;  
+                margin-top: 5%;
+                transition: 1s;
             }
         }
+        div.mid:hover{
+            cursor: pointer;
+
+            img.aari{
+                width: 17%;
+                margin-left: -15%;
+                transform: rotate(60deg);
+            }
+            img.hathoda{
+                width: 9%;
+                margin-left: -40%;
+                transform: rotate(30deg);
+            }
+        }
+
     }
 
     @media (max-width:1280px) {

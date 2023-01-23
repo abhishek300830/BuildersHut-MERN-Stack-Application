@@ -10,7 +10,6 @@ const Practice = () => {
         <img src={hut2} className='hut2' alt="" />
         <img src={aari} className='aari' alt="" />
         <img src={hathoda} className='hathoda' alt="" />
-
     </div>
     </PractDiv>
   )

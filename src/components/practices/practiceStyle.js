@@ -14,20 +14,20 @@ export const PractDiv= styled.div`
         }
         img.aari{
             position: absolute;
-            margin-left: -26.5%;
+            margin-left: -26%;
             margin-top: 7.6%;
             transition: 1s;
         }
         img.hathoda{
             position: absolute;
-            margin-left: -21.5%;  
+            margin-left: -20.8%;  
             margin-top: 2.5%;
             transition: 1s;
         }
     }
 
     div:hover{
-        border: 2px solid red;
+        border: 1px solid red;
         img.aari{
             margin-left: -15%;
             transform: rotate(60deg);
