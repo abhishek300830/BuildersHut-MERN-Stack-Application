@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { AppDiv } from "./AppStyle";
+import Navbar from "./components/navbar/navbar";
 import BuilderVdioPage from "./components/start_animation/start_video";
 
 function App() {
@@ -10,9 +12,17 @@ function App() {
 //  },[])
   return (
     <>
-      <BuilderVdioPage/>
+      <Navbar/>
+      
+      <AppDiv>
+        <div>
+          Hello Builder
+        </div>
+          
+
+      </AppDiv>
+    
     </>
-    // <div>Hello Builder</div>
   );
 }
 
