@@ -13,6 +13,7 @@ const Navbar=()=>{
     document.getElementById('moon_id').style.backgroundColor='transparent';
     document.body.style.backgroundColor="white";
 
+
   }
 
   const moonOnclick=()=>{
