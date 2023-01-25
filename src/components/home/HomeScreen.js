@@ -5,6 +5,7 @@ import builder2 from '../../images/builder2.png';
 import builder3 from '../../images/builder3.png';
 import icons from '../../images/icons.png'
 import explore from '../../images/explore.png'
+import { NavLink } from 'react-router-dom';
 
 const HomeScreen = () => {
   return (
@@ -41,7 +42,9 @@ const HomeScreen = () => {
         
         <div className="explore">
             <h4>Explore</h4>
-            <img src={explore} alt="explore" />
+            <NavLink to="workshop">
+                <img src={explore} alt="explore" />
+            </NavLink>
         </div>
 
     </HomeStyle>

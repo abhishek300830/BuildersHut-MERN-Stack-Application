@@ -25,18 +25,20 @@ export const NavbarDiv=styled.div`
             }
             img.aari{
                 width: 15%;
+                margin-left: -28%;
                 position: absolute;
-                margin-left: -27%;
                 margin-top: 9%;
                 transition: 1s;
             }
             img.hathoda{
                 width: 7%;
+                margin-left: -25%;
+
                 position: absolute;
-                margin-left: -24%;  
                 margin-top: 5%;
                 transition: 1s;
             }
+
         }
         div.mid:hover{
             cursor: pointer;
@@ -93,6 +95,10 @@ export const NavbarDiv=styled.div`
         }
     }
 
+    div.outlet{
+        padding-top: 10%;
+    }
+
     @media (max-width:1280px) {
         div.main{ }   
     }
@@ -118,6 +124,9 @@ export const NavbarDiv=styled.div`
                 }
             }
  
+        }
+        div.outlet{
+            padding-top: 12%;
         }
     }
 

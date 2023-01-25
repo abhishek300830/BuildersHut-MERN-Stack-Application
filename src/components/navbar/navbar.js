@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
 import { NavbarDiv } from './navbarStyle'
 import hut2 from '../../images/builderhut2.png'
 import aari from '../../images/aari.png'
@@ -28,9 +29,12 @@ const Navbar=()=>{
         <div className="main">
             <div className="left"></div>
             <div className="mid">
-                  <img src={hut2} className='hut2' alt="" />
-                  <img src={aari} className='aari' alt="" />
-                  <img src={hathoda} className='hathoda' alt="" />
+
+                  <NavLink to="/">
+                    <img src={hut2} className='hut2' alt="" />
+                    <img src={aari} className='aari' alt="" />
+                    <img src={hathoda} className='hathoda' alt="" />
+                  </NavLink>
             </div>
             <div className="right">
               <div className="theme">
@@ -42,6 +46,10 @@ const Navbar=()=>{
                   </div>
               </div>
             </div>
+        </div>
+        
+        <div className="outlet">
+          <Outlet/>
         </div>
     </NavbarDiv>
   )

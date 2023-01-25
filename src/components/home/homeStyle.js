@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 
 export const HomeStyle=styled.div`
+    animation:home-main 1s linear 0s 1;
+    @keyframes  home-main{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
     div.home-main{
         display: grid;
         grid-template-columns: 50% 50%;
@@ -23,7 +33,7 @@ export const HomeStyle=styled.div`
                 left: 20%;
                 top: 0%;
                 /* border: 1px solid black; */
-                animation: build1 20s linear 0s infinite;
+                animation: build1 20s ease-in-out 0s infinite;
                 transition: 0.5s;
             }
             img.b2{
@@ -33,7 +43,7 @@ export const HomeStyle=styled.div`
                 left: 10%;
                 top: 20%;
                 opacity: 0.5;
-                animation: build2 20s linear 0s infinite;
+                animation: build2 20s ease-in-out 0s infinite;
                 transition: 0.5s;
             }
             img.b3{
@@ -43,7 +53,7 @@ export const HomeStyle=styled.div`
                 top: 20%;
                 right: 10%;
                 opacity: 0.5;
-                animation: build3 20s linear 0s infinite;
+                animation: build3 20s ease-in-out 0s infinite;
                 transition: 0.5s;
             }
 
@@ -59,7 +69,17 @@ export const HomeStyle=styled.div`
                     width: 55%;
                     left: 20%;
                     opacity: 1;
+
                 }   
+                10%{
+                    top: 2%;
+                }
+                18%{
+                    top: 0%;
+                }
+                25%{
+                    top: 2%;
+                }
                 28%{
                     top: 0%;
                     width: 55%;
@@ -130,14 +150,24 @@ export const HomeStyle=styled.div`
                     top: 0%;
                     opacity: 1;
                     z-index: 10;
-
+                    animation: builder_anim-1 8s ease-in-out 0.5s infinite;
                 }   
+                40%{
+                    top: 2%;
+                }
+                48%{
+                    top: 0%;
+                }
+                55%{
+                    top: 2%;
+                }
                 60%{
                     width: 55%;
                     left: 20%;
                     top: 0%;
                     opacity: 1;
                     z-index: 10;
+                    animation: builder_anim-1 8s ease-in-out 0.5s infinite;
                 }   
                 /* halt */
 
@@ -202,6 +232,16 @@ export const HomeStyle=styled.div`
                     right: 17%;
                     opacity: 1;
                     z-index: 10;
+                    animation: builder_anim-1 8s ease-in-out 0.5s infinite;
+                }
+                70%{
+                    top: 2%;
+                }
+                78%{
+                    top: 0%;
+                }
+                89%{
+                    top: 2%;
                 }
                 95%{
                     top: 0%;
@@ -209,6 +249,7 @@ export const HomeStyle=styled.div`
                     right: 17%;
                     opacity: 1;
                     z-index: 10;
+                    animation: builder_anim-1 8s ease-in-out 0.5s infinite;
                 }   
 
                 /* halt  */
@@ -220,6 +261,7 @@ export const HomeStyle=styled.div`
                     z-index: 2;
                 }       
             }
+
         }
 
         /* text written div  */
