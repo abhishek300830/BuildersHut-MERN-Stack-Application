@@ -35,6 +35,15 @@ export const WorkshopDiv=styled.div`
         width: 40%;
         right: 0;
         bottom: 0;
+        animation: ustad-anim 1.5s ease-out 0s 1;
+    }
+    @keyframes ustad-anim  {
+        0%{
+            margin-left: 40%;
+        }
+        100%{
+            margin-left: 0%;
+        }
     }
     img.workshop-img{
         position: fixed;
@@ -71,6 +80,22 @@ export const WorkshopDiv=styled.div`
         overflow: auto;
         /* background-color: #68746992; */
         padding-top: 10%;
+        ::-webkit-scrollbar {
+             width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background: #bac5a3;
+        }
+
 
     }
 

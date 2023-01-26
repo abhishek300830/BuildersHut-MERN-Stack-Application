@@ -16,7 +16,6 @@ export const CardDiv=styled.div`
         overflow: hidden;
     
         position: relative;
-        cursor: pointer;
         img{
             width: 40%;
             height: 40%;
@@ -36,6 +35,7 @@ export const CardDiv=styled.div`
                 border-radius: 10px;
             }
             p{
+                font-family: 'Aboreto', cursive;
                 font-size: 0.8vw;
                 color: #365f37;
             }
@@ -43,70 +43,65 @@ export const CardDiv=styled.div`
         
         div.upward{
             position: absolute;
-            background-color: #a4ba76fa;
+            background-color: #a9ba85f9;
             width: 100%;
             bottom: 0;
             height: 80%;
             display:none;
             transition: 0.4s;
             animation: up-anim 0.8s ease-out 0s 1;
-
-            ul{
-                list-style-type: none;
-                /* border: 1px solid black; */
-                text-align: left;
-
-                li{
-                    margin-top: 10%;
-                    display: grid;
-                    grid-template-columns: 40% 60%;
-                    span{
-                        font-size: 1.2vw;
-                         padding-top: 10%;
-                         color: #442c0f ;
-                         font-weight: bold;
-                    } 
+            div.loop{
+                display: grid; 
+                grid-template-columns: 45% 45%;
+                justify-content: space-evenly;
+                button{
+                    margin-bottom: 10%;
+                    position: relative;
+                    padding:5%;
+                    border-radius: 5px;
+                    font-size: 1.2vw;
+                    background:linear-gradient(#acf85ae8,#86f014);
+                    border: 3px solid black;
+                    box-shadow: 1px 1px 3px #3d3d3d;
+                    cursor: pointer;
+                    transition: 0.4s;
+                    color: #3b3b3b;
+                    font-weight: bold;
                     
-                    button{
+
+                    div.seperate{
+                        position: absolute;
+                        width: 85%;
+                        top: -5%;
+                        height: 25%;
+                        margin-left: 3%;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        z-index: 1;
+                        background-color: #fefefe53;
+                    }
+                    img{
                         position: relative;
-                        margin-left: 5%;
-                        width: 70%;
-                        padding: 3%;
-                        font-size: 1vw;
-                        font-weight: bold;
-                        border-radius: 5px;
-                        background:linear-gradient(#7b6a48,#4c3304);
-                        border: 0;
-                        box-shadow: 1px 1px 3px #3d3d3d;
-                        cursor: pointer;
-                        text-align: right;
-                        transition: 0.4s;
-                        color: #c1bdbd;
-                        img{
-                            height: 180%;
-                            width: 25%;
-                            opacity: 0.8;
-                            left: 10%;
-                            top: -10%;
-                            position: absolute;
-                            transform: rotate(-70deg);
-                            filter: drop-shadow(-2px 2px 5px black);
-                            transition: 0.4s;
-                        }
+                        z-index: 2;
+                        filter: drop-shadow(-2px 2px 1px black);
+                        width: 40%;
+                        height: 50%;
+                        transition: 0.3s;
+                    }
                     }
 
                     button:hover{
                         box-shadow: -2px 2px 5px transparent;
 
                         img{                            
-                            transform: rotate(-50deg);
+                            transform: rotate(10deg);
                         }
                     }
-                
-                }
-            }
 
+            }
+                    
         }
+    }
 
         @keyframes up-anim {
             0%{
@@ -121,7 +116,6 @@ export const CardDiv=styled.div`
                 color: #153e1b;
             }
         }
-    }
 
     .card-main:hover {
         div.upward{
@@ -150,19 +144,16 @@ export const CardDiv=styled.div`
             }
 
             div.upward{
-                ul{
-                    li{
-                        justify-content: space-between;
-                        margin-top: 10%;
-                        span{
-                            font-size: 2.6vw;
+                div.loop{
+                    button{
+                        margin-bottom: 10%;
+                        padding:8%;
+                        border-radius: 5px;
+                        font-size: 2.5vw;
+                        div.seperate{
+                            margin-left: 0%;
                         }
-                        button{
-                            width: 80%;
-                            padding: 5%;
-                            font-size: 2.3vw;
                         }
-                    }
                 }
             }
         }
@@ -185,17 +176,19 @@ export const CardDiv=styled.div`
             }
 
             div.upward{
-                ul{
-                    li{
-                        justify-content: space-between;
-                        margin-top: 10%;
-                        span{
-                            font-size: 4.6vw;
+                div.loop{
+                    button{
+                        margin-bottom: 10%;
+                        padding:15%;
+                        border-radius: 5px;
+                        font-size: 4.5vw;
+                        div.seperate{
+                            height: 35%;
+                            margin-left: -7%;
                         }
-                        button{
-                            width: 80%;
-                            padding: 5%;
-                            font-size: 3.5vw;
+                        img{
+                            width: 50%;
+                            height: 60%;
                         }
                     }
                 }

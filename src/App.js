@@ -8,6 +8,11 @@ import Workshop from "./components/workshop/Workshop";
 // import Practice from "./components/practices/practice";
 // import BuilderVdioPage from "./components/start_animation/start_video";
 
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 function App() {
   return (
     <>

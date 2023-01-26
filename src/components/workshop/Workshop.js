@@ -25,7 +25,7 @@ const Workshop = () => {
       <WorkshopDiv>
           <img src={crack} alt="crack" className='crack' />
           <img src={workshop_img} className='workshop-img' alt="" /> 
-          <img src={builder_bg} alt="builder bg" className='builder_bg'/>
+          <img src={builder_bg} alt="builder bg" data-aos="slide-left" data-aos-duration="1500" className='builder_bg'/>
           
           <div className="scroll-up">
             <div className="work-main">

@@ -17,9 +17,9 @@ const HomeScreen = () => {
     <HomeStyle>
         <div className='home-main'>
             <div className="builder-div">
-                <img src={builder1} className='b1' alt="builder1" />
-                <img src={builder2} className='b2' alt="builder2" />
-                <img src={builder3} className='b3' alt="builder3" />
+                <img src={builder1} data-aos="slide-down" data-aos-duration="2000" className='b1' alt="builder1" />
+                <img src={builder2} data-aos="slide-down" data-aos-duration="2000" className='b2' alt="builder2" />
+                <img src={builder3} data-aos="slide-down" data-aos-duration="2000" className='b3' alt="builder3" />
             </div>
 
             <div className="text-div">
@@ -38,15 +38,16 @@ const HomeScreen = () => {
                 <div className="workshop">
                     <h1>OUR WORKSHOP</h1>
 
-                    {/* change icons   */}
+                    <NavLink to='workshop'>
                     <div className="b-icons">
-                        <img src={icon1} alt="icon" />
-                        <img src={icon2} alt="icon" />
-                        <img src={icon3} alt="icon" />
-                        <img src={icon4} alt="icon" />
-                        <img src={icon5} alt="icon" />
-                        <img src={icon6} alt="icon" />
+                            <img src={icon1} alt="icon" />
+                            <img src={icon2} alt="icon" />
+                            <img src={icon3} alt="icon" />
+                            <img src={icon4} alt="icon" />
+                            <img src={icon5} alt="icon" />
+                            <img src={icon6} alt="icon" />
                     </div>
+                    </NavLink>
                 </div>
 
             </div>
