@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { NavbarDiv } from './navbarStyle'
-import hut2 from '../../images/builderhut2.png'
-import aari from '../../images/aari.png'
-import hathoda from '../../images/hathoda.png'
-import sun from '../../images/sun.png'
-import moon from '../../images//moon.png'
+import hut2 from '../../images/favicon/builderhut2.png'
+import aari from '../../images/favicon/aari.png'
+import hathoda from '../../images/favicon/hathoda.png'
+import sun from '../../images/favicon/sun.png'
+import moon from '../../images/favicon/moon.png'
 
 const Navbar=()=>{
 

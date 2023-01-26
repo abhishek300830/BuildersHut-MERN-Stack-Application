@@ -11,6 +11,7 @@ export const NavbarDiv=styled.div`
         display: grid;
         grid-template-columns: 43% 15% 43%;
 
+
         div.mid{
             background-color: ${navbar_color};
             padding: 2%;
@@ -19,6 +20,7 @@ export const NavbarDiv=styled.div`
             text-align: center;
             border-bottom-left-radius: 200px;
             border-bottom-right-radius: 200px;
+
             img.hut2{
                 width: 45%;
                 transition: 1s;
@@ -56,6 +58,7 @@ export const NavbarDiv=styled.div`
         }
 
         div.right{
+
             div.theme{
                 display: grid;
                 grid-template-columns: 50% 50%;
@@ -150,6 +153,11 @@ export const NavbarDiv=styled.div`
                     }
                 }
             }
+            
+        }
+
+        div.outlet{
+            padding-top: 25%;
         }
 
     } 

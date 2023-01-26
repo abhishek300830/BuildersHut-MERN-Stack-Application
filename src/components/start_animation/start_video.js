@@ -1,5 +1,5 @@
 import React from "react";
-import vdio from '../../images/builder_hut1.mp4'
+// import vdio from '../../images/builder_hut1.mp4'
 import { StartVdioDiv } from "./style";
 
 const BuilderVdioPage=()=>{
@@ -9,9 +9,7 @@ const BuilderVdioPage=()=>{
     }
     return(
         <StartVdioDiv>
-        <video autoPlay muted style={styling}>
-            <source src={vdio} type="video/webm"/>
-        </video>
+        
         </StartVdioDiv>
     )
 }

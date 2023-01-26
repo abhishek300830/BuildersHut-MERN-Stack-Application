@@ -292,9 +292,12 @@ export const HomeStyle=styled.div`
                 }
             }
 
-            div.workshop{
+        div.workshop{
                 display: grid;
                 grid-template-columns: 40% 60%;
+
+                /* border: 1px solid black; */
+
                 h1{
                     font-size: 1.6vw;
                     background-color: #d1d1d1;
@@ -303,9 +306,21 @@ export const HomeStyle=styled.div`
                     border-radius: 20px;
                     color: #91ac5ad4;
                 }
-                img{
-                    width: 80%;
+                div.b-icons{
+                    display: grid;
+                    grid-template-columns: auto auto auto auto auto auto;
+                    /* border: 1px solid red; */
+                    padding-top: 1%;
+                    img{
+                        width: 100%;
+                        transition: 0.4s;
+                    }
+                    img:hover{
+                        filter:drop-shadow(0px 0px 4px gray);
+                        cursor: pointer;
+                    }
                 }
+
             }
 
         }
@@ -424,17 +439,20 @@ export const HomeStyle=styled.div`
                     h1{
                         font-size: 3vw;
                         width: 80%;
-                        margin-left: 20%;
-                    }
-                    img{
                         margin-left: 10%;
-                        width: 80%;
-                        
-                    }   
+                    }
+                    div.b-icons{
+                        display: grid;
+                        grid-template-columns: auto auto auto auto auto auto;
+                        /* border: 1px solid red; */
+                        padding-top: 1%;
+                        img{
+                            width: 100%;
+                        }
+                    }
                 }
-
+           
             }
-
         }
 
         div.explore{
@@ -453,6 +471,7 @@ export const HomeStyle=styled.div`
         }
     }
 
+
     @media (max-width: 520px) {
         div.home-main{
             height: 140vw;
@@ -467,9 +486,6 @@ export const HomeStyle=styled.div`
 
                 h2{
                     font-size: 3vw;
-                    /* border: 1px solid black; */
-                    /* width: 80%; */
-                    /* margin-left: 20%; */
                     text-align: center;
                     b{
                         font-size:7vw;
@@ -477,7 +493,7 @@ export const HomeStyle=styled.div`
                 }
 
                 .t1{
-                    grid-template-columns: 12% 87%;
+                    grid-template-columns: 20% 80%;
                     font-size: 5vw;
                     margin-top:5%;
                  

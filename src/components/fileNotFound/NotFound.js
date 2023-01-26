@@ -1,6 +1,6 @@
 import React from 'react'
 import { NotFoundDiv } from './notFoundStyle'
-import robo from '../../images/robortBuilder.png'
+import robo from '../../images/builder/robortBuilder.png'
 
 const NotFound = () => {
   return (
