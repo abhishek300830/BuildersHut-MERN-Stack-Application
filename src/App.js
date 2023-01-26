@@ -11,6 +11,7 @@ import Workshop from "./components/workshop/Workshop";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import About from "./components/about/About";
 AOS.init();
 
 function App() {
@@ -20,13 +21,16 @@ function App() {
 
       {/* routes   */}
           <Routes>
-    {/* main route  */}
+          {/* main route  */}
           <Route path="/" element={<Navbar/>}>
 
               {/* inner routes  */}
               <Route  index element={<HomeScreen/>} />
               <Route path="workshop" element={<Workshop/>} />
 
+
+              {/* sameer work. dont touch  */}
+              <Route path="about" element={<About/>} />
               {/* page not found route  */}
               <Route path="*" element={<NotFound/>}/>
 
