@@ -27,7 +27,9 @@ const Navbar=()=>{
   return (
     <NavbarDiv>
         <div className="main">
-            <div className="left"></div>
+            <div className="left">
+              <NavLink to='about'>About</NavLink>
+            </div>
             <div className="mid">
 
                   <NavLink to="/">

@@ -17,6 +17,8 @@ import ColorBuilder from "./components/workshopSubPages/color/ColorBuilder";
 import ImageBuilder from "./components/workshopSubPages/image/ImageBuilder";
 import MemeBuilder from "./components/workshopSubPages/meme/MemeBuilder";
 import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuilder";
+
+import About from "./components/about/About";
 AOS.init();
 
 function App() {
@@ -38,6 +40,9 @@ function App() {
             <Route path="image" element={<ImageBuilder />} />
             <Route path="meme" element={<MemeBuilder />} />
             <Route path="schedule" element={<ScheduleBuilder />} />
+
+            {/* sameer work. dont touch  */}
+            <Route path="about" element={<About />} />
 
             {/* page not found route  */}
             <Route path="*" element={<NotFound />} />
