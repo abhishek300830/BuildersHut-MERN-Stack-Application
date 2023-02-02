@@ -24,7 +24,7 @@ const Card = ({ name, desc, url, index, btn1, btn2, btn3 }) => {
         {index !== 7 && (
           <div className="upward">
             <div className="loop">
-              <NavLink to={`/${name}`}>
+              <NavLink to={`${name}`}>
                 <button>
                   <img src={hathoda} alt="hathoda" />
                   <div className="seperate"></div>
@@ -35,7 +35,7 @@ const Card = ({ name, desc, url, index, btn1, btn2, btn3 }) => {
               </NavLink>
 
               {btn2 !== "" && (
-                <NavLink to={`/${name}`}>
+                <NavLink to={`${name}`}>
                   <button>
                     <img src={hathoda} alt="hathoda" />
                     <div className="seperate"></div>
@@ -46,7 +46,7 @@ const Card = ({ name, desc, url, index, btn1, btn2, btn3 }) => {
                 </NavLink>
               )}
               {btn3 !== "" && (
-                <NavLink to={`/${name}`}>
+                <NavLink to={`${name}`}>
                   <button>
                     <img src={hathoda} alt="hathoda" />
                     <div className="seperate"></div>

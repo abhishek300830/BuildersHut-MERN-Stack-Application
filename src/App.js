@@ -33,13 +33,13 @@ function App() {
             <Route index element={<HomeScreen />} />
             <Route path="workshop" element={<Workshop />} />
             {/* Builders Routes */}
-            <Route path="profile" element={<ResumeBuilder />} />
-            <Route path="aura" element={<AuraBuilder />} />
-            <Route path="chart" element={<ChartBuilder />} />
-            <Route path="colour" element={<ColorBuilder />} />
-            <Route path="image" element={<ImageBuilder />} />
-            <Route path="meme" element={<MemeBuilder />} />
-            <Route path="schedule" element={<ScheduleBuilder />} />
+            <Route path="workshop/profile" element={<ResumeBuilder />} />
+            <Route path="workshop/aura" element={<AuraBuilder />} />
+            <Route path="workshop/chart" element={<ChartBuilder />} />
+            <Route path="workshop/colour" element={<ColorBuilder />} />
+            <Route path="workshop/image" element={<ImageBuilder />} />
+            <Route path="workshop/meme" element={<MemeBuilder />} />
+            <Route path="workshop/schedule" element={<ScheduleBuilder />} />
 
             {/* sameer work. dont touch  */}
             <Route path="about" element={<About />} />
