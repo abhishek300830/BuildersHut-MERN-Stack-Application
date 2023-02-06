@@ -9,4 +9,5 @@ add These Scripts
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build",
 
-command npm run deploy
+command
+npm run deploy
