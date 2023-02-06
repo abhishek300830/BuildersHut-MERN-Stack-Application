@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BuildersHut-MERN-Stack-Application/static/css/main.9fc10d74.css",
-    "main.js": "/BuildersHut-MERN-Stack-Application/static/js/main.e93e3b18.js",
+    "main.js": "/BuildersHut-MERN-Stack-Application/static/js/main.1d62d046.js",
     "static/media/robortBuilder.png": "/BuildersHut-MERN-Stack-Application/static/media/robortBuilder.1fdf30264832a373ab12.png",
     "static/media/builder2_bg.png": "/BuildersHut-MERN-Stack-Application/static/media/builder2_bg.910e3bc3ab1d5887ae99.png",
     "static/media/builder3.png": "/BuildersHut-MERN-Stack-Application/static/media/builder3.7114627af333ed48d338.png",
@@ -28,10 +28,10 @@
     "static/media/resume_png.png": "/BuildersHut-MERN-Stack-Application/static/media/resume_png.2644f5c3557760cd602f.png",
     "index.html": "/BuildersHut-MERN-Stack-Application/index.html",
     "main.9fc10d74.css.map": "/BuildersHut-MERN-Stack-Application/static/css/main.9fc10d74.css.map",
-    "main.e93e3b18.js.map": "/BuildersHut-MERN-Stack-Application/static/js/main.e93e3b18.js.map"
+    "main.1d62d046.js.map": "/BuildersHut-MERN-Stack-Application/static/js/main.1d62d046.js.map"
   },
   "entrypoints": [
     "static/css/main.9fc10d74.css",
-    "static/js/main.e93e3b18.js"
+    "static/js/main.1d62d046.js"
   ]
 }
