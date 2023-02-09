@@ -58,8 +58,6 @@ const Workshop = () => {
         <img
           src={builder_bg}
           alt="builder bg"
-          data-aos="slide-left"
-          data-aos-duration="1500"
           className="builder_bg"
         />
 

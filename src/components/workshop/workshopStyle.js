@@ -33,16 +33,17 @@ export const WorkshopDiv=styled.div`
         position: fixed;
         z-index: 0;
         width: 40%;
-        right: 0;
+        right: 0%;
         bottom: 0;
         animation: ustad-anim 1.5s ease-out 0s 1;
     }
-    @keyframes ustad-anim  {
+    @keyframes ustad-anim{
         0%{
             margin-left: 40%;
+            right: -40%;
         }
         100%{
-            margin-left: 0%;
+            right: 0%;
         }
     }
     img.workshop-img{
