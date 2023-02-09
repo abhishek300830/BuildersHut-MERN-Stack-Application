@@ -11,12 +11,13 @@ export const NavbarDiv=styled.div`
         display: grid;
         grid-template-columns: 43% 15% 43%;
 
+        // delete this later
         div.left{
             color:black;
             font-size:1.4vw;
             a{
                 position:absolute;
-                margin-left:5%;
+                right:20%;
                 margin-top:2%;
             }
         }

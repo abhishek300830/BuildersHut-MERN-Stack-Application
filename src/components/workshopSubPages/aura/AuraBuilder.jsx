@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../footer/Footer";
+// import Footer from "../../footer/Footer";
 import Button from "@mui/material/Button";
 
 const AuraBuilder = () => {
@@ -8,6 +8,7 @@ const AuraBuilder = () => {
       <div>AuraBuilder</div>
       <Button variant="contained">hell</Button>
 
+      
       {/* <Footer/> */}
     </>
   );

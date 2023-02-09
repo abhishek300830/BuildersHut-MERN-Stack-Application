@@ -23,9 +23,11 @@ const Navbar = () => {
   return (
     <NavbarDiv>
       <div className="main">
+
         <div className="left">
           <NavLink to="about">About</NavLink>
         </div>
+        
         <div className="mid">
           <NavLink to="/">
             <img src={hut2} className="hut2" alt="" />

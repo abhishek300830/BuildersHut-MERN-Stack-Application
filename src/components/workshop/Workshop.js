@@ -6,7 +6,7 @@ import color_icon from "../../images/builder icons/color_png.png";
 import task_icon from "../../images/builder icons/task_builder.png";
 import meme_icon from "../../images/builder icons/meme_png.png";
 import chart_icon from "../../images/builder icons/chart_png.png";
-import Footer from "../footer/Footer";
+// import Footer from "../footer/Footer";
 import workshop_img from "../../images/left out/workshop2.png";
 import crack from "../../images/left out/crack.png";
 import Card from "../workshop_card/Card";
