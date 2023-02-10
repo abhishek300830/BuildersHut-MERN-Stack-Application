@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import chartH from "../../../images/headers/chart.png";
 import Steps from "./progress/Steps";
 import { ResumeStyleDiv } from "./resumeStyle";
+import Achievement from "./ResumeSubFiles/achievements/Achievement";
 import Language from "./ResumeSubFiles/languageAndProfile/Language";
 import Personal from "./ResumeSubFiles/personal/Personal";
 import Qualification from "./ResumeSubFiles/qualification/Qualification";
+import Skill from "./ResumeSubFiles/skillAndProject/Skill";
 
 const ResumeBuilder = () => {
   var flag = false;
@@ -23,7 +25,13 @@ const ResumeBuilder = () => {
     }
   };
   const [activeStep, setActiveStep] = useState(0);
-  const pages = [<Personal />, <Language />, <Qualification />];
+  const pages = [
+    <Personal />,
+    <Language />,
+    <Qualification />,
+    <Skill />,
+    <Achievement />,
+  ];
   return (
     <ResumeStyleDiv>
       <img src={chartH} alt="header" className="header" />

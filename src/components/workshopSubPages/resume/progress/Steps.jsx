@@ -16,7 +16,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
   return (
     <MobileStepper
       variant="progress"
-      steps={3}
+      steps={5}
       position="static"
       activeStep={activeStep}
       sx={{ flexGrow: 1 }}
@@ -25,7 +25,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
           size="small"
           variant="contained"
           onClick={handleNext}
-          disabled={activeStep === 2}
+          disabled={activeStep === 4}
         >
           Next
           {theme.direction === "rtl" ? (
