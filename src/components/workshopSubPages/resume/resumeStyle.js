@@ -22,8 +22,10 @@ export const ResumeStyleDiv=styled.div`
         }
         div.left{
             padding: 2%;
-            background-color: #eeee6f74;
-            overflow: auto;
+            /* background-color: #eeee6f74; */
+              background-color: #b0b0b09c;
+
+                overflow: auto;
 
                 ::-webkit-scrollbar {
                     width: 5px;
@@ -49,27 +51,31 @@ export const ResumeStyleDiv=styled.div`
             }
 
         }
-        div.right{
-            background-color: #f965654e;
-            padding: 2%;
-            position: relative;
+      }
+    
+    div.right {
+      background-color: #f965654e;
+      padding: 2%;
+      position: relative;
 
-            div.a4{
-                width: 70%;
-                margin: auto;
-                height: 98.994%;
-                background-color: #7d79799c;
-            }
-        }
-
-       
+      div.a4 {
+        /* width: 70px; */
+        width: 385px;
+        margin: auto;
+        margin-top: 3%;
+        /* height: 98.994px; */
+        height: 544.467px;
+        background-color: #7d79799c;
+      }
     }
 
-
-    /* media queries ####### */
-    @media (max-width:1280px){
-        
+  /* media queries ####### */
+  @media (max-width: 1280px) {
+    section.rMain div.right div.a4 {
+      /* background-color: red; */
+      margin-top: 25px;
     }
+}
     @media (max-width:820px){
         margin-top: -1%;
         img.header{

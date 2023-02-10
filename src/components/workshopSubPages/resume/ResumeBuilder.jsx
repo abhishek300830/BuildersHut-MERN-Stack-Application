@@ -1,9 +1,17 @@
-import React from "react";
-import chartH from '../../../images/headers/chart.png'
+import { TextField } from "@mui/material";
+import React, { useState } from "react";
+import chartH from "../../../images/headers/chart.png";
 import { ResumeStyleDiv } from "./resumeStyle";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs from "dayjs";
+import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
+
 
 const ResumeBuilder = () => {
-
+  const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  };
   var flag=true;
   const onClickPreview=()=>{
     if(flag){
@@ -26,10 +34,28 @@ const ResumeBuilder = () => {
       {/* main div where textfields will b there  */}
         <button id="btn-id" className="flip" onClick={onClickPreview}>Preview</button>
         <div className="left" id="left-part">
+         
+         
           <div className="user-input">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt doloribus dignissimos officiis voluptate possimus neque amet ad saepe obcaecati eveniet. Repudiandae eveniet cum quia voluptatibus sapiente aspernatur excepturi eaque nobis facere fugit iste, quod quasi nulla expedita ea nisi architecto, magnam, dolor tenetur omnis quos placeat inventore? Porro esse iure tempore. Nihil tempora delectus repudiandae nobis dolorem molestiae illum porro, suscipit expedita sapiente, eius ullam possimus adipisci laboriosam alias repellat, voluptatum provident ipsam sit? Placeat suscipit esse necessitatibus magni omnis, alias libero, consequuntur ea laudantium unde eaque dolorem odit eveniet, deserunt cumque adipisci pariatur eius? Velit officiis commodi placeat iure?
-              </p>
+            <TextField label="Name" variant="filled" />
+
+            {/* <DesktopDatePicker
+              label="Date desktop"
+              inputFormat="MM/DD/YYYY"
+              value={value}
+              onChange={handleChange}
+              renderInput={(params) => <TextField {...params} />}
+            /> */}
+            <br />
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <MobileDatePicker
+                label="Date mobile"
+                inputFormat="MM/DD/YYYY"
+                value={value}
+                onChange={handleChange}
+                renderInput={(params) => <TextField {...params} />}
+              />
+            </LocalizationProvider>
           </div>
         </div>
 
@@ -37,9 +63,8 @@ const ResumeBuilder = () => {
         <div className="right" id="right-part">
           <div className="a4"></div>
         </div>
-    </section>
-    
-  </ResumeStyleDiv>
+      </section>
+    </ResumeStyleDiv>
   );
 };
 
