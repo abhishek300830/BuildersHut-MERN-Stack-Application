@@ -4,6 +4,7 @@ import { Button, TextField } from "@mui/material";
 import dayjs from "dayjs";
 
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
+import { PersonalSection } from "./personalStyle";
 
 const Personal = () => {
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
@@ -11,9 +12,9 @@ const Personal = () => {
     setValue(newValue);
   };
   return (
-    <section className="bioData">
-      <div>
-        <h2>Personal Details</h2>
+    <PersonalSection>
+      <div className="personal">
+        <h3 className="p-label">Personal Details</h3>
         <TextField label="Name" variant="filled" color="success" />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
@@ -41,7 +42,7 @@ const Personal = () => {
         </Button>
       </div>
       <div className="languages"></div>
-    </section>
+    </PersonalSection>
   );
 };
 
