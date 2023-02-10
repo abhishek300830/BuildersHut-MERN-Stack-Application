@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ResumeStyleDiv=styled.div`
-    margin-top: -3%;
+    margin-top: -2.5%;
     img.header{
         width: 20%;
         position: absolute;
@@ -11,22 +11,49 @@ export const ResumeStyleDiv=styled.div`
     section.rMain{
         display: grid;
         grid-template-columns: 60% 40%;
-        border: 1px solid black;
-
-        height: 40vw;
+        /* border: 1px solid black; */
+        position: absolute;
+        width: 98%;
+        height: 83%;
+        margin-left: 1%;
         div.left{
+            padding: 2%;
+            background-color: #eeee6f74;
+            overflow: auto;
 
+                ::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                /* Track */
+                ::-webkit-scrollbar-track {
+                    border-radius: 3px;
+                }
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    background: #eaa5a5; 
+                    border-radius: 3px;
+                    
+                }
+
+            div.user-input{
+                width: 100%;
+                height: 100%;
+                p{
+                    width: 20%;
+                }
+            }
         }
         div.right{
-            padding: 5%;
+            background-color: #f965654e;
+            padding: 2%;
             position: relative;
-            background-color: #a89f9f90;
 
             div.a4{
                 width: 70%;
                 margin: auto;
                 height: 98.994%;
-                background-color: #3434349c;
+                background-color: #7d79799c;
             }
         }
     }
