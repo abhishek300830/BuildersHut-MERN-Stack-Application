@@ -22,8 +22,9 @@ export const ResumeStyleDiv = styled.div`
     }
     div.left {
       padding: 2%;
-
       overflow: auto;
+      /* border: 1px solid black; */
+      height: 85%;
 
       ::-webkit-scrollbar {
         width: 5px;
@@ -40,7 +41,19 @@ export const ResumeStyleDiv = styled.div`
 
       div.user-input {
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
+        position: relative;
+
+
+        .scroll-x-y{
+          /* border: 1px solid black; */
+          position: fixed;
+          z-index: 12;
+          width: 58%;
+          bottom: 0;
+          left: 1%;
+        }
+
       }
     }
   }
@@ -91,12 +104,16 @@ export const ResumeStyleDiv = styled.div`
       div.left {
         padding: 2%;
         overflow: auto;
-        height: 95%;
+        height: 90%;
+
         div.user-input {
           width: 100%;
           height: 100%;
-          p {
-            width: 20%;
+          .scroll-x-y{
+            /* border: 1px solid black; */
+            width: 98%;
+            bottom: 0;
+            left: 1%;
           }
         }
         animation: left-anim-1 0.6s normal 0s 1;
@@ -150,7 +167,7 @@ export const ResumeStyleDiv = styled.div`
       div.left {
         padding: 2%;
         overflow: auto;
-        height: 95%;
+        height: 85%;
         div.user-input {
           width: 100%;
           height: 100%;

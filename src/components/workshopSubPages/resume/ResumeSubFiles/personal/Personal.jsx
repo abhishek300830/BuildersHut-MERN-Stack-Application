@@ -41,7 +41,8 @@ const Personal = () => {
           Add Fields
         </Button>
       </div>
-      <div className="languages"></div>
+      <div className="languages" style={{width:"40%"}}>
+      </div>
     </PersonalSection>
   );
 };

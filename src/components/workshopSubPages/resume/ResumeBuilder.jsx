@@ -55,7 +55,12 @@ const ResumeBuilder = () => {
               {/* Personaldetails section  */}
               {pages[activeStep]}
               {/* Personaldetails section  */}
-              <Steps activeStep={activeStep} setActiveStep={setActiveStep} />
+
+              <div className="scroll-x-y">
+                <Steps activeStep={activeStep} setActiveStep={setActiveStep} />
+              </div>
+
+
             </Box>
           </div>
         </div>

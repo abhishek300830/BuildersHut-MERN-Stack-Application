@@ -20,12 +20,14 @@ const Steps = ({ activeStep, setActiveStep }) => {
       position="static"
       activeStep={activeStep}
       sx={{ flexGrow: 1 }}
+      style={{background:"transparent"}}
       nextButton={
         <Button
           size="small"
           variant="contained"
           onClick={handleNext}
           disabled={activeStep === 4}
+          style={{width:"10%"}}
         >
           Next
           {theme.direction === "rtl" ? (
@@ -40,6 +42,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
           size="small"
           variant="contained"
           onClick={handleBack}
+          style={{width:"10%"}}
           disabled={activeStep === 0}
         >
           {theme.direction === "rtl" ? (
