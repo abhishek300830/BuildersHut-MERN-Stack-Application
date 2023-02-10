@@ -70,12 +70,11 @@ export const ResumeStyleDiv=styled.div`
     }
 
   /* media queries ####### */
-  @media (max-width: 1280px) {
-    section.rMain div.right div.a4 {
-      /* background-color: red; */
-      margin-top: 25px;
+     @media (max-width: 1280px) {
+        section.rMain div.right div.a4 {
+        margin-top: 25px;
+        }
     }
-}
     @media (max-width:820px){
         margin-top: -1%;
         img.header{
@@ -100,7 +99,6 @@ export const ResumeStyleDiv=styled.div`
             }
             div.left{
                 padding: 2%;
-                background-color: #eeee6f74;
                 overflow: auto;
                 height: 95%;
                 div.user-input{
@@ -117,6 +115,7 @@ export const ResumeStyleDiv=styled.div`
                 padding: 2%;
                 position: relative;
                 height: 95%;
+                display: none;
                 div.a4{
                     width: 70%;
                     margin: auto;
@@ -159,7 +158,6 @@ export const ResumeStyleDiv=styled.div`
             }
             div.left{
                 padding: 2%;
-                background-color: #eeee6f74;
                 overflow: auto;
                 height: 95%;
                 div.user-input{
