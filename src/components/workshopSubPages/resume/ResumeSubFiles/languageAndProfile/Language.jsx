@@ -11,6 +11,8 @@ import { Box } from "@mui/system";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import { LanguageContainer } from "./languageStyle";
+import { useContext } from "react";
+import builderContext from "../../../../../context/builderContext";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -50,6 +52,8 @@ const Language = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
+  const {themebg,formbg,borderbg} = useContext(builderContext)
+
   const handleChange = (event) => {
     const {
       target: { value },
@@ -61,8 +65,8 @@ const Language = () => {
   };
   return (
     <LanguageContainer>
-      <div className="languages border">
-        <h2 className="lang-label">Select Languages</h2>
+      <div className="languages border" style={{borderColor:borderbg}}>
+        <h2 className="lang-label" style={{background:formbg}}>Select Languages</h2>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-chip-label">Languages</InputLabel>
           <Select
@@ -93,11 +97,11 @@ const Language = () => {
           </Select>
         </FormControl>
       </div>
-      <div className="profileBio border">
-        <h2 className="profile-label">Profile Details</h2>
+      <div className="profileBio border" style={{borderColor:borderbg}}>
+        <h2 className="profile-label" style={{background:formbg}}>Profile Details</h2>
         <Box
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "95%" },
+            "& .MuiTextField-root": { m: 1, width: "98%" },
           }}
           noValidate
           autoComplete="off"
@@ -107,14 +111,15 @@ const Language = () => {
             label="Bio Details"
             multiline
             rows={4}
+            style={{width:"98%"}}
             variant="filled"
             defaultValue="Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python."
             fullWidth
           />
         </Box>
       </div>
-      <div className="interestAndHobbies border">
-        <h2 className="interest-label">Interest And Hobbies</h2>
+      <div className="interestAndHobbies border" style={{borderColor:borderbg}}>
+        <h2 className="interest-label" style={{background:formbg}}>Interest And Hobbies</h2>
         <TextField variant="filled" label="hello"></TextField>
       </div>
     </LanguageContainer>

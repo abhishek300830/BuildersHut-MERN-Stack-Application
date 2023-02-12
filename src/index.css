@@ -4,3 +4,39 @@ body {
     transition: 0.5s;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
+/* this button style is used in profile builder progress  */
+
+.nextbtns {
+    width: 10%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0b125;
+    box-shadow: 2px 2px 3px gray;
+    border-color: gray;
+    position: relative;
+}
+
+.nextbtns div {
+    position: relative;
+    z-index: 20;
+    padding: 10%;
+    font-weight: bold;
+}
+
+.stepDiv {
+    position: absolute;
+    width: 95%;
+    background-color: rgb(242, 196, 79);
+    height: 45%;
+    top: 2%;
+    left: 2%;
+    z-index: 15;
+}
+
+@media (max-width:820px) {
+    .nextbtns {
+        width: 20%;
+    }
+}

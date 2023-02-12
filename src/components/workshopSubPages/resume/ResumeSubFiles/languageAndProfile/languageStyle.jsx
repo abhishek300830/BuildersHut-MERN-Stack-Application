@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const LanguageContainer = styled.div`
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   .border {
-    margin: 2%;
+    margin-bottom: 5%;
     padding: 2%;
     border: black solid 1px;
     border-radius: 5px;
@@ -22,6 +22,9 @@ export const LanguageContainer = styled.div`
       left: 3%;
       background-color: white;
       padding: 0% 1%;
+      border-radius: 5px;
+      color: #454343ff;
+
     }
   }
   .profileBio {
@@ -32,6 +35,10 @@ export const LanguageContainer = styled.div`
       left: 3%;
       background-color: white;
       padding: 0% 1%;
+      border-radius: 5px;
+      color: #454343ff;
+
+
     }
   }
   .interestAndHobbies {
@@ -42,6 +49,9 @@ export const LanguageContainer = styled.div`
       left: 3%;
       background-color: white;
       padding: 0% 1%;
+      border-radius: 5px;
+      color: #454343ff;
+
     }
   }
 

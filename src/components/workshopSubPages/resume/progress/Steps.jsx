@@ -14,46 +14,38 @@ const Steps = ({ activeStep, setActiveStep }) => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
   return (
+    <>
     <MobileStepper
       variant="progress"
       steps={5}
       position="static"
       activeStep={activeStep}
-      sx={{ flexGrow: 1 }}
-      style={{background:"transparent"}}
+      sx={{ flexGrow: 1,background:"transparent"}}
       nextButton={
-        <Button
-          size="small"
-          variant="contained"
+        <button
+          className="nextbtns"
           onClick={handleNext}
           disabled={activeStep === 4}
-          style={{width:"5%",borderRadius:"50px"}}
         >
           
-          {theme.direction === "rtl" ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
+          <div> NEXT </div>
+          <span className="stepDiv"></span>
+
+        </button>
       }
       backButton={
-        <Button
-          size="small"
-          variant="contained"
+        <button
+          className="nextbtns"
           onClick={handleBack}
-          style={{width:"5%",borderRadius:"50px"}}
           disabled={activeStep === 0}
         >
-          {theme.direction === "rtl" ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
+          <div> BACK </div>
+          <span className="stepDiv"></span>
           
-        </Button>
+        </button>
       }
     />
+    </>
   );
 };
 

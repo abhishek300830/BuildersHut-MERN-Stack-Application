@@ -10,8 +10,12 @@ import Qualification from "./ResumeSubFiles/qualification/Qualification";
 import Skill from "./ResumeSubFiles/skillAndProject/Skill";
 import v_res from '../../../images/left out/vert_resume.png'
 import h_res from '../../../images/left out/horiz_resume.png'
+import builderContext from "../../../context/builderContext";
+import { useContext } from "react";
 
 const ResumeBuilder = () => {
+  const {formbg} = useContext(builderContext)
+
   var flag = false;
   const onClickPreview = () => {
     if (flag) {
@@ -29,7 +33,7 @@ const ResumeBuilder = () => {
   const [activeStep, setActiveStep] = useState(0);
   const pages = [
     <Personal />,
-    <Language />,
+    // <Language />,
     <Qualification />,
     <Skill />,
     <Achievement />,
@@ -37,13 +41,14 @@ const ResumeBuilder = () => {
   return (
     <ResumeStyleDiv>
       <img src={resumeH} alt="header" className="header" />
+      {/* <h2 className="header">PROFILE BUILDER</h2> */}
 
       <section className="rMain">
         {/* main div where textfields will b there  */}
         <button id="btn-id" className="flip" onClick={onClickPreview}>
           Preview
         </button>
-        <div className="left" id="left-part">
+        <div className="left" id="left-part" >
           <div className="user-input">
             
             <div className="select-temp" style={{display:"none"}}>
@@ -67,7 +72,7 @@ const ResumeBuilder = () => {
             <Box
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch" },
+                "& .MuiTextField-root": { m: 1, width: "25ch", background:formbg , borderRadius:"0.8ch"},
                 "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
               }}
               noValidate

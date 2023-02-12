@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ResumeStyleDiv = styled.div`
   margin-top: -2.5%;
-  img.header {
+  .header {
     width: 20%;
     position: absolute;
     top: 2%;
@@ -39,7 +39,7 @@ export const ResumeStyleDiv = styled.div`
         border-radius: 3px;
       }
 
-      border: 1px solid black;
+      /* border: 1px solid black; */
       div.user-input {
         width: 100%;
         /* height: 100%; */

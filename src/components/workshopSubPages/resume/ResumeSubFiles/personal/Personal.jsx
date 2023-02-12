@@ -5,8 +5,13 @@ import dayjs from "dayjs";
 
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { PersonalSection } from "./personalStyle";
+import Language from "../languageAndProfile/Language";
+import { useContext } from "react";
+import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
+  const {formbg,borderbg}=useContext(builderContext);
+
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -18,7 +23,7 @@ const Personal = () => {
         <TextField label="Name" variant="filled" color="success" />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
-            label="Date mobile"
+            label="DOB"
             inputFormat="MM/DD/YYYY"
             value={value}
             onChange={handleChange}
@@ -26,9 +31,9 @@ const Personal = () => {
           />
         </LocalizationProvider>
       </div>
-      <div className="address">
-        <h3 className="label">Address</h3>
-        <TextField label="City" variant="filled" color="success" />
+      <div className="address" style={{borderColor:borderbg}}>
+        <h3 className="label" style={{background:formbg}}>Address</h3>
+        <TextField label="City" variant="filled" color="success"/>
         <TextField label="State" variant="filled" color="success" />
         <TextField label="PinCode" variant="filled" color="success" />
         <TextField label="Mobile" variant="filled" color="success" />
@@ -41,8 +46,9 @@ const Personal = () => {
           Add Fields
         </Button>
       </div>
-      <div className="languages" style={{width:"40%"}}>
-      </div>
+      <Language/>
+      {/* <div className="languages" style={{width:"40%"}}>
+      </div> */}
     </PersonalSection>
   );
 };

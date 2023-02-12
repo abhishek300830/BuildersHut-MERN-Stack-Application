@@ -2,13 +2,12 @@ import styled from "styled-components";
 
 export const PersonalSection = styled.div`
   .personal {
-    /* padding: 2%; */
     margin-bottom: 5%;
     position: relative;
-    border-radius: 5px;
     .p-label {
-      text-decoration: underline;
       font-size: 2vw;
+      color: #3f3e3e;
+
     }
   }
   .address {
@@ -26,7 +25,8 @@ export const PersonalSection = styled.div`
       z-index: 10;
       position: absolute;
       top: -20%;
-      background-color: white;
+      border-radius: 5px;
+      /* background-color: white; */
       padding: 0% 1%;
     }
   }
