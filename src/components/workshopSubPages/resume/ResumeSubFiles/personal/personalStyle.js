@@ -12,7 +12,7 @@ export const PersonalSection = styled.div`
     }
   }
   .address {
-    /* background-color: #d1d1d1; */
+    /* background-color: #d1d1d16c; */
     padding: 2%;
     margin-top: 2%;
     margin-bottom: 5%;

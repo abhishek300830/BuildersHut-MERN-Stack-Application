@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
-import chartH from "../../../images/headers/chart.png";
+import resumeH from "../../../images/headers/profile.png";
 import Steps from "./progress/Steps";
 import { ResumeStyleDiv } from "./resumeStyle";
 import Achievement from "./ResumeSubFiles/achievements/Achievement";
@@ -8,6 +8,8 @@ import Language from "./ResumeSubFiles/languageAndProfile/Language";
 import Personal from "./ResumeSubFiles/personal/Personal";
 import Qualification from "./ResumeSubFiles/qualification/Qualification";
 import Skill from "./ResumeSubFiles/skillAndProject/Skill";
+import v_res from '../../../images/left out/vert_resume.png'
+import h_res from '../../../images/left out/horiz_resume.png'
 
 const ResumeBuilder = () => {
   var flag = false;
@@ -34,7 +36,7 @@ const ResumeBuilder = () => {
   ];
   return (
     <ResumeStyleDiv>
-      <img src={chartH} alt="header" className="header" />
+      <img src={resumeH} alt="header" className="header" />
 
       <section className="rMain">
         {/* main div where textfields will b there  */}
@@ -43,6 +45,25 @@ const ResumeBuilder = () => {
         </button>
         <div className="left" id="left-part">
           <div className="user-input">
+            
+            <div className="select-temp" style={{display:"none"}}>
+
+                <div className="st1">
+                  <h2>Choose <br /> alignment</h2>
+                    <div>
+                      <img src={h_res} alt="temp" /> <br />
+                      <b>Horizontal</b>
+                      </div>
+                    <div>
+                      <img src={v_res} alt="temp" /> <br />
+                      <b>Vertical</b>
+                    </div>
+                
+                </div>
+
+                 
+            </div>
+
             <Box
               component="form"
               sx={{
@@ -51,6 +72,7 @@ const ResumeBuilder = () => {
               }}
               noValidate
               autoComplete="off"
+              // style={{display:"none"}}
             >
               {/* Personaldetails section  */}
               {pages[activeStep]}
@@ -59,9 +81,9 @@ const ResumeBuilder = () => {
               <div className="scroll-x-y">
                 <Steps activeStep={activeStep} setActiveStep={setActiveStep} />
               </div>
-
-
             </Box>
+
+
           </div>
         </div>
 

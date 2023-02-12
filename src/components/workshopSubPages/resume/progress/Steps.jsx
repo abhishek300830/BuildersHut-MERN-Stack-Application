@@ -27,9 +27,9 @@ const Steps = ({ activeStep, setActiveStep }) => {
           variant="contained"
           onClick={handleNext}
           disabled={activeStep === 4}
-          style={{width:"10%"}}
+          style={{width:"5%",borderRadius:"50px"}}
         >
-          Next
+          
           {theme.direction === "rtl" ? (
             <KeyboardArrowLeft />
           ) : (
@@ -42,7 +42,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
           size="small"
           variant="contained"
           onClick={handleBack}
-          style={{width:"10%"}}
+          style={{width:"5%",borderRadius:"50px"}}
           disabled={activeStep === 0}
         >
           {theme.direction === "rtl" ? (
@@ -50,7 +50,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
           ) : (
             <KeyboardArrowLeft />
           )}
-          Back
+          
         </Button>
       }
     />

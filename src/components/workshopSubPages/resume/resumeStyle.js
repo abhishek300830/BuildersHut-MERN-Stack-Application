@@ -23,7 +23,7 @@ export const ResumeStyleDiv = styled.div`
     div.left {
       padding: 2%;
       overflow: auto;
-      /* border: 1px solid black; */
+      /* background: #80808020; */
       height: 85%;
 
       ::-webkit-scrollbar {
@@ -39,14 +39,37 @@ export const ResumeStyleDiv = styled.div`
         border-radius: 3px;
       }
 
+      border: 1px solid black;
       div.user-input {
         width: 100%;
         /* height: 100%; */
         position: relative;
 
+        .select-temp{
+          /* border: 1px solid black; */
+          .st1{
+            display: grid;
+            grid-template-columns: 40% 30% 30%;
+            align-items: center;
+            h2{
+              text-align: right;
+              /* border: 1px solid black; */
+
+            }
+            div{
+              /* border: 1px solid black; */
+              text-align: left;
+              img{
+                width: 40%;
+              }
+            }
+
+            }
+
+          }
+        }
 
         .scroll-x-y{
-          /* border: 1px solid black; */
           position: fixed;
           z-index: 12;
           width: 58%;
@@ -56,7 +79,7 @@ export const ResumeStyleDiv = styled.div`
 
       }
     }
-  }
+  
 
   div.right {
     padding: 2%;
@@ -105,12 +128,10 @@ export const ResumeStyleDiv = styled.div`
         padding: 2%;
         overflow: auto;
         height: 90%;
-
         div.user-input {
           width: 100%;
           height: 100%;
           .scroll-x-y{
-            /* border: 1px solid black; */
             width: 98%;
             bottom: 0;
             left: 1%;
