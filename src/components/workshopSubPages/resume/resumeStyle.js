@@ -55,14 +55,16 @@ export const ResumeStyleDiv = styled.div`
     width: 98%;
     height: 83%;
     margin-left: 1%;
-
     button.flip {
       display: none;
     }
     div.left {
       padding: 2%;
       overflow: auto;
-      height: 85%;
+      height: 85%;  
+      background: #c9c7c72c;
+      border-radius: 5px;
+
 
       ::-webkit-scrollbar {
         width: 5px;
@@ -78,8 +80,7 @@ export const ResumeStyleDiv = styled.div`
       }
 
       /* border: 1px solid black; */
-      border-radius: 5px;
-      background: #c9c7c72c;
+     
       /* box-shadow: 4px 4px 4px 4px #e7934fa1; */
       /* box-shadow: 2px 2px 4px rgba(0,0,0,.3); */
       div.user-input {

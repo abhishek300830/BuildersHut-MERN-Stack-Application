@@ -68,6 +68,9 @@ export const LanguageContainer = styled.div`
     }
     .interestAndHobbies {
       margin-top: 5%;
+      .interest-label{
+        top: -20%;
+      }
     }
   }
 `;

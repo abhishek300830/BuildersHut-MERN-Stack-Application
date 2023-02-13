@@ -47,8 +47,6 @@ const Personal = () => {
         </Button>
       </div>
       <Language/>
-      {/* <div className="languages" style={{width:"40%"}}>
-      </div> */}
     </PersonalSection>
   );
 };

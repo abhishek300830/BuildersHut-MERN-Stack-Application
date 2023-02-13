@@ -18,7 +18,7 @@ const Navbar = () => {
     document.getElementById("moon_id").style.backgroundColor = "transparent";
   
     setThemebg("white")
-    setFormbg("white")
+    setFormbg("#faf6f6")
     setBorderbg("black")
   };
 

@@ -37,7 +37,13 @@ export const PersonalSection = styled.div`
           font-size: 4vw;
       }
     }
+    .address {
+      .label {
+        left: 5%;
+        top: -13%;
+      }
   }
+}
   
   @media (max-width: 820px) {
     .personal {
@@ -53,5 +59,11 @@ export const PersonalSection = styled.div`
           font-size: 5vw;
       }
     }
+    .address {
+      .label {
+        left: 5%;
+        top: -8%;
+      }
+  }
   }
 `;
