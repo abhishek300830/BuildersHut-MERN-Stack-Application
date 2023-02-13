@@ -2,12 +2,47 @@ import styled from "styled-components";
 
 export const ResumeStyleDiv = styled.div`
   margin-top: -2.5%;
-  .header {
-    width: 20%;
-    position: absolute;
-    top: 2%;
+  .pop-up-girl {
+    width: 30%;
+    position: fixed;
+    bottom: 2%;
     left: 2%;
+    z-index: 22;
+    animation: pop-up-anim 1s ease-out 0s 1 normal forwards;
   }
+  .blur-bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 21;
+    opacity: 0.7;
+  }
+
+  @keyframes pop-up-anim {
+    0% {
+      width: 0;
+      left: 0;
+    }
+    100% {
+      width: 30%;
+      left: 2%;
+    }
+  }
+  /* @keyframes pop-up-bg-2 {
+    0%{
+      width: 100%;
+    }
+    98%{
+      width: 100%;
+    }
+    100%{
+      width: 0%;
+      display: none;
+    }
+  } */
+
   section.rMain {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -51,31 +86,30 @@ export const ResumeStyleDiv = styled.div`
         .select-temp {
           /* border: 1px solid black; */
           .st1 {
-            display: grid;
-            grid-template-columns: 40% 30% 30%;
-            align-items: center;
-            h2 {
-              text-align: right;
+            border: 1px solid black;
+            width: 60%;
+            border-radius: 5px;
+            .alignment {
               /* border: 1px solid black; */
+              padding: 1% 4%;
+              border-radius: 5px;
             }
-            div {
-              /* border: 1px solid black; */
-              text-align: left;
-              img {
-                width: 40%;
-              }
+            .templates {
+              margin-top: 2%;
+              width: 80%;
+              padding: 1% 4%;
             }
           }
         }
       }
+    }
 
-      .scroll-x-y {
-        position: fixed;
-        z-index: 12;
-        width: 58%;
-        bottom: 0;
-        left: 1%;
-      }
+    .scroll-x-y {
+      position: fixed;
+      z-index: 12;
+      width: 58%;
+      bottom: 0;
+      left: 1%;
     }
   }
 
@@ -102,11 +136,18 @@ export const ResumeStyleDiv = styled.div`
   }
   @media (max-width: 820px) {
     margin-top: -1%;
-    img.header {
-      width: 30%;
-      position: absolute;
-      top: 0.3%;
-      left: 1%;
+    .pop-up-girl {
+      width: 70%;
+    }
+    @keyframes pop-up-anim {
+      0% {
+        width: 0;
+        left: 0;
+      }
+      100% {
+        width: 70%;
+        left: 2%;
+      }
     }
     section.rMain {
       display: block;
@@ -173,12 +214,21 @@ export const ResumeStyleDiv = styled.div`
     }
   }
   @media (max-width: 520px) {
-    img.header {
-      width: 70%;
-      position: relative;
-      margin-left: 12%;
-      margin-top: -5%;
+    .pop-up-girl {
+      width: 98%;
+      left: 1;
     }
+    @keyframes pop-up-anim {
+      0% {
+        width: 0;
+        left: 0;
+      }
+      100% {
+        width: 98%;
+        left: 1%;
+      }
+    }
+
     section.rMain {
       height: 76%;
       button.flip {
