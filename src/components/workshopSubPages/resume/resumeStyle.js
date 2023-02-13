@@ -19,6 +19,12 @@ export const ResumeStyleDiv = styled.div`
     z-index: 21;
     opacity: 0.7;
   }
+  .header{
+    width: 20%;
+    position: fixed;
+    top: 1%;
+    left: 1%;
+  }
 
   @keyframes pop-up-anim {
     0% {
@@ -138,6 +144,10 @@ export const ResumeStyleDiv = styled.div`
     margin-top: -1%;
     .pop-up-girl {
       width: 70%;
+    }
+    .header{
+      width: 30%;
+      left: 3%;
     }
     @keyframes pop-up-anim {
       0% {

@@ -4,14 +4,14 @@ import popUpMsg from "../../../images/left out/popupGirl.png";
 import Steps from "./progress/Steps";
 import { ResumeStyleDiv } from "./resumeStyle";
 import Achievement from "./ResumeSubFiles/achievements/Achievement";
-import Language from "./ResumeSubFiles/languageAndProfile/Language";
 import Personal from "./ResumeSubFiles/personal/Personal";
 import Qualification from "./ResumeSubFiles/qualification/Qualification";
 import Skill from "./ResumeSubFiles/skillAndProject/Skill";
-import v_res from '../../../images/left out/vert_resume.png'
-import h_res from '../../../images/left out/horiz_resume.png'
+// import v_res from '../../../images/left out/vert_resume.png'
+// import h_res from '../../../images/left out/horiz_resume.png'
 import builderContext from "../../../context/builderContext";
 import { useContext } from "react";
+import resumeH from '../../../images/headers/profile.png'
 
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -60,8 +60,8 @@ const ResumeBuilder = () => {
   }
   return (
     <ResumeStyleDiv>
-      {/* <img src={resumeH} alt="header" className="header" /> */}
-      <img src={popUpMsg} className="pop-up-girl" alt="welcome msg image" id="pp-girl"/>
+      <img src={resumeH} alt="headers" className="header" />
+      <img src={popUpMsg} className="pop-up-girl" alt="welcomemsgimage" id="pp-girl"/>
       <div className="blur-bg" style={{background:themebg}} onClick={onPopUpClick} id="pp-bg"></div>
       
       <section className="rMain">

@@ -1,11 +1,8 @@
-import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import { Button, MobileStepper } from "@mui/material";
+import { MobileStepper } from "@mui/material";
 import React from "react";
-import { useTheme } from "@mui/material/styles";
 import { StepsDiv } from "./stepsStyle";
 
 const Steps = ({ activeStep, setActiveStep }) => {
-  const theme = useTheme();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
