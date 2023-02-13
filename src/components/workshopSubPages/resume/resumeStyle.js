@@ -24,6 +24,8 @@ export const ResumeStyleDiv = styled.div`
     position: fixed;
     top: 1%;
     left: 1%;
+    animation: pop-up-bg-2 1s ease-out 0s 1 normal forwards;
+
   }
 
   @keyframes pop-up-anim {
@@ -36,18 +38,14 @@ export const ResumeStyleDiv = styled.div`
       left: 2%;
     }
   }
-  /* @keyframes pop-up-bg-2 {
+  @keyframes pop-up-bg-2 {
     0%{
-      width: 100%;
-    }
-    98%{
-      width: 100%;
+      opacity: 0;
     }
     100%{
-      width: 0%;
-      display: none;
+      opacity: 1;
     }
-  } */
+  }
 
   section.rMain {
     display: grid;
@@ -224,9 +222,15 @@ export const ResumeStyleDiv = styled.div`
     }
   }
   @media (max-width: 520px) {
+    margin-top: 10%;
     .pop-up-girl {
       width: 98%;
       left: 1;
+    }
+    .header{
+      width: 50%;
+      left: 25%;
+      top: 11%;
     }
     @keyframes pop-up-anim {
       0% {
@@ -240,7 +244,7 @@ export const ResumeStyleDiv = styled.div`
     }
 
     section.rMain {
-      height: 76%;
+      height: 82%;
       button.flip {
         font-size: 3.5vw;
       }

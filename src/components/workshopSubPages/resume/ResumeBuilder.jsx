@@ -23,7 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 const ResumeBuilder = () => {
-  const {formbg,themebg} = useContext(builderContext)
+  const {formbg} = useContext(builderContext)
 
   const [age, setAge] = React.useState('');
 
@@ -57,12 +57,14 @@ const ResumeBuilder = () => {
   const onPopUpClick =()=>{
     document.getElementById('pp-girl').style.display="none";
     document.getElementById('pp-bg').style.display="none";
+    document.getElementById('header-1').style.display="block";
   }
   return (
     <ResumeStyleDiv>
-      <img src={resumeH} alt="headers" className="header" />
+      <img src={resumeH} alt="headers" id="header-1" className="header" style={{display:"none"}}/>
+     
       <img src={popUpMsg} className="pop-up-girl" alt="welcomemsgimage" id="pp-girl"/>
-      <div className="blur-bg" style={{background:themebg}} onClick={onPopUpClick} id="pp-bg"></div>
+      <div className="blur-bg" style={{background:"#0a0a0ad7"}} onClick={onPopUpClick} id="pp-bg"></div>
       
       <section className="rMain">
         {/* main div where textfields will b there  */}
@@ -73,7 +75,7 @@ const ResumeBuilder = () => {
           <div className="user-input">
             
             <div className="select-temp" 
-            // style={{display:"none"}}
+            style={{display:"none"}}
             >
 
                 <div className="st1">
@@ -134,7 +136,7 @@ const ResumeBuilder = () => {
               }}
               noValidate
               autoComplete="off"
-              style={{display:"none"}}
+              // style={{display:"none"}}
             >
               {/* Personaldetails section  */}
               {pages[activeStep]}
