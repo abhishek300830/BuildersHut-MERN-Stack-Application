@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { useContext } from "react";
 import { useState } from "react";
 import builderContext from "../../../../../context/builderContext";
@@ -52,6 +52,7 @@ const Achievement = () => {
         <Button
           variant="contained"
           size="large"
+          className="all-btns"
           onClick={addField}
           disabled={maxFields === 0 || val.length === 0}
           style={{
@@ -64,22 +65,23 @@ const Achievement = () => {
               src="https://cdn.lordicon.com/ynwbvguu.json"
               trigger="hover"
               colors="primary:#ffffff"
-              style={{width:"90%",height:"90%",opacity:val.length==0?"0.6":"1"}}>              
+              style={{width:"90%",height:"90%",opacity:val.length===0?"0.6":"1"}}>              
           </lord-icon>
         </Button>
 
         <Button
           variant="contained"
           size="large"
+          className="all-btns"
           onClick={() => setFields([])}
           disabled={fields.length === 0}
-          style={{ backgroundColor: "#e65f5f", width: "20%",opacity:fields.length==0?"0.6":"1" }}
+          style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
           <lord-icon
               src="https://cdn.lordicon.com/akuwjdzh.json"
               trigger="hover"
               colors={`primary:#ffffff`}
-              style={{width:"90%",height:"90%"}}>              
+              style={{width:"90%",height:"90%",opacity:fields.length===0?"0.6":"1"}}>              
           </lord-icon>
         </Button>
       </section>

@@ -94,6 +94,7 @@ const Skill = () => {
         <Button
           variant="contained"
           size="large"
+          className="all-btns"
           onClick={addField}
           disabled={maxFields === 0 || val.length === 0}
           style={{
@@ -102,17 +103,28 @@ const Skill = () => {
             marginLeft: "30%",
           }}
         >
-          Add Fields
+          <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style={{width:"90%",height:"90%",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
 
         <Button
           variant="contained"
+          className="all-btns"
           size="large"
           onClick={() => setSkillData([])}
           disabled={skillData.length === 0}
           style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
-          Reset
+          <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#ffffff`}
+              style={{width:"90%",height:"90%",opacity:skillData.length===0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
       </section>
 
@@ -258,6 +270,7 @@ const Skill = () => {
         <br />
         <Button
           variant="contained"
+          className="all-btns"
           size="large"
           onClick={addField2}
           disabled={
@@ -269,19 +282,31 @@ const Skill = () => {
             marginLeft: "30%",
           }}
         >
-          Add Fields
+          <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style={{width:"90%",height:"90%",
+              opacity:maxField2 === 0 || type.length === 0 || txValue.length === 0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
 
         <Button
           variant="contained"
+          className="all-btns"
           size="large"
           onClick={resetAll}
           disabled={
             intershipData.length + projectData.length + othersData.length === 0
           }
-          style={{ backgroundColor: "#e65f5f", width: "20%" }}
+          style={{ backgroundColor: "#e65f5f", width: "20%"}}
         >
-          Reset
+          <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#ffffff`}
+              style={{width:"90%",height:"90%",opacity:intershipData.length + projectData.length + othersData.length === 0? "0.6":"1"}}>              
+          </lord-icon>
         </Button>
       </section>
     </SkillStyleDiv>

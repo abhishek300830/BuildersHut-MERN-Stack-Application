@@ -55,7 +55,7 @@ const Language = () => {
   const theme = useTheme();
   const [personName, setPersonName] = useState([]);
 
-  const {themebg,formbg,borderbg, hobbieData,setHobbieData} = useContext(builderContext)
+  const {formbg,borderbg, hobbieData,setHobbieData} = useContext(builderContext)
 
   const handleChange = (event) => {
     const {
@@ -168,6 +168,7 @@ const Language = () => {
 
         <Button
           variant="contained"
+          className="all-btns"
           size="large"
           onClick={addField}
           disabled={maxFields === 0 || val.length === 0}
@@ -177,17 +178,28 @@ const Language = () => {
             marginLeft: "30%",
           }}
         >
-          Add Fields
+          <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style={{width:"90%",height:"90%",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
 
         <Button
           variant="contained"
+          className="all-btns"
           size="large"
           onClick={() => setHobbieData([])}
           disabled={hobbieData.length === 0}
           style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
-          Reset
+           <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#ffffff`}
+              style={{width:"90%",height:"90%",opacity:hobbieData.length === 0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
       </div>
     </LanguageContainer>
