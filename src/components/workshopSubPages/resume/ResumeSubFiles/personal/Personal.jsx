@@ -16,6 +16,9 @@ const Personal = () => {
   const handleChange = (newValue) => {
     setValue(newValue);
   };
+
+ 
+
   return (
     <PersonalSection>
       <div className="personal">
@@ -40,7 +43,7 @@ const Personal = () => {
         <TextField label="PinCode" variant="filled" color="success" />
         <TextField label="Mobile" variant="filled" color="success" />
         <TextField label="Email" variant="filled" color="success" />
-        <TextField label="linkedin,github,etc." variant="filled" color="success" />
+        <TextField label="linkedin, github, etc." variant="filled" color="success" />
         
       </div>
       <Language />

@@ -9,11 +9,12 @@ import {
   TextField,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import { LanguageContainer } from "./languageStyle";
 import { useContext } from "react";
 import builderContext from "../../../../../context/builderContext";
+import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -50,10 +51,11 @@ function getStyles(name, personName, theme) {
 }
 
 const Language = () => {
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
 
-  const {themebg,formbg,borderbg} = useContext(builderContext)
+  const theme = useTheme();
+  const [personName, setPersonName] = useState([]);
+
+  const {themebg,formbg,borderbg, hobbieData,setHobbieData} = useContext(builderContext)
 
   const handleChange = (event) => {
     const {
@@ -64,6 +66,21 @@ const Language = () => {
       typeof value === "string" ? value.split(",") : value
     );
   };
+
+
+  // interest and hobbies
+  const [val, setVal] = useState("");
+  let maxFields = 4 - hobbieData.length; 
+  const addField = () => {
+    setHobbieData([...hobbieData, { name: val }]);
+    setVal("");
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      addField();
+    }
+  };
+
   return (
     <LanguageContainer>
       <div className="languages border" style={{borderColor:borderbg}}>
@@ -119,15 +136,58 @@ const Language = () => {
           />
         </Box>
       </div>
+
+
       <div className="interestAndHobbies border" style={{borderColor:borderbg}}>
         <h2 className="interest-label" style={{background:formbg}}>Interest And Hobbies</h2>
-        <TextField variant="filled" label="hello"></TextField>
+        <h4 style={{ color: "red" }}>(* add maximum 4 fields)</h4>
+
+        {hobbieData.map((vals, ind) => (
+          <CssTextField
+            key={ind}
+            disabled
+            value={vals.name}
+            id={`acheiv-field-` + ind}
+            variant="filled"
+            color="success"
+          />
+        ))}
+        {maxFields > 0 && (
+          <CssTextField
+            inputProps={{ maxLength: 20 }}
+            label="Enter your hobbie"
+            variant="filled"
+            color="success"
+            value={val}
+            onChange={(ev) => setVal(ev.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+        )}
+        
+        <br />
+
         <Button
           variant="contained"
           size="large"
-          style={{ backgroundColor: "GrayText"}}
+          onClick={addField}
+          disabled={maxFields === 0 || val.length === 0}
+          style={{
+            backgroundColor: "GrayText",
+            width: "20%",
+            marginLeft: "30%",
+          }}
         >
-          Add Field
+          Add Fields
+        </Button>
+
+        <Button
+          variant="contained"
+          size="large"
+          onClick={() => setHobbieData([])}
+          disabled={hobbieData.length === 0}
+          style={{ backgroundColor: "#e65f5f", width: "20%" }}
+        >
+          Reset
         </Button>
       </div>
     </LanguageContainer>

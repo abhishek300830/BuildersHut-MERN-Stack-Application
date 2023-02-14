@@ -60,7 +60,12 @@ const Achievement = () => {
             marginLeft: "30%",
           }}
         >
-          Add Fields
+          <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#ffffff"
+              style={{width:"90%",height:"90%",opacity:val.length==0?"0.6":"1"}}>              
+          </lord-icon>
         </Button>
 
         <Button
@@ -68,9 +73,14 @@ const Achievement = () => {
           size="large"
           onClick={() => setFields([])}
           disabled={fields.length === 0}
-          style={{ backgroundColor: "#e65f5f", width: "20%" }}
+          style={{ backgroundColor: "#e65f5f", width: "20%",opacity:fields.length==0?"0.6":"1" }}
         >
-          Reset
+          <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#ffffff`}
+              style={{width:"90%",height:"90%"}}>              
+          </lord-icon>
         </Button>
       </section>
     </AcheivStyleDiv>
