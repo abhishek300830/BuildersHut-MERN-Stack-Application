@@ -1,30 +1,12 @@
-import { styled, TextField } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import builderContext from "../../../../../context/builderContext";
+import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 import { QualificationContainer } from "./qualificationStyle";
 
 const Qualification = () => {
-  const CssTextField = styled(TextField)({
-    "& label.Mui-focused": {
-      color: "#fcae05",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "green",
-    },
-    "& .MuiOutlinedInput-root": {
-      // "& fieldset": {
-      //   borderColor: "red",
-      // },
-      "&:hover fieldset": {
-        borderColor: "#F0B125",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#F0B125",
-      },
-    },
-  });
-
+  const { themebg } = useContext(builderContext);
   return (
-    <QualificationContainer>
+    <QualificationContainer themebg={themebg}>
       <div className="qualification">
         <h2 className="qualification-label">Qualifications</h2>
         <div className="graduate">
