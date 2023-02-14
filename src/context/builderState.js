@@ -11,6 +11,8 @@ const BuilderState=(props)=>{
     // acheivement state (all fields data)
     const [fields,setFields]=useState([]);
     
+    // skills state (all fields data)
+    const [skillData,setSkillData]=useState([]);
 
     
     return(
@@ -20,7 +22,8 @@ const BuilderState=(props)=>{
             themebg,
             setThemebg,setFormbg,
             setBorderbg,borderbg,
-            fields,setFields
+            fields,setFields,
+            skillData,setSkillData
         }}
         >
            { props.children }

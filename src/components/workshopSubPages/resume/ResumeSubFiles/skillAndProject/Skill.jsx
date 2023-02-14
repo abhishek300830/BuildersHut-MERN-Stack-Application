@@ -13,7 +13,16 @@ import dayjs from "dayjs";
 
 const Skill = () => {
 
-  const {formbg,borderbg}=useContext(builderContext)
+  const {formbg,borderbg,skillData,setSkillData}=useContext(builderContext)
+  const [val,setVal]=useState("");
+  var maxFields=8-skillData.length;
+
+  const addField=()=>{
+    setSkillData([...skillData,{name:val}])
+    setVal('')
+  }
+
+  
 
   const [age, setAge] = React.useState('');
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
@@ -28,18 +37,49 @@ const Skill = () => {
         
         <section className="skills" style={{borderColor:borderbg}}>
           <h1 style={{background:formbg}}>Skills</h1>
-          <TextField label="enter your skill" variant="filled" color="success"/>
+          {/* <TextField label="enter your skill" variant="filled" color="success"/>
           <Button variant="contained" size="large"
           style={{ backgroundColor: "GrayText"}}>
             Add Field
-          </Button>
+          </Button> */}
 
+          <h4 style={{color:"red"}}>(* add maximum 8 fields)</h4>
+          {skillData.map( (vals,ind)=>(<TextField key={ind} disabled value={vals.name} id={`acheiv-field-`+ind} variant="filled" color="success"/>))}
+          {maxFields>0 && 
+            <TextField 
+              inputProps={{ maxLength: 20 }}
+              label="Enter your skill" 
+              variant="filled" 
+              color="success" 
+              value={val} 
+              onChange={(ev)=>(setVal(ev.target.value))}
+            />
+
+            }
+          <br />
+
+          <Button
+            variant="contained" 
+            size="large" 
+            onClick={addField} 
+            disabled={maxFields === 0 || val.length === 0}
+            style={{ backgroundColor: "GrayText",width:"20%",marginLeft:"30%"}}>
+            Add Fields
+          </Button>
+          
+          <Button 
+            variant="contained" 
+            size="large" 
+            onClick={()=>(setSkillData([]) )} 
+            disabled={skillData.length === 0}
+            style={{ backgroundColor: "#e65f5f",width:"20%"}}>
+            Reset
+          </Button>
         </section>
 
         <section className="projects" style={{borderColor:borderbg}}>
 
           <h1 style={{background:formbg}}>Projects and Interships</h1>
-          
           <FormControl fullWidth style={{width:"20%",marginTop:"1%"}}>
             <InputLabel id="demo-simple-select-label">type</InputLabel>
             <Select
