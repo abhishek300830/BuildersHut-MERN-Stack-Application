@@ -10,7 +10,7 @@ import { useContext } from "react";
 import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
-  const {formbg,borderbg}=useContext(builderContext);
+  const { formbg, borderbg } = useContext(builderContext);
 
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
@@ -31,9 +31,11 @@ const Personal = () => {
           />
         </LocalizationProvider>
       </div>
-      <div className="address" style={{borderColor:borderbg}}>
-        <h3 className="label" style={{background:formbg}}>Address</h3>
-        <TextField label="City" variant="filled" color="success"/>
+      <div className="address" style={{ borderColor: borderbg }}>
+        <h3 className="label" style={{ background: formbg }}>
+          Address
+        </h3>
+        <TextField label="City" variant="filled" color="success" />
         <TextField label="State" variant="filled" color="success" />
         <TextField label="PinCode" variant="filled" color="success" />
         <TextField label="Mobile" variant="filled" color="success" />
@@ -46,7 +48,7 @@ const Personal = () => {
           Add Fields
         </Button>
       </div>
-      <Language/>
+      <Language />
     </PersonalSection>
   );
 };
