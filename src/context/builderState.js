@@ -14,6 +14,13 @@ const BuilderState=(props)=>{
     // skills state (all fields data)
     const [skillData,setSkillData]=useState([]);
 
+    // projects and internships data
+    const [projectData,setProjectData]=useState([]);
+    const [intershipData,setIntershipData]=useState([]);
+    const [othersData,setOthersData] = useState([]);
+
+    // interests and hobbies data
+    const [hobbieData,setHobbieData]=useState([]);
     
     return(
         <builderContext.Provider
@@ -23,7 +30,11 @@ const BuilderState=(props)=>{
             setThemebg,setFormbg,
             setBorderbg,borderbg,
             fields,setFields,
-            skillData,setSkillData
+            skillData,setSkillData,
+            projectData,setProjectData,
+            intershipData,setIntershipData,
+            othersData,setOthersData,
+            hobbieData,setHobbieData
         }}
         >
            { props.children }

@@ -10,7 +10,7 @@ import { useContext } from "react";
 import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
-  const { formbg, borderbg } = useContext(builderContext);
+  const { formbg, borderbg , hobbieData,setHobbieData} = useContext(builderContext);
 
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
@@ -40,13 +40,8 @@ const Personal = () => {
         <TextField label="PinCode" variant="filled" color="success" />
         <TextField label="Mobile" variant="filled" color="success" />
         <TextField label="Email" variant="filled" color="success" />
-        <Button
-          variant="contained"
-          size="large"
-          style={{ backgroundColor: "GrayText" }}
-        >
-          Add Fields
-        </Button>
+        <TextField label="linkedin,github,etc." variant="filled" color="success" />
+        
       </div>
       <Language />
     </PersonalSection>
