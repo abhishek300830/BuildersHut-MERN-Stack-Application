@@ -48,6 +48,13 @@ export const ResumeStyleDiv = styled.div`
   }
 
   section.rMain {
+    /* border-top: 5px solid #8e5a2c; */
+    /* border-left: 5px solid #8e5a2c; */
+    /* border-right: 5px solid #8e5a2c; */
+
+    border: 5px solid black;
+    border-color: #4e8e2c87;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: 60% 40%;
     /* border: 1px solid black; */
@@ -63,6 +70,7 @@ export const ResumeStyleDiv = styled.div`
       overflow: auto;
       height: 85%;  
       background: #c9c7c72c;
+      /* box-shadow: 4px 7px 4px gray; */
       border-radius: 5px;
 
 
@@ -113,7 +121,7 @@ export const ResumeStyleDiv = styled.div`
       position: fixed;
       z-index: 12;
       width: 58%;
-      bottom: 0;
+      bottom: 1%;
       left: 1%;
     }
   }
@@ -122,6 +130,8 @@ export const ResumeStyleDiv = styled.div`
     padding: 2%;
     position: relative;
 
+    background:#4e8e2c87;
+
     div.a4 {
       /* width: 70px; */
       width: 385px;
@@ -129,7 +139,7 @@ export const ResumeStyleDiv = styled.div`
       margin-top: 3%;
       /* height: 98.994px; */
       height: 544.467px;
-      background-color: #7d79799c;
+      background-color: #e4e1e1d3;
     }
   }
 
@@ -137,6 +147,11 @@ export const ResumeStyleDiv = styled.div`
   @media (max-width: 1280px) {
     section.rMain div.right div.a4 {
       margin-top: 25px;
+    }
+    section.rMain {
+      .scroll-x-y {
+        bottom: 5%;
+      }
     }
   }
   @media (max-width: 820px) {
@@ -162,7 +177,7 @@ export const ResumeStyleDiv = styled.div`
       display: block;
       position: fixed;
       height: 90%;
-      margin-left: 1%;
+      margin-left: 0.5%;
 
       button.flip {
         display: block;
@@ -182,17 +197,17 @@ export const ResumeStyleDiv = styled.div`
           height: 100%;
           .scroll-x-y {
             width: 98%;
-            bottom: 0;
+            bottom: 1%;
             left: 1%;
           }
         }
         animation: left-anim-1 0.6s normal 0s 1;
       }
       div.right {
-        background-color: #f965654e;
+        /* background-color: #f965654e; */
         padding: 2%;
         position: relative;
-        height: 95%;
+        height: 97%;
         display: none;
         div.a4 {
           width: 70%;
@@ -253,6 +268,7 @@ export const ResumeStyleDiv = styled.div`
         padding: 2%;
         overflow: auto;
         height: 85%;
+        margin-left: 0;
         div.user-input {
           width: 100%;
           height: 100%;
@@ -262,7 +278,6 @@ export const ResumeStyleDiv = styled.div`
         }
       }
       div.right {
-        background-color: #f965654e;
         padding: 0%;
         position: relative;
         height: 94%;
