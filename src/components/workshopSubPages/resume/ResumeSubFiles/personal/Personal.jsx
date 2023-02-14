@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import dayjs from "dayjs";
 
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
@@ -10,7 +10,7 @@ import { useContext } from "react";
 import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
-  const { formbg, borderbg , hobbieData,setHobbieData} = useContext(builderContext);
+  const { formbg, borderbg } = useContext(builderContext);
 
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
