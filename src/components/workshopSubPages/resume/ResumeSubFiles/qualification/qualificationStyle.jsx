@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
 const QualificationContainer = styled.div`
+  // for headings of text Fields
+  .MuiFormLabel-root {
+    background-color: ${(props) =>
+      props.themebg === "white" ? "#FAF6F6" : "#D1D1D1"};
+    padding: 0% 2%;
+    border-radius: 5px;
+  }
+
+  // main folder structure
   .qualification {
     margin-top: 2%;
     padding: 1%;
