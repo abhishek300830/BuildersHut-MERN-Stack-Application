@@ -75,13 +75,13 @@ const ResumeBuilder = () => {
           <div className="user-input">
             
             <div className="select-temp" 
-            style={{display:"none"}}
+            // style={{display:"none"}}
             >
 
                 <div className="st1">
 
                   <FormControl className="alignment">
-                    <FormLabel id="demo-row-radio-buttons-group-label"> Select Alignment</FormLabel>
+                    <FormLabel id="demo-row-radio-buttons-group-label" className="align-label"> Select Alignment</FormLabel>
                     <RadioGroup
                       row
                       aria-labelledby="demo-row-radio-buttons-group-label"
@@ -92,8 +92,9 @@ const ResumeBuilder = () => {
                     </RadioGroup>
                   </FormControl>
                 
-                    <Box sx={{ minWidth: 120,display:"flex",gap:"10px" }} className="templates">
-                        <FormControl fullWidth>
+                    <Box sx={{ minWidth: 120,display:"flex",gap:"10px"}} className="templates">
+                        {/* <FormControl fullWidth>
+                          
                           <InputLabel id="demo-simple-select-label">Primary color</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
@@ -106,14 +107,16 @@ const ResumeBuilder = () => {
                             <MenuItem value={20}>light</MenuItem>
                             <MenuItem value={30}>midnight</MenuItem>
                           </Select>
-                        </FormControl>
+                        </FormControl> */}
+                        
                         <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label">Secondary color</InputLabel>
+                          <InputLabel id="demo-simple-select-label" >Template</InputLabel>
                           <Select
                             labelId="demo-simple-select-label"
                             id="demo-simple-select"
+                            className="select-opt"
                             value={age}
-                            label="Secondary color"
+                            label="Template"
                             onChange={handleChange}
                           >
                             <MenuItem value={10}>dark</MenuItem>
@@ -136,7 +139,7 @@ const ResumeBuilder = () => {
               }}
               noValidate
               autoComplete="off"
-              // style={{display:"none"}}
+              style={{display:"none"}}
             >
               {/* Personaldetails section  */}
               {pages[activeStep]}

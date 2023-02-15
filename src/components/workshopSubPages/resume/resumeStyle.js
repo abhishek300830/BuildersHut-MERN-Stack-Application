@@ -52,8 +52,8 @@ export const ResumeStyleDiv = styled.div`
     /* border-left: 5px solid #8e5a2c; */
     /* border-right: 5px solid #8e5a2c; */
 
-    border: 5px solid black;
-    border-color: #4e8e2c87;
+    /* border: 5px solid black; */
+    /* border-color: #4e8e2c87; */
     border-radius: 5px;
     display: grid;
     grid-template-columns: 60% 40%;
@@ -99,9 +99,17 @@ export const ResumeStyleDiv = styled.div`
         .select-temp {
           /* border: 1px solid black; */
           .st1 {
-            border: 1px solid black;
+            /* border: 1px solid black; */
             width: 60%;
             border-radius: 5px;
+            background-color: #f1b226;
+            margin: auto;
+            margin-top: 10%;
+            padding: 2%;
+            .align-label{
+              color: black  ;
+              font-weight: bold;
+            }
             .alignment {
               /* border: 1px solid black; */
               padding: 1% 4%;
@@ -111,8 +119,32 @@ export const ResumeStyleDiv = styled.div`
               margin-top: 2%;
               width: 80%;
               padding: 1% 4%;
+              /* background-color: white; */
+              .select-opt{
+                background: #2c2c2c;
+              }
+              .MuiFormLabel-root{
+                color: white;
+                background-color: #2c2c2c;
+                padding: 0% 3%;
+                border-radius: 5px;
+              }
+              .MuiSvgIcon-root{
+                color: white;
+              }
+              .MuiPaper-root{
+                background: #2c2c2c;
+                color: red;
+              }
+              .MuiSelect-select{
+                color: white;
+              }
+
+
             }
           }
+
+
         }
       }
     }
@@ -130,7 +162,7 @@ export const ResumeStyleDiv = styled.div`
     padding: 2%;
     position: relative;
 
-    background:#4e8e2c87;
+    /* background:#4e8e2c87; */
 
     div.a4 {
       /* width: 70px; */
