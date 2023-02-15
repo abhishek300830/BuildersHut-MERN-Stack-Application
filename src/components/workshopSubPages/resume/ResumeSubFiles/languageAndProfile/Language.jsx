@@ -6,7 +6,6 @@ import {
   MenuItem,
   OutlinedInput,
   Select,
-  TextField,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
@@ -51,11 +50,11 @@ function getStyles(name, personName, theme) {
 }
 
 const Language = () => {
-
   const theme = useTheme();
   const [personName, setPersonName] = useState([]);
 
-  const {formbg,borderbg, hobbieData,setHobbieData} = useContext(builderContext)
+  const { formbg, borderbg, hobbieData, setHobbieData } =
+    useContext(builderContext);
 
   const handleChange = (event) => {
     const {
@@ -67,10 +66,9 @@ const Language = () => {
     );
   };
 
-
   // interest and hobbies
   const [val, setVal] = useState("");
-  let maxFields = 4 - hobbieData.length; 
+  let maxFields = 4 - hobbieData.length;
   const addField = () => {
     setHobbieData([...hobbieData, { name: val }]);
     setVal("");
@@ -83,8 +81,10 @@ const Language = () => {
 
   return (
     <LanguageContainer>
-      <div className="languages border" style={{borderColor:borderbg}}>
-        <h2 className="lang-label" style={{background:formbg}}>Select Languages</h2>
+      <div className="languages border" style={{ borderColor: borderbg }}>
+        <h2 className="lang-label" style={{ background: formbg }}>
+          Select Languages
+        </h2>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="demo-multiple-chip-label">Languages</InputLabel>
           <Select
@@ -93,7 +93,14 @@ const Language = () => {
             multiple
             value={personName}
             onChange={handleChange}
-            input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+            input={
+              <OutlinedInput
+                className="outlined-lang-input"
+                // style={{ border: "1px solid #fcae05" }}
+                id="select-multiple-chip"
+                label="Chip"
+              />
+            }
             renderValue={(selected) => (
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                 {selected.map((value) => (
@@ -115,21 +122,27 @@ const Language = () => {
           </Select>
         </FormControl>
       </div>
-      <div className="profileBio border" style={{borderColor:borderbg}}>
-        <h2 className="profile-label" style={{background:formbg}}>Profile Details</h2>
+      <div className="profileBio border" style={{ borderColor: borderbg }}>
+        <h2 className="profile-label" style={{ background: formbg }}>
+          Profile Details
+        </h2>
         <Box
           sx={{
-            "& .MuiTextField-root": { m: 1, width: "98%" },
+            "& .MuiTextField-root": {
+              m: 1,
+              width: "98%",
+              bottomBorder: "green 10px solid !important",
+            },
           }}
           noValidate
           autoComplete="off"
         >
-          <TextField
+          <CssTextField
             id="outlined-multiline-static"
             label="Bio Details"
             multiline
             rows={4}
-            style={{width:"98%"}}
+            style={{ width: "98%" }}
             variant="filled"
             defaultValue="Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python."
             fullWidth
@@ -137,9 +150,13 @@ const Language = () => {
         </Box>
       </div>
 
-
-      <div className="interestAndHobbies border" style={{borderColor:borderbg}}>
-        <h2 className="interest-label" style={{background:formbg}}>Interest And Hobbies</h2>
+      <div
+        className="interestAndHobbies border"
+        style={{ borderColor: borderbg }}
+      >
+        <h2 className="interest-label" style={{ background: formbg }}>
+          Interest And Hobbies
+        </h2>
         <h4 style={{ color: "red" }}>(* add maximum 4 fields)</h4>
 
         {hobbieData.map((vals, ind) => (
@@ -163,7 +180,7 @@ const Language = () => {
             onKeyDown={handleKeyDown}
           />
         )}
-        
+
         <br />
 
         <Button
@@ -179,11 +196,15 @@ const Language = () => {
           }}
         >
           <lord-icon
-              src="https://cdn.lordicon.com/ynwbvguu.json"
-              trigger="hover"
-              colors="primary:#ffffff"
-              style={{width:"90%",height:"90%",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
-          </lord-icon>
+            src="https://cdn.lordicon.com/ynwbvguu.json"
+            trigger="hover"
+            colors="primary:#ffffff"
+            style={{
+              width: "90%",
+              height: "90%",
+              opacity: maxFields === 0 || val.length === 0 ? "0.6" : "1",
+            }}
+          ></lord-icon>
         </Button>
 
         <Button
@@ -194,12 +215,16 @@ const Language = () => {
           disabled={hobbieData.length === 0}
           style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
-           <lord-icon
-              src="https://cdn.lordicon.com/akuwjdzh.json"
-              trigger="hover"
-              colors={`primary:#ffffff`}
-              style={{width:"90%",height:"90%",opacity:hobbieData.length === 0?"0.6":"1"}}>              
-          </lord-icon>
+          <lord-icon
+            src="https://cdn.lordicon.com/akuwjdzh.json"
+            trigger="hover"
+            colors={`primary:#ffffff`}
+            style={{
+              width: "90%",
+              height: "90%",
+              opacity: hobbieData.length === 0 ? "0.6" : "1",
+            }}
+          ></lord-icon>
         </Button>
       </div>
     </LanguageContainer>

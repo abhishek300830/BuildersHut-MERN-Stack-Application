@@ -10,11 +10,25 @@ export const LanguageContainer = styled.div`
   }
 
   .languages {
+    /* // set border of mui language
+    .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused {
+      border: solid !important;
+      border-color: #fcae05 !important;
+      border-width: 2px !important;
+    } */
     position: relative;
     #demo-multiple-chip-label {
       z-index: 10;
       padding-right: 2%;
       background-color: white;
+    }
+    .outlined-lang-input {
+      select:focus {
+        border: 1px solid #fcae05 !important;
+      }
+      input:focus {
+        border: 1px solid #fcae05 !important;
+      }
     }
     .lang-label {
       position: absolute;
@@ -24,7 +38,6 @@ export const LanguageContainer = styled.div`
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
-
     }
   }
   .profileBio {
@@ -37,9 +50,13 @@ export const LanguageContainer = styled.div`
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
-
-
     }
+    .css-leqjib-MuiInputBase-root-MuiFilledInput-root::after {
+      border-bottom: #fcae05 2px solid;
+    }
+    /* #outlined-multiline-static {
+      border-bottom: red 2px solid;
+    } */
   }
   .interestAndHobbies {
     position: relative;
@@ -51,7 +68,6 @@ export const LanguageContainer = styled.div`
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
-
     }
   }
 
@@ -68,7 +84,7 @@ export const LanguageContainer = styled.div`
     }
     .interestAndHobbies {
       margin-top: 5%;
-      .interest-label{
+      .interest-label {
         top: -20%;
       }
     }
