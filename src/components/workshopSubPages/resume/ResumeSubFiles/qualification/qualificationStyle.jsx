@@ -11,7 +11,7 @@ const QualificationContainer = styled.div`
 
   // main folder structure
   .qualification {
-    margin-top: 2%;
+    margin-top: 5%;
     padding: 1%;
     padding-bottom: 5%;
     position: relative;
