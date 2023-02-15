@@ -40,6 +40,24 @@ const QualificationContainer = styled.div`
       }
     }
   }
+
+  @media (max-width:820px){
+    .qualification {
+        margin-top: 5%;
+        .qualification-label {
+          top: -5%;
+        }
+      }
+   }
+
+   @media (max-width:520px){
+    .qualification {
+        margin-top: 8%;
+        .qualification-label {
+          top: -4%;
+        }
+      }
+   }
 `;
 
 export { QualificationContainer };

@@ -19,14 +19,13 @@ export const ResumeStyleDiv = styled.div`
     z-index: 21;
     opacity: 0.7;
   }
-  .header{
+  /* .header{
     width: 20%;
     position: fixed;
     top: 1%;
     left: 1%;
     animation: pop-up-bg-2 1s ease-out 0s 1 normal forwards;
-
-  }
+  } */
 
   @keyframes pop-up-anim {
     0% {
@@ -48,12 +47,7 @@ export const ResumeStyleDiv = styled.div`
   }
 
   section.rMain {
-    /* border-top: 5px solid #8e5a2c; */
-    /* border-left: 5px solid #8e5a2c; */
-    /* border-right: 5px solid #8e5a2c; */
 
-    /* border: 5px solid black; */
-    /* border-color: #4e8e2c87; */
     border-radius: 5px;
     display: grid;
     grid-template-columns: 60% 40%;
@@ -66,66 +60,99 @@ export const ResumeStyleDiv = styled.div`
       display: none;
     }
     div.left {
+      position: relative;
       padding: 2%;
-      overflow: auto;
       height: 85%;  
-      background: #c9c7c72c;
-      /* box-shadow: 4px 7px 4px gray; */
-      border-radius: 5px;
-
-
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      /* Track */
-      ::-webkit-scrollbar-track {
-        border-radius: 3px;
-      }
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        border-radius: 3px;
-      }
-
-      /* border: 1px solid black; */
-     
-      /* box-shadow: 4px 4px 4px 4px #e7934fa1; */
-      /* box-shadow: 2px 2px 4px rgba(0,0,0,.3); */
+      /* overflow: auto; */
+      background: #e9e8e2;
+      border: 5px solid #595451;
+      border-top: 40px solid #595451;
+      border-radius: 10px;
+      .left-temp{
+          position: absolute;
+          /* border: 1px solid red; */
+          overflow: auto;
+          width: 99%;
+          left: 0.5%;
+          /* height: 480px; */
+          height: 91%;
+          top: 0;
+          ::-webkit-scrollbar {
+            width: 5px;
+          }
+          ::-webkit-scrollbar-track {
+            border-radius: 3px;
+          }
+          ::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+          }
+        }
       div.user-input {
         width: 100%;
-        /* height: 100%; */
         position: relative;
-
+        border-radius: 15px;
+        margin-top: -2%;
+        /* border: 1px solid black; */
         .select-temp {
-          /* border: 1px solid black; */
-          .st1 {
+          /* border: 1px solid #595451;
+          border-top: 40px solid #595451;
+          border-radius: 10px; */
+          position: relative;
+
+          .resume-intro{
             /* border: 1px solid black; */
-            width: 60%;
-            border-radius: 5px;
-            background-color: #f1b226;
+            width: 70%;
+            color: #565555;
             margin: auto;
-            margin-top: 10%;
+            margin-top: 3%;
+            text-align: center;
+          }
+
+          .st1 {
+            border: 2px solid #2c2c2c;
+            width: 60%;
+            border-radius: 10px;
+            background-color: #f1b226;
+            /* background: linear-gradient(to right,#ebc532,#f1b226); */
+            margin: auto;
+            margin-top: 5%;
+            margin-bottom: 5%;
             padding: 2%;
+            position: relative;
+            box-shadow: 2px 2px 3px gray;
+            div.abs-1{
+              position: absolute;
+              width: 97%;
+              height: 50%;
+              left: 1.5%;
+              top: 2%;
+              border-radius: 10px;
+              background:#ebc532;
+            }
+
             .align-label{
               color: black  ;
               font-weight: bold;
             }
             .alignment {
-              /* border: 1px solid black; */
               padding: 1% 4%;
               border-radius: 5px;
+              text-align: center;
+              width: 50%;
+              margin-left:20%;
             }
             .templates {
               margin-top: 2%;
               width: 80%;
               padding: 1% 4%;
+              margin-left: 5%;
               /* background-color: white; */
               .select-opt{
-                background: #2c2c2c;
+                background: #595451;
               }
               .MuiFormLabel-root{
                 color: white;
-                background-color: #2c2c2c;
+                background-color: #595451;
                 padding: 0% 3%;
                 border-radius: 5px;
               }
@@ -142,19 +169,77 @@ export const ResumeStyleDiv = styled.div`
 
 
             }
+            .begin-btn{
+              padding: 2% 4%;
+              border-radius: 5px;
+              position:relative;
+              margin-left: 40%;
+              width: 20%;
+              margin-top: 2%;
+              background-color: #81ee1d;
+              cursor: pointer;
+              box-shadow: 1px 1px 4px black;
+              transition: 0.1s;
+              span{
+                position: relative;
+                font-weight: bold;
+                z-index: 5;;
+              }
+              div{
+                z-index: 4;
+                position: absolute;
+                opacity: 0.7;
+                background-color: #dcf87e;
+                width: 96%;
+                border-radius: 5px;
+                height: 50%;
+                top: 3%;
+                left: 2%;
+              }
+            }
+            .begin-btn:hover{
+              box-shadow: 0px 0px 2px black;
+            }
           }
 
-
         }
-      }
+
+      } 
+    }
+
+    div.left::before{
+      position: absolute;
+      content: "h";
+      color: transparent;
+      width: 100%;
+      border-radius: 8px;
+      height: 20px;
+      left: 0%;
+      top: -38px;
+      opacity: 0.7;
+      background-color: #958e8c;
+    }
+    div.left::after{
+      position: absolute;
+      content: "Resume Builder";
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+      color: white;
+      text-align: center;
+      width: 100%;
+      height: 30px;
+      top: -30px;
+      left: 0;
+      background-color: transparent;
     }
 
     .scroll-x-y {
+      border-top: 2px solid #565555;
       position: fixed;
       z-index: 12;
       width: 58%;
-      bottom: 1%;
-      left: 1%;
+      bottom: 3%;
+      left: 1.2%;
     }
   }
 
@@ -182,19 +267,33 @@ export const ResumeStyleDiv = styled.div`
     }
     section.rMain {
       .scroll-x-y {
-        bottom: 5%;
+        bottom: 9%;
       }
+
+      div.user-input {
+        .select-temp {
+          .st1 { 
+            .alignment {
+              text-align: center;
+              width: 70%  !important;
+              margin-left:10% !important;
+            }
+          }
+        }
+      }
+
     }
   }
+
   @media (max-width: 820px) {
     margin-top: -1%;
     .pop-up-girl {
       width: 70%;
     }
-    .header{
+    /* .header{
       width: 30%;
       left: 3%;
-    }
+    } */
     @keyframes pop-up-anim {
       0% {
         width: 0;
@@ -217,68 +316,108 @@ export const ResumeStyleDiv = styled.div`
         right: 3%;
         margin-top: 1%;
         font-size: 2.5vw;
+        padding: 0% 2%;
         z-index: 10;
+        border: 1px solid black;
+        height: 40px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 2px black;
+        font-weight: bold;
       }
+      
+
       div.left {
         padding: 2%;
-        overflow: auto;
         height: 90%;
+        border-top: 60px solid #565555;
+        .left-temp{
+          height: 93%;
 
+        }
         div.user-input {
           width: 100%;
           height: 100%;
           .scroll-x-y {
-            width: 98%;
-            bottom: 1%;
-            left: 1%;
+            width: 96%;
+            bottom: 1.4%;
+            left: 1.5%;
           }
         }
         animation: left-anim-1 0.6s normal 0s 1;
       }
+      div.left::before{
+      width: 100%;
+      height: 30px;
+      left: 0%;
+      top: -57px;
+    }
+      div.left::after{
+        width: 99%;
+        height: 30px;
+        top: -40px;
+        font-size: 3vw;
+      }
+
       div.right {
-        /* background-color: #f965654e; */
+        background-color: #f1b226;
         padding: 2%;
         position: relative;
         height: 97%;
         display: none;
         div.a4 {
-          width: 70%;
+          width: 600px;
           margin: auto;
-          height: 98.994%;
-          background-color: #7d79799c;
+          height: 848px;
+          position: relative;
+          background-color: #565555;
+          z-index: 3;
+          margin-top: 5%;
         }
         animation: right-anim-1 0.6s normal 0s 1;
       }
+      div.right::after{
+        position: absolute;
+        content: "1";
+        color:transparent;
+        background-color: #ebc532;
+        width: 98%;
+        height: 50%;
+        top: 1%;
+        left: 1%;
+        border-radius: 5px;
+        z-index: 0;
+
+      }
+
       @keyframes left-anim-1 {
         0% {
-          width: 0;
+          opacity: 0;
         }
         100% {
-          width: 96%;
+          opacity: 1;
         }
       }
       @keyframes right-anim-1 {
         0% {
-          width: 0;
-          margin-left: 98%;
+          opacity: 0;
         }
         100% {
-          width: 96%;
-          margin-left: 1%;
+          opacity: 1;
         }
       }
     }
   }
+
+
   @media (max-width: 520px) {
-    margin-top: 10%;
+    margin-top: -5%;
+    
     .pop-up-girl {
       width: 98%;
       left: 1;
     }
     .header{
-      width: 50%;
-      left: 25%;
-      top: 11%;
+      display: none !important;
     }
     @keyframes pop-up-anim {
       0% {
@@ -292,45 +431,76 @@ export const ResumeStyleDiv = styled.div`
     }
 
     section.rMain {
-      height: 82%;
-      button.flip {
+      height: 93%;
+      button.flip { 
         font-size: 3.5vw;
+        border: 1px solid black;
+        height: 30px;
+        border-radius: 5px;
+        margin-right: 2%;
+        margin-top: 1%;
       }
+      
       div.left {
         padding: 2%;
-        overflow: auto;
         height: 85%;
         margin-left: 0;
+        border-top: 40px solid #565555;
+        .left-temp{
+          height: 90%;
+        }
         div.user-input {
           width: 100%;
           height: 100%;
-          p {
-            width: 20%;
+          .select-temp {
+            .st1 { 
+              width: 90% !important;
+              .templates{
+                width: 90%;
+                margin-left: 0%;
+              }
+              .begin-btn{
+                width: 30%;
+                margin-left:35%;  
+                margin-top:5%;
+              }
+            }
+            
           }
         }
       }
+
+      .scroll-x-y {
+        border-top: 2px solid #565555;
+        width: 95% !important;
+        left: 2% !important;
+    }
+
+      div.left::before{
+        height: 20px;
+        top: -38px;
+      }
+      div.left::after{
+        font-size: 5vw;
+        top: -30px;
+      }
+
+
       div.right {
         padding: 0%;
         position: relative;
-        height: 94%;
+        height: 90%;
         padding-top: 8%;
+        border-radius: 5px;
 
         div.a4 {
-          width: 65%;
-          height: 91.923%;
+          width:350px;
+          height: 494px;
           margin: auto;
+          margin-top:8%;  
         }
       }
-      @keyframes right-anim-1 {
-        0% {
-          width: 0;
-          margin-left: 100%;
-        }
-        100% {
-          width: 98.5%;
-          margin-left: 1%;
-        }
-      }
+    
     }
   }
 `;
