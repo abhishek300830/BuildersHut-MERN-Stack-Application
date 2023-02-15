@@ -8,6 +8,7 @@ import { PersonalSection } from "./personalStyle";
 import Language from "../languageAndProfile/Language";
 import { useContext } from "react";
 import builderContext from "../../../../../context/builderContext";
+import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 
 const Personal = () => {
   const { formbg, borderbg } = useContext(builderContext);
@@ -17,13 +18,11 @@ const Personal = () => {
     setValue(newValue);
   };
 
- 
-
   return (
     <PersonalSection>
       <div className="personal">
         <h3 className="p-label">Personal Details</h3>
-        <TextField label="Name" variant="filled" color="success" />
+        <CssTextField label="Name" variant="filled" color="success" />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
             label="DOB"
@@ -38,13 +37,16 @@ const Personal = () => {
         <h3 className="label" style={{ background: formbg }}>
           Address
         </h3>
-        <TextField label="City" variant="filled" color="success" />
-        <TextField label="State" variant="filled" color="success" />
-        <TextField label="PinCode" variant="filled" color="success" />
-        <TextField label="Mobile" variant="filled" color="success" />
-        <TextField label="Email" variant="filled" color="success" />
-        <TextField label="linkedin, github, etc." variant="filled" color="success" />
-        
+        <CssTextField label="City" variant="filled" color="success" />
+        <CssTextField label="State" variant="filled" color="success" />
+        <CssTextField label="PinCode" variant="filled" color="success" />
+        <CssTextField label="Mobile" variant="filled" color="success" />
+        <CssTextField label="Email" variant="filled" color="success" />
+        <CssTextField
+          label="linkedin, github, etc."
+          variant="filled"
+          color="success"
+        />
       </div>
       <Language />
     </PersonalSection>

@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const PersonalSection = styled.div`
+  css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    input:hover {
+      border: #fcae05 2px solid !important;
+    }
+  }
   .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
     background-color: #d1d1d1 !important;
   }
