@@ -22,6 +22,21 @@ const BuilderState=(props)=>{
     // interests and hobbies data
     const [hobbieData,setHobbieData]=useState([]);
     
+
+    // qualification data
+    const [qualifData,setQualifData]=useState(
+       {
+        year1:"",
+        perc1:"",
+        inst1:"",
+        year2:"",
+        perc2:"",
+        inst2:"",
+        year3:"",
+        perc3:"",
+        inst3:""
+       });
+
     return(
         <builderContext.Provider
         value={{
@@ -34,7 +49,8 @@ const BuilderState=(props)=>{
             projectData,setProjectData,
             intershipData,setIntershipData,
             othersData,setOthersData,
-            hobbieData,setHobbieData
+            hobbieData,setHobbieData,
+            qualifData,setQualifData
         }}
         >
            { props.children }
