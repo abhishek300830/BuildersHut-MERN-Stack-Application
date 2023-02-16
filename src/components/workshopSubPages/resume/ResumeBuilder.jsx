@@ -22,6 +22,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
+import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
 
 const ResumeBuilder = () => {
   const { themebg, headings } = useContext(builderContext);
@@ -65,6 +66,15 @@ const ResumeBuilder = () => {
     document.getElementById("select-1").style.display = "none";
     document.getElementById("select-2").style.display = "block";
     document.getElementById("subhead-span").style.display = "inline";
+  };
+
+  // horizontal and vertical alignment state
+
+  const [alignment, setAlignment] = useState("horizontal");
+
+  const onAlignmentChange = (val) => {
+    // console.log("first", val.target.value);
+    setAlignment(val.target.value);
   };
 
   return (
@@ -126,6 +136,7 @@ const ResumeBuilder = () => {
                         gridTemplateColumns: "50% 40%",
                         justifyContent: "space-between",
                       }}
+                      onChange={onAlignmentChange}
                     >
                       <FormControlLabel
                         value="horizontal"
@@ -209,8 +220,16 @@ const ResumeBuilder = () => {
         {/* a4 size template  */}
         <div className="right" id="right-part">
           <div className="a4">
-            <HorizontalTemplete />
+            {alignment === "horizontal" ? (
+              <HorizontalTemplete />
+            ) : (
+              <VerticalTemplete />
+            )}
           </div>
+          <button className="print-btn" onClick={window.print}>
+            <span>Print</span>
+            <div></div>
+          </button>
         </div>
       </section>
     </ResumeStyleDiv>

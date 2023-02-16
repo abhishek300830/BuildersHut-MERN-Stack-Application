@@ -256,6 +256,42 @@ export const ResumeStyleDiv = styled.div`
       height: 544.467px;
       background-color: #e4e1e1d3;
     }
+    /* .a4:hover {
+       background-color: red; 
+      transform: scale(1.3);
+      translate: -450px -60px;
+    } */
+    .print-btn {
+      padding: 2% 4%;
+      border-radius: 5px;
+      position: relative;
+      margin-left: 40%;
+      width: 20%;
+      margin-top: 2%;
+      background-color: #81ee1d;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px black;
+      transition: 0.1s;
+      span {
+        position: relative;
+        font-weight: bold;
+        z-index: 5;
+      }
+      div {
+        z-index: 4;
+        position: absolute;
+        opacity: 0.7;
+        background-color: #dcf87e;
+        width: 96%;
+        border-radius: 5px;
+        height: 50%;
+        top: 3%;
+        left: 2%;
+      }
+    }
+    .print-btn:hover {
+      box-shadow: 0px 0px 2px black;
+    }
   }
 
   /* media queries ####### */
