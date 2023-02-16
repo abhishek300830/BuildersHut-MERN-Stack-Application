@@ -8,39 +8,43 @@ import sun from "../../images/favicon/sun.png";
 import moon from "../../images/favicon/moon.png";
 import { useContext } from "react";
 import builderContext from "../../context/builderContext";
+import { Button } from "@mui/material";
 
 const Navbar = () => {
-  const {themebg,setThemebg,setFormbg,setBorderbg} = useContext(builderContext);
-  
-  
+  const { themebg, setThemebg, setFormbg, setBorderbg } =
+    useContext(builderContext);
+
   const sunOnclick = () => {
     document.getElementById("sun_id").style.backgroundColor = "#f3f7139d";
     document.getElementById("moon_id").style.backgroundColor = "transparent";
-  
-    setThemebg("white")
-    setFormbg("#faf6f6")
-    setBorderbg("black")
+
+    setThemebg("white");
+    setFormbg("#faf6f6");
+    setBorderbg("black");
   };
 
   const moonOnclick = () => {
     document.getElementById("sun_id").style.backgroundColor = "unset";
     document.getElementById("moon_id").style.backgroundColor = "#8e8d8d6c";
 
-    setThemebg("#0a0a0ad7")
-    setFormbg("#d1d1d1")
-    setBorderbg("#d1d1d1")
+    setThemebg("#0a0a0ad7");
+    setFormbg("#d1d1d1");
+    setBorderbg("#d1d1d1");
   };
   document.body.style.backgroundColor = themebg;
-
 
   return (
     <NavbarDiv>
       <div className="main">
-
         <div className="left">
-          <NavLink to="about">About</NavLink>
+          <NavLink to="about">
+            {/* <button className="aboutusBtn">About</button> */}
+            <Button variant="contained" color="warning">
+              About
+            </Button>
+          </NavLink>
         </div>
-        
+
         <div className="mid">
           <NavLink to="/">
             <img src={hut2} className="hut2" alt="" />

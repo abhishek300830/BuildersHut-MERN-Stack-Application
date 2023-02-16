@@ -11,21 +11,22 @@ import Skill from "./ResumeSubFiles/skillAndProject/Skill";
 // import h_res from '../../../images/left out/horiz_resume.png'
 import builderContext from "../../../context/builderContext";
 import { useContext } from "react";
-import resumeH from '../../../images/headers/profile.png'
+import resumeH from "../../../images/headers/profile.png";
 
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 
 const ResumeBuilder = () => {
-  const {formbg} = useContext(builderContext)
+  const { formbg } = useContext(builderContext);
 
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -54,46 +55,74 @@ const ResumeBuilder = () => {
     <Achievement />,
   ];
 
-  const onPopUpClick =()=>{
-    document.getElementById('pp-girl').style.display="none";
-    document.getElementById('pp-bg').style.display="none";
-    document.getElementById('header-1').style.display="block";
-  }
+  const onPopUpClick = () => {
+    document.getElementById("pp-girl").style.display = "none";
+    document.getElementById("pp-bg").style.display = "none";
+    document.getElementById("header-1").style.display = "block";
+  };
   return (
     <ResumeStyleDiv>
-      <img src={resumeH} alt="headers" id="header-1" className="header" style={{display:"none"}}/>
-     
-      <img src={popUpMsg} className="pop-up-girl" alt="welcomemsgimage" id="pp-girl"/>
-      <div className="blur-bg" style={{background:"#0a0a0ad7"}} onClick={onPopUpClick} id="pp-bg"></div>
-      
+      <img
+        src={resumeH}
+        alt="headers"
+        id="header-1"
+        className="header"
+        style={{ display: "none" }}
+      />
+
+      <img
+        src={popUpMsg}
+        className="pop-up-girl"
+        alt="welcomemsgimage"
+        id="pp-girl"
+      />
+      <div
+        className="blur-bg"
+        style={{ background: "#0a0a0ad7" }}
+        onClick={onPopUpClick}
+        id="pp-bg"
+      ></div>
+
       <section className="rMain">
         {/* main div where textfields will b there  */}
         <button id="btn-id" className="flip" onClick={onClickPreview}>
           Preview
         </button>
-        <div className="left" id="left-part" >
+        <div className="left" id="left-part">
           <div className="user-input">
-            
-            <div className="select-temp" 
-            // style={{display:"none"}}
-            >
+            <div className="select-temp" style={{ display: "none" }}>
+              <div className="st1">
+                <FormControl className="alignment">
+                  <FormLabel
+                    id="demo-row-radio-buttons-group-label"
+                    className="align-label"
+                  >
+                    {" "}
+                    Select Alignment
+                  </FormLabel>
+                  <RadioGroup
+                    row
+                    aria-labelledby="demo-row-radio-buttons-group-label"
+                    name="row-radio-buttons-group"
+                  >
+                    <FormControlLabel
+                      value="horizontal"
+                      control={<Radio />}
+                      label="Horizontal"
+                    />
+                    <FormControlLabel
+                      value="vertical"
+                      control={<Radio />}
+                      label="Vertical"
+                    />
+                  </RadioGroup>
+                </FormControl>
 
-                <div className="st1">
-
-                  <FormControl className="alignment">
-                    <FormLabel id="demo-row-radio-buttons-group-label" className="align-label"> Select Alignment</FormLabel>
-                    <RadioGroup
-                      row
-                      aria-labelledby="demo-row-radio-buttons-group-label"
-                      name="row-radio-buttons-group"
-                    >
-                      <FormControlLabel value="horizontal" control={<Radio />} label="Horizontal" />
-                      <FormControlLabel value="vertical" control={<Radio />} label="Vertical" />
-                    </RadioGroup>
-                  </FormControl>
-                
-                    <Box sx={{ minWidth: 120,display:"flex",gap:"10px"}} className="templates">
-                        {/* <FormControl fullWidth>
+                <Box
+                  sx={{ minWidth: 120, display: "flex", gap: "10px" }}
+                  className="templates"
+                >
+                  {/* <FormControl fullWidth>
                           
                           <InputLabel id="demo-simple-select-label">Primary color</InputLabel>
                           <Select
@@ -108,38 +137,42 @@ const ResumeBuilder = () => {
                             <MenuItem value={30}>midnight</MenuItem>
                           </Select>
                         </FormControl> */}
-                        
-                        <FormControl fullWidth>
-                          <InputLabel id="demo-simple-select-label" >Template</InputLabel>
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            className="select-opt"
-                            value={age}
-                            label="Template"
-                            onChange={handleChange}
-                          >
-                            <MenuItem value={10}>dark</MenuItem>
-                            <MenuItem value={20}>light</MenuItem>
-                            <MenuItem value={30}>midnight</MenuItem>
-                          </Select>
-                        </FormControl>
 
-                  </Box>
-                </div>
-
-                 
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Template
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      className="select-opt"
+                      value={age}
+                      label="Template"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>dark</MenuItem>
+                      <MenuItem value={20}>light</MenuItem>
+                      <MenuItem value={30}>midnight</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+              </div>
             </div>
 
             <Box
               component="form"
               sx={{
-                "& .MuiTextField-root": { m: 1, width: "25ch", background:formbg , borderRadius:"0.8ch"},
+                "& .MuiTextField-root": {
+                  m: 1,
+                  width: "25ch",
+                  background: formbg,
+                  borderRadius: "0.8ch",
+                },
                 "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
               }}
               noValidate
               autoComplete="off"
-              style={{display:"none"}}
+              // style={{display:"none"}}
             >
               {/* Personaldetails section  */}
               {pages[activeStep]}
@@ -149,14 +182,14 @@ const ResumeBuilder = () => {
                 <Steps activeStep={activeStep} setActiveStep={setActiveStep} />
               </div>
             </Box>
-
-
           </div>
         </div>
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-          <div className="a4"></div>
+          <div className="a4">
+            <HorizontalTemplete />
+          </div>
         </div>
       </section>
     </ResumeStyleDiv>
