@@ -4,7 +4,7 @@ export const AcheivStyleDiv=styled.div`
     section.acheiv{
         border: 1px solid black;
         padding: 2%;
-        margin-top: 2%;
+        margin-top: 5%;
         position: relative;
         border-radius: 5px;
         h1{

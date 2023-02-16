@@ -40,8 +40,8 @@ const Skill = () => {
     setDateValue(newValue);
   };
 
-  var maxField2 =
-    4 - (projectData.length + intershipData.length + othersData.length);
+  var maxField2 = 4 - (projectData.length + intershipData.length + othersData.length);
+
   const addField2 = () => {
     if (type === "Project") {
       // console.log("dateval", dateVal);
@@ -58,6 +58,7 @@ const Skill = () => {
     setTxValue("");
     setDateValue(dayjs("2014-08-18"));
   };
+
   const resetAll = () => {
     setIntershipData([]);
     setProjectData([]);
@@ -66,6 +67,7 @@ const Skill = () => {
 
   return (
     <SkillStyleDiv>
+
       <section className="skills" style={{ borderColor: borderbg }}>
         <h1 style={{ background: formbg }}>Skills</h1>
         <h4 style={{ color: "red" }}>(* add maximum 8 fields)</h4>
@@ -79,6 +81,7 @@ const Skill = () => {
             color="success"
           />
         ))}
+
         {maxFields > 0 && (
           <TextField
             inputProps={{ maxLength: 20 }}
@@ -165,6 +168,7 @@ const Skill = () => {
             <hr />
           </div>
         ))}
+
         {intershipData.map((vals, ind) => (
           <div key={ind}>
             <TextField
@@ -198,6 +202,7 @@ const Skill = () => {
             <hr />
           </div>
         ))}
+
         {othersData.map((vals, ind) => (
           <div key={ind}>
             <TextField
@@ -234,7 +239,7 @@ const Skill = () => {
 
         {maxField2 > 0 && (
           <div style={{ marginTop: "5%" }}>
-            <FormControl fullWidth style={{ width: "20%", marginTop: "1%" }}>
+            <FormControl fullWidth className="project-select" style={{ width: "20%", marginTop: "1%" }}>
               <InputLabel id="demo-simple-select-label">type</InputLabel>
               <Select
                 labelId="demo-simple-select-label"

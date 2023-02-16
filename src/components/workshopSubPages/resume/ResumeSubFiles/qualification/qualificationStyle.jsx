@@ -11,7 +11,7 @@ const QualificationContainer = styled.div`
 
   // main folder structure
   .qualification {
-    margin-top: 2%;
+    margin-top: 5%;
     padding: 1%;
     padding-bottom: 5%;
     position: relative;
@@ -40,6 +40,24 @@ const QualificationContainer = styled.div`
       }
     }
   }
+
+  @media (max-width:820px){
+    .qualification {
+        margin-top: 5%;
+        .qualification-label {
+          top: -5%;
+        }
+      }
+   }
+
+   @media (max-width:520px){
+    .qualification {
+        margin-top: 8%;
+        .qualification-label {
+          top: -4%;
+        }
+      }
+   }
 `;
 
 export { QualificationContainer };

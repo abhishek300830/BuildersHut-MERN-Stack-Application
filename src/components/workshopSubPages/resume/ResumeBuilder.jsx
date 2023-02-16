@@ -11,7 +11,7 @@ import Skill from "./ResumeSubFiles/skillAndProject/Skill";
 // import h_res from '../../../images/left out/horiz_resume.png'
 import builderContext from "../../../context/builderContext";
 import { useContext } from "react";
-import resumeH from "../../../images/headers/profile.png";
+// import resumeH from "../../../images/headers/profile.png";
 
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -60,15 +60,15 @@ const ResumeBuilder = () => {
     document.getElementById("pp-bg").style.display = "none";
     document.getElementById("header-1").style.display = "block";
   };
+
+  const goNextHandler = () => {
+    document.getElementById("select-1").style.display = "none";
+    document.getElementById("select-2").style.display = "block";
+  };
+
   return (
     <ResumeStyleDiv>
-      <img
-        src={resumeH}
-        alt="headers"
-        id="header-1"
-        className="header"
-        style={{ display: "none" }}
-      />
+      {/* <img src={resumeH} alt="headers" id="header-1" className="header" style={{display:"none"}}/> */}
 
       <img
         src={popUpMsg}
@@ -89,99 +89,105 @@ const ResumeBuilder = () => {
           Preview
         </button>
         <div className="left" id="left-part">
-          <div className="user-input">
-            <div className="select-temp" style={{ display: "none" }}>
-              <div className="st1">
-                <FormControl className="alignment">
-                  <FormLabel
-                    id="demo-row-radio-buttons-group-label"
-                    className="align-label"
-                  >
-                    {" "}
-                    Select Alignment
-                  </FormLabel>
-                  <RadioGroup
-                    row
-                    aria-labelledby="demo-row-radio-buttons-group-label"
-                    name="row-radio-buttons-group"
-                  >
-                    <FormControlLabel
-                      value="horizontal"
-                      control={<Radio />}
-                      label="Horizontal"
-                    />
-                    <FormControlLabel
-                      value="vertical"
-                      control={<Radio />}
-                      label="Vertical"
-                    />
-                  </RadioGroup>
-                </FormControl>
+          <div className="left-temp">
+            <div className="user-input">
+              <div className="select-temp" id="select-1">
+                <h4 className="resume-intro">
+                  It helps you to build your resume of your choice and
+                  customization without any efforts.
+                </h4>
 
-                <Box
-                  sx={{ minWidth: 120, display: "flex", gap: "10px" }}
-                  className="templates"
-                >
-                  {/* <FormControl fullWidth>
-                          
-                          <InputLabel id="demo-simple-select-label">Primary color</InputLabel>
-                          <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={age}
-                            label="Primary color"
-                            onChange={handleChange}
-                          >
-                            <MenuItem value={10}>dark</MenuItem>
-                            <MenuItem value={20}>light</MenuItem>
-                            <MenuItem value={30}>midnight</MenuItem>
-                          </Select>
-                        </FormControl> */}
+                <div className="st1">
+                  <div className="abs-1"></div>
 
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Template
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      className="select-opt"
-                      value={age}
-                      label="Template"
-                      onChange={handleChange}
+                  <FormControl className="alignment">
+                    <FormLabel
+                      id="demo-row-radio-buttons-group-label"
+                      className="align-label"
                     >
-                      <MenuItem value={10}>dark</MenuItem>
-                      <MenuItem value={20}>light</MenuItem>
-                      <MenuItem value={30}>midnight</MenuItem>
-                    </Select>
+                      {" "}
+                      Select Alignment
+                    </FormLabel>
+                    <RadioGroup
+                      // row
+                      aria-labelledby="demo-row-radio-buttons-group-label"
+                      name="row-radio-buttons-group"
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "50% 40%",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <FormControlLabel
+                        value="horizontal"
+                        control={<Radio />}
+                        label="Horizontal"
+                      />
+                      <FormControlLabel
+                        value="vertical"
+                        control={<Radio />}
+                        label="Vertical"
+                      />
+                    </RadioGroup>
                   </FormControl>
-                </Box>
+
+                  <Box
+                    sx={{ minWidth: 120, display: "flex", gap: "10px" }}
+                    className="templates"
+                  >
+                    <FormControl fullWidth>
+                      <InputLabel id="demo-simple-select-label">
+                        Template
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        className="select-opt"
+                        value={age}
+                        label="Template"
+                        onChange={handleChange}
+                      >
+                        <MenuItem value={10}>dark</MenuItem>
+                        <MenuItem value={20}>light</MenuItem>
+                        <MenuItem value={30}>midnight</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </Box>
+
+                  <button className="begin-btn" onClick={goNextHandler}>
+                    <span>Begin</span>
+                    <div></div>
+                  </button>
+                </div>
               </div>
+              <Box
+                component="form"
+                sx={{
+                  "& .MuiTextField-root": {
+                    m: 1,
+                    width: "25ch",
+                    background: formbg,
+                    borderRadius: "0.8ch",
+                  },
+                  "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
+                }}
+                noValidate
+                autoComplete="off"
+                id="select-2"
+                style={{ display: "none" }}
+              >
+                {/* Personaldetails section  */}
+                {pages[activeStep]}
+                {/* Personaldetails section  */}
+
+                <div className="scroll-x-y">
+                  <Steps
+                    activeStep={activeStep}
+                    setActiveStep={setActiveStep}
+                  />
+                </div>
+              </Box>
             </div>
-
-            <Box
-              component="form"
-              sx={{
-                "& .MuiTextField-root": {
-                  m: 1,
-                  width: "25ch",
-                  background: formbg,
-                  borderRadius: "0.8ch",
-                },
-                "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
-              }}
-              noValidate
-              autoComplete="off"
-              // style={{display:"none"}}
-            >
-              {/* Personaldetails section  */}
-              {pages[activeStep]}
-              {/* Personaldetails section  */}
-
-              <div className="scroll-x-y">
-                <Steps activeStep={activeStep} setActiveStep={setActiveStep} />
-              </div>
-            </Box>
           </div>
         </div>
 
