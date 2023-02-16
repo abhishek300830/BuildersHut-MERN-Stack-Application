@@ -24,7 +24,7 @@ import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 
 const ResumeBuilder = () => {
-  const {themebg,headings} = useContext(builderContext)
+  const { themebg, headings } = useContext(builderContext);
 
   const [age, setAge] = React.useState("");
 
@@ -61,12 +61,11 @@ const ResumeBuilder = () => {
     document.getElementById("header-1").style.display = "block";
   };
 
-  const goNextHandler=()=>{
-    document.getElementById('select-1').style.display="none";
-    document.getElementById('select-2').style.display="block";
-    document.getElementById('subhead-span').style.display="inline";
-
-  }
+  const goNextHandler = () => {
+    document.getElementById("select-1").style.display = "none";
+    document.getElementById("select-2").style.display = "block";
+    document.getElementById("subhead-span").style.display = "inline";
+  };
 
   return (
     <ResumeStyleDiv>
@@ -87,11 +86,15 @@ const ResumeBuilder = () => {
 
       <section className="rMain">
         {/* main div where textfields will b there  */}
-        <button id="btn-id" className="flip" onClick={onClickPreview}>Preview</button>
-        <div className="left" id="left-part" >
-
+        <button id="btn-id" className="flip" onClick={onClickPreview}>
+          Preview
+        </button>
+        <div className="left" id="left-part">
           <div className="subheads">
-            Resume Builder /<span style={{display:"none"}} id="subhead-span">{headings[activeStep]}</span>
+            Resume Builder /
+            <span style={{ display: "none" }} id="subhead-span">
+              {headings[activeStep]}
+            </span>
           </div>
 
           <div className="left-temp">
@@ -135,14 +138,13 @@ const ResumeBuilder = () => {
                         label="Vertical"
                       />
                     </RadioGroup>
-
                   </FormControl>
 
                   <Box
                     sx={{ minWidth: 120, display: "flex", gap: "10px" }}
                     className="templates"
                   >
-                    <FormControl fullWidth>
+                    <FormControl style={{ width: "80%" }}>
                       <InputLabel id="demo-simple-select-label">
                         Template
                       </InputLabel>
@@ -171,7 +173,12 @@ const ResumeBuilder = () => {
               <Box
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { m: 1, width: "25ch", background:themebg , borderRadius:"0.8ch"},
+                  "& .MuiTextField-root": {
+                    m: 1,
+                    width: "25ch",
+                    background: themebg,
+                    borderRadius: "0.8ch",
+                  },
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
                 }}
                 noValidate
