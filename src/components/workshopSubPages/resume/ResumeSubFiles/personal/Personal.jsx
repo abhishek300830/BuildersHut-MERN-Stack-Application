@@ -13,17 +13,18 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 const Personal = () => {
   const { formbg, borderbg } = useContext(builderContext);
 
-  const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
+  // const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
+  const [value, setValue] = useState();
   const handleChange = (newValue) => {
     setValue(newValue);
   };
 
   return (
     <PersonalSection>
-      <div className="personal">
-        <h3 className="p-label">Personal Details</h3>
-        <CssTextField label="Name" variant="filled" color="success" />
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div className="personal" style={{marginLeft:"2%"}}>
+        {/* <h3 className="p-label">Personal Details</h3> */}
+        <CssTextField placeholder="Name" variant="outlined" color="success" />
+        <LocalizationProvider dateAdapter={AdapterDayjs} >
           <MobileDatePicker
             label="DOB"
             inputFormat="MM/DD/YYYY"
@@ -37,14 +38,14 @@ const Personal = () => {
         <h3 className="label" style={{ background: formbg }}>
           Address
         </h3>
-        <CssTextField label="City" variant="filled" color="success" />
-        <CssTextField label="State" variant="filled" color="success" />
-        <CssTextField label="PinCode" variant="filled" color="success" />
-        <CssTextField label="Mobile" variant="filled" color="success" />
-        <CssTextField label="Email" variant="filled" color="success" />
+        <CssTextField placeholder="City" variant="outlined" />
+        <CssTextField placeholder="State" variant="outlined" color="success" />
+        <CssTextField placeholder="PinCode" variant="outlined" color="success" />
+        <CssTextField placeholder="Mobile" variant="outlined" color="success" />
+        <CssTextField placeholder="Email" variant="outlined" color="success" />
         <CssTextField
-          label="linkedin, github, etc."
-          variant="filled"
+          placeholder="linkedin, github, etc."
+          variant="outlined"
           color="success"
         />
       </div>

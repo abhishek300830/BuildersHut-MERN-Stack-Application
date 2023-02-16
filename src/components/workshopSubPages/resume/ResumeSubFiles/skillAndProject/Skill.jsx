@@ -9,6 +9,7 @@ import Select from "@mui/material/Select";
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 
 const Skill = () => {
   const {
@@ -83,10 +84,10 @@ const Skill = () => {
         ))}
 
         {maxFields > 0 && (
-          <TextField
+          <CssTextField
             inputProps={{ maxLength: 20 }}
-            label="Enter your skill"
-            variant="filled"
+            placeholder="Enter your skill"
+            variant="outlined"
             color="success"
             value={val}
             onChange={(ev) => setVal(ev.target.value)}

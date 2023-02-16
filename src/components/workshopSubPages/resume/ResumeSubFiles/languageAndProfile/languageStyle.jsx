@@ -62,7 +62,7 @@ export const LanguageContainer = styled.div`
     position: relative;
     .interest-label {
       position: absolute;
-      top: -35%;
+      top: -15%;
       left: 3%;
       background-color: white;
       padding: 0% 1%;

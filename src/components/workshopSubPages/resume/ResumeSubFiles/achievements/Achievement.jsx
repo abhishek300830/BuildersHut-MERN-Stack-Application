@@ -24,23 +24,23 @@ const Achievement = () => {
   return (
     <AcheivStyleDiv>
       <section className="acheiv" style={{ borderColor: borderbg }}>
-        <h1 style={{ background: formbg }}>Achievements</h1>
+        {/* <h1 style={{ background: formbg }}>Achievements</h1> */}
+
         <h4 style={{ color: "red" }}>(* add maximum 6 fields)</h4>
         {fields.map((vals, ind) => (
           <CssTextField
             key={ind}
             disabled
             value={vals.name}
-            id={`acheiv-field-` + ind}
-            variant="filled"
-            color="success"
+            variant="outlined"
+            style={{boxShadow:"2px 2px 2px gray"}}
           />
         ))}
         {maxFields > 0 && (
           <CssTextField
             inputProps={{ maxLength: 20 }}
-            label="Enter content"
-            variant="filled"
+            placeholder="Enter content"
+            variant="outlined"
             color="success"
             value={val}
             onChange={(ev) => setVal(ev.target.value)}

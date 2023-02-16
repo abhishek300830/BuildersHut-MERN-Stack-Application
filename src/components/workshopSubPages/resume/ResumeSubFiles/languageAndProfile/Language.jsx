@@ -139,11 +139,10 @@ const Language = () => {
         >
           <CssTextField
             id="outlined-multiline-static"
-            label="Bio Details"
             multiline
             rows={4}
             style={{ width: "98%" }}
-            variant="filled"
+            variant="outlined"
             defaultValue="Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python."
             fullWidth
           />
@@ -172,8 +171,8 @@ const Language = () => {
         {maxFields > 0 && (
           <CssTextField
             inputProps={{ maxLength: 20 }}
-            label="Enter your hobbie"
-            variant="filled"
+            placeholder="Enter your hobbie"
+            variant="outlined"
             color="success"
             value={val}
             onChange={(ev) => setVal(ev.target.value)}

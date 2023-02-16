@@ -9,7 +9,13 @@ const Steps = ({ activeStep, setActiveStep }) => {
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    if(activeStep === 0){
+      document.getElementById('select-1').style.display="block";
+      document.getElementById('select-2').style.display="none";
+      document.getElementById('subhead-span').style.display="none";
+    }else{
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    }
   };
   return (
     <StepsDiv>
@@ -34,7 +40,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
           <button
             className="nextbtns"
             onClick={handleBack}
-            disabled={activeStep === 0}
+            // disabled={activeStep === 0}
           >
             <div> BACK </div>
             <span className="stepDiv"></span>

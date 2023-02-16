@@ -205,6 +205,20 @@ export const ResumeStyleDiv = styled.div`
         }
 
       } 
+
+      div.subheads{
+        position: absolute;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px black;
+        color: white;
+        text-align: left;
+        padding-left: 2%;
+        width: 100%;
+        height: 30px;
+        top: -30px;
+        left: 0;
+        background-color: transparent;
+      }
     }
 
     div.left::before{
@@ -218,19 +232,6 @@ export const ResumeStyleDiv = styled.div`
       top: -38px;
       opacity: 0.7;
       background-color: #958e8c;
-    }
-    div.left::after{
-      position: absolute;
-      content: "Resume Builder";
-      font-weight: bold;
-      text-shadow: 1px 1px 2px black;
-      color: white;
-      text-align: center;
-      width: 100%;
-      height: 30px;
-      top: -30px;
-      left: 0;
-      background-color: transparent;
     }
 
     .scroll-x-y {
@@ -343,6 +344,12 @@ export const ResumeStyleDiv = styled.div`
             left: 1.5%;
           }
         }
+        div.subheads{
+          width: 99%;
+          height: 30px;
+          top: -40px;
+          font-size: 3vw;
+        }
         animation: left-anim-1 0.6s normal 0s 1;
       }
       div.left::before{
@@ -351,13 +358,8 @@ export const ResumeStyleDiv = styled.div`
       left: 0%;
       top: -57px;
     }
-      div.left::after{
-        width: 99%;
-        height: 30px;
-        top: -40px;
-        font-size: 3vw;
-      }
-
+    
+    
       div.right {
         background-color: #f1b226;
         padding: 2%;
@@ -436,9 +438,10 @@ export const ResumeStyleDiv = styled.div`
         font-size: 3.5vw;
         border: 1px solid black;
         height: 30px;
+        
         border-radius: 5px;
         margin-right: 2%;
-        margin-top: 1%;
+        margin-top: -8%;
       }
       
       div.left {
@@ -468,6 +471,10 @@ export const ResumeStyleDiv = styled.div`
             
           }
         }
+        div.subheads{
+          font-size: 4vw;
+          top: -28px;
+        }
       }
 
       .scroll-x-y {
@@ -480,10 +487,7 @@ export const ResumeStyleDiv = styled.div`
         height: 20px;
         top: -38px;
       }
-      div.left::after{
-        font-size: 5vw;
-        top: -30px;
-      }
+      
 
 
       div.right {

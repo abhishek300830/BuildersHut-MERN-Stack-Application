@@ -1,21 +1,27 @@
 import styled from "styled-components";
 
 export const PersonalSection = styled.div`
+margin-top: 5%;
   css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
     input:hover {
       border: #fcae05 2px solid !important;
     }
   }
+  .MuiInputBase-input{
+      padding: 3.5%;
+
+  }
+
   .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
-    background-color: #d1d1d1 !important;
+    background-color: transparent !important;
   }
   .personal {
     margin-bottom: 5%;
     position: relative;
-    .p-label {
+    /* .p-label {
       font-size: 2vw;
       color: #3f3e3e;
-    }
+    } */
     .MuiFormLabel-root {
       padding: 0% 2% !important;
       border-radius: 5px !important;
@@ -45,9 +51,9 @@ export const PersonalSection = styled.div`
 
   @media (max-width: 1280px) {
     .personal {
-      .p-label {
+      /* .p-label {
         font-size: 4vw;
-      }
+      } */
     }
     .address {
       .label {
@@ -59,17 +65,17 @@ export const PersonalSection = styled.div`
 
   @media (max-width: 820px) {
     .personal {
-      .p-label {
+      /* .p-label {
         font-size: 4vw;
-      }
+      } */
     }
   }
 
   @media (max-width: 520px) {
     .personal {
-      .p-label {
+      /* .p-label {
         font-size: 5vw;
-      }
+      } */
     }
     .address {
       .label {

@@ -9,21 +9,22 @@ const Qualification = () => {
   return (
     <QualificationContainer themebg={themebg}>
       <div className="qualification">
-        <h2 className="qualification-label">Qualifications</h2>
+      {/* <h2 className="qualification-label">Qualifications</h2> */}
+
         <div className="graduate">
           <h3>Graduate</h3>
           <CssTextField
             id="filled-basic"
-            label="Year"
             variant="outlined"
             type="number"
+            placeholder="Year"
             value={qualifData.year1}
             onChange={(ev)=>setQualifData({...qualifData,year1:ev.target.value})}
             inputProps={{ maxLength: 4 }}
           />
           <CssTextField
             id="filled-basic"
-            label="Percentage"
+            placeholder="Percentage"
             type="number"
             variant="outlined"
             value={qualifData.perc1}
@@ -32,18 +33,19 @@ const Qualification = () => {
           />
           <CssTextField
             id="filled-basic"
-            label="Institute"
+            placeholder="Institute"
             variant="outlined"
             value={qualifData.inst1}
             onChange={(ev)=>setQualifData({...qualifData,inst1:ev.target.value})}
             type="text"
           />
         </div>
+
         <div className="intermediate">
           <h3>Intermediate</h3>
           <CssTextField
             id="filled-basic"
-            label="Year"
+            placeholder="Year"
             variant="outlined"
             type="number"
             value={qualifData.year2}
@@ -52,7 +54,7 @@ const Qualification = () => {
           />
           <CssTextField
             id="filled-basic"
-            label="Percentage"
+            placeholder="Percentage"
             type="number"
             value={qualifData.perc2}
             onChange={(ev)=>setQualifData({...qualifData,perc2:ev.target.value})}
@@ -61,18 +63,19 @@ const Qualification = () => {
           />
           <CssTextField
             id="filled-basic"
-            label="Institute"
+            placeholder="Institute"
             variant="outlined"
             value={qualifData.inst2}
             onChange={(ev)=>setQualifData({...qualifData,inst2:ev.target.value})}
             type="text"
           />
         </div>
+
         <div className="highschool">
           <h3>High School</h3>
           <CssTextField
             id="filled-basic"
-            label="Year"
+            placeholder="Year"
             variant="outlined"
             value={qualifData.year3}
             onChange={(ev)=>setQualifData({...qualifData,year3:ev.target.value})}
@@ -81,7 +84,7 @@ const Qualification = () => {
           />
           <CssTextField
             id="filled-basic"
-            label="Percentage"
+            placeholder="Percentage"
             type="number"
             value={qualifData.perc3}
             onChange={(ev)=>setQualifData({...qualifData,perc3:ev.target.value})}
@@ -89,13 +92,14 @@ const Qualification = () => {
           />
           <CssTextField
             id="filled-basic"
-            label="Institute"
+            placeholder="Institute"
             value={qualifData.inst3}
             onChange={(ev)=>setQualifData({...qualifData,inst3:ev.target.value})}
             variant="outlined"
             type="text"
           />
         </div>
+
       </div>
     </QualificationContainer>
   );

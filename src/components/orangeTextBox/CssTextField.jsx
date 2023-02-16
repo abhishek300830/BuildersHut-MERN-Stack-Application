@@ -4,22 +4,23 @@ export const CssTextField = styled(TextField)({
     color: "#fcae05",
   },
   "& .css-1gpdw0k-MuiInputBase-root-MuiFilledInput-root::after": {
-    borderBottom: "2px solid #F0B125",
+    border: "2px solid #F0B125",
   },
-
-  // "& .MuiInput-underline:after": {
-  //   borderBottomColor: "#F0B125",
-  // },
-
   "& .MuiOutlinedInput-root": {
-    // "& fieldset": {
-    //   borderColor: "#F0B125",
-    // },
-    "&:hover fieldset": {
-      borderColor: "#F0B125",
-    },
+    
+    border:"1px solid black",
+    borderTop:"2px solid black",
+    padding:"0 !important",
+    borderRadius:"8px",
+    
+
     "&.Mui-focused fieldset": {
-      borderColor: "#F0B125",
+      // borderColor: "#F0B125",
+      border:"1px solid black",
+      borderTop:"2px solid black",
     },
   },
+  "& .MuiInputBase-input":{
+    padding:"3%",
+  }
 });

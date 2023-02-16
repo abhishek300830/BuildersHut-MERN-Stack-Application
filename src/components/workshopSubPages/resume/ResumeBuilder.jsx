@@ -23,7 +23,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 
 const ResumeBuilder = () => {
-  const {formbg} = useContext(builderContext)
+  const {formbg,themebg,headings} = useContext(builderContext)
 
   const [age, setAge] = React.useState('');
 
@@ -63,6 +63,7 @@ const ResumeBuilder = () => {
   const goNextHandler=()=>{
     document.getElementById('select-1').style.display="none";
     document.getElementById('select-2').style.display="block";
+    document.getElementById('subhead-span').style.display="inline";
 
   }
 
@@ -77,6 +78,11 @@ const ResumeBuilder = () => {
         {/* main div where textfields will b there  */}
         <button id="btn-id" className="flip" onClick={onClickPreview}>Preview</button>
         <div className="left" id="left-part" >
+
+          <div className="subheads">
+            Resume Builder /<span style={{display:"none"}} id="subhead-span">{headings[activeStep]}</span>
+          </div>
+
           <div className="left-temp">
 
             <div className="user-input">
@@ -128,10 +134,11 @@ const ResumeBuilder = () => {
                   
                   </div>
               </div>
+
               <Box
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { m: 1, width: "25ch", background:formbg , borderRadius:"0.8ch"},
+                  "& .MuiTextField-root": { m: 1, width: "25ch", background:themebg , borderRadius:"0.8ch"},
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
                 }}
                 noValidate

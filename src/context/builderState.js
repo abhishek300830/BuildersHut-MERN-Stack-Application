@@ -19,7 +19,7 @@ const BuilderState=(props)=>{
     const [intershipData,setIntershipData]=useState([]);
     const [othersData,setOthersData] = useState([]);
 
-    // interests and hobbies data
+    // interests and hobbies data   
     const [hobbieData,setHobbieData]=useState([]);
     
 
@@ -36,6 +36,9 @@ const BuilderState=(props)=>{
         perc3:"",
         inst3:""
        });
+    
+       // const headings in resume builder
+       const headings=[" personal details"," qualifications"," skills-projects-internships"," acheivements"];
 
     return(
         <builderContext.Provider
@@ -50,7 +53,8 @@ const BuilderState=(props)=>{
             intershipData,setIntershipData,
             othersData,setOthersData,
             hobbieData,setHobbieData,
-            qualifData,setQualifData
+            qualifData,setQualifData,
+            headings
         }}
         >
            { props.children }
