@@ -13,7 +13,6 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 
 const Skill = () => {
   const {
-    formbg,
     borderbg,
     skillData,
     setSkillData,
@@ -44,6 +43,7 @@ const Skill = () => {
   var maxField2 = 4 - (projectData.length + intershipData.length + othersData.length);
 
   const addField2 = () => {
+
     if (type === "Project") {
       // console.log("dateval", dateVal);
       setProjectData([...projectData, { type, name: txValue, date: dateVal }]);
@@ -70,31 +70,33 @@ const Skill = () => {
     <SkillStyleDiv>
 
       <section className="skills" style={{ borderColor: borderbg }}>
-        <h1 style={{ background: formbg }}>Skills</h1>
-        <h4 style={{ color: "red" }}>(* add maximum 8 fields)</h4>
-        {skillData.map((vals, ind) => (
-          <TextField
-            key={ind}
-            disabled
-            value={vals.name}
-            id={`acheiv-field-` + ind}
-            variant="filled"
-            color="success"
-          />
-        ))}
 
-        {maxFields > 0 && (
+        <h4 >NOTE: max 8 fields are allowed.</h4>
+        <h3>
+          Skills: 
           <CssTextField
             inputProps={{ maxLength: 20 }}
             placeholder="Enter your skill"
             variant="outlined"
             color="success"
+            disabled={maxFields === 0}
             value={val}
             onChange={(ev) => setVal(ev.target.value)}
           />
-        )}
-        <br />
+        </h3>
 
+          <div className="dyn-data">
+            {skillData.map((vals, ind) => (
+              <CssTextField
+                key={ind}
+                disabled
+                value={vals.name}
+                variant="outlined"
+              />
+            ))}
+          </div>
+          
+          <br />
         <Button
           variant="contained"
           size="large"
@@ -130,117 +132,17 @@ const Skill = () => {
               style={{width:"90%",height:"90%",opacity:skillData.length===0?"0.6":"1"}}>              
           </lord-icon>
         </Button>
+
+      <hr />
       </section>
 
       <section className="projects" style={{ borderColor: borderbg }}>
-        <h1 style={{ background: formbg }}>Projects and Interships</h1>
-        <h4 style={{ color: "red" }}>(* add maximum 4 fields)</h4>
-        {projectData.map((vals, ind) => (
-          <div key={ind}>
-            <TextField
-              label="type"
-              variant="filled"
-              color="success"
-              disabled
-              value={vals.type}
-            />
-            <TextField
-              label="name"
-              variant="filled"
-              disabled
-              color="success"
-              value={vals.name}
-            />
-            <TextField
-              label="date"
-              variant="filled"
-              disabled
-              color="success"
-              type="text"
-              value={
-                vals.date.$d.getDate() +
-                " / " +
-                vals.date.$d.getMonth() +
-                " / " +
-                vals.date.$d.getFullYear()
-              }
-            />
-            <br />
-            <hr />
-          </div>
-        ))}
 
-        {intershipData.map((vals, ind) => (
-          <div key={ind}>
-            <TextField
-              label="type"
-              variant="filled"
-              disabled
-              color="success"
-              value={vals.type}
-            />
-            <TextField
-              label="name"
-              disabled
-              variant="filled"
-              color="success"
-              value={vals.name}
-            />
-            <TextField
-              label="date"
-              disabled
-              variant="filled"
-              color="success"
-              value={
-                vals.date.$d.getDate() +
-                " / " +
-                vals.date.$d.getMonth() +
-                " / " +
-                vals.date.$d.getFullYear()
-              }
-            />
-            <br />
-            <hr />
-          </div>
-        ))}
+        <h3>Projects and Interships </h3>
+        <h4>NOTE: max 4 fields are allowed.</h4>
 
-        {othersData.map((vals, ind) => (
-          <div key={ind}>
-            <TextField
-              label="type"
-              variant="filled"
-              color="success"
-              disabled
-              value={vals.type}
-            />
-            <TextField
-              label="name"
-              variant="filled"
-              color="success"
-              disabled
-              value={vals.name}
-            />
-            <TextField
-              label="date"
-              variant="filled"
-              color="success"
-              disabled
-              value={
-                vals.date.$d.getDate() +
-                " / " +
-                vals.date.$d.getMonth() +
-                " / " +
-                vals.date.$d.getFullYear()
-              }
-            />
-            <br />
-            <hr />
-          </div>
-        ))}
-
-        {maxField2 > 0 && (
-          <div style={{ marginTop: "5%" }}>
-            <FormControl fullWidth className="project-select" style={{ width: "20%", marginTop: "1%" }}>
+        <div  className="project-select">
+            <FormControl fullWidth className="select-2" style={{ width: "20%", marginTop: "1%" }}>
               <InputLabel id="demo-simple-select-label">type</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
@@ -255,10 +157,9 @@ const Skill = () => {
               </Select>
             </FormControl>
 
-            <TextField
-              label="name"
-              variant="filled"
-              color="success"
+            <CssTextField
+              placeholder="name"
+              variant="outlined"
               value={txValue}
               onChange={(ev) => setTxValue(ev.target.value)}
             />
@@ -271,8 +172,13 @@ const Skill = () => {
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-          </div>
-        )}
+
+        </div>
+        
+       
+
+          
+
         <br />
         <Button
           variant="contained"
@@ -314,6 +220,93 @@ const Skill = () => {
               style={{width:"90%",height:"90%",opacity:intershipData.length + projectData.length + othersData.length === 0? "0.6":"1"}}>              
           </lord-icon>
         </Button>
+
+        <div className="dyn-data">
+          {projectData.map((vals, ind) => (
+            <div key={ind}>
+              <hr />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={vals.type}
+              />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={vals.name}
+              />
+              <CssTextField
+                variant="outlined"
+                disabled
+                type="text"
+                value={
+                  vals.date.$d.getDate() +
+                  " / " +
+                  vals.date.$d.getMonth() +
+                  " / " +
+                  vals.date.$d.getFullYear()
+                }
+              />
+              <br />
+            </div>
+          ))}
+
+          {intershipData.map((vals, ind) => (
+            <div key={ind}>
+              <hr />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={vals.type}
+              />
+              <CssTextField
+                disabled
+                variant="outlined"
+                value={vals.name}
+              />
+              <CssTextField
+                disabled
+                variant="outlined"
+                value={
+                  vals.date.$d.getDate() +
+                  " / " +
+                  vals.date.$d.getMonth() +
+                  " / " +
+                  vals.date.$d.getFullYear()
+                }
+              />
+              <br />
+            </div>
+          ))}
+
+          {othersData.map((vals, ind) => (
+            <div key={ind}>
+              <hr />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={vals.type}
+              />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={vals.name}
+              />
+              <CssTextField
+                variant="outlined"
+                disabled
+                value={
+                  vals.date.$d.getDate() +
+                  " / " +
+                  vals.date.$d.getMonth() +
+                  " / " +
+                  vals.date.$d.getFullYear()
+                }
+              />
+              <br />
+            </div>
+          ))}
+        </div>
       </section>
     </SkillStyleDiv>
   );

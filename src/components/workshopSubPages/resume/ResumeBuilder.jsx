@@ -24,7 +24,7 @@ import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 
 const ResumeBuilder = () => {
-  const {formbg,themebg,headings} = useContext(builderContext)
+  const {themebg,headings} = useContext(builderContext)
 
   const [age, setAge] = React.useState("");
 
@@ -113,6 +113,7 @@ const ResumeBuilder = () => {
                       {" "}
                       Select Alignment
                     </FormLabel>
+
                     <RadioGroup
                       // row
                       aria-labelledby="demo-row-radio-buttons-group-label"
@@ -134,6 +135,7 @@ const ResumeBuilder = () => {
                         label="Vertical"
                       />
                     </RadioGroup>
+
                   </FormControl>
 
                   <Box

@@ -1,21 +1,32 @@
 import styled from "styled-components";
-
+// color: #454343ff;
+// background-color: #e0dfdf;
 export const AcheivStyleDiv=styled.div`
     section.acheiv{
-        border: 1px solid black;
-        padding: 2%;
+        padding:5% 2%;
         margin-top: 5%;
         position: relative;
         border-radius: 5px;
-        /* h1{
-            font-size: 1.3vw;
-            color:black;
+        background-color: #e0dfdf;
+        
+        h4{
+            background-color: #d74846;
+            padding:1% 2%;
             position: absolute;
-            top: -35px;
-            padding: 0% 1%;
-            border-radius: 5px;
-            color: #454343ff;
-        } */
+            border-radius: 8px;
+            color: #e7e7e7;
+            margin-left: 33%;
+            margin-top: -2%;
+        }
+        .fields{
+            margin-top: 3%;
+            text-align: center;
+        }
+
+        .dyn-data{
+            text-align: center;
+        }
+
     }
 
     @media (max-width: 1280px) {

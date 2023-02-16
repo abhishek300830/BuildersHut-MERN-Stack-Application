@@ -6,7 +6,7 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 import { AcheivStyleDiv } from "./acheiStyle";
 
 const Achievement = () => {
-  const { formbg, borderbg, fields, setFields } = useContext(builderContext);
+  const {  borderbg, fields, setFields } = useContext(builderContext);
   const [val, setVal] = useState("");
 
   let maxFields = 6 - fields.length; // assign max fields accordingly
@@ -24,29 +24,20 @@ const Achievement = () => {
   return (
     <AcheivStyleDiv>
       <section className="acheiv" style={{ borderColor: borderbg }}>
-        {/* <h1 style={{ background: formbg }}>Achievements</h1> */}
 
-        <h4 style={{ color: "red" }}>(* add maximum 6 fields)</h4>
-        {fields.map((vals, ind) => (
-          <CssTextField
-            key={ind}
-            disabled
-            value={vals.name}
-            variant="outlined"
-            style={{boxShadow:"2px 2px 2px gray"}}
-          />
-        ))}
-        {maxFields > 0 && (
+        <h4> NOTE: max 6 fields are allowed.</h4>
+
+        <div className="fields">
           <CssTextField
             inputProps={{ maxLength: 20 }}
             placeholder="Enter content"
             variant="outlined"
-            color="success"
+            disabled={maxFields === 0}
             value={val}
             onChange={(ev) => setVal(ev.target.value)}
             onKeyDown={handleKeyDown}
           />
-        )}
+        </div>
         <br />
 
         <Button
@@ -84,6 +75,18 @@ const Achievement = () => {
               style={{width:"90%",height:"90%",opacity:fields.length===0?"0.6":"1"}}>              
           </lord-icon>
         </Button>
+
+          <div className="dyn-data">
+            {fields.map((vals, ind) => (
+              <CssTextField
+                key={ind}
+                disabled
+                value={vals.name}
+                variant="outlined"
+                style={{boxShadow:"2px 2px 2px gray"}}
+              />
+            ))}
+        </div>
       </section>
     </AcheivStyleDiv>
   );

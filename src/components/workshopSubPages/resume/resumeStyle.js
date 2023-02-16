@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ResumeStyleDiv = styled.div`
   margin-top: -2.5%;
+  font-family: 'Ubuntu', sans-serif;
+
   .pop-up-girl {
     width: 30%;
     position: fixed;
@@ -64,7 +66,7 @@ export const ResumeStyleDiv = styled.div`
       padding: 2%;
       height: 85%;  
       /* overflow: auto; */
-      background: #e9e8e2;
+      background: #f7f7f7;
       border: 5px solid #595451;
       border-top: 40px solid #595451;
       border-radius: 10px;
@@ -94,9 +96,6 @@ export const ResumeStyleDiv = styled.div`
         margin-top: -2%;
         /* border: 1px solid black; */
         .select-temp {
-          /* border: 1px solid #595451;
-          border-top: 40px solid #595451;
-          border-radius: 10px; */
           position: relative;
 
           .resume-intro{
@@ -113,7 +112,6 @@ export const ResumeStyleDiv = styled.div`
             width: 60%;
             border-radius: 10px;
             background-color: #f1b226;
-            /* background: linear-gradient(to right,#ebc532,#f1b226); */
             margin: auto;
             margin-top: 5%;
             margin-bottom: 5%;
@@ -143,7 +141,7 @@ export const ResumeStyleDiv = styled.div`
             }
             .templates {
               margin-top: 2%;
-              width: 80%;
+              width:100%;
               padding: 1% 4%;
               margin-left: 5%;
               /* background-color: white; */
@@ -153,7 +151,7 @@ export const ResumeStyleDiv = styled.div`
               .MuiFormLabel-root{
                 color: white;
                 background-color: #595451;
-                padding: 0% 3%;
+                padding: 0% 2%;
                 border-radius: 5px;
               }
               .MuiSvgIcon-root{
@@ -433,12 +431,12 @@ export const ResumeStyleDiv = styled.div`
     }
 
     section.rMain {
-      height: 93%;
+      height: 95%;
       button.flip { 
         font-size: 3.5vw;
         border: 1px solid black;
         height: 30px;
-        
+
         border-radius: 5px;
         margin-right: 2%;
         margin-top: -8%;
@@ -481,7 +479,7 @@ export const ResumeStyleDiv = styled.div`
         border-top: 2px solid #565555;
         width: 95% !important;
         left: 2% !important;
-    }
+      }
 
       div.left::before{
         height: 20px;

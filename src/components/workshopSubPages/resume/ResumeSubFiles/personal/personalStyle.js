@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const PersonalSection = styled.div`
 margin-top: 5%;
+.merge-2{
+  background-color: #e0dfdf;
+  border-radius: 5px;
+}
   css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
     input:hover {
       border: #fcae05 2px solid !important;
@@ -9,6 +13,8 @@ margin-top: 5%;
   }
   .MuiInputBase-input{
       padding: 3.5%;
+      font-family:'Ubuntu', sans-serif;
+      font-weight:bold;
 
   }
 
@@ -18,6 +24,9 @@ margin-top: 5%;
   .personal {
     margin-bottom: 5%;
     position: relative;
+    display: grid;
+    grid-template-columns: 10% 40%;
+    align-items: baseline;
     /* .p-label {
       font-size: 2vw;
       color: #3f3e3e;
@@ -29,23 +38,18 @@ margin-top: 5%;
     }
   }
   .address {
-    /* background-color: #d1d1d16c; */
+    text-align: center;
     padding: 2%;
     margin-top: 2%;
-    margin-bottom: 5%;
     position: relative;
-    border: 1px solid black;
     border-radius: 5px;
     .label {
-      /* opacity: 0.8; */
-      color: #454343ff;
-      left: 5%;
-      z-index: 10;
-      position: absolute;
-      top: -20%;
+      color: #424242;
+      text-align: center;
+      
       border-radius: 5px;
-      /* background-color: white; */
       padding: 0% 1%;
+      /* background-color: #d2d2d2 ; */
     }
   }
 
@@ -73,9 +77,7 @@ margin-top: 5%;
 
   @media (max-width: 520px) {
     .personal {
-      /* .p-label {
-        font-size: 5vw;
-      } */
+      grid-template-columns: 20% 50%;
     }
     .address {
       .label {

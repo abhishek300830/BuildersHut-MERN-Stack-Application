@@ -1,26 +1,18 @@
 import styled from "styled-components";
 
 export const LanguageContainer = styled.div`
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   .border {
-    margin-bottom: 5%;
+    margin-bottom: 0%;
     padding: 2%;
-    border: black solid 1px;
     border-radius: 5px;
   }
 
   .languages {
-    /* // set border of mui language
-    .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused {
-      border: solid !important;
-      border-color: #fcae05 !important;
-      border-width: 2px !important;
-    } */
     position: relative;
+    
     #demo-multiple-chip-label {
       z-index: 10;
       padding-right: 2%;
-      background-color: white;
     }
     .outlined-lang-input {
       select:focus {
@@ -31,25 +23,29 @@ export const LanguageContainer = styled.div`
       }
     }
     .lang-label {
-      position: absolute;
-      top: -35%;
-      left: 3%;
-      background-color: white;
+      /* position: absolute; */
+      /* top: -35%; */
+      /* left: 3%; */
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
     }
   }
   .profileBio {
     position: relative;
+
     .profile-label {
-      position: absolute;
-      top: -20%;
-      left: 3%;
-      background-color: white;
+      /* position: absolute; */
+      /* top: -20%; */
+      /* left: 3%; */
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
+      text-align: center;
     }
     .css-leqjib-MuiInputBase-root-MuiFilledInput-root::after {
       border-bottom: #fcae05 2px solid;
@@ -58,16 +54,36 @@ export const LanguageContainer = styled.div`
       border-bottom: red 2px solid;
     } */
   }
+
   .interestAndHobbies {
     position: relative;
-    .interest-label {
+    h4{
+      background-color: #d74846;
       position: absolute;
-      top: -15%;
-      left: 3%;
-      background-color: white;
+      top: -10%;
+      padding:1% 2%;
+      margin-left: 32%;
+      border-radius: 8px;
+      color: #e7e7e7;
+    }
+    .dyn-data{
+            text-align: center;
+    }
+    .interest-label {
+      /* position: absolute; */
+      /* top: -15%; */
+      /* left: 3%; */
+      display: flex;
+      /* border: 1px solid black; */
       padding: 0% 1%;
       border-radius: 5px;
       color: #454343ff;
+      align-items: baseline;
+      justify-content: center;
+
+      div.content{
+        /* border: 1px solid red; */
+      }
     }
   }
 
@@ -77,6 +93,7 @@ export const LanguageContainer = styled.div`
       #demo-multiple-chip {
         margin-top: 2%;
       }
+      
     }
     .profileBio {
       margin-top: 5%;
@@ -84,8 +101,15 @@ export const LanguageContainer = styled.div`
     }
     .interestAndHobbies {
       margin-top: 5%;
+      h4{
+      margin-left: 10%;
+      }
       .interest-label {
-        top: -20%;
+        align-items: center;
+        margin-top: 10%;
+        div.content{
+          font-size: 4.5vw;
+        }
       }
     }
   }

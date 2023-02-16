@@ -53,7 +53,7 @@ const Language = () => {
   const theme = useTheme();
   const [personName, setPersonName] = useState([]);
 
-  const { formbg, borderbg, hobbieData, setHobbieData } =
+  const {  borderbg, hobbieData, setHobbieData } =
     useContext(builderContext);
 
   const handleChange = (event) => {
@@ -82,48 +82,58 @@ const Language = () => {
   return (
     <LanguageContainer>
       <div className="languages border" style={{ borderColor: borderbg }}>
-        <h2 className="lang-label" style={{ background: formbg }}>
+        <h2 className="lang-label" 
+        // style={{ background: formbg }}
+        >
           Select Languages
+
+          <FormControl sx={{ m: 1, width: 300 }}>
+            <InputLabel id="demo-multiple-chip-label">Languages</InputLabel>
+            <Select
+              labelId="demo-multiple-chip-label"
+              id="demo-multiple-chip"
+              multiple
+              value={personName}
+              onChange={handleChange}
+              input={
+                <OutlinedInput
+                  className="outlined-lang-input"
+                  // style={{ border: "1px solid #fcae05" }}
+                  id="select-multiple-chip"
+                  label="Languages"
+                />
+              }
+              renderValue={(selected) => (
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                  {selected.map((value) => (
+                    <Chip key={value} label={value} />
+                  ))}
+                </Box>
+              )}
+              MenuProps={MenuProps}
+            >
+              {names.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
         </h2>
-        <FormControl sx={{ m: 1, width: 300 }}>
-          <InputLabel id="demo-multiple-chip-label">Languages</InputLabel>
-          <Select
-            labelId="demo-multiple-chip-label"
-            id="demo-multiple-chip"
-            multiple
-            value={personName}
-            onChange={handleChange}
-            input={
-              <OutlinedInput
-                className="outlined-lang-input"
-                // style={{ border: "1px solid #fcae05" }}
-                id="select-multiple-chip"
-                label="Chip"
-              />
-            }
-            renderValue={(selected) => (
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                {selected.map((value) => (
-                  <Chip key={value} label={value} />
-                ))}
-              </Box>
-            )}
-            MenuProps={MenuProps}
-          >
-            {names.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                style={getStyles(name, personName, theme)}
-              >
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+
+
+      <hr />
       </div>
-      <div className="profileBio border" style={{ borderColor: borderbg }}>
-        <h2 className="profile-label" style={{ background: formbg }}>
+
+
+      <div className="profileBio border">
+        <h2 className="profile-label" 
+        // style={{ background: formbg }}
+        >
           Profile Details
         </h2>
         <Box
@@ -147,28 +157,18 @@ const Language = () => {
             fullWidth
           />
         </Box>
+      <hr />
       </div>
-
-      <div
-        className="interestAndHobbies border"
+        
+      <div className="interestAndHobbies border"
         style={{ borderColor: borderbg }}
       >
-        <h2 className="interest-label" style={{ background: formbg }}>
-          Interest And Hobbies
-        </h2>
-        <h4 style={{ color: "red" }}>(* add maximum 4 fields)</h4>
-
-        {hobbieData.map((vals, ind) => (
-          <CssTextField
-            key={ind}
-            disabled
-            value={vals.name}
-            id={`acheiv-field-` + ind}
-            variant="filled"
-            color="success"
-          />
-        ))}
-        {maxFields > 0 && (
+        <h4>NOTE: max 4 fields are allowed.</h4>
+        <h2 className="interest-label" 
+        // style={{ background: formbg }}
+        >
+          <div className="content">Interest And Hobbies: </div>
+          
           <CssTextField
             inputProps={{ maxLength: 20 }}
             placeholder="Enter your hobbie"
@@ -177,8 +177,24 @@ const Language = () => {
             value={val}
             onChange={(ev) => setVal(ev.target.value)}
             onKeyDown={handleKeyDown}
+            disabled={maxFields === 0}
           />
-        )}
+
+        </h2>
+
+          <div className="dyn-data">
+
+            {hobbieData.map((vals, ind) => (
+              <CssTextField
+                key={ind}
+                disabled
+                value={vals.name}
+                variant="outlined"
+              />
+            ))}
+          </div>
+
+        
 
         <br />
 

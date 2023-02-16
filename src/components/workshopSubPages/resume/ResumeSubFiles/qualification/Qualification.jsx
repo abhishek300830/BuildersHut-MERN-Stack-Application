@@ -40,6 +40,7 @@ const Qualification = () => {
             type="text"
           />
         </div>
+        <hr />
 
         <div className="intermediate">
           <h3>Intermediate</h3>
@@ -70,6 +71,7 @@ const Qualification = () => {
             type="text"
           />
         </div>
+        <hr />
 
         <div className="highschool">
           <h3>High School</h3>

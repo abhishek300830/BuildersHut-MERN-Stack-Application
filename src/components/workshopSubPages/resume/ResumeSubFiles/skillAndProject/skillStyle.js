@@ -1,41 +1,77 @@
 import styled from "styled-components";
 
+
+
+
 export const SkillStyleDiv=styled.div`
-    section.skills{
-        border: 1px solid black;
-        padding: 2%;
+        background-color: #e0dfdf;
         margin-top: 5%;
+        border-radius: 5px;
+    section.skills{
+        padding: 2%;
         position: relative;
         border-radius: 5px;
-        h1{
-            font-size: 1.3vw;
-            color:black;
+        h4{
+            background-color: #d74846;
+            padding:1% 2%;
             position: absolute;
-            top: -35px;
+            border-radius: 8px;
+            color: #e7e7e7;
+            margin-left: 33%;
+            margin-top: 0%;
+        }
+        
+        h3{
+            font-size: 1.3vw;
+            margin-top: 5%;
             padding: 0% 1%;
-            border-radius: 5px;
             color: #454343ff;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 2%;
+        }
 
+        .dyn-data{
+            text-align: center;
         }
     }
 
     section.projects{
-        border: 1px solid black;
         padding: 2%;
-        margin-top: 4%;
         position: relative;
         border-radius: 5px;
-
-       
-        h1{
-            font-size: 1.3vw;
-            color:black;
+        margin-top: -2%;
+        h4{
+            background-color: #d74846;
+            padding:1% 2%;
             position: absolute;
-            top: -35px;
+            border-radius: 8px;
+            color: #e7e7e7;
+            margin-left: 33%;
+            margin-top: -2%;
+        }
+        h3{
+            text-align: center;
+            font-size: 1.3vw;
+            color: #454343ff;
             padding: 0% 1%;
             border-radius: 5px;
-            color: #454343ff;
         }
+
+        .MuiInputBase-input{
+            padding: 3.5%;
+            font-family:'Ubuntu', sans-serif;
+            font-weight:bold;
+        }
+        .project-select{
+            margin-top: 8%;
+            text-align: center;
+        }
+        .dyn-data{
+            text-align: center;
+        }
+
     }
 
     @media (max-width: 1280px) {
@@ -52,45 +88,62 @@ export const SkillStyleDiv=styled.div`
     }
 
     @media (max-width: 820px) {
-        margin-top: 5%;
         section.skills{
-            padding: 3%;
-            h1{
+            padding: 2%;
+            h3{
                 font-size: 2.5vw;
-                top:-30px;
+            }
+            h4{
+                margin-left: 34%;
+                font-size: 1.5vw;
             }
         }
         section.projects{
-            margin-top: 8%;
             padding: 3%;
-            h1{
+            h3{
                 font-size: 2.5vw;
-                top:-30px;
+            }
+            h4{
+                font-size: 1.5vw;
+                margin-left: 33%;
             }
         }
     }
 
     @media (max-width: 520px) {
-        margin-top: 8%;
         section.skills{
-            padding: 4%;
-
-            h1{
-                font-size: 4.5vw;
-                top:-30px;
+            padding: 2%;
+            h3{
+                font-size: 3.5vw;
+            }
+            h4{
+                margin-left: 25%;
+                font-size: 2.5vw;
+                border-radius: 5px;
             }
         }
         section.projects{
-            margin-top: 10%;
-            padding: 4%;
-            .project-select{
-                width: 80% !important;
-                margin-left: 3%;
+            h3{
+                font-size: 5.5vw;
+
             }
-            h1{
-                font-size: 4.5vw;
-                top:-30px;
+            h4{
+                font-size: 2.5vw;
+                border-radius: 5px;
+                margin-left: 25%;
+            }
+            .project-select{
+                margin-top: 15%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .select-2{
+                    width: 60% !important;
+                    margin-left: 0%;
+                }
             }
         }
+
     }
 `

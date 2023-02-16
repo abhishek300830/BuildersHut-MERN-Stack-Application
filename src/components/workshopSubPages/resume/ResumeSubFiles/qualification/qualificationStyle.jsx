@@ -12,35 +12,20 @@ const QualificationContainer = styled.div`
   // main folder structure
   .qualification {
     margin-top: 5%;
-    padding: 1%;
+    padding:2%;
     padding-bottom: 5%;
     position: relative;
     /* border: 1px solid black; */
     border-radius: 5px;
     background: #d2d2d2;
-  /* 
-      .qualification-label {
-        padding: 0% 1%;
-        margin-left: 2%;
-        position: absolute;
-        top: -9%;
-      } 
-      */
-    .graduate {
+
       h3 {
-        margin-left: 4%;
+        color: #454343ff;
+        text-align: center;
       }
-    }
-    .intermediate {
-      h3 {
-        margin-left: 4%;
+      div.graduate, div.intermediate, div.highschool{
+        text-align: center;
       }
-    }
-    .highschool {
-      h3 {
-        margin-left: 4%;
-      }
-    }
   }
 
   @media (max-width:820px){

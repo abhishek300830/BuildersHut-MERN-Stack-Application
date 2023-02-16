@@ -11,10 +11,9 @@ import builderContext from "../../../../../context/builderContext";
 import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 
 const Personal = () => {
-  const { formbg, borderbg } = useContext(builderContext);
+  const { borderbg } = useContext(builderContext);
 
-  // const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -22,11 +21,13 @@ const Personal = () => {
   return (
     <PersonalSection>
       <div className="personal" style={{marginLeft:"2%"}}>
+
         {/* <h3 className="p-label">Personal Details</h3> */}
-        <CssTextField placeholder="Name" variant="outlined" color="success" />
-        <LocalizationProvider dateAdapter={AdapterDayjs} >
+        <label>Name:</label>
+        <CssTextField placeholder="enter your name" variant="outlined" color="success" />
+        <label>DOB: </label>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
-            label="DOB"
             inputFormat="MM/DD/YYYY"
             value={value}
             onChange={handleChange}
@@ -34,22 +35,28 @@ const Personal = () => {
           />
         </LocalizationProvider>
       </div>
-      <div className="address" style={{ borderColor: borderbg }}>
-        <h3 className="label" style={{ background: formbg }}>
-          Address
-        </h3>
-        <CssTextField placeholder="City" variant="outlined" />
-        <CssTextField placeholder="State" variant="outlined" color="success" />
-        <CssTextField placeholder="PinCode" variant="outlined" color="success" />
-        <CssTextField placeholder="Mobile" variant="outlined" color="success" />
-        <CssTextField placeholder="Email" variant="outlined" color="success" />
-        <CssTextField
-          placeholder="linkedin, github, etc."
-          variant="outlined"
-          color="success"
-        />
-      </div>
-      <Language />
+
+      <section className="merge-2">
+
+        <div className="address" style={{ borderColor: borderbg }}>
+          <h2 className="label">
+            Address
+          </h2>
+          <CssTextField placeholder="City" variant="outlined" />
+          <CssTextField placeholder="State" variant="outlined" color="success" />
+          <CssTextField placeholder="PinCode" variant="outlined" color="success" />
+          <CssTextField placeholder="Mobile" variant="outlined" color="success" />
+          <CssTextField placeholder="Email" variant="outlined" color="success" />
+          <CssTextField
+            placeholder="linkedin, github, etc."
+            variant="outlined"
+            color="success"
+          />
+        <hr />
+        </div>
+        <Language />
+      </section>
+      
     </PersonalSection>
   );
 };
