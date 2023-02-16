@@ -141,10 +141,15 @@ const ResumeBuilder = () => {
                   </FormControl>
 
                   <Box
-                    sx={{ minWidth: 120, display: "flex", gap: "10px" }}
+                    sx={{
+                      minWidth: 120,
+                      display: "flex",
+                      gap: "10px",
+                      textAlign: "center",
+                    }}
                     className="templates"
                   >
-                    <FormControl style={{ width: "80%" }}>
+                    <FormControl className="templeteClass">
                       <InputLabel id="demo-simple-select-label">
                         Template
                       </InputLabel>

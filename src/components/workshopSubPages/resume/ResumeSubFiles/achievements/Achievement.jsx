@@ -6,7 +6,7 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 import { AcheivStyleDiv } from "./acheiStyle";
 
 const Achievement = () => {
-  const {  borderbg, fields, setFields } = useContext(builderContext);
+  const { borderbg, fields, setFields } = useContext(builderContext);
   const [val, setVal] = useState("");
 
   let maxFields = 6 - fields.length; // assign max fields accordingly
@@ -24,7 +24,6 @@ const Achievement = () => {
   return (
     <AcheivStyleDiv>
       <section className="acheiv" style={{ borderColor: borderbg }}>
-
         <h4> NOTE: max 6 fields are allowed.</h4>
 
         <div className="fields">
@@ -39,6 +38,17 @@ const Achievement = () => {
           />
         </div>
         <br />
+        <div className="dyn-data">
+          {fields.map((vals, ind) => (
+            <CssTextField
+              key={ind}
+              disabled
+              value={vals.name}
+              variant="outlined"
+              style={{ boxShadow: "2px 2px 2px gray" }}
+            />
+          ))}
+        </div>
 
         <Button
           variant="contained"
@@ -53,11 +63,15 @@ const Achievement = () => {
           }}
         >
           <lord-icon
-              src="https://cdn.lordicon.com/ynwbvguu.json"
-              trigger="hover"
-              colors="primary:#ffffff"
-              style={{width:"90%",height:"90%",opacity:val.length===0?"0.6":"1"}}>              
-          </lord-icon>
+            src="https://cdn.lordicon.com/ynwbvguu.json"
+            trigger="hover"
+            colors="primary:#ffffff"
+            style={{
+              width: "90%",
+              height: "90%",
+              opacity: val.length === 0 ? "0.6" : "1",
+            }}
+          ></lord-icon>
         </Button>
 
         <Button
@@ -69,24 +83,16 @@ const Achievement = () => {
           style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
           <lord-icon
-              src="https://cdn.lordicon.com/akuwjdzh.json"
-              trigger="hover"
-              colors={`primary:#ffffff`}
-              style={{width:"90%",height:"90%",opacity:fields.length===0?"0.6":"1"}}>              
-          </lord-icon>
+            src="https://cdn.lordicon.com/akuwjdzh.json"
+            trigger="hover"
+            colors={`primary:#ffffff`}
+            style={{
+              width: "90%",
+              height: "90%",
+              opacity: fields.length === 0 ? "0.6" : "1",
+            }}
+          ></lord-icon>
         </Button>
-
-          <div className="dyn-data">
-            {fields.map((vals, ind) => (
-              <CssTextField
-                key={ind}
-                disabled
-                value={vals.name}
-                variant="outlined"
-                style={{boxShadow:"2px 2px 2px gray"}}
-              />
-            ))}
-        </div>
       </section>
     </AcheivStyleDiv>
   );
