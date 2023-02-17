@@ -61,7 +61,9 @@ const ResumeBuilder = () => {
     document.getElementById("pp-bg").style.display = "none";
   };
 
+  const [makeVisible,setMakeVisible]=useState(false);
   const goNextHandler = () => {
+    setMakeVisible(true);
     document.getElementById("select-1").style.display = "none";
     document.getElementById("select-2").style.display = "block";
     document.getElementById("subhead-span").style.display = "inline";
@@ -106,6 +108,7 @@ const ResumeBuilder = () => {
           </div>
 
           <div className="left-temp">
+            
             <div className="user-input">
               <div className="select-temp" id="select-1">
                 <h4 className="resume-intro">
@@ -191,7 +194,6 @@ const ResumeBuilder = () => {
                     m: 1,
                     width: "25ch",
                     background:"white",
-
                     borderRadius: "0.8ch",
                   },
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
@@ -205,15 +207,22 @@ const ResumeBuilder = () => {
                 {pages[activeStep]}
                 {/* Personaldetails section  */}
 
-                <div className="scroll-x-y">
-                  <Steps
-                    activeStep={activeStep}
-                    setActiveStep={setActiveStep}
-                  />
-                </div>
+                
+
               </Box>
+
             </div>
           </div>
+
+          {makeVisible && 
+            <div className="scroll-x-y">
+              <Steps
+                activeStep={activeStep}
+                setActiveStep={setActiveStep}
+                status={setMakeVisible}
+              />
+            </div>
+          }
         </div>
 
         {/* a4 size template  */}
