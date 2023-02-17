@@ -12,7 +12,9 @@ export const MainPrintStyleDiv=styled.div`
         background-color: black;
         overflow: auto;
         z-index: 25;
+        animation: print-1 0.5s linear 0s 1;
     }
+  
     .resume-print{
         position: absolute;
         top: 0;
@@ -24,6 +26,16 @@ export const MainPrintStyleDiv=styled.div`
         background-color: whitesmoke;
         margin-top: 2%;
         margin-bottom: 2%;
+        animation: print-1 0.5s linear 0s 1;
+
+    }
+    @keyframes print-1 {
+        0%{
+            opacity: 0;
+        }   
+        100%{
+            opacity: 1;
+        }
     }
 
 `

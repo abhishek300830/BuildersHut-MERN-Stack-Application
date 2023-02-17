@@ -14,6 +14,7 @@ const MainPrintableFile = () => {
         <div className="vanish-click" onClick={onClickHandler1}>
         </div>
         <div className="resume-print">
+            print your file here -
         </div>
 
     </MainPrintStyleDiv>
