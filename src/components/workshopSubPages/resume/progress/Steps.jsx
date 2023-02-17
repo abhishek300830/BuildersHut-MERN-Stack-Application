@@ -9,7 +9,7 @@ const Steps = ({ activeStep, setActiveStep ,status}) => {
   };
 
   const handleBack = () => {
-    if(activeStep > 0){
+    if (activeStep > 0) {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }else{
       status(false);
@@ -25,17 +25,24 @@ const Steps = ({ activeStep, setActiveStep ,status}) => {
         steps={4}
         position="static"
         activeStep={activeStep}
-        sx={{ flexGrow: 1, background: "transparent"}}
+        sx={{ flexGrow: 1, background: "transparent" }}
         className="mobileStepper"
         nextButton={
-          <button
-            className="nextbtns"
-            onClick={handleNext}
-            disabled={activeStep === 3}
-          >
-            <div> NEXT </div>
-            <span className="stepDiv"></span>
-          </button>
+          activeStep === 3 ? (
+            <button className="buildbtns" onClick={window.print}>
+              <div> BUILD </div>
+              <span className="buildstepDiv"></span>
+            </button>
+          ) : (
+            <button
+              className="nextbtns"
+              onClick={handleNext}
+              disabled={activeStep === 3}
+            >
+              <div> NEXT </div>
+              <span className="stepDiv"></span>
+            </button>
+          )
         }
         backButton={
           <button

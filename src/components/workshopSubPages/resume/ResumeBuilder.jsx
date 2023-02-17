@@ -234,10 +234,10 @@ const ResumeBuilder = () => {
               <VerticalTemplete />
             )}
           </div>
-          <button className="print-btn" onClick={window.print}>
+          {/* <button className="print-btn" onClick={window.print}>
             <span>Print</span>
             <div></div>
-          </button>
+          </button> */}
         </div>
       </section>
     </ResumeStyleDiv>

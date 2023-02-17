@@ -210,7 +210,7 @@ const Language = () => {
         </div>
 
         <br />
-        <div className="btns-center" style={{textAlign:"center"}}>
+        <div className="btns-center" style={{ textAlign: "center" }}>
           <button
             className="all-btns"
             onClick={addField}
