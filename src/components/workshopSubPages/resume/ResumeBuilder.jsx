@@ -62,7 +62,7 @@ const ResumeBuilder = () => {
     document.getElementById("pp-bg").style.display = "none";
   };
 
-  const [makeVisible,setMakeVisible]=useState(false);
+  const [makeVisible, setMakeVisible] = useState(false);
   const goNextHandler = () => {
     setMakeVisible(true);
     document.getElementById("select-1").style.display = "none";
@@ -78,9 +78,9 @@ const ResumeBuilder = () => {
     setAlignment(val.target.value);
   };
 
-  const onClickA4=()=>{
-    document.getElementById('show-result').style.display="block";
-  }
+  const onClickA4 = () => {
+    document.getElementById("show-result").style.display = "block";
+  };
 
   return (
     <ResumeStyleDiv>
@@ -113,7 +113,6 @@ const ResumeBuilder = () => {
           </div>
 
           <div className="left-temp">
-            
             <div className="user-input">
               <div className="select-temp" id="select-1">
                 <h4 className="resume-intro">
@@ -198,7 +197,7 @@ const ResumeBuilder = () => {
                   "& .MuiTextField-root": {
                     m: 1,
                     width: "25ch",
-                    background:"white",
+                    background: "white",
                     borderRadius: "0.8ch",
                   },
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
@@ -211,15 +210,11 @@ const ResumeBuilder = () => {
                 {/* Personaldetails section  */}
                 {pages[activeStep]}
                 {/* Personaldetails section  */}
-
-                
-
               </Box>
-
             </div>
           </div>
 
-          {makeVisible && 
+          {makeVisible && (
             <div className="scroll-x-y">
               <Steps
                 activeStep={activeStep}
@@ -227,7 +222,7 @@ const ResumeBuilder = () => {
                 status={setMakeVisible}
               />
             </div>
-          }
+          )}
         </div>
 
         {/* a4 size template  */}
@@ -246,10 +241,9 @@ const ResumeBuilder = () => {
         </div>
       </section>
 
-
       {/* show result  */}
-      <div id="show-result" style={{display:"none"}}>
-        <MainPrintableFile/>
+      <div id="show-result" style={{ display: "none" }}>
+        <MainPrintableFile />
       </div>
     </ResumeStyleDiv>
   );
