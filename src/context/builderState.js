@@ -8,6 +8,17 @@ const BuilderState=(props)=>{
     const [formbg, setFormbg] = useState('#faf6f6');
     const [borderbg,setBorderbg]=useState('black');
 
+    // personal data 
+    const [personalData,setPersonalData]=useState({name:"",dob:""})
+    const [addrData,setAddrData]=useState({
+        city:"",
+        state:"",
+        pincode:"",
+        mobile:"",
+        email:"",
+        other:""
+    })
+
     // acheivement state (all fields data)
     const [fields,setFields]=useState([]);
     
@@ -48,13 +59,15 @@ const BuilderState=(props)=>{
             setThemebg,setFormbg,
             setBorderbg,borderbg,
             fields,setFields,
+            personalData,setPersonalData,
+            addrData,setAddrData,
             skillData,setSkillData,
             projectData,setProjectData,
             intershipData,setIntershipData,
             othersData,setOthersData,
             hobbieData,setHobbieData,
             qualifData,setQualifData,
-            headings
+            headings,
         }}
         >
            { props.children }

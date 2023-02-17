@@ -453,7 +453,7 @@ export const ResumeStyleDiv = styled.div`
     }
 
     section.rMain {
-      height: 95%;
+      height: 93%;
       button.flip {
         font-size: 3.5vw;
         border: 1px solid black;

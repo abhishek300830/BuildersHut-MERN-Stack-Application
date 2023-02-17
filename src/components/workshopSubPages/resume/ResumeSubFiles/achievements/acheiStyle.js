@@ -44,6 +44,10 @@ export const AcheivStyleDiv=styled.div`
         section.acheiv{
             margin-top: 8%;
             padding: 3%;
+            h4{
+                margin-left: 30%;
+                margin-top: -2%;
+            }
             /* h1{
                 font-size: 2.5vw;
                 top:-30px;
@@ -56,6 +60,13 @@ export const AcheivStyleDiv=styled.div`
         section.acheiv{
             margin-top: 10%;
             padding: 4%;
+            h4{
+                margin-left: 11%;
+                margin-top: -2%;
+            }
+            .fields{
+                margin-top: 10%;
+            }
 
             /* h1{
                 font-size: 4.5vw;
