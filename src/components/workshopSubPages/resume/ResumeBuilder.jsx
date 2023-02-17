@@ -23,6 +23,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
+import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
 
 const ResumeBuilder = () => {
   const { headings } = useContext(builderContext);
@@ -76,6 +77,10 @@ const ResumeBuilder = () => {
   const onAlignmentChange = (val) => {
     setAlignment(val.target.value);
   };
+
+  const onClickA4=()=>{
+    document.getElementById('show-result').style.display="block";
+  }
 
   return (
     <ResumeStyleDiv>
@@ -227,7 +232,7 @@ const ResumeBuilder = () => {
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-          <div className="a4">
+          <div className="a4" onClick={onClickA4}>
             {alignment === "horizontal" ? (
               <HorizontalTemplete />
             ) : (
@@ -240,6 +245,12 @@ const ResumeBuilder = () => {
           </button> */}
         </div>
       </section>
+
+
+      {/* show result  */}
+      <div id="show-result" style={{display:"none"}}>
+        <MainPrintableFile/>
+      </div>
     </ResumeStyleDiv>
   );
 };
