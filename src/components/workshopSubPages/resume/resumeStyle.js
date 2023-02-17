@@ -39,14 +39,7 @@ export const ResumeStyleDiv = styled.div`
       left: 2%;
     }
   }
-  @keyframes pop-up-bg-2 {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+
 
   section.rMain {
     border-radius: 5px;
@@ -264,7 +257,7 @@ export const ResumeStyleDiv = styled.div`
     .print-btn {
       padding: 2% 4%;
       border-radius: 5px;
-      position: relative;
+      position: absolute;
       margin-left: 40%;
       width: 20%;
       margin-top: 2%;

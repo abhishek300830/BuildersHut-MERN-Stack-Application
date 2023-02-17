@@ -38,7 +38,7 @@ const Personal = () => {
 
       <section className="merge-2">
 
-        <div className="address" style={{ borderColor: borderbg }}>
+        <div className="address">
           <h2 className="label">
             Address
           </h2>

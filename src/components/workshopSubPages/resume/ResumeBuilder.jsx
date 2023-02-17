@@ -25,7 +25,7 @@ import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
 
 const ResumeBuilder = () => {
-  const { themebg, headings } = useContext(builderContext);
+  const { headings } = useContext(builderContext);
 
   const [age, setAge] = React.useState("");
 
@@ -59,7 +59,6 @@ const ResumeBuilder = () => {
   const onPopUpClick = () => {
     document.getElementById("pp-girl").style.display = "none";
     document.getElementById("pp-bg").style.display = "none";
-    document.getElementById("header-1").style.display = "block";
   };
 
   const goNextHandler = () => {
@@ -73,7 +72,6 @@ const ResumeBuilder = () => {
   const [alignment, setAlignment] = useState("horizontal");
 
   const onAlignmentChange = (val) => {
-    // console.log("first", val.target.value);
     setAlignment(val.target.value);
   };
 
@@ -192,7 +190,8 @@ const ResumeBuilder = () => {
                   "& .MuiTextField-root": {
                     m: 1,
                     width: "25ch",
-                    background: themebg,
+                    background:"white",
+
                     borderRadius: "0.8ch",
                   },
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },

@@ -9,12 +9,12 @@ const Steps = ({ activeStep, setActiveStep }) => {
   };
 
   const handleBack = () => {
-    if(activeStep === 0){
+    if(activeStep > 0){
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    }else{
       document.getElementById('select-1').style.display="block";
       document.getElementById('select-2').style.display="none";
       document.getElementById('subhead-span').style.display="none";
-    }else{
-      setActiveStep((prevActiveStep) => prevActiveStep - 1);
     }
   };
   return (
@@ -24,7 +24,7 @@ const Steps = ({ activeStep, setActiveStep }) => {
         steps={4}
         position="static"
         activeStep={activeStep}
-        sx={{ flexGrow: 1, background: "transparent", color: "red !important" }}
+        sx={{ flexGrow: 1, background: "transparent"}}
         className="mobileStepper"
         nextButton={
           <button
