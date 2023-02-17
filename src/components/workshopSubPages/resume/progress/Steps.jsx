@@ -3,18 +3,17 @@ import React from "react";
 import { StepsDiv } from "./stepsStyle";
 
 const Steps = ({ activeStep, setActiveStep }) => {
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    if(activeStep > 0){
+    if (activeStep > 0) {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    }else{
-      document.getElementById('select-1').style.display="block";
-      document.getElementById('select-2').style.display="none";
-      document.getElementById('subhead-span').style.display="none";
+    } else {
+      document.getElementById("select-1").style.display = "block";
+      document.getElementById("select-2").style.display = "none";
+      document.getElementById("subhead-span").style.display = "none";
     }
   };
   return (
@@ -24,17 +23,24 @@ const Steps = ({ activeStep, setActiveStep }) => {
         steps={4}
         position="static"
         activeStep={activeStep}
-        sx={{ flexGrow: 1, background: "transparent"}}
+        sx={{ flexGrow: 1, background: "transparent" }}
         className="mobileStepper"
         nextButton={
-          <button
-            className="nextbtns"
-            onClick={handleNext}
-            disabled={activeStep === 3}
-          >
-            <div> NEXT </div>
-            <span className="stepDiv"></span>
-          </button>
+          activeStep === 3 ? (
+            <button className="buildbtns" onClick={window.print}>
+              <div> BUILD </div>
+              <span className="buildstepDiv"></span>
+            </button>
+          ) : (
+            <button
+              className="nextbtns"
+              onClick={handleNext}
+              disabled={activeStep === 3}
+            >
+              <div> NEXT </div>
+              <span className="stepDiv"></span>
+            </button>
+          )
         }
         backButton={
           <button

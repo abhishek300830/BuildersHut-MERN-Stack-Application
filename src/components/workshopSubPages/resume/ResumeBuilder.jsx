@@ -190,7 +190,7 @@ const ResumeBuilder = () => {
                   "& .MuiTextField-root": {
                     m: 1,
                     width: "25ch",
-                    background:"white",
+                    background: "white",
 
                     borderRadius: "0.8ch",
                   },
@@ -225,10 +225,10 @@ const ResumeBuilder = () => {
               <VerticalTemplete />
             )}
           </div>
-          <button className="print-btn" onClick={window.print}>
+          {/* <button className="print-btn" onClick={window.print}>
             <span>Print</span>
             <div></div>
-          </button>
+          </button> */}
         </div>
       </section>
     </ResumeStyleDiv>

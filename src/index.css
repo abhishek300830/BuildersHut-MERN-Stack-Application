@@ -18,7 +18,6 @@ body {
     border-color: gray;
     position: relative;
 }
-
 .nextbtns div {
     position: relative;
     z-index: 20;
@@ -30,6 +29,34 @@ body {
     position: absolute;
     width: 95%;
     background-color: rgb(242, 196, 79);
+    /* background-color: #81ee1d; */
+    height: 45%;
+    top: 2%;
+    left: 2%;
+    z-index: 15;
+}
+
+/* build btns */
+.buildbtns {
+    width: 10%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #81ee1d;
+    box-shadow: 2px 2px 3px gray;
+    border-color: gray;
+    position: relative;
+}
+.buildbtns div {
+    position: relative;
+    z-index: 20;
+    padding: 10%;
+    font-weight: bold;
+}
+.buildstepDiv {
+    position: absolute;
+    width: 95%;
+    background-color: #dcf87e;
+    /* background-color: #81ee1d; */
     height: 45%;
     top: 2%;
     left: 2%;
