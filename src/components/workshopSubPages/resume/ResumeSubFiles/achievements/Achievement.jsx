@@ -50,49 +50,47 @@ const Achievement = () => {
           ))}
         </div>
 
-        <Button
-          variant="contained"
-          size="large"
+        <div className="btn-center" style={{textAlign:"center"}}>
+
+        <button
+          // variant="contained"
+          // size="large"
           className="all-btns"
           onClick={addField}
           disabled={maxFields === 0 || val.length === 0}
-          style={{
-            backgroundColor: "GrayText",
-            width: "20%",
-            marginLeft: "30%",
-          }}
         >
           <lord-icon
             src="https://cdn.lordicon.com/ynwbvguu.json"
             trigger="hover"
-            colors="primary:#ffffff"
+            colors="primary:#0c0c0c"
             style={{
-              width: "90%",
-              height: "90%",
+              width: "40px",
+              height: "40px",
               opacity: val.length === 0 ? "0.6" : "1",
             }}
           ></lord-icon>
-        </Button>
+        </button>
 
-        <Button
-          variant="contained"
-          size="large"
-          className="all-btns"
+        <button
+          // variant="contained"
+          // size="large"
+          className="all-btns2"
           onClick={() => setFields([])}
           disabled={fields.length === 0}
-          style={{ backgroundColor: "#e65f5f", width: "20%" }}
         >
           <lord-icon
             src="https://cdn.lordicon.com/akuwjdzh.json"
             trigger="hover"
-            colors={`primary:#ffffff`}
+            colors={`primary:#141414`}
             style={{
-              width: "90%",
-              height: "90%",
+              width: "40px",
+              height: "40px",
               opacity: fields.length === 0 ? "0.6" : "1",
             }}
           ></lord-icon>
-        </Button>
+        </button>
+        </div>
+
       </section>
     </AcheivStyleDiv>
   );

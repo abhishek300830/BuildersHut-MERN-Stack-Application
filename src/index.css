@@ -39,6 +39,56 @@ body {
 
 /* // all icon buttons to add and reset  .all-btns */
 
+.all-btns {
+    border: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    margin-left: 2%;
+    border-radius: 5px;
+    width: 15%;
+    background: #81ee1d;
+    margin-top: 2%;
+    cursor: pointer;
+    position: relative;
+}
+
+.all-btns::before {
+    content: 'a';
+    width: 98%;
+    position: absolute;
+    background-color: #c1f561;
+    height: 50%;
+    left: 1%;
+    top: 3%;
+    color: transparent;
+    border-radius: 5px;
+}
+
+.all-btns2 {
+    position: relative;
+    border: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    margin-left: 2%;
+    border-radius: 5px;
+    width: 15%;
+    background: rgb(248, 35, 35);
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.all-btns2::before {
+    content: 'a';
+    width: 98%;
+    position: absolute;
+    background-color: rgb(250, 69, 69);
+    height: 50%;
+    left: 1%;
+    top: 3%;
+    color: transparent;
+    border-radius: 5px;
+}
+
 @media (max-width:820px) {
     .nextbtns {
         width: 20%;
@@ -47,7 +97,11 @@ body {
 
 @media (max-width:520px) {
     .all-btns {
-        width: 40% !important;
+        width: 30% !important;
+        margin-left: 5% !important;
+    }
+    .all-btns2 {
+        width: 30% !important;
         margin-left: 5% !important;
     }
 }
