@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const LanguageContainer = styled.div`
+  // select language
+  .MuiOutlinedInput-notchedOutline:focus {
+    border-color: red !important;
+  }
   .border {
     margin-bottom: 0%;
     padding: 2%;
@@ -9,19 +13,20 @@ export const LanguageContainer = styled.div`
 
   .languages {
     position: relative;
-    
+
     #demo-multiple-chip-label {
       z-index: 10;
       padding-right: 2%;
-    }
-    .outlined-lang-input {
-      select:focus {
-        border: 1px solid #fcae05 !important;
+      .outlined-lang-input {
+        select:focus {
+          border: 1px solid red !important;
+        }
+        input:focus {
+          border: 1px solid red !important;
+        }
       }
-      input:focus {
-        border: 1px solid #fcae05 !important;
-      }
     }
+
     .lang-label {
       /* position: absolute; */
       /* top: -35%; */
@@ -32,7 +37,6 @@ export const LanguageContainer = styled.div`
       display: flex;
       align-items: center;
       flex-direction: column;
-
     }
   }
   .profileBio {
@@ -57,17 +61,17 @@ export const LanguageContainer = styled.div`
 
   .interestAndHobbies {
     position: relative;
-    h4{
+    h4 {
       background-color: #d74846;
       position: absolute;
       top: -10%;
-      padding:1% 2%;
+      padding: 1% 2%;
       margin-left: 32%;
       border-radius: 8px;
       color: #e7e7e7;
     }
-    .dyn-data{
-            text-align: center;
+    .dyn-data {
+      text-align: center;
     }
     .interest-label {
       /* position: absolute; */
@@ -81,7 +85,7 @@ export const LanguageContainer = styled.div`
       align-items: baseline;
       justify-content: center;
 
-      div.content{
+      div.content {
         /* border: 1px solid red; */
       }
     }
@@ -93,7 +97,6 @@ export const LanguageContainer = styled.div`
       #demo-multiple-chip {
         margin-top: 2%;
       }
-      
     }
     .profileBio {
       margin-top: 5%;
@@ -101,13 +104,13 @@ export const LanguageContainer = styled.div`
     }
     .interestAndHobbies {
       margin-top: 5%;
-      h4{
-      margin-left: 10%;
+      h4 {
+        margin-left: 10%;
       }
       .interest-label {
         align-items: center;
         margin-top: 10%;
-        div.content{
+        div.content {
           font-size: 4.5vw;
         }
       }

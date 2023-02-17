@@ -53,8 +53,7 @@ const Language = () => {
   const theme = useTheme();
   const [personName, setPersonName] = useState([]);
 
-  const {  borderbg, hobbieData, setHobbieData } =
-    useContext(builderContext);
+  const { borderbg, hobbieData, setHobbieData } = useContext(builderContext);
 
   const handleChange = (event) => {
     const {
@@ -82,13 +81,28 @@ const Language = () => {
   return (
     <LanguageContainer>
       <div className="languages border" style={{ borderColor: borderbg }}>
-        <h2 className="lang-label" 
-        // style={{ background: formbg }}
+        <h2
+          className="lang-label"
+          // style={{ background: formbg }}
         >
           Select Languages
-
-          <FormControl sx={{ m: 1, width: 300 }}>
-            <InputLabel id="demo-multiple-chip-label">Languages</InputLabel>
+          <FormControl sx={{ m: 1, width: 300, background: "white" }}>
+            <InputLabel
+              id="demo-multiple-chip-label"
+              style={{
+                fontFamily: "ubuntu,sans-serif",
+              }}
+            >
+              <span
+                style={{
+                  backgroundColor: "white",
+                  padding: "0px 3px",
+                  borderRadius: "5px",
+                }}
+              >
+                Languages
+              </span>
+            </InputLabel>
             <Select
               labelId="demo-multiple-chip-label"
               id="demo-multiple-chip"
@@ -98,7 +112,10 @@ const Language = () => {
               input={
                 <OutlinedInput
                   className="outlined-lang-input"
-                  // style={{ border: "1px solid #fcae05" }}
+                  style={{
+                    border: "1px solid black",
+                    borderTop: "2px solid black",
+                  }}
                   id="select-multiple-chip"
                   label="Languages"
                 />
@@ -125,14 +142,13 @@ const Language = () => {
           </FormControl>
         </h2>
 
-
-      <hr />
+        <hr />
       </div>
 
-
       <div className="profileBio border">
-        <h2 className="profile-label" 
-        // style={{ background: formbg }}
+        <h2
+          className="profile-label"
+          // style={{ background: formbg }}
         >
           Profile Details
         </h2>
@@ -157,18 +173,20 @@ const Language = () => {
             fullWidth
           />
         </Box>
-      <hr />
+        <hr />
       </div>
-        
-      <div className="interestAndHobbies border"
+
+      <div
+        className="interestAndHobbies border"
         style={{ borderColor: borderbg }}
       >
         <h4>NOTE: max 4 fields are allowed.</h4>
-        <h2 className="interest-label" 
-        // style={{ background: formbg }}
+        <h2
+          className="interest-label"
+          // style={{ background: formbg }}
         >
           <div className="content">Interest And Hobbies: </div>
-          
+
           <CssTextField
             inputProps={{ maxLength: 20 }}
             placeholder="Enter your hobbie"
@@ -179,22 +197,18 @@ const Language = () => {
             onKeyDown={handleKeyDown}
             disabled={maxFields === 0}
           />
-
         </h2>
 
-          <div className="dyn-data">
-
-            {hobbieData.map((vals, ind) => (
-              <CssTextField
-                key={ind}
-                disabled
-                value={vals.name}
-                variant="outlined"
-              />
-            ))}
-          </div>
-
-        
+        <div className="dyn-data">
+          {hobbieData.map((vals, ind) => (
+            <CssTextField
+              key={ind}
+              disabled
+              value={vals.name}
+              variant="outlined"
+            />
+          ))}
+        </div>
 
         <br />
 
