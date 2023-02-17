@@ -4,7 +4,7 @@ export const SkillStyleDiv = styled.div`
   // internship type
   #demo-simple-select-label {
     background-color: white;
-    padding: 0px 5px;
+    padding: 0px 5gpx;
     border-radius: 5px;
     margin-top: -6%;
   }
