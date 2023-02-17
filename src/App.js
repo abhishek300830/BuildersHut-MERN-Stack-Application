@@ -19,6 +19,8 @@ import MemeBuilder from "./components/workshopSubPages/meme/MemeBuilder";
 import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuilder";
 
 import About from "./components/about/About";
+import PrintPage from "./components/workshopSubPages/resume/printRoute/PrintPage";
+
 AOS.init();
 
 function App() {
@@ -34,19 +36,20 @@ function App() {
             <Route path="workshop" element={<Workshop />} />
             {/* Builders Routes */}
             <Route path="workshop/profile" element={<ResumeBuilder />} />
+
             <Route path="workshop/aura" element={<AuraBuilder />} />
             <Route path="workshop/chart" element={<ChartBuilder />} />
             <Route path="workshop/colour" element={<ColorBuilder />} />
             <Route path="workshop/image" element={<ImageBuilder />} />
             <Route path="workshop/meme" element={<MemeBuilder />} />
             <Route path="workshop/schedule" element={<ScheduleBuilder />} />
-
             {/* sameer work. dont touch  */}
             <Route path="about" element={<About />} />
-
             {/* page not found route  */}
             <Route path="*" element={<NotFound />} />
           </Route>
+          {/* profile print */}
+          <Route path="workshop/profile/printResume" element={<PrintPage />} />
         </Routes>
       </AppDiv>
     </>

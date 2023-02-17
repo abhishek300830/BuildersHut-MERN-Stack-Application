@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { MainPrintStyleDiv } from "./mainPrintStyle";
+// import "./style.css";
 
 const MainPrintableFile = () => {
   // const onClickHandler2=()=>{
@@ -9,26 +10,23 @@ const MainPrintableFile = () => {
     document.getElementById("show-result").style.display = "none";
   };
 
-  const Print = () => {
-    //console.log('print');
-    let printContents = document.getElementById("section-to-print").innerHTML;
-    let originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-  };
-
-  // useEffect(() => {});j
-  var getQuoteButton = document.getElementById("printBtn");
-  getQuoteButton.addEventListener("click", Print);
-
   return (
+    // <div>
+    //   <div className="vanish-click" onClick={onClickHandler1}></div>
+    //   <HorizontalPrint />
+    //   <button id="printBtn" onClick={window.print}>
+    //     print me
+    //   </button>
+    // </div>
+
     <MainPrintStyleDiv>
       <div className="vanish-click" onClick={onClickHandler1}></div>
       <div id="section-to-print" className="resume-print">
         print your file here -
       </div>
-      <button id="printBtn">print me</button>
+      <button id="printBtn" onClick={window.print}>
+        print me
+      </button>
     </MainPrintStyleDiv>
   );
 };

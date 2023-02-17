@@ -1,9 +1,9 @@
 import { MobileStepper } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import { StepsDiv } from "./stepsStyle";
 
-const Steps = ({ activeStep, setActiveStep ,status}) => {
-
+const Steps = ({ activeStep, setActiveStep, status }) => {
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -11,11 +11,11 @@ const Steps = ({ activeStep, setActiveStep ,status}) => {
   const handleBack = () => {
     if (activeStep > 0) {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    }else{
+    } else {
       status(false);
-      document.getElementById('select-1').style.display="block";
-      document.getElementById('select-2').style.display="none";
-      document.getElementById('subhead-span').style.display="none";
+      document.getElementById("select-1").style.display = "block";
+      document.getElementById("select-2").style.display = "none";
+      document.getElementById("subhead-span").style.display = "none";
     }
   };
   return (
@@ -29,8 +29,10 @@ const Steps = ({ activeStep, setActiveStep ,status}) => {
         className="mobileStepper"
         nextButton={
           activeStep === 3 ? (
-            <button className="buildbtns" onClick={window.print}>
-              <div> BUILD </div>
+            <button className="buildbtns">
+              <Link to={"/workshop/profile/printResume"}>
+                <div> BUILD </div>
+              </Link>
               <span className="buildstepDiv"></span>
             </button>
           ) : (

@@ -41,32 +41,4 @@ export const MainPrintStyleDiv = styled.div`
       opacity: 1;
     }
   }
-  /* @media print {
-    .vanish-click {
-      display: none;
-    }
-    .resume-print {
-      margin-top: 0;
-      left: 0;
-      margin-bottom: 0;
-      margin-right: 0;
-      width: 95%;
-      height: 96%;
-      border: 1px solid black;
-    }
-  }
-
-  @media print {
-    body * {
-      visibility: hidden;
-    }
-    #section-to-print * {
-      visibility: visible;
-    }
-    #section-to-print {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-  } */
 `;
