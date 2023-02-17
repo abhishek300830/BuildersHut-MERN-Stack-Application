@@ -97,41 +97,36 @@ const Skill = () => {
           </div>
           
           <br />
-        <Button
-          variant="contained"
-          size="large"
-          className="all-btns"
-          onClick={addField}
-          disabled={maxFields === 0 || val.length === 0}
-          style={{
-            backgroundColor: "GrayText",
-            width: "20%",
-            marginLeft: "30%",
-          }}
-        >
-          <lord-icon
-              src="https://cdn.lordicon.com/ynwbvguu.json"
-              trigger="hover"
-              colors="primary:#ffffff"
-              style={{width:"90%",height:"90%",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
-          </lord-icon>
-        </Button>
 
-        <Button
-          variant="contained"
-          className="all-btns"
-          size="large"
-          onClick={() => setSkillData([])}
-          disabled={skillData.length === 0}
-          style={{ backgroundColor: "#e65f5f", width: "20%" }}
-        >
-          <lord-icon
-              src="https://cdn.lordicon.com/akuwjdzh.json"
-              trigger="hover"
-              colors={`primary:#ffffff`}
-              style={{width:"90%",height:"90%",opacity:skillData.length===0?"0.6":"1"}}>              
-          </lord-icon>
-        </Button>
+          <div className="btns-center">
+            <button
+              className="all-btns"
+              onClick={addField}
+              disabled={maxFields === 0 || val.length === 0}
+              
+            >
+              <lord-icon
+                  src="https://cdn.lordicon.com/ynwbvguu.json"
+                  trigger="hover"
+                  colors="primary:#ffffff"
+                  style={{width:"50px",height:"50px",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
+              </lord-icon>
+            </button>
+
+            <button
+              className="all-btns"
+              onClick={() => setSkillData([])}
+              disabled={skillData.length === 0}
+            >
+              <lord-icon
+                  src="https://cdn.lordicon.com/akuwjdzh.json"
+                  trigger="hover"
+                  colors={`primary:#ffffff`}
+                  style={{width:"90%",height:"90%",opacity:skillData.length===0?"0.6":"1"}}
+                  >              
+              </lord-icon>
+            </button>
+        </div>
 
       <hr />
       </section>
