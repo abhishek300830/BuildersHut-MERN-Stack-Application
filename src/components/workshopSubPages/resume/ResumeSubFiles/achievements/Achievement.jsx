@@ -9,6 +9,7 @@ const Achievement = () => {
   const { borderbg, fields, setFields } = useContext(builderContext);
   const [val, setVal] = useState("");
 
+  console.log(fields)
   let maxFields = 6 - fields.length; // assign max fields accordingly
 
   const addField = () => {

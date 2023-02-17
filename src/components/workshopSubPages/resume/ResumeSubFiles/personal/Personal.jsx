@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { TextField } from "@mui/material";
 import dayjs from "dayjs";
@@ -7,11 +7,16 @@ import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { PersonalSection } from "./personalStyle";
 import Language from "../languageAndProfile/Language";
 import { CssTextField } from "../../../../orangeTextBox/CssTextField";
+import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
+  
+  const {personalData,setPersonalData,addrData,setAddrData}=useContext(builderContext)
+
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
     setValue(newValue);
+    setPersonalData({...personalData,dob:newValue})
   };
 
   return (
@@ -22,6 +27,8 @@ const Personal = () => {
         <CssTextField
           placeholder="enter your name"
           variant="outlined"
+          value={personalData.name}
+          onChange={(ev)=>(setPersonalData({...personalData,name:ev.target.value}))}
           color="success"
         />
         <label>DOB: </label>
@@ -38,31 +45,41 @@ const Personal = () => {
       <section className="merge-2">
         <div className="address">
           <h2 className="label">Address</h2>
-          <CssTextField placeholder="City" variant="outlined" />
+          <CssTextField
+           placeholder="City" 
+           variant="outlined" 
+           value={addrData.city}
+           onChange={(ev)=>(setAddrData({...addrData,city:ev.target.value}))}
+           />
           <CssTextField
             placeholder="State"
             variant="outlined"
-            color="success"
+            value={addrData.state}
+            onChange={(ev)=>(setAddrData({...addrData,state:ev.target.value}))}
           />
           <CssTextField
             placeholder="PinCode"
             variant="outlined"
-            color="success"
+            value={addrData.pincode}
+            onChange={(ev)=>(setAddrData({...addrData,pincode:ev.target.value}))}
           />
           <CssTextField
             placeholder="Mobile"
             variant="outlined"
-            color="success"
+            value={addrData.mobile}
+            onChange={(ev)=>(setAddrData({...addrData,mobile:ev.target.value}))}
           />
           <CssTextField
             placeholder="Email"
             variant="outlined"
-            color="success"
+            value={addrData.email}
+            onChange={(ev)=>(setAddrData({...addrData,email:ev.target.value}))}
           />
           <CssTextField
             placeholder="linkedin, github, etc."
             variant="outlined"
-            color="success"
+            value={addrData.other}
+            onChange={(ev)=>(setAddrData({...addrData,other:ev.target.value}))}
           />
           <hr />
         </div>
