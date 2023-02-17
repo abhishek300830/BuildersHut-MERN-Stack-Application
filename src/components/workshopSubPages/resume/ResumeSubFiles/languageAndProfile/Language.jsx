@@ -211,50 +211,41 @@ const Language = () => {
         </div>
 
         <br />
+        <div className="btns-center" style={{textAlign:"center"}}>
+          <button
+            className="all-btns"
+            onClick={addField}
+            disabled={maxFields === 0 || val.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#000000"
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: maxFields === 0 || val.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
 
-        <Button
-          variant="contained"
-          className="all-btns"
-          size="large"
-          onClick={addField}
-          disabled={maxFields === 0 || val.length === 0}
-          style={{
-            backgroundColor: "GrayText",
-            width: "20%",
-            marginLeft: "30%",
-          }}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/ynwbvguu.json"
-            trigger="hover"
-            colors="primary:#ffffff"
-            style={{
-              width: "90%",
-              height: "90%",
-              opacity: maxFields === 0 || val.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </Button>
-
-        <Button
-          variant="contained"
-          className="all-btns"
-          size="large"
-          onClick={() => setHobbieData([])}
-          disabled={hobbieData.length === 0}
-          style={{ backgroundColor: "#e65f5f", width: "20%" }}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/akuwjdzh.json"
-            trigger="hover"
-            colors={`primary:#ffffff`}
-            style={{
-              width: "90%",
-              height: "90%",
-              opacity: hobbieData.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </Button>
+          <button
+            className="all-btns2"
+            onClick={() => setHobbieData([])}
+            disabled={hobbieData.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#090909`}
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: hobbieData.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
+        </div>
       </div>
     </LanguageContainer>
   );

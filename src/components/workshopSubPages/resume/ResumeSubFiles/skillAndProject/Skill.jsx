@@ -98,7 +98,7 @@ const Skill = () => {
           
           <br />
 
-          <div className="btns-center">
+          <div className="btns-center" style={{textAlign:"center"}}>
             <button
               className="all-btns"
               onClick={addField}
@@ -108,21 +108,21 @@ const Skill = () => {
               <lord-icon
                   src="https://cdn.lordicon.com/ynwbvguu.json"
                   trigger="hover"
-                  colors="primary:#ffffff"
-                  style={{width:"50px",height:"50px",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
+                  colors="primary:#000000"
+                  style={{width:"40px",height:"40px",opacity:maxFields === 0 || val.length === 0?"0.6":"1"}}>              
               </lord-icon>
             </button>
 
             <button
-              className="all-btns"
+              className="all-btns2"
               onClick={() => setSkillData([])}
               disabled={skillData.length === 0}
             >
               <lord-icon
                   src="https://cdn.lordicon.com/akuwjdzh.json"
                   trigger="hover"
-                  colors={`primary:#ffffff`}
-                  style={{width:"90%",height:"90%",opacity:skillData.length===0?"0.6":"1"}}
+                  colors={`primary:#000000`}
+                  style={{width:"40px",height:"40px",opacity:skillData.length===0?"0.6":"1"}}
                   >              
               </lord-icon>
             </button>
@@ -170,51 +170,41 @@ const Skill = () => {
 
         </div>
         
-       
-
-          
-
         <br />
-        <Button
-          variant="contained"
+
+        <div className="btns-center" style={{textAlign:"center"}}>
+
+        <button
           className="all-btns"
-          size="large"
           onClick={addField2}
           disabled={
             maxField2 === 0 || type.length === 0 || txValue.length === 0
           }
-          style={{
-            backgroundColor: "GrayText",
-            width: "20%",
-            marginLeft: "30%",
-          }}
         >
           <lord-icon
               src="https://cdn.lordicon.com/ynwbvguu.json"
               trigger="hover"
-              colors="primary:#ffffff"
-              style={{width:"90%",height:"90%",
+              colors="primary:#000000"
+              style={{width:"40px",height:"40px",
               opacity:maxField2 === 0 || type.length === 0 || txValue.length === 0?"0.6":"1"}}>              
           </lord-icon>
-        </Button>
+        </button>
 
-        <Button
-          variant="contained"
-          className="all-btns"
-          size="large"
+        <button
+          className="all-btns2"
           onClick={resetAll}
           disabled={
             intershipData.length + projectData.length + othersData.length === 0
           }
-          style={{ backgroundColor: "#e65f5f", width: "20%"}}
         >
           <lord-icon
               src="https://cdn.lordicon.com/akuwjdzh.json"
               trigger="hover"
-              colors={`primary:#ffffff`}
-              style={{width:"90%",height:"90%",opacity:intershipData.length + projectData.length + othersData.length === 0? "0.6":"1"}}>              
+              colors={`primary:#000000`}
+              style={{width:"40px",height:"40px",opacity:intershipData.length + projectData.length + othersData.length === 0? "0.6":"1"}}>              
           </lord-icon>
-        </Button>
+        </button>
+        </div>
 
         <div className="dyn-data">
           {projectData.map((vals, ind) => (
