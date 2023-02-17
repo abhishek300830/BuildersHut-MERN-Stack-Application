@@ -20,6 +20,7 @@ import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuil
 
 import About from "./components/about/About";
 import PrintPage from "./components/workshopSubPages/resume/printRoute/PrintPage";
+import HorizontalPreview from "./components/workshopSubPages/resume/printables/horizontalFile/HorizontalPreview";
 
 AOS.init();
 
@@ -50,6 +51,8 @@ function App() {
           </Route>
           {/* profile print */}
           <Route path="workshop/profile/printResume" element={<PrintPage />} />
+          <Route path="workshop/profile/horizontal" element={<HorizontalPreview />} />
+        
         </Routes>
       </AppDiv>
     </>

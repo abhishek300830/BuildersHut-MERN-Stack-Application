@@ -18,6 +18,7 @@ const Personal = () => {
     setValue(newValue);
     setPersonalData({...personalData,dob:newValue})
   };
+  console.log(personalData)
 
   return (
     <PersonalSection>

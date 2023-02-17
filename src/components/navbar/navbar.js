@@ -37,7 +37,7 @@ const Navbar = () => {
     <NavbarDiv>
       <div className="main">
         <div className="left">
-          <NavLink to="about">
+          <NavLink to="/workshop/profile/horizontal">
             {/* <button className="aboutusBtn">About</button> */}
             <Button variant="contained" color="warning">
               About

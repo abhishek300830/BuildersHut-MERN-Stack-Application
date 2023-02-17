@@ -9,7 +9,7 @@ const BuilderState=(props)=>{
     const [borderbg,setBorderbg]=useState('black');
 
     // personal data 
-    const [personalData,setPersonalData]=useState({name:"",dob:""})
+    const [personalData,setPersonalData]=useState({})
     const [addrData,setAddrData]=useState({
         city:"",
         state:"",
