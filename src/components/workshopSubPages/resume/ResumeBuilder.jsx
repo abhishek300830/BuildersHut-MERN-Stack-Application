@@ -219,6 +219,7 @@ const ResumeBuilder = () => {
         {/* a4 size template  */}
         <div className="right" id="right-part">
           <div className="a4">
+            <h1>Hello printer</h1>
             {alignment === "horizontal" ? (
               <HorizontalTemplete />
             ) : (
