@@ -4,7 +4,7 @@ import { HorizontalConatiner } from "./HorizontalStyle";
 const HorizontalTemplete = () => {
   return (
     <HorizontalConatiner>
-      <div className="print">
+      <div>
         <h3>App ki Naukri paki mubarak ho !</h3>
       </div>
     </HorizontalConatiner>
