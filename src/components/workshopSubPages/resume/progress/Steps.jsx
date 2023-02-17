@@ -2,7 +2,8 @@ import { MobileStepper } from "@mui/material";
 import React from "react";
 import { StepsDiv } from "./stepsStyle";
 
-const Steps = ({ activeStep, setActiveStep }) => {
+const Steps = ({ activeStep, setActiveStep ,status}) => {
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -10,10 +11,11 @@ const Steps = ({ activeStep, setActiveStep }) => {
   const handleBack = () => {
     if (activeStep > 0) {
       setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    } else {
-      document.getElementById("select-1").style.display = "block";
-      document.getElementById("select-2").style.display = "none";
-      document.getElementById("subhead-span").style.display = "none";
+    }else{
+      status(false);
+      document.getElementById('select-1').style.display="block";
+      document.getElementById('select-2').style.display="none";
+      document.getElementById('subhead-span').style.display="none";
     }
   };
   return (

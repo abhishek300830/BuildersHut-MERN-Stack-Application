@@ -208,6 +208,16 @@ export const ResumeStyleDiv = styled.div`
         left: 0;
         background-color: transparent;
       }
+
+      .scroll-x-y {
+        border-top: 1px solid black;
+        position: absolute;
+        border-top: 2px solid #565555;
+        z-index: 12;
+        width: 100%;
+        bottom: 0%;
+        left: 0%;
+      }
     }
 
     div.left::before {
@@ -223,14 +233,7 @@ export const ResumeStyleDiv = styled.div`
       background-color: #958e8c;
     }
 
-    .scroll-x-y {
-      border-top: 2px solid #565555;
-      position: fixed;
-      z-index: 12;
-      width: 58%;
-      bottom: 3%;
-      left: 1.2%;
-    }
+    
   }
 
   div.right {
@@ -256,14 +259,11 @@ export const ResumeStyleDiv = styled.div`
   }
 
   /* media queries ####### */
-  @media (max-width: 1280px) {
+  @media (max-width: 1280px) { 
     section.rMain div.right div.a4 {
       margin-top: 25px;
     }
     section.rMain {
-      .scroll-x-y {
-        bottom: 9%;
-      }
 
       div.user-input {
         .select-temp {
@@ -307,8 +307,8 @@ export const ResumeStyleDiv = styled.div`
       button.flip {
         display: block;
         position: fixed;
-        right: 3%;
-        margin-top: 1%;
+        left: 3%;
+        top: 8%;
         font-size: 2.5vw;
         padding: 0% 2%;
         z-index: 10;
@@ -329,11 +329,6 @@ export const ResumeStyleDiv = styled.div`
         div.user-input {
           width: 100%;
           height: 100%;
-          .scroll-x-y {
-            width: 96%;
-            bottom: 1.4%;
-            left: 1.5%;
-          }
         }
         div.subheads {
           width: 99%;
@@ -438,7 +433,7 @@ export const ResumeStyleDiv = styled.div`
         margin-left: 0;
         border-top: 40px solid #565555;
         .left-temp {
-          height: 90%;
+          height: 93%;
         }
         div.user-input {
           width: 100%;
@@ -469,8 +464,6 @@ export const ResumeStyleDiv = styled.div`
 
       .scroll-x-y {
         border-top: 2px solid #565555;
-        width: 95% !important;
-        left: 2% !important;
       }
 
       div.left::before {

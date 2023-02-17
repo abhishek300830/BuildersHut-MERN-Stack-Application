@@ -23,6 +23,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
+import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
 
 const ResumeBuilder = () => {
   const { headings } = useContext(builderContext);
@@ -61,7 +62,9 @@ const ResumeBuilder = () => {
     document.getElementById("pp-bg").style.display = "none";
   };
 
+  const [makeVisible, setMakeVisible] = useState(false);
   const goNextHandler = () => {
+    setMakeVisible(true);
     document.getElementById("select-1").style.display = "none";
     document.getElementById("select-2").style.display = "block";
     document.getElementById("subhead-span").style.display = "inline";
@@ -73,6 +76,10 @@ const ResumeBuilder = () => {
 
   const onAlignmentChange = (val) => {
     setAlignment(val.target.value);
+  };
+
+  const onClickA4 = () => {
+    document.getElementById("show-result").style.display = "block";
   };
 
   return (
@@ -191,7 +198,6 @@ const ResumeBuilder = () => {
                     m: 1,
                     width: "25ch",
                     background: "white",
-
                     borderRadius: "0.8ch",
                   },
                   "& .MuiButton-root": { m: 1, width: "30ch", height: "6.5ch" },
@@ -204,22 +210,24 @@ const ResumeBuilder = () => {
                 {/* Personaldetails section  */}
                 {pages[activeStep]}
                 {/* Personaldetails section  */}
-
-                <div className="scroll-x-y">
-                  <Steps
-                    activeStep={activeStep}
-                    setActiveStep={setActiveStep}
-                  />
-                </div>
               </Box>
             </div>
           </div>
+
+          {makeVisible && (
+            <div className="scroll-x-y">
+              <Steps
+                activeStep={activeStep}
+                setActiveStep={setActiveStep}
+                status={setMakeVisible}
+              />
+            </div>
+          )}
         </div>
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-          <div className="a4">
-            <h1>Hello printer</h1>
+          <div className="a4" onClick={onClickA4}>
             {alignment === "horizontal" ? (
               <HorizontalTemplete />
             ) : (
@@ -232,6 +240,11 @@ const ResumeBuilder = () => {
           </button> */}
         </div>
       </section>
+
+      {/* show result  */}
+      <div id="show-result" style={{ display: "none" }}>
+        <MainPrintableFile />
+      </div>
     </ResumeStyleDiv>
   );
 };
