@@ -39,10 +39,10 @@ const names = [
   "Italian",
 ];
 
-function getStyles(name, personName, theme) {
+function getStyles(name, lang, theme) {
   return {
     fontWeight:
-      personName.indexOf(name) === -1
+      lang.indexOf(name) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
   };
@@ -50,23 +50,22 @@ function getStyles(name, personName, theme) {
 
 const Language = () => {
   const theme = useTheme();
-  const [personName, setPersonName] = useState([]);
 
-  const { borderbg, hobbieData, setHobbieData } = useContext(builderContext);
+  const { borderbg, hobbieData, setHobbieData, profileInfo,setProfileInfo,languages,setLanguages } = useContext(builderContext);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
+    setLanguages(
       typeof value === "string" ? value.split(",") : value
-    );
+    )
   };
 
   // interest and hobbies
   const [val, setVal] = useState("");
   let maxFields = 4 - hobbieData.length;
+
   const addField = () => {
     setHobbieData([...hobbieData, { name: val }]);
     setVal("");
@@ -106,7 +105,7 @@ const Language = () => {
               labelId="demo-multiple-chip-label"
               id="demo-multiple-chip"
               multiple
-              value={personName}
+              value={languages}
               onChange={handleChange}
               input={
                 <OutlinedInput
@@ -132,7 +131,7 @@ const Language = () => {
                 <MenuItem
                   key={name}
                   value={name}
-                  style={getStyles(name, personName, theme)}
+                  style={getStyles(name, languages, theme)}
                 >
                   {name}
                 </MenuItem>
@@ -168,7 +167,9 @@ const Language = () => {
             rows={4}
             style={{ width: "98%" }}
             variant="outlined"
-            defaultValue="Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python."
+            value={profileInfo}
+            onChange={(ev)=>setProfileInfo(ev.target.value)}
+            // defaultValue="Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python."
             fullWidth
           />
         </Box>

@@ -9,7 +9,7 @@ const BuilderState=(props)=>{
     const [borderbg,setBorderbg]=useState('black');
 
     // personal data 
-    const [personalData,setPersonalData]=useState({})
+    const [personalData,setPersonalData]=useState({name:"",dob:""})
     const [addrData,setAddrData]=useState({
         city:"",
         state:"",
@@ -18,6 +18,10 @@ const BuilderState=(props)=>{
         email:"",
         other:""
     })
+
+    //  languages and bio 
+    const [languages,setLanguages]=useState([]);
+    const [profileInfo,setProfileInfo]=useState("Ex. I have core knowledge of Front-End and Back-End Web Development and working on MERN Stack Development and Data Structure and algorithms in java and Python.")
 
     // acheivement state (all fields data)
     const [fields,setFields]=useState([]);
@@ -61,6 +65,8 @@ const BuilderState=(props)=>{
             fields,setFields,
             personalData,setPersonalData,
             addrData,setAddrData,
+            languages,setLanguages,
+            profileInfo,setProfileInfo,
             skillData,setSkillData,
             projectData,setProjectData,
             intershipData,setIntershipData,

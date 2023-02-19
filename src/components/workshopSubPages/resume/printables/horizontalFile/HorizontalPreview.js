@@ -3,140 +3,101 @@ import { NavLink } from 'react-router-dom';
 import builderContext from '../../../../../context/builderContext'
 import { CssTextField } from '../../../../orangeTextBox/CssTextField';
 import { HorizontalPrevStyleDiv } from './horizontalStyle'
+import idphoto from '../../../../../images/left out/idcard.jpg'
 
 const HorizontalPreview = () => {
 
-    const {fields,personalData,addrData,skillData,projectData,intershipData,othersData, hobbieData, qualifData}=useContext(builderContext);
+    const {fields,personalData,addrData,skillData,projectData,intershipData,othersData, hobbieData, qualifData,profileInfo,setProfileInfo,languages,setLanguages}=useContext(builderContext);
 
-    console.log(personalData)
   return (
     <HorizontalPrevStyleDiv>
         <div class="Main">
-            <NavLink to="/workshop/profile">
+            {/* <NavLink to="/workshop/profile">
                 click
-            </NavLink>
+            </NavLink> */}
         <div class="page-y">
             <div class="horizontalPage">
-                <h1>Personal data</h1>
-                <section>
-                    <div>{personalData.name}</div>
-                    <CssTextField
-                            variant="outlined"
-                            disabled
-                            type="text"
-                            value={
-                            personalData.dob.$d.getDate() +
-                            " / " +
-                            personalData.dob.$d.getMonth() +
-                            " / " +
-                            personalData.dob.$d.getFullYear()
-                            }
-                         />
-                </section>
 
-                <h1>address Data</h1>
-                <section>
-                    <div>{addrData.city}</div>
-                    <div>{addrData.state}</div>
-                    <div>{addrData.pincode}</div>
-                    <div>{addrData.mobile}</div>
-                    <div>{addrData.email}</div>
-                    <div>{addrData.other}</div>
-                </section>
+                {/* left section of resume  */}
+                <div className="left-section">
 
-                <h2>hobbies</h2>
-                {hobbieData.map((val,indx)=>(
-                        <div key={indx}>{val.name}</div>
-                ))}
+                    <div className="addrs">
+                        <img src={idphoto} alt="photo" />
+                        
+                        <h3>Address</h3>
+                        <p>{addrData.city}, {addrData.state}, {addrData.pincode}</p>
 
-                <h1>qualification</h1>
-                <section>
-                    <div>{qualifData.year1}</div>
-                    <div>{qualifData.perc1}</div>
-                    <div>{qualifData.inst1}</div>
-                    <hr />
-                    <div>{qualifData.year2}</div>
-                    <div>{qualifData.perc2}</div>
-                    <div>{qualifData.inst2}</div>
-                    <hr />
-                    <div>{qualifData.year3}</div>
-                    <div>{qualifData.perc3}</div>
-                    <div>{qualifData.inst3}</div>
-                </section>
+                        <h3>Phone</h3>
+                        <p>{addrData.mobile}</p>
 
-                <h2>skills</h2>
-                {skillData.map((val,indx)=>(
-                    <section key={indx}>
-                        <div key={indx}>{val.name}</div>
+                        <h3>Email</h3>
+                        <p>{addrData.email}</p>
+
+                    </div>
+                    
+                    <section className="rest">
+                        <div className="skills" style={{listStyleType:"none"}}>
+                            <h2>SKILLS</h2>
+                            {skillData.map((val,indx)=>(
+                                <li key={indx}>{val.name}</li>
+                            ))}
+                        </div>
+                        <div className="hobbies" style={{listStyleType:"none"}}>
+                            <h2>INTEREST & HOBBIES</h2>
+                            {hobbieData.map((val,indx)=>(
+                                <li key={indx}>{val.name} </li>
+                            ))}
+                        </div>
                     </section>
-                ))}
 
-                <h2>acheivements</h2>
-                {fields.map((val,indx)=>(
-                    <div key={indx}>{val.name}</div>
-                ))}
 
-                <h2>Projects - interships</h2>
-                <h3>projects</h3>
-                {projectData.map((val,indx)=>(
-                    <section key={indx}>
-                        <div>{val.type}</div>
-                        <div>{val.name}</div>
-                        <CssTextField
-                            variant="outlined"
-                            disabled
-                            type="text"
-                            value={
-                            val.date.$d.getDate() +
-                            " / " +
-                            val.date.$d.getMonth() +
-                            " / " +
-                            val.date.$d.getFullYear()
-                            }
-                         />
-                    </section>  
-                ))}
-              
-                <hr />
-                <h3>Interships</h3>
-                {intershipData.map((val,indx)=>(
-                    <section key={indx}>
-                        <div>{val.type}</div>
-                        <div>{val.name}</div>
-                        <CssTextField
-                            variant="outlined"
-                            disabled
-                            type="text"
-                            value={
-                            val.date.$d.getDate() +
-                            " / " +
-                            val.date.$d.getMonth() +
-                            " / " +
-                            val.date.$d.getFullYear()
-                            }
-                         />
-                    </section>  
-                ))}
-                <hr />
-                <h3>others</h3>
-                {othersData.map((val,indx)=>(
-                    <section key={indx}>
-                        <div>{val.type}</div>
-                        <div>{val.name}</div>
-                        <CssTextField
-                            variant="outlined"
-                            disabled
-                            type="text"
-                            value={
-                            val.date.$d.getDate() +
-                            " / " +
-                            val.date.$d.getMonth() +
-                            " / " +
-                            val.date.$d.getFullYear()
-                            }
-                         />
-                    </section>  
-                ))}
+                </div>
+
+                {/* right sectio nof resume  */}
+                <div className="right-section">
+                    <div className="bio">
+                        <h1>{personalData.name}</h1>
+                        <h3>PROFILE</h3>
+                        <p>{profileInfo}</p>
+                        <h3>PERSONAL DETAILS</h3>
+
+                        <div>
+                            <b>D.O.B  - </b>
+                            {personalData.dob}
+                             <br />
+                            <b>Languages Known - </b>  
+                            {languages.map((val,indx)=>(
+                                <span key={indx}>{val} | </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="qualifications">
+                        <h3>QUALIFICATIONS</h3>
+                        
+                        
+
+                    </div>
+
+                    <div className="projects">
+                        <h3>PROEJCTS AND INTERNSHIPS</h3>
+                        
+                    </div>
+
+                    <div className="acheivements">
+                        <h3>CERTIFICATION & ACHIEVEMENTS</h3>
+                        {fields.map((val,indx)=>(
+                            <li key={indx}>{val.name}</li>
+                        ))}
+                    </div>
+
+                    <div className="extra">
+                        <h3>EXTRA CURRICULAR ACTIVITIES</h3>
+                    </div>
+
+
+
+                </div>
 
             </div>
         </div>

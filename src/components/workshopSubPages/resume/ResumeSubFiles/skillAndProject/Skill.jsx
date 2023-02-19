@@ -36,9 +36,10 @@ const Skill = () => {
 
   const [dateVal, setDateValue] = useState(dayjs("2014-08-18"));
   const handleChange2 = (newValue) => {
-    // console.log(newValue);
+    var tempDate=newValue.$d.getDate()+" / "+(newValue.$d.getMonth()+1)+" / " +newValue.$d.getFullYear();
     setDateValue(newValue);
   };
+
 
   var maxField2 =
     4 - (projectData.length + intershipData.length + othersData.length);

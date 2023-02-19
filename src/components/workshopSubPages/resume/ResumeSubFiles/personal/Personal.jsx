@@ -15,10 +15,10 @@ const Personal = () => {
 
   const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
   const handleChange = (newValue) => {
-    setValue(newValue);
-    setPersonalData({...personalData,dob:newValue})
+    var tempDate=newValue.$d.getDate()+" / "+(newValue.$d.getMonth()+1)+" / " +newValue.$d.getFullYear();
+    setValue(tempDate)
+    setPersonalData({...personalData,dob:tempDate})
   };
-  console.log(personalData)
 
   return (
     <PersonalSection>
