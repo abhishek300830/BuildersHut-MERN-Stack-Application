@@ -100,46 +100,8 @@ const HorizontalPreview = () => {
 
                 </div>
 
-            <hr />
-            <h3>Interships</h3>
-            {intershipData.map((val, indx) => (
-              <section key={indx}>
-                <div>{val.type}</div>
-                <div>{val.name}</div>
-                <CssTextField
-                  variant="outlined"
-                  disabled
-                  type="text"
-                  value={
-                    val.date.$d.getDate() +
-                    " / " +
-                    val.date.$d.getMonth() +
-                    " / " +
-                    val.date.$d.getFullYear()
-                  }
-                />
-              </section>
-            ))}
-            <hr />
-            <h3>others</h3>
-            {othersData.map((val, indx) => (
-              <section key={indx}>
-                <div>{val.type}</div>
-                <div>{val.name}</div>
-                <CssTextField
-                  variant="outlined"
-                  disabled
-                  type="text"
-                  value={
-                    val.date.$d.getDate() +
-                    " / " +
-                    val.date.$d.getMonth() +
-                    " / " +
-                    val.date.$d.getFullYear()
-                  }
-                />
-              </section>
-            ))}
+            
+            
           </div>
         </div>
       </div>
