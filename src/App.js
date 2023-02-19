@@ -19,8 +19,8 @@ import MemeBuilder from "./components/workshopSubPages/meme/MemeBuilder";
 import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuilder";
 
 import About from "./components/about/About";
-import PrintPage from "./components/workshopSubPages/resume/printRoute/PrintPage";
 import HorizontalPreview from "./components/workshopSubPages/resume/printables/horizontalFile/HorizontalPreview";
+import VerticalResume from "./components/workshopSubPages/resume/printables/VerticalDesign/VerticalResume";
 
 AOS.init();
 
@@ -50,9 +50,15 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* profile print */}
-          <Route path="workshop/profile/printResume" element={<PrintPage />} />
-          <Route path="workshop/profile/horizontal" element={<HorizontalPreview />} />
-        
+          {/* <Route path="workshop/profile/printResume" element={<PrintPage />} /> */}
+          <Route
+            path="workshop/profile/printResume"
+            element={<VerticalResume />}
+          />
+          <Route
+            path="workshop/profile/horizontal"
+            element={<HorizontalPreview />}
+          />
         </Routes>
       </AppDiv>
     </>
