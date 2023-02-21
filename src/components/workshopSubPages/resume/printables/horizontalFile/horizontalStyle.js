@@ -33,28 +33,48 @@ export const HorizontalPrevStyleDiv=styled.div`
                         width: 80%;
                         margin-left: 10%;
                     }
-                    p{
-                        margin-top: -4%;
+
+                    div{
+                        display: grid;
+                        grid-template-columns: 15% 85%;
+                        align-items: center;
+                        margin-top: -3%;
+
+                        p{
+                            margin-top: -4%;
+                        }
+
                     }
                 }
                 .rest{
                     margin-top: 4%;
 
                     .skills{
-                        background-color: #eae7e7;
-                        padding: 2%;
                         min-height: 75mm;
                         max-height: 75mm;
-
                     }
                     .hobbies{
-                        background-color: #eae7e7;
-                        padding: 2%; 
                         min-height: 50mm;
                         max-height: 50mm;
                         margin-top: 2%;
-
                     }
+                    .hobbies,.skills{
+                        background-color: #eae7e7;
+                        padding: 2%; 
+                        div{
+                            display: grid;
+                            grid-template-columns: auto auto;
+                            span{
+                                color: white;
+                                background-color: #272727;
+                                margin-bottom: 2%;
+                                padding: 2%;
+                                margin-right: 2%;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+
                 }
 
             }
@@ -66,12 +86,16 @@ export const HorizontalPrevStyleDiv=styled.div`
                     padding: 1%;
                     min-height: 75mm;
                     max-height: 75mm;
-
-
+                    color: #363535;
                     p{
                         margin-top: -3%;
-                        color: #4b4b4b;
                     }   
+                    div{
+                        display: inline;
+                    }
+                    h3,h1,b{
+                        color: black;
+                    }
                    
                 }
                 .qualifications{
@@ -79,12 +103,35 @@ export const HorizontalPrevStyleDiv=styled.div`
                     padding: 0% 1%;
                     min-height: 65mm;
                     max-height: 65mm;
+                    color: #4b4b4b;
+                    h3{
+                        color: black;
+                    }
+                    table{
+
+                        tr{
+                            border: 1px solid black;
+    
+                        }
+                        td{
+                        /* border: 1px solid black; */
+                            
+                        }
+                    }
                 }
                 .projects{
                     border: 1px solid transparent;
                     padding: 0% 1%;
                     min-height: 60mm;
                     max-height: 60mm;
+                    color: #4b4b4b;
+
+                    li{
+                        margin-left: 5%;
+                    }
+                    h3{
+                        color: black;
+                    }
                 }
                 .acheivements{
                     border: 1px solid transparent;
@@ -105,7 +152,14 @@ export const HorizontalPrevStyleDiv=styled.div`
                     padding:0% 1%;
                     min-height: 40mm;
                     max-height: 40mm;
+                    color: #4b4b4b;
                     margin-top: 1%;
+                    li{
+                        margin-left: 5%;
+                    }
+                    h3{
+                        color: black;
+                    }
 
                 }
             }

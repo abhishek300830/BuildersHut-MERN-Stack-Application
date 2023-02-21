@@ -33,10 +33,11 @@ const Skill = () => {
 
   const [type, setType] = useState("");
   const [txValue, setTxValue] = useState("");
+  const month = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+
 
   const [dateVal, setDateValue] = useState(dayjs("2014-08-18"));
   const handleChange2 = (newValue) => {
-    var tempDate=newValue.$d.getDate()+" / "+(newValue.$d.getMonth()+1)+" / " +newValue.$d.getFullYear();
     setDateValue(newValue);
   };
 
@@ -45,16 +46,17 @@ const Skill = () => {
     4 - (projectData.length + intershipData.length + othersData.length);
 
   const addField2 = () => {
+    var tempDate=month[dateVal.$d.getMonth()]+" "+dateVal.$d.getDate()+", "+dateVal.$d.getFullYear();
+
     if (type === "Project") {
-      // console.log("dateval", dateVal);
-      setProjectData([...projectData, { type, name: txValue, date: dateVal }]);
+      setProjectData([...projectData, { type, name: txValue, date: tempDate }]);
     } else if (type === "Internship") {
       setIntershipData([
         ...intershipData,
-        { type, name: txValue, date: dateVal },
+        { type, name: txValue, date: tempDate },
       ]);
     } else {
-      setOthersData([...othersData, { type, name: txValue, date: dateVal }]);
+      setOthersData([...othersData, { type, name: txValue, date: tempDate }]);
     }
     setType("");
     setTxValue("");
@@ -174,6 +176,7 @@ const Skill = () => {
             placeholder="name"
             variant="outlined"
             value={txValue}
+            inputProps={{ maxLength: 60 }}
             onChange={(ev) => setTxValue(ev.target.value)}
           />
           <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -249,13 +252,7 @@ const Skill = () => {
                 variant="outlined"
                 disabled
                 type="text"
-                value={
-                  vals.date.$d.getDate() +
-                  " / " +
-                  vals.date.$d.getMonth() +
-                  " / " +
-                  vals.date.$d.getFullYear()
-                }
+                value={vals.date}
               />
               <br />
             </div>
@@ -269,13 +266,7 @@ const Skill = () => {
               <CssTextField
                 disabled
                 variant="outlined"
-                value={
-                  vals.date.$d.getDate() +
-                  " / " +
-                  vals.date.$d.getMonth() +
-                  " / " +
-                  vals.date.$d.getFullYear()
-                }
+                value={vals.date }
               />
               <br />
             </div>
@@ -289,13 +280,7 @@ const Skill = () => {
               <CssTextField
                 variant="outlined"
                 disabled
-                value={
-                  vals.date.$d.getDate() +
-                  " / " +
-                  vals.date.$d.getMonth() +
-                  " / " +
-                  vals.date.$d.getFullYear()
-                }
+                value={vals.date}
               />
               <br />
             </div>

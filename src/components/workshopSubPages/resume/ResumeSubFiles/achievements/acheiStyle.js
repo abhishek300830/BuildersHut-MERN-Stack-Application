@@ -2,12 +2,12 @@ import styled from "styled-components";
 // color: #454343ff;
 // background-color: #e0dfdf;
 export const AcheivStyleDiv=styled.div`
+    background-color: #e0dfdf;
     section.acheiv{
         padding:5% 2%;
         margin-top: 5%;
         position: relative;
         border-radius: 5px;
-        background-color: #e0dfdf;
         
         h4{
             background-color: #d74846;
@@ -18,9 +18,18 @@ export const AcheivStyleDiv=styled.div`
             margin-left: 33%;
             margin-top: -2%;
         }
+        h3{
+            text-align: center;
+            color: #454343ff;
+            margin-top: -5%;
+        }
         .fields{
             margin-top: 3%;
             text-align: center;
+        }
+        .fields2{
+            margin-top:8%;
+
         }
 
         .dyn-data{
@@ -66,6 +75,9 @@ export const AcheivStyleDiv=styled.div`
             }
             .fields{
                 margin-top: 10%;
+            }
+            .fields2{
+                margin-top:14%;
             }
 
             /* h1{

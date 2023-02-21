@@ -13,10 +13,12 @@ const Personal = () => {
   
   const {personalData,setPersonalData,addrData,setAddrData}=useContext(builderContext)
 
-  const [value, setValue] = useState(dayjs("2014-08-18T21:11:54"));
+  const [value, setValue] = useState("Aug 5, 2022");
+  const month = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+
   const handleChange = (newValue) => {
-    var tempDate=newValue.$d.getDate()+" / "+(newValue.$d.getMonth()+1)+" / " +newValue.$d.getFullYear();
-    setValue(tempDate)
+    var tempDate=month[newValue.$d.getMonth()]+" "+newValue.$d.getDate()+", "+newValue.$d.getFullYear();
+    setValue(newValue)
     setPersonalData({...personalData,dob:tempDate})
   };
 

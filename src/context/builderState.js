@@ -25,6 +25,9 @@ const BuilderState=(props)=>{
 
     // acheivement state (all fields data)
     const [fields,setFields]=useState([]);
+
+    // extra curricular data
+    const [extracurr, setExtracurr] = useState([])
     
     // skills state (all fields data)
     const [skillData,setSkillData]=useState([]);
@@ -74,6 +77,7 @@ const BuilderState=(props)=>{
             hobbieData,setHobbieData,
             qualifData,setQualifData,
             headings,
+            extracurr, setExtracurr
         }}
         >
            { props.children }

@@ -5,17 +5,21 @@ import { CssTextField } from '../../../../orangeTextBox/CssTextField';
 import { HorizontalPrevStyleDiv } from './horizontalStyle'
 import idphoto from '../../../../../images/left out/idcard.jpg'
 
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
 const HorizontalPreview = () => {
 
 
-    const {fields,personalData,addrData,skillData,projectData,intershipData,othersData, hobbieData, qualifData,profileInfo,setProfileInfo,languages,setLanguages}=useContext(builderContext);
+    const {fields,personalData,addrData,skillData,projectData,intershipData,othersData, hobbieData, qualifData,profileInfo,setProfileInfo,languages,setLanguages,extracurr, setExtracurr}=useContext(builderContext);
 
   return (
     <HorizontalPrevStyleDiv>
         <div class="Main">
-            {/* <NavLink to="/workshop/profile">
+            <NavLink to="/workshop/profile">
                 click
-            </NavLink> */}
+            </NavLink>
         <div class="page-y">
             <div class="horizontalPage">
 
@@ -25,29 +29,45 @@ const HorizontalPreview = () => {
                     <div className="addrs">
                         <img src={idphoto} alt="photo" />
                         
-                        <h3>Address</h3>
-                        <p>{addrData.city}, {addrData.state}, {addrData.pincode}</p>
+                        <div>
+                            <LocationOnIcon fontSize='large'/>
+                            <h3>Address</h3>
+                            <span></span>
+                            <p> {addrData.city}, {addrData.state}, {addrData.pincode}</p>
+                        </div>
 
-                        <h3>Phone</h3>
-                        <p>{addrData.mobile}</p>
+                        <div>
+                            <LocalPhoneIcon fontSize='large'/>
+                            <h3>Phone</h3>
+                            <span></span>
+                            <p>{addrData.mobile}</p>
+                        </div>
 
-                        <h3>Email</h3>
-                        <p>{addrData.email}</p>
+                        <div>
+                            <EmailIcon fontSize='large'/>
+                            <h3>Email</h3>
+                            <span></span>
+                            <p>{addrData.email}</p>
+                        </div>
 
                     </div>
                     
                     <section className="rest">
-                        <div className="skills" style={{listStyleType:"none"}}>
+                        <div className="skills">
                             <h2>SKILLS</h2>
-                            {skillData.map((val,indx)=>(
-                                <li key={indx}>{val.name}</li>
-                            ))}
+                            <div>
+                                {skillData.map((val,indx)=>(
+                                    <span key={indx}>{val.name}</span>
+                                ))}
+                            </div>
                         </div>
-                        <div className="hobbies" style={{listStyleType:"none"}}>
+                        <div className="hobbies">
                             <h2>INTEREST & HOBBIES</h2>
-                            {hobbieData.map((val,indx)=>(
-                                <li key={indx}>{val.name} </li>
-                            ))}
+                            <div>
+                                {hobbieData.map((val,indx)=>(
+                                    <span key={indx}>{val.name} </span>
+                                ))}
+                            </div>
                         </div>
                     </section>
 
@@ -56,32 +76,105 @@ const HorizontalPreview = () => {
 
                 {/* right sectio nof resume  */}
                 <div className="right-section">
+
                     <div className="bio">
                         <h1>{personalData.name}</h1>
                         <h3>PROFILE</h3>
                         <p>{profileInfo}</p>
                         <h3>PERSONAL DETAILS</h3>
+                        <b>D.O.B  - </b>
+                        {personalData.dob}
+                            <br />
+                        <b>Languages Known - </b>  
 
                         <div>
-                            <b>D.O.B  - </b>
-                            {personalData.dob}
-                             <br />
-                            <b>Languages Known - </b>  
                             {languages.map((val,indx)=>(
-                                <span key={indx}>{val} | </span>
+                                <span key={indx}>{val} <b> | </b> </span>
                             ))}
                         </div>
                     </div>
 
                     <div className="qualifications">
                         <h3>QUALIFICATIONS</h3>
-                        
-                        
+
+                        <table>
+                            <tr>
+                                <td><b>Graduation</b></td>
+                                <td>in</td>
+                                <td>BE - CSE </td>
+                                <td>- {qualifData.year1}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>from </td>
+                                <td>{qualifData.inst1}</td>
+                            </tr>
+                            <br />
+                            <tr>
+                                <td><b>Intermediate</b> </td>
+                                <td>in</td>
+                                <td>Science </td>
+                                <td>- {qualifData.year2}</td>
+                            </tr>
+                            
+                            <tr>
+                                <td></td>
+                                <td>from</td>
+                                <td>{qualifData.inst3}</td>
+                            </tr>
+                            <br />
+                            <tr>
+                                <td><b>Matriculation</b></td>
+                                <td></td>
+                                <td></td>
+                                <td>- {qualifData.year3}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>from</td>
+                                <td>{qualifData.inst3}</td>
+                            </tr>
+                        </table>
 
                     </div>
 
                     <div className="projects">
-                        <h3>PROEJCTS AND INTERNSHIPS</h3>
+                        <h3>PROJECTS AND INTERNSHIPS</h3>
+                        {projectData.length >0 && 
+                        <>
+                            <b>Projects</b>
+                            {projectData.map((val,indx)=>(
+                                <li key={indx}>
+                                    {val.name} - 
+                                    on {val.date}
+                                </li>  
+                            ))}                        
+                        </>
+                        }
+                        {intershipData.length >0 && 
+                        <>
+                            <b>Interships</b>
+                            {intershipData.map((val,indx)=>(
+                                <li key={indx}>
+                                    {val.name} - 
+                                    on {val.date}
+                                </li>  
+                            ))}                        
+                        </>
+                        }
+                        {othersData.length >0 && 
+                        <>
+                            <b>Others</b>
+                            {othersData.map((val,indx)=>(
+                                <li key={indx}>
+                                    {val.name} - 
+                                    on {val.date}
+                                </li>  
+                            ))}                        
+                        </>
+                        }
+                        
+
                         
                     </div>
 
@@ -94,6 +187,9 @@ const HorizontalPreview = () => {
 
                     <div className="extra">
                         <h3>EXTRA CURRICULAR ACTIVITIES</h3>
+                        {extracurr.map((val,indx)=>(
+                            <li key={indx}>{val.name}</li>
+                        ))}
                     </div>
 
 
