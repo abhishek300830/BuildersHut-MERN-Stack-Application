@@ -11,7 +11,7 @@ export const VerticalResumeConatainer = styled.div`
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
     width: 210mm;
-    min-height: 297mm;
+    max-height: 297mm;
     /* padding: 5mm; */
     margin: 10mm auto;
     border: 1px #d3d3d3 solid;
@@ -23,10 +23,11 @@ export const VerticalResumeConatainer = styled.div`
     // this height is main cause of page shift
     /* min-height: 257mm; */
     min-height: 296mm;
+    max-height: 296mm;
     /* border: 1px black solid; */
     display: grid;
     /* grid-template-rows: 16% 84%; */
-    grid-template-rows: 20% auto;
+    grid-template-rows: 18% auto;
 
     .upper-part {
       display: grid;
@@ -53,7 +54,8 @@ export const VerticalResumeConatainer = styled.div`
         padding: 0px 20px;
         .firstName {
           margin: 0;
-          margin-top: 35px;
+          /* margin-top: 35px; */
+          margin-top: 50px;
           font-size: 30px;
           letter-spacing: 3px;
 
@@ -99,7 +101,7 @@ export const VerticalResumeConatainer = styled.div`
       font-size: 18px;
       .lower-left {
         background-color: #ffffff;
-        padding: 20px;
+        padding: 18px;
         .subpart1 {
           .bio {
             line-height: 25px;
@@ -108,31 +110,41 @@ export const VerticalResumeConatainer = styled.div`
         .subpart2 {
           display: block;
           .subheading {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
           }
           .educationTable {
             .row {
-              margin-bottom: 10px;
+              .qualification {
+                font-weight: bold;
+              }
+            }
+            .schoolName {
+              font-size: 16px;
+              margin: 0;
+              margin-left: 20px;
+              margin-bottom: 8px;
             }
           }
         }
         .subpart3 {
+          min-height: 150px;
           margin-top: 10px;
           .list {
-            line-height: 30px;
+            line-height: 25px;
           }
         }
         .subpart4 {
+          min-height: 150px;
           .list {
-            line-height: 30px;
+            line-height: 25px;
           }
         }
         .subpart5 {
           .subheading {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
           }
           .personalDetails {
-            margin-top: 10px;
+            margin-top: 8px;
           }
         }
         // common for all subparts
@@ -161,6 +173,7 @@ export const VerticalResumeConatainer = styled.div`
         background-color: #f8f8f8;
         padding: 20px;
         .right-subpart1 {
+          min-height: 150px;
           margin-top: 10px;
           margin-bottom: 10px;
           .trainingDetails {
@@ -173,6 +186,8 @@ export const VerticalResumeConatainer = styled.div`
           }
         }
         .right-subpart2 {
+          min-height: 150px;
+
           .projects {
             margin-bottom: 10px;
             .projectname {
@@ -187,6 +202,7 @@ export const VerticalResumeConatainer = styled.div`
           }
         }
         .right-subpart3 {
+          min-height: 150px;
           .achievements {
             line-height: 30px;
           }

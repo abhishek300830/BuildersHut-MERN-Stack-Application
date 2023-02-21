@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { VerticalResumeConatainer } from "./VerticalResumeStyle";
 
 //icons
@@ -7,8 +7,28 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import { Divider } from "@mui/material";
+import builderContext from "../../../../../context/builderContext";
 
 const VerticalResume = () => {
+  // Context
+  const {
+    fields,
+    personalData,
+    addrData,
+    skillData,
+    projectData,
+    intershipData,
+    othersData,
+    hobbieData,
+    qualifData,
+    profileInfo,
+    // setProfileInfo,
+    languages,
+    // setLanguages,
+    extracurr,
+    // setExtracurr,
+  } = useContext(builderContext);
+
   return (
     <VerticalResumeConatainer>
       <div className="page">
@@ -21,37 +41,45 @@ const VerticalResume = () => {
               />
             </div>
             <div className="upper-part2">
-              <h2 className="firstName">Abhishek</h2>
-              <h2 className="lastName">Kumar</h2>
-              <Divider />
-              <h3 className="position">MERN Stack Developer</h3>
+              <h2 className="firstName">{personalData.name.split(" ", 1)}</h2>
+              <h2 className="lastName">{personalData.name.split(" ", 2)[1]}</h2>
+              {/* <Divider /> */}
+              {/* <h3 className="position">Fresher</h3> */}
             </div>
             <div className="upper-part3">
               <div className="phone">
                 <span className="icons">
                   <LocalPhoneRoundedIcon sx={{ color: "white" }} />
                 </span>
-                <span className="detail">9759250020</span>
+                {/* mobile Number */}
+                <span className="detail">{addrData.mobile}</span>
               </div>
               <div className="email">
                 <span className="icons">
                   <EmailRoundedIcon sx={{ color: "white" }} />
                 </span>
-                <span className="detail">Abhishek300830@gmail.com</span>
+                {/* Email */}
+                <span className="detail">{addrData.email}</span>
               </div>
               <div className="address">
                 <span className="icons">
                   <LocationOnRoundedIcon sx={{ color: "white" }} />
                 </span>
                 <span className="detail">
-                  Saharanpur,Uttar Pradesh , 123456
+                  {/* address */}
+                  {addrData.city !== "" && (
+                    <>
+                      {addrData.city}, {addrData.state}, {addrData.pincode}
+                    </>
+                  )}
                 </span>
               </div>
               <div className="other">
                 <span className="icons">
                   <PublicRoundedIcon sx={{ color: "white" }} />
                 </span>
-                <span className="detail">github.com/abhishek300830</span>
+                {/* Other Social Links */}
+                <span className="detail">{addrData.other}</span>
               </div>
             </div>
           </div>
@@ -60,122 +88,145 @@ const VerticalResume = () => {
               <div className="subpart1">
                 <span className="subheading">About Me</span>
                 <p className="bio">
-                  I have core knowledge of Front-End and Back-End Web
-                  Development and working on Mern Stack Development and Data
-                  Structure and algorithms in java and Python with few libraries
-                  and learning Ethical Hacking
+                  {/* profile Bio */}
+                  {profileInfo}
                 </p>
               </div>
               <div className="subpart2">
                 <span className="subheading">Education</span>
                 <div className="educationTable">
                   <div className="row">
-                    <div className="qualification">BE CSE</div>
-                    <div className="percent">8.5 CGPA</div>
-                    <div className="year">2024</div>
+                    <div className="qualification">Graduation</div>
+                    <div className="percent">{qualifData.perc1}%</div>
+                    <div className="year">{qualifData.year1}</div>
                   </div>
+                  <span className="schoolName">( {qualifData.inst1} )</span>
                   <div className="row">
-                    <div className="qualification">Intemediate (CBSE)</div>
-                    <div className="percent">88 %</div>
-                    <div className="year">2019</div>
+                    <div className="qualification">Intemediate</div>
+                    <div className="percent">{qualifData.perc2}%</div>
+                    <div className="year">{qualifData.year2}</div>
                   </div>
+                  <span className="schoolName">( {qualifData.inst2} )</span>
+
                   <div className="row">
                     <div className="qualification">Matriculation</div>
-                    <div className="percent">10 CGPA</div>
-                    <div className="year">2017</div>
+                    <div className="percent">{qualifData.perc2}%</div>
+                    <div className="year">{qualifData.year3}</div>
                   </div>
+                  <span className="schoolName">( {qualifData.inst3} )</span>
                 </div>
               </div>
               <div className="subpart3">
                 <span className="subheading">Technical Skills</span>
                 <ul className="list">
-                  <li className="item">Full Stack Web Development</li>
-                  <li className="item">JAVA</li>
-                  <li className="item">C++</li>
-                  <li className="item">JAVASCRIPT</li>
-                  <li className="item">Video Editing</li>
+                  {/* Technical Skills */}
+
+                  {skillData.map((value, idx) => {
+                    console.log("value", value);
+                    return (
+                      <li className="item" key={idx}>
+                        {value.name}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="subpart4">
-                <span className="subheading">Interpersonal Skills</span>
+                {/* Interpersonal Skills */}
+                <span className="subheading">Interest And Hobbies</span>
                 <ul className="list">
-                  <li className="item">Time Management</li>
-                  <li className="item">Team Working</li>
-                  <li className="item">Adaptability</li>
-                  <li className="item">Coordination</li>
+                  {hobbieData.map((value, idx) => {
+                    return (
+                      <li className="item" key={idx}>
+                        {value.name}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="subpart5">
                 <span className="subheading">Personal Details</span>
-                <div className="personalDetails">DOB : 28 September 2024</div>
                 <div className="personalDetails">
-                  Languages : English | Hindi | Punjabi
+                  <b>DOB </b>: {personalData.dob}
+                </div>
+                <div className="personalDetails">
+                  <b> Languages : </b>
+                  {languages.map((value, idx) => {
+                    return (
+                      <span key={idx}>
+                        {idx !== 0 ? " | " : ""}
+                        {value}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
             <div className="lower-right">
               <div className="right-subpart1">
-                <span className="subheading">Trainings</span>
-                <div>
-                  <p className="trainingDetails">
-                    React Training From Internshala
-                  </p>
-                  <span className="training-date">july 2022</span>
-                </div>
-                <div>
-                  <p className="trainingDetails">
-                    Summer Training of Web Development
-                  </p>
-                  <span className="training-date">july 2022</span>
-                </div>
+                <span className="subheading">Trainings And Internship</span>
+                {intershipData.length > 0 && (
+                  <>
+                    {intershipData.map((value, idx) => {
+                      return (
+                        <div key={idx}>
+                          <p className="trainingDetails">{value.name}</p>
+                          <span className="training-date">{value.date}</span>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
+                {othersData.length > 0 && (
+                  <>
+                    {othersData.map((value, idx) => {
+                      return (
+                        <div key={idx}>
+                          <p className="trainingDetails">{value.name}</p>
+                          <span className="training-date">{value.date}</span>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
               </div>
               <div className="right-subpart2">
                 <span className="subheading">Projects</span>
-                <div className="projects">
-                  <p className="projectname">Brainiac Web Application</p>
-                  <span className="date">July 2022</span>
-                </div>
-                <div className="projects">
-                  <p className="projectname">Brainiac Web Application</p>
-                  <span className="date">July 2022</span>
-                </div>
-                <div className="projects">
-                  <p className="projectname">Brainiac Web Application</p>
-                  <span className="date">July 2022</span>
-                </div>
-                <div className="projects">
-                  <p className="projectname">Brainiac Web Application</p>
-                  <span className="date">July 2022</span>
-                </div>
+                {projectData.length > 0 && (
+                  <>
+                    {projectData.map((value, idx) => {
+                      return (
+                        <div className="projects" key={idx}>
+                          <p className="projectname">{value.name}</p>
+                          <span className="date">{value.date}</span>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
               </div>
               <div className="right-subpart3">
                 <span className="subheading">Certificate and Achievements</span>
                 <ul className="achievements">
-                  <li className="item">5 Star JS Programmer on HackerRank</li>
-                  <li className="item">5 Star JS Programmer on HackerRank</li>
-                  <li className="item">5 Star JS Programmer on HackerRank</li>
-                  <li className="item">5 Star JS Programmer on HackerRank</li>
-                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                  {fields.map((value, idx) => {
+                    return (
+                      <li className="item" key={idx}>
+                        {value.name}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
               <div className="right-subpart4">
                 <span className="subheading">Extra Curricular Activities</span>
                 <ul className="extraActivities">
-                  <li className="item">
-                    Front-End Web Frameworks: Bootstrap 4
-                  </li>
-                  <li className="item">
-                    Front-End Web Frameworks: Bootstrap 4
-                  </li>
-                  <li className="item">
-                    Front-End Web Frameworks: Bootstrap 4
-                  </li>
-                  <li className="item">
-                    Front-End Web Frameworks: Bootstrap 4
-                  </li>
-                  <li className="item">
-                    Front-End Web Frameworks: Bootstrap 4
-                  </li>
+                  {extracurr.map((value, idx) => {
+                    return (
+                      <li className="item" key={idx}>
+                        {value.name}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
