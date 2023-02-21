@@ -113,7 +113,72 @@ const VerticalResume = () => {
                 </div>
               </div>
             </div>
-            <div className="lower-right">hello</div>
+            <div className="lower-right">
+              <div className="right-subpart1">
+                <span className="subheading">Trainings</span>
+                <div>
+                  <p className="trainingDetails">
+                    React Training From Internshala
+                  </p>
+                  <span className="training-date">july 2022</span>
+                </div>
+                <div>
+                  <p className="trainingDetails">
+                    Summer Training of Web Development
+                  </p>
+                  <span className="training-date">july 2022</span>
+                </div>
+              </div>
+              <div className="right-subpart2">
+                <span className="subheading">Projects</span>
+                <div className="projects">
+                  <p className="projectname">Brainiac Web Application</p>
+                  <span className="date">July 2022</span>
+                </div>
+                <div className="projects">
+                  <p className="projectname">Brainiac Web Application</p>
+                  <span className="date">July 2022</span>
+                </div>
+                <div className="projects">
+                  <p className="projectname">Brainiac Web Application</p>
+                  <span className="date">July 2022</span>
+                </div>
+                <div className="projects">
+                  <p className="projectname">Brainiac Web Application</p>
+                  <span className="date">July 2022</span>
+                </div>
+              </div>
+              <div className="right-subpart3">
+                <span className="subheading">Certificate and Achievements</span>
+                <ul className="achievements">
+                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                  <li className="item">5 Star JS Programmer on HackerRank</li>
+                </ul>
+              </div>
+              <div className="right-subpart4">
+                <span className="subheading">Extra Curricular Activities</span>
+                <ul className="extraActivities">
+                  <li className="item">
+                    Front-End Web Frameworks: Bootstrap 4
+                  </li>
+                  <li className="item">
+                    Front-End Web Frameworks: Bootstrap 4
+                  </li>
+                  <li className="item">
+                    Front-End Web Frameworks: Bootstrap 4
+                  </li>
+                  <li className="item">
+                    Front-End Web Frameworks: Bootstrap 4
+                  </li>
+                  <li className="item">
+                    Front-End Web Frameworks: Bootstrap 4
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
