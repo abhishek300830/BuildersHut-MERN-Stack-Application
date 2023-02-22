@@ -24,6 +24,7 @@ const HorizontalPreview = () => {
     // setLanguages,
     extracurr,
     // setExtracurr,
+    backTheme
   } = useContext(builderContext);
 
   return (
@@ -33,7 +34,7 @@ const HorizontalPreview = () => {
           <div class="horizontalPage">
             {/* left section of resume  */}
             <div className="left-section">
-              <div className="addrs">
+              <div className="addrs" style={{background:backTheme.primary}}>
                 <img src={idphoto} alt="profilePhoto" />
 
                 <div>
@@ -62,7 +63,7 @@ const HorizontalPreview = () => {
               </div>
 
               <section className="rest">
-                <div className="skills">
+                <div className="skills" style={{background:backTheme.secondary}}>
                   <h2>SKILLS</h2>
                   <div>
                     {skillData.map((val, indx) => (
@@ -70,7 +71,7 @@ const HorizontalPreview = () => {
                     ))}
                   </div>
                 </div>
-                <div className="hobbies">
+                <div className="hobbies" style={{background:backTheme.secondary}}>
                   <h2>INTEREST & HOBBIES</h2>
                   <div>
                     {hobbieData.map((val, indx) => (
@@ -83,7 +84,7 @@ const HorizontalPreview = () => {
 
             {/* right sectio nof resume  */}
             <div className="right-section">
-              <div className="bio">
+              <div className="bio" style={{background:backTheme.secondary}}>
                 <h1>{personalData.name}</h1>
                 <h3>PROFILE</h3>
                 <p>{profileInfo}</p>

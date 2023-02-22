@@ -8,7 +8,7 @@ import { QualificationContainer } from "./qualificationStyle";
 const Qualification = () => {
   const { themebg, qualifData, setQualifData } = useContext(builderContext);
   const [graduation, setGraduation] = useState("");
-
+  console.log(qualifData)
   const handleChange = (ev) => {
     setGraduation(ev.target.value);
     setQualifData({ ...qualifData, grad: ev.target.value });

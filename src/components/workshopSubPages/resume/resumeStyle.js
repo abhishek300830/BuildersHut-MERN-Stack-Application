@@ -52,6 +52,7 @@ export const ResumeStyleDiv = styled.div`
     button.flip {
       display: none;
     }
+    
     div.left {
       position: relative;
       padding: 2%;
@@ -122,6 +123,7 @@ export const ResumeStyleDiv = styled.div`
             .align-label {
               color: black;
               font-weight: bold;
+
             }
             .alignment {
               padding: 1% 4%;
@@ -130,24 +132,30 @@ export const ResumeStyleDiv = styled.div`
               width: 50%;
               margin-left: 20%;
             }
+           
             .templates {
               text-align: center;
               margin-top: 2%;
               width: 100%;
               padding: 1% 4%;
+              
               margin-left: 5%;
+              
               /* background-color: white; */
               .templeteClass {
                 width: 80%;
               }
-              .select-opt {
-                background: #595451;
               }
+              .select-opt {
+                background: #595451;  
+              }
+              
               .MuiFormLabel-root {
                 color: white;
-                background-color: #595451;
+                background-color: #595451; 
                 padding: 0% 2%;
                 border-radius: 5px;
+                
               }
               .MuiSvgIcon-root {
                 color: white;
@@ -157,7 +165,8 @@ export const ResumeStyleDiv = styled.div`
                 color: red;
               }
               .MuiSelect-select {
-                color: white;
+                color: transparent;
+                text-shadow: -0px -4px 1px white;
               }
             }
             .begin-btn {
@@ -232,7 +241,7 @@ export const ResumeStyleDiv = styled.div`
       opacity: 0.7;
       background-color: #958e8c;
     }
-  }
+  
 
   div.right {
     padding: 2%;

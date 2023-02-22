@@ -45,6 +45,7 @@ const BuilderState = (props) => {
 
   // qualification data
   const [qualifData, setQualifData] = useState({
+    grad:"",
     year1: "",
     perc1: "",
     inst1: "",
@@ -55,6 +56,8 @@ const BuilderState = (props) => {
     perc3: "",
     inst3: "",
   });
+
+  const [backTheme,setBackTheme]=useState({primary:"#191919",secondary:"#c7c7c7d4"});
 
   // const headings in resume builder
   const headings = [
@@ -98,6 +101,7 @@ const BuilderState = (props) => {
         headings,
         extracurr,
         setExtracurr,
+        backTheme,setBackTheme,
       }}
     >
       {props.children}

@@ -7,7 +7,10 @@ const QualificationContainer = styled.div`
       props.themebg === "white" ? "#FAF6F6" : "#D1D1D1"};
     padding: 0% 2%;
     border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
   }
+
 
   // main folder structure
   .qualification {

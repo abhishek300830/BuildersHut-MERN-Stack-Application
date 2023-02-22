@@ -22,17 +22,21 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
+import InvertColorsIcon from '@mui/icons-material/InvertColors';
 import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
 import HorizontalPreview from "./printables/horizontalFile/HorizontalPreview";
 import VerticalResume from "./printables/VerticalDesign/VerticalResume";
 
 const ResumeBuilder = () => {
-  const { headings } = useContext(builderContext);
+  const { headings,backTheme,setBackTheme } = useContext(builderContext);
 
-  const [age, setAge] = React.useState("");
+  const themePrimaryColors=["#191919","#c3c1c1","#2d1b88"]
+  const themeSecondaryColors=["#c4c4c4","#878686","#502ff35d"]
+  var indx;
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    indx=event.target.value;
+    setBackTheme({primary:themePrimaryColors[event.target.value] ,secondary:themeSecondaryColors[event.target.value]})
   };
 
   var flag = false;
@@ -114,6 +118,7 @@ const ResumeBuilder = () => {
           </div>
 
           <div className="left-temp">
+
             <div className="user-input">
               <div className="select-temp" id="select-1">
                 <h4 className="resume-intro">
@@ -173,13 +178,21 @@ const ResumeBuilder = () => {
                         labelId="demo-simple-select-label"
                         id="demo-simple-select"
                         className="select-opt"
-                        value={age}
+                        value={indx}
                         label="Template"
                         onChange={handleChange}
                       >
-                        <MenuItem value={10}>dark</MenuItem>
-                        <MenuItem value={20}>light</MenuItem>
-                        <MenuItem value={30}>midnight</MenuItem>
+                        <MenuItem value={0}>
+                          <InvertColorsIcon style={{background:"white",borderRadius:"20px",color:"#191919",marginRight:"2%"}}/>
+                          dark
+                          </MenuItem>
+                        <MenuItem value={1}>
+                          <InvertColorsIcon style={{color:"#c3c1c1",background:"white",borderRadius:"20px",marginRight:"2%"}}/>
+                          light</MenuItem>
+                        <MenuItem value={2}>
+                          <InvertColorsIcon style={{color:"#2d1b88",background:"white",borderRadius:"20px",marginRight:"2%"}}/>
+                          Midnight
+                        </MenuItem>
                       </Select>
                     </FormControl>
                   </Box>
