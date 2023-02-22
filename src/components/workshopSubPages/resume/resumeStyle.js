@@ -247,15 +247,17 @@ export const ResumeStyleDiv = styled.div`
       width: 385px;
       margin: auto;
       margin-top: 3%;
-      /* height: 98.994px; */
       height: 544.467px;
+      position: relative;
       background-color: #e4e1e1d3;
+      div.align-me{
+        position: absolute;
+        scale: 0.5;
+        top: -60%;
+        left: -55%;
+      }
     }
-    /* .a4:hover {
-       background-color: red; 
-      transform: scale(1.3);
-      translate: -450px -60px;
-    } */
+   
   }
 
   /* media queries ####### */
@@ -355,10 +357,14 @@ export const ResumeStyleDiv = styled.div`
           width: 600px;
           margin: auto;
           height: 848px;
-          position: relative;
-          background-color: #565555;
+          background-color: transparent;
           z-index: 3;
           margin-top: 5%;
+          div.align-me{
+            scale:0.7;
+            top:-20%;
+            left: -15%;
+          }
         }
         animation: right-anim-1 0.6s normal 0s 1;
       }
@@ -477,12 +483,17 @@ export const ResumeStyleDiv = styled.div`
         height: 90%;
         padding-top: 8%;
         border-radius: 5px;
-
         div.a4 {
-          width: 350px;
-          height: 494px;
+          position: relative;
           margin: auto;
           margin-top: 8%;
+          width: 350px;
+          height: 494px;
+          div.align-me{
+            scale:0.4;
+            top:-75%;
+            left: -64%;
+          }
         }
       }
     }

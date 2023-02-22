@@ -24,6 +24,8 @@ import Select from "@mui/material/Select";
 import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
 import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
 import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
+import HorizontalPreview from "./printables/horizontalFile/HorizontalPreview";
+import VerticalResume from "./printables/VerticalDesign/VerticalResume";
 
 const ResumeBuilder = () => {
   const { headings } = useContext(builderContext);
@@ -128,7 +130,6 @@ const ResumeBuilder = () => {
                       id="demo-row-radio-buttons-group-label"
                       className="align-label"
                     >
-                      {" "}
                       Select Alignment
                     </FormLabel>
 
@@ -229,9 +230,13 @@ const ResumeBuilder = () => {
         <div className="right" id="right-part">
           <div className="a4" onClick={onClickA4}>
             {alignment === "horizontal" ? (
-              <HorizontalTemplete />
+              <div className="align-me">
+                <HorizontalPreview />
+              </div>
             ) : (
-              <VerticalTemplete />
+              <div className="align-me">
+                <VerticalResume />
+              </div>
             )}
           </div>
           {/* <button className="print-btn" onClick={window.print}>
@@ -243,7 +248,7 @@ const ResumeBuilder = () => {
 
       {/* show result  */}
       <div id="show-result" style={{ display: "none" }}>
-        <MainPrintableFile />
+        <MainPrintableFile type={alignment}/>
       </div>
     </ResumeStyleDiv>
   );

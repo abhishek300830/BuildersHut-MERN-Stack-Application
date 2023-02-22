@@ -1,32 +1,26 @@
 import React from "react";
+import HorizontalPreview from "../horizontalFile/HorizontalPreview";
+import VerticalResume from "../VerticalDesign/VerticalResume";
 import { MainPrintStyleDiv } from "./mainPrintStyle";
-// import "./style.css";
 
-const MainPrintableFile = () => {
-  // const onClickHandler2=()=>{
-  //     document.getElementById('show-result').style.display="block";
-  // }
+const MainPrintableFile = ({type}) => {
   const onClickHandler1 = () => {
     document.getElementById("show-result").style.display = "none";
   };
 
   return (
-    // <div>
-    //   <div className="vanish-click" onClick={onClickHandler1}></div>
-    //   <HorizontalPrint />
-    //   <button id="printBtn" onClick={window.print}>
-    //     print me
-    //   </button>
-    // </div>
-
     <MainPrintStyleDiv>
       <div className="vanish-click" onClick={onClickHandler1}></div>
       <div id="section-to-print" className="resume-print">
-        print your file here -
+        {type === "horizontal" ? (
+                <HorizontalPreview />
+            ) : (
+                <VerticalResume />
+        )}
       </div>
-      <button id="printBtn" onClick={window.print}>
-        print me
-      </button>
+      {/* <button id="printBtn" onClick={window.print}> */}
+        {/* print me */}
+      {/* </button> */}
     </MainPrintStyleDiv>
   );
 };

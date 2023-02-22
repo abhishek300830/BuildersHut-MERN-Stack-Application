@@ -7,9 +7,8 @@ export const HorizontalPrevStyleDiv=styled.div`
         width: 210mm;
         min-height: 297mm;
         max-height: 297mm;
-        padding: 5mm;
+        /* padding: 5mm; */
         margin: 10mm auto;
-        border: 1px #D3D3D3 solid;
         border-radius: 5px;
         background: rgb(252, 252, 252);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);

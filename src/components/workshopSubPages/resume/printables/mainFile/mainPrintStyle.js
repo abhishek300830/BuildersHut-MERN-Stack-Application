@@ -16,15 +16,16 @@ export const MainPrintStyleDiv = styled.div`
 
   .resume-print {
     position: relative;
-    z-index: 30;
-    width: 80%;
-    height: 153%;
-    left: 10%;
-    color: black;
-    background-color: whitesmoke;
+    z-index: 30; 
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: auto;
     margin-top: 2%;
-    margin-bottom: 2%;
     animation: print-1 0.5s linear 0s 1;
+    div.page-y{
+      margin-top: 0;
+    } 
   }
   button {
     position: relative;
