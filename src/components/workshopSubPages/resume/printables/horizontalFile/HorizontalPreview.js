@@ -17,9 +17,6 @@ const HorizontalPreview = () => {
   return (
     <HorizontalPrevStyleDiv>
         <div class="Main">
-            <NavLink to="/workshop/profile">
-                click
-            </NavLink>
         <div class="page-y">
             <div class="horizontalPage">
 
