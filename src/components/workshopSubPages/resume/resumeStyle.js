@@ -232,8 +232,6 @@ export const ResumeStyleDiv = styled.div`
       opacity: 0.7;
       background-color: #958e8c;
     }
-
-    
   }
 
   div.right {
@@ -250,23 +248,21 @@ export const ResumeStyleDiv = styled.div`
       height: 544.467px;
       position: relative;
       background-color: #e4e1e1d3;
-      div.align-me{
+      div.align-me {
         position: absolute;
         scale: 0.5;
         top: -60%;
         left: -55%;
       }
     }
-   
   }
 
   /* media queries ####### */
-  @media (max-width: 1280px) { 
+  @media (max-width: 1280px) {
     section.rMain div.right div.a4 {
       margin-top: 25px;
     }
     section.rMain {
-
       div.user-input {
         .select-temp {
           .st1 {
@@ -360,9 +356,9 @@ export const ResumeStyleDiv = styled.div`
           background-color: transparent;
           z-index: 3;
           margin-top: 5%;
-          div.align-me{
-            scale:0.7;
-            top:-20%;
+          div.align-me {
+            scale: 0.7;
+            top: -20%;
             left: -15%;
           }
         }
@@ -489,9 +485,9 @@ export const ResumeStyleDiv = styled.div`
           margin-top: 8%;
           width: 350px;
           height: 494px;
-          div.align-me{
-            scale:0.4;
-            top:-75%;
+          div.align-me {
+            scale: 0.4;
+            top: -75%;
             left: -64%;
           }
         }

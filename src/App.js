@@ -5,8 +5,6 @@ import NotFound from "./components/fileNotFound/NotFound";
 import HomeScreen from "./components/home/HomeScreen";
 import Navbar from "./components/navbar/navbar";
 import Workshop from "./components/workshop/Workshop";
-// import Practice from "./components/practices/practice";
-// import BuilderVdioPage from "./components/start_animation/start_video";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,8 +17,6 @@ import MemeBuilder from "./components/workshopSubPages/meme/MemeBuilder";
 import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuilder";
 
 import About from "./components/about/About";
-import HorizontalPreview from "./components/workshopSubPages/resume/printables/horizontalFile/HorizontalPreview";
-import VerticalResume from "./components/workshopSubPages/resume/printables/VerticalDesign/VerticalResume";
 
 AOS.init();
 
@@ -51,14 +47,14 @@ function App() {
           </Route>
           {/* profile print */}
           {/* <Route path="workshop/profile/printResume" element={<PrintPage />} /> */}
-          <Route
+          {/* <Route
             path="workshop/profile/printResume"
             element={<VerticalResume />}
-          />
-          <Route
+          /> */}
+          {/* <Route
             path="workshop/profile/horizontal"
             element={<HorizontalPreview />}
-          />
+          /> */}
         </Routes>
       </AppDiv>
     </>

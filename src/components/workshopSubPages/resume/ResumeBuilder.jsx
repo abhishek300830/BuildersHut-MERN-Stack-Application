@@ -21,8 +21,7 @@ import FormLabel from "@mui/material/FormLabel";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import HorizontalTemplete from "./resumeAlignment/Horizonal/HorizontalTemplete";
-import VerticalTemplete from "./resumeAlignment/Vertical/VerticalTemplete";
+
 import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
 import HorizontalPreview from "./printables/horizontalFile/HorizontalPreview";
 import VerticalResume from "./printables/VerticalDesign/VerticalResume";
@@ -248,7 +247,7 @@ const ResumeBuilder = () => {
 
       {/* show result  */}
       <div id="show-result" style={{ display: "none" }}>
-        <MainPrintableFile type={alignment}/>
+        <MainPrintableFile type={alignment} />
       </div>
     </ResumeStyleDiv>
   );

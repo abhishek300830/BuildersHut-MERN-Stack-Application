@@ -6,7 +6,7 @@ import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
-import { Divider } from "@mui/material";
+
 import builderContext from "../../../../../context/builderContext";
 
 const VerticalResume = () => {
