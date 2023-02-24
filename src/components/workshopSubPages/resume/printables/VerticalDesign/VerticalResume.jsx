@@ -43,7 +43,10 @@ const VerticalResume = () => {
             </div>
             <div className="upper-part2">
               <h2 className="firstName">{personalData.name.split(" ", 1)}</h2>
-              <h2 className="lastName">{personalData.name.split(" ", 2)[1]}</h2>
+              <h2 className="lastName">
+                {personalData.name.split(" ", 3)[1]}{" "}
+                {personalData.name.split(" ", 3)[2]}
+              </h2>
               {/* <Divider /> */}
               {/* <h3 className="position">Fresher</h3> */}
             </div>
@@ -224,26 +227,29 @@ const VerticalResume = () => {
                   </>
                 )}
               </div>
-              <div className="right-subpart2">
-                <span
-                  className="subheading"
-                  style={{ background: backTheme.primary }}
-                >
-                  Projects
-                </span>
-                {projectData.length > 0 && (
-                  <>
-                    {projectData.map((value, idx) => {
-                      return (
-                        <div className="projects" key={idx}>
-                          <p className="projectname">{value.name}</p>
-                          <span className="date">{value.date}</span>
-                        </div>
-                      );
-                    })}
-                  </>
-                )}
-              </div>
+              {projectData.length > 0 && (
+                <div className="right-subpart2">
+                  <span
+                    className="subheading"
+                    style={{ background: backTheme.primary }}
+                  >
+                    Projects
+                  </span>
+                  {projectData.length > 0 && (
+                    <>
+                      {projectData.map((value, idx) => {
+                        return (
+                          <div className="projects" key={idx}>
+                            <p className="projectname">{value.name}</p>
+                            <span className="date">{value.date}</span>
+                          </div>
+                        );
+                      })}
+                    </>
+                  )}
+                </div>
+              )}
+
               <div className="right-subpart3">
                 <span
                   className="subheading"
