@@ -24,7 +24,7 @@ const HorizontalPreview = () => {
     // setLanguages,
     extracurr,
     // setExtracurr,
-    backTheme
+    backTheme,
   } = useContext(builderContext);
 
   return (
@@ -34,7 +34,7 @@ const HorizontalPreview = () => {
           <div class="horizontalPage">
             {/* left section of resume  */}
             <div className="left-section">
-              <div className="addrs" style={{background:backTheme.primary}}>
+              <div className="addrs" style={{ background: backTheme.primary }}>
                 <img src={idphoto} alt="profilePhoto" />
 
                 <div>
@@ -63,19 +63,35 @@ const HorizontalPreview = () => {
               </div>
 
               <section className="rest">
-                <div className="skills" style={{background:backTheme.secondary}}>
+                <div
+                  className="skills"
+                  style={{ background: backTheme.secondary }}
+                >
                   <h2>SKILLS</h2>
                   <div>
                     {skillData.map((val, indx) => (
-                      <span key={indx}>{val.name}</span>
+                      <span
+                        key={indx}
+                        style={{ background: backTheme.primary }}
+                      >
+                        {val.name}
+                      </span>
                     ))}
                   </div>
                 </div>
-                <div className="hobbies" style={{background:backTheme.secondary}}>
+                <div
+                  className="hobbies"
+                  style={{ background: backTheme.secondary }}
+                >
                   <h2>INTEREST & HOBBIES</h2>
                   <div>
                     {hobbieData.map((val, indx) => (
-                      <span key={indx}>{val.name} </span>
+                      <span
+                        key={indx}
+                        style={{ background: backTheme.primary }}
+                      >
+                        {val.name}{" "}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -84,7 +100,7 @@ const HorizontalPreview = () => {
 
             {/* right sectio nof resume  */}
             <div className="right-section">
-              <div className="bio" style={{background:backTheme.secondary}}>
+              <div className="bio" style={{ background: backTheme.secondary }}>
                 <h1>{personalData.name}</h1>
                 <h3>PROFILE</h3>
                 <p>{profileInfo}</p>
