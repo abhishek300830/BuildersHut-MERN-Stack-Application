@@ -32,6 +32,7 @@ const ResumeBuilder = () => {
 
   const themePrimaryColors=["#191919","#c3c1c1","#2d1b88"]
   const themeSecondaryColors=["#c4c4c4","#878686","#502ff35d"]
+
   var indx;
 
   const handleChange = (event) => {
