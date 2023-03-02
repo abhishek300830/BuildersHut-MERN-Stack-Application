@@ -33,7 +33,7 @@ export const VerticalResumeConatainer = styled.div`
       display: grid;
       grid-template-columns: 24% 38% 38%;
       // background color of upper part
-      background-color: #303c47;
+      /* background-color: #303c47; */
       color: "white";
 
       .upper-part1 {
@@ -170,7 +170,7 @@ export const VerticalResumeConatainer = styled.div`
         }
       }
       .lower-right {
-        background-color: #f8f8f8;
+        /* background-color: #f8f8f8; */
         padding: 20px;
         .right-subpart1 {
           min-height: 150px;

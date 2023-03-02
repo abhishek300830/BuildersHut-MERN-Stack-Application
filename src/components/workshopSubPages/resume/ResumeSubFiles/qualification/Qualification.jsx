@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { border } from "@mui/system";
+
 import React, { useContext, useState } from "react";
 import builderContext from "../../../../../context/builderContext";
 import { CssTextField } from "../../../../orangeTextBox/CssTextField";
@@ -8,7 +8,7 @@ import { QualificationContainer } from "./qualificationStyle";
 const Qualification = () => {
   const { themebg, qualifData, setQualifData } = useContext(builderContext);
   const [graduation, setGraduation] = useState("");
-  console.log(qualifData)
+  console.log(qualifData);
   const handleChange = (ev) => {
     setGraduation(ev.target.value);
     setQualifData({ ...qualifData, grad: ev.target.value });

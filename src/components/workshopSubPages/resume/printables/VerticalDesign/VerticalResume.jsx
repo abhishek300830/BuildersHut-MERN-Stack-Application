@@ -27,13 +27,14 @@ const VerticalResume = () => {
     // setLanguages,
     extracurr,
     // setExtracurr,
+    backTheme,
   } = useContext(builderContext);
 
   return (
     <VerticalResumeConatainer>
       <div className="page">
         <div className="subpage">
-          <div className="upper-part">
+          <div className="upper-part" style={{ background: backTheme.primary }}>
             <div className="upper-part1">
               <img
                 src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-business-user-profile-vector-png-image_1541960.jpg"
@@ -42,7 +43,10 @@ const VerticalResume = () => {
             </div>
             <div className="upper-part2">
               <h2 className="firstName">{personalData.name.split(" ", 1)}</h2>
-              <h2 className="lastName">{personalData.name.split(" ", 2)[1]}</h2>
+              <h2 className="lastName">
+                {personalData.name.split(" ", 3)[1]}{" "}
+                {personalData.name.split(" ", 3)[2]}
+              </h2>
               {/* <Divider /> */}
               {/* <h3 className="position">Fresher</h3> */}
             </div>
@@ -86,14 +90,24 @@ const VerticalResume = () => {
           <div className="lower-part">
             <div className="lower-left">
               <div className="subpart1">
-                <span className="subheading">About Me</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  About Me
+                </span>
                 <p className="bio">
                   {/* profile Bio */}
                   {profileInfo}
                 </p>
               </div>
               <div className="subpart2">
-                <span className="subheading">Education</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Education
+                </span>
                 <div className="educationTable">
                   <div className="row">
                     <div className="qualification">Graduation</div>
@@ -117,7 +131,12 @@ const VerticalResume = () => {
                 </div>
               </div>
               <div className="subpart3">
-                <span className="subheading">Technical Skills</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Technical Skills
+                </span>
                 <ul className="list">
                   {/* Technical Skills */}
 
@@ -133,7 +152,12 @@ const VerticalResume = () => {
               </div>
               <div className="subpart4">
                 {/* Interpersonal Skills */}
-                <span className="subheading">Interest And Hobbies</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Interest And Hobbies
+                </span>
                 <ul className="list">
                   {hobbieData.map((value, idx) => {
                     return (
@@ -145,7 +169,12 @@ const VerticalResume = () => {
                 </ul>
               </div>
               <div className="subpart5">
-                <span className="subheading">Personal Details</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Personal Details
+                </span>
                 <div className="personalDetails">
                   <b>DOB </b>: {personalData.dob}
                 </div>
@@ -162,9 +191,17 @@ const VerticalResume = () => {
                 </div>
               </div>
             </div>
-            <div className="lower-right">
+            <div
+              className="lower-right"
+              style={{ background: backTheme.secondary }}
+            >
               <div className="right-subpart1">
-                <span className="subheading">Trainings And Internship</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Trainings And Internship
+                </span>
                 {intershipData.length > 0 && (
                   <>
                     {intershipData.map((value, idx) => {
@@ -190,23 +227,36 @@ const VerticalResume = () => {
                   </>
                 )}
               </div>
-              <div className="right-subpart2">
-                <span className="subheading">Projects</span>
-                {projectData.length > 0 && (
-                  <>
-                    {projectData.map((value, idx) => {
-                      return (
-                        <div className="projects" key={idx}>
-                          <p className="projectname">{value.name}</p>
-                          <span className="date">{value.date}</span>
-                        </div>
-                      );
-                    })}
-                  </>
-                )}
-              </div>
+              {projectData.length > 0 && (
+                <div className="right-subpart2">
+                  <span
+                    className="subheading"
+                    style={{ background: backTheme.primary }}
+                  >
+                    Projects
+                  </span>
+                  {projectData.length > 0 && (
+                    <>
+                      {projectData.map((value, idx) => {
+                        return (
+                          <div className="projects" key={idx}>
+                            <p className="projectname">{value.name}</p>
+                            <span className="date">{value.date}</span>
+                          </div>
+                        );
+                      })}
+                    </>
+                  )}
+                </div>
+              )}
+
               <div className="right-subpart3">
-                <span className="subheading">Certificate and Achievements</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Certificate and Achievements
+                </span>
                 <ul className="achievements">
                   {fields.map((value, idx) => {
                     return (
@@ -218,7 +268,12 @@ const VerticalResume = () => {
                 </ul>
               </div>
               <div className="right-subpart4">
-                <span className="subheading">Extra Curricular Activities</span>
+                <span
+                  className="subheading"
+                  style={{ background: backTheme.primary }}
+                >
+                  Extra Curricular Activities
+                </span>
                 <ul className="extraActivities">
                   {extracurr.map((value, idx) => {
                     return (

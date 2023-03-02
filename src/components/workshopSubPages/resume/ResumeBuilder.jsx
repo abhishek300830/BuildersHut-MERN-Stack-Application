@@ -22,22 +22,38 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-import InvertColorsIcon from '@mui/icons-material/InvertColors';
+import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import MainPrintableFile from "./printables/mainFile/MainPrintableFile";
 import HorizontalPreview from "./printables/horizontalFile/HorizontalPreview";
 import VerticalResume from "./printables/VerticalDesign/VerticalResume";
 
 const ResumeBuilder = () => {
-  const { headings,backTheme,setBackTheme } = useContext(builderContext);
+  const { headings, backTheme, setBackTheme } = useContext(builderContext);
 
-  const themePrimaryColors=["#191919","#c3c1c1","#2d1b88"]
-  const themeSecondaryColors=["#c4c4c4","#878686","#502ff35d"]
+  // theme color of resume
 
+  const themePrimaryColors = [
+    "#191919",
+    "#238F51",
+    "#3b3654",
+    "#303c47",
+    "#323271",
+  ];
+  const themeSecondaryColors = [
+    "#f8f8f8",
+    "#d1f9e2f0",
+    "#f3f0ff",
+    "#f8f8f8",
+    "#efefff",
+  ];
   var indx;
 
   const handleChange = (event) => {
-    indx=event.target.value;
-    setBackTheme({primary:themePrimaryColors[event.target.value] ,secondary:themeSecondaryColors[event.target.value]})
+    indx = event.target.value;
+    setBackTheme({
+      primary: themePrimaryColors[event.target.value],
+      secondary: themeSecondaryColors[event.target.value],
+    });
   };
 
   var flag = false;
@@ -119,7 +135,6 @@ const ResumeBuilder = () => {
           </div>
 
           <div className="left-temp">
-
             <div className="user-input">
               <div className="select-temp" id="select-1">
                 <h4 className="resume-intro">
@@ -183,15 +198,59 @@ const ResumeBuilder = () => {
                         label="Template"
                         onChange={handleChange}
                       >
+                        <MenuItem value={4}>
+                          <InvertColorsIcon
+                            style={{
+                              background: "white",
+                              borderRadius: "20px",
+                              color: "#3d3da4",
+                              marginRight: "2%",
+                            }}
+                          />
+                          Navy Blue
+                        </MenuItem>
+                        <MenuItem value={3}>
+                          <InvertColorsIcon
+                            style={{
+                              background: "white",
+                              borderRadius: "20px",
+                              color: "#515960",
+                              marginRight: "2%",
+                            }}
+                          />
+                          Metallic Grey (Recommended)
+                        </MenuItem>
                         <MenuItem value={0}>
-                          <InvertColorsIcon style={{background:"white",borderRadius:"20px",color:"#191919",marginRight:"2%"}}/>
+                          <InvertColorsIcon
+                            style={{
+                              background: "white",
+                              borderRadius: "20px",
+                              color: "#191919",
+                              marginRight: "2%",
+                            }}
+                          />
                           dark
-                          </MenuItem>
+                        </MenuItem>
                         <MenuItem value={1}>
-                          <InvertColorsIcon style={{color:"#c3c1c1",background:"white",borderRadius:"20px",marginRight:"2%"}}/>
-                          light</MenuItem>
+                          <InvertColorsIcon
+                            style={{
+                              color: "#238F51",
+                              background: "white",
+                              borderRadius: "20px",
+                              marginRight: "2%",
+                            }}
+                          />
+                          Classic Green
+                        </MenuItem>
                         <MenuItem value={2}>
-                          <InvertColorsIcon style={{color:"#2d1b88",background:"white",borderRadius:"20px",marginRight:"2%"}}/>
+                          <InvertColorsIcon
+                            style={{
+                              color: "#3b3654",
+                              background: "white",
+                              borderRadius: "20px",
+                              marginRight: "2%",
+                            }}
+                          />
                           Midnight
                         </MenuItem>
                       </Select>
