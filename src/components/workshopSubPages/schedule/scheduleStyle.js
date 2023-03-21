@@ -73,82 +73,87 @@ export const ScheduleStyleDiv = styled.div`
   div.right {
     padding: 2%;
     position: relative;
-    /* font-family: 'Fredericka the Great', cursive; */
-    /* font-family: 'Homemade Apple'; */
-    /* font-family: 'Nanum Pen Script', cursive; */
+    overflow: auto;
     font-family: "Over the Rainbow", cursive;
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
 
     .generate-tables {
-      border: 5px solid #bb0404;
-      border-radius: 10px;
-      .table-head {
-        position: relative;
-        display: grid;
-        grid-template-columns: 15% 75% 10%;
-        text-align: center;
-        align-items: center;
-        color: white;
-        border-radius: 5px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-        /* background-color: #565555; */
-        /* background-color: #0c5214; */
-        background-color: #1a1a1a;
+        border: 10px solid #68440d;
+        border-radius: 10px;
+        background-size:auto;
+        background-position:center;
+
+
+        .table-head {
+          position: relative;
+          display: grid;
+          grid-template-columns: 15% 75% 10%;
+          text-align: center;
+          align-items: center;
+          color: white;
+          border-radius: 5px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-bottom: 3px solid #e2e2e2;
+
+        /* background-color: #242424; */
+
 
         b {
           padding: 3%;
+          font-size: 1.5vw;
         }
         .b3 {
-          /* border-left: 1px solid white; */
           color: transparent;
         }
       }
-      .b1 {
-        border-right: 1px solid white;
+
+      .dusturImg,.dusturImg-anim{
+         width: 60%;
+         transition: 0.5s;
+         filter: drop-shadow(0px 3px #b8eabd);  
+         cursor: pointer;
       }
-      .b3 {
-        border-left: 1px solid white;
-        color: transparent;
+      .dusturImg:hover{
+        width: 70%;
+        transform: rotate(20deg);
+      }
+      .dusturImg-anim{
+        display: none;
+        position: absolute;
+        width: 6%;
+        right: 4%;
+        animation: dustAnim 1s normal 0s 1 linear forwards;
+      }
+      
+      @keyframes dustAnim {
+          0%{
+            right: 4%;
+          }
+          100%{
+            right: 90%;
+          }
       }
     }
-
-    /* .table-head::before{
-            content: "1";
-            position: absolute;
-            width: 99%;
-            height: 47%;
-            top: 5%;
-            left: 0.5%;
-            border-radius: 8px;
-            background-color: #837c7a;
-            z-index: 2;
-            color: transparent;
-        } */
-
     .content {
+      position: relative;
       display: grid;
       grid-template-columns: 15% 75% 10%;
       text-align: center;
       align-items: center;
       color: white;
       border-radius: 0px;
-      background-color: #1a1a1a;
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
+      text-shadow: 0.5px 0.2px white;
+
 
       div {
         padding: 2%;
       }
-      button {
-        border: 0;
-        width: 70%;
-        padding: 10% 0%;
-        margin: auto;
-        border-radius: 5px;
-        background-color: #f82a2a;
-        color: white;
-        cursor: pointer;
-      }
+      
     }
     .bottom {
       display: grid;
@@ -158,25 +163,9 @@ export const ScheduleStyleDiv = styled.div`
       color: white;
       height: 30px;
       border-radius: 5px;
-      /* background-color: black; */
-      background-color: #1a1a1a;
-
-      /* background-color: #042e09; */
-
       border-top-right-radius: 0px;
       border-top-left-radius: 0px;
     }
   }
-  .bottom {
-    display: grid;
-    grid-template-columns: 15% 75% 10%;
-    text-align: center;
-    align-items: center;
-    color: white;
-    height: 30px;
-    border-radius: 5px;
-    background-color: #4a4747;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-  }
+ 
 `;
