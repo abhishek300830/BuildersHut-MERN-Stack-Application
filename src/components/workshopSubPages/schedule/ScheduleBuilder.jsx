@@ -2,8 +2,8 @@ import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
-import dusturImg from '../../../images/taskBuilder/duster.png'
-import blackBg from '../../../images/taskBuilder/bgBlackBoard.jpg'
+import dusturImg from "../../../images/taskBuilder/duster.png";
+import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 
 const ScheduleBuilder = () => {
   const seq = [1, 2, 3, 4, 5];
@@ -17,15 +17,14 @@ const ScheduleBuilder = () => {
 
   // const const [first, setfirst] = useState(second)
 
-  const dusturAnimation=(indx)=>{
-      document.getElementById(`display-dust-${indx}`).style.display="block";
-      document.getElementById(`hide-dust-${indx}`).style.display="none";
-  }
+  const dusturAnimation = (indx) => {
+    document.getElementById(`display-dust-${indx}`).style.display = "block";
+    document.getElementById(`hide-dust-${indx}`).style.display = "none";
+  };
 
   return (
     <ScheduleStyleDiv>
       <section className="sMain">
-        
         <div className="left">
           <div className="subheads">Schedule Builder</div>
 
@@ -92,72 +91,12 @@ const ScheduleBuilder = () => {
                     label="Template"
                     // onChange={handleChange}
                   >
-                    <MenuItem value={1}>
-                      <InvertColorsIcon
-                        style={{
-                          background: "white",
-                          borderRadius: "20px",
-                          color: "#3d3da4",
-                          marginRight: "2%",
-                        }}
-                      />
-                      Highest
-                    </MenuItem>
-                    <MenuItem value={2}>
-                      <InvertColorsIcon
-                        style={{
-                          background: "white",
-                          borderRadius: "20px",
-                          color: "#515960",
-                          marginRight: "2%",
-                        }}
-                      />
-                      High
-                    </MenuItem>
-                    <MenuItem value={3}>
-                      <InvertColorsIcon
-                        style={{
-                          background: "white",
-                          borderRadius: "20px",
-                          color: "#191919",
-                          marginRight: "2%",
-                        }}
-                      />
-                      Medium
-                    </MenuItem>
-                    <MenuItem value={4}>
-                      <InvertColorsIcon
-                        style={{
-                          color: "#238F51",
-                          background: "white",
-                          borderRadius: "20px",
-                          marginRight: "2%",
-                        }}
-                      />
-                      low
-                    </MenuItem>
-                    <MenuItem value={5}>
-                      <InvertColorsIcon
-                        style={{
-                          color: "#3b3654",
-                          background: "white",
-                          borderRadius: "20px",
-                          marginRight: "2%",
-                        }}
-                      />
-                      Lowest
-                    </MenuItem>
-                    <MenuItem value={6}>
-                      <InvertColorsIcon
-                        style={{
-                          color: "#3b3654",
-                          background: "white",
-                          borderRadius: "20px",
-                          marginRight: "2%",
-                        }}
-                      />
-                      Not Important
-                    </MenuItem>
+                    <MenuItem value={1}>Highest</MenuItem>
+                    <MenuItem value={2}>High</MenuItem>
+                    <MenuItem value={3}>Medium</MenuItem>
+                    <MenuItem value={4}>low</MenuItem>
+                    <MenuItem value={5}>Lowest</MenuItem>
+                    <MenuItem value={6}>Not Important</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -188,9 +127,11 @@ const ScheduleBuilder = () => {
         </div>
 
         {/* a4 size template  */}
-        <div className="right" id="right-part" >
-
-          <div className="generate-tables"  style={{backgroundImage:`url(${blackBg})`}}>
+        <div className="right" id="right-part">
+          <div
+            className="generate-tables"
+            style={{ backgroundImage: `url(${blackBg})` }}
+          >
             <section className="table-head">
               <b className="b1">Priority</b>
               <b>Task ( 12 hours Table )</b>
@@ -203,8 +144,19 @@ const ScheduleBuilder = () => {
                   <div>{val}.</div>
                   <div className="tasks">{task[indx]}</div>
                   {/* <button>X</button> */}
-                  <img src={dusturImg} className="dusturImg" id={`hide-dust-${task[indx]}`} alt="dustur" onClick={()=>dusturAnimation(task[indx])}/>
-                  <img src={dusturImg} className="dusturImg-anim" id={`display-dust-${task[indx]}`} alt="dustur"/>
+                  <img
+                    src={dusturImg}
+                    className="dusturImg"
+                    id={`hide-dust-${task[indx]}`}
+                    alt="dustur"
+                    onClick={() => dusturAnimation(task[indx])}
+                  />
+                  <img
+                    src={dusturImg}
+                    className="dusturImg-anim"
+                    id={`display-dust-${task[indx]}`}
+                    alt="dustur"
+                  />
                 </section>
                 {/* <hr style={{margin:"0"}}/> */}
               </>
@@ -216,8 +168,15 @@ const ScheduleBuilder = () => {
               <div></div>
             </section>
           </div>
-         
-          <div className="generate-tables"  style={{marginTop:"5%",backgroundImage:`url(${blackBg})`, borderColor:'#0f6d07'}}>
+
+          <div
+            className="generate-tables"
+            style={{
+              marginTop: "5%",
+              backgroundImage: `url(${blackBg})`,
+              borderColor: "#0f6d07",
+            }}
+          >
             <section className="table-head">
               <b className="b1">Priority</b>
               <b>Task ( 24 hours Table )</b>
