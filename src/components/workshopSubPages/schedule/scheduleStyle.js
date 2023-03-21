@@ -74,6 +74,11 @@ section.sMain {
   div.right {
     padding: 2%;
     position: relative;
+    /* font-family: 'Fredericka the Great', cursive; */
+    /* font-family: 'Homemade Apple'; */
+    /* font-family: 'Nanum Pen Script', cursive; */
+    font-family: 'Over the Rainbow', cursive;
+
 
     .generate-tables{
       border: 5px solid #bb0404;
