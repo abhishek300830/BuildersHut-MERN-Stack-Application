@@ -5,7 +5,7 @@ export const VerticalResumeConatainer = styled.div`
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #8099b0;
+  /* background-color: #8099b0; */
   /* font-size: 16px; */
   .page {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -234,6 +234,7 @@ export const VerticalResumeConatainer = styled.div`
       width: 210mm;
       height: 297mm;
     }
+
     .page {
       margin: 0;
       border: initial;

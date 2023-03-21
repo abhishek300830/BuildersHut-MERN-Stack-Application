@@ -19,6 +19,8 @@ const BuilderState = (props) => {
     email: "",
     other: "",
   });
+  // templete alignment
+  const [alignment, setAlignment] = useState("horizontal");
 
   //  languages and bio
   const [languages, setLanguages] = useState([]);
@@ -45,7 +47,7 @@ const BuilderState = (props) => {
 
   // qualification data
   const [qualifData, setQualifData] = useState({
-    grad:"",
+    grad: "",
     year1: "",
     perc1: "",
     inst1: "",
@@ -57,7 +59,10 @@ const BuilderState = (props) => {
     inst3: "",
   });
 
-  const [backTheme,setBackTheme]=useState({primary:"#191919",secondary:"#c7c7c7d4"});
+  const [backTheme, setBackTheme] = useState({
+    primary: "#191919",
+    secondary: "#c7c7c7d4",
+  });
 
   // const headings in resume builder
   const headings = [
@@ -101,7 +106,10 @@ const BuilderState = (props) => {
         headings,
         extracurr,
         setExtracurr,
-        backTheme,setBackTheme,
+        backTheme,
+        setBackTheme,
+        alignment,
+        setAlignment,
       }}
     >
       {props.children}

@@ -39,22 +39,51 @@ export const ScheduleStyleDiv = styled.div`
           /* text-align: left; */
           padding: "10px";
         }
+        .templeteClass {
+          width: 80%;
+        }
+      }
+      .select-opt {
+        /* background: #595451;   */
+        background-color: white;
+        color: black;
+      }
+
+      .MuiFormLabel-root {
+        color: black;
+        /* background-color: #595451;  */
+        background-color: white;
+        padding: 0% 2%;
+        border-radius: 5px;
+      }
+      .MuiSvgIcon-root {
+        color: white;
+      }
+      .MuiPaper-root {
+        /* background: #2c2c2c; */
+        background-color: white;
+        /* color: red; */
+      }
+      .MuiSelect-select {
+        color: transparent;
+        /* color:black; */
+        text-shadow: -0px -4px 1px black;
       }
     }
+  }
 
-    div.subheads {
-      position: absolute;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px black;
-      color: white;
-      text-align: left;
-      padding-left: 2%;
-      width: 100%;
-      height: 30px;
-      top: -30px;
-      left: 0;
-      background-color: transparent;
-    }
+  div.subheads {
+    position: absolute;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    height: 30px;
+    top: -30px;
+    left: 0;
+    background-color: transparent;
   }
 
   div.left::before {
