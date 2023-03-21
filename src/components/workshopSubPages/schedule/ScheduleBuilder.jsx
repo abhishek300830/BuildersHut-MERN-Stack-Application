@@ -1,7 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
+import InvertColorsIcon from "@mui/icons-material/InvertColors";
 
 const ScheduleBuilder = () => {
   const seq = [1, 2, 3, 4, 5, 6];
@@ -60,6 +61,99 @@ const ScheduleBuilder = () => {
                 color="success"
               />
               <br />
+              <Box
+                sx={{
+                  minWidth: 120,
+                  display: "flex",
+                  gap: "10px",
+                  textAlign: "center",
+                  marginTop: "8%",
+                  marginLeft: "15%",
+                }}
+                className="templates"
+              >
+                <FormControl className="templeteClass">
+                  <InputLabel id="demo-simple-select-label">
+                    Task Priority
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    className="select-opt"
+                    // value={indx}
+                    label="Template"
+                    // onChange={handleChange}
+                  >
+                    <MenuItem value={1}>
+                      <InvertColorsIcon
+                        style={{
+                          background: "white",
+                          borderRadius: "20px",
+                          color: "#3d3da4",
+                          marginRight: "2%",
+                        }}
+                      />
+                      Highest
+                    </MenuItem>
+                    <MenuItem value={2}>
+                      <InvertColorsIcon
+                        style={{
+                          background: "white",
+                          borderRadius: "20px",
+                          color: "#515960",
+                          marginRight: "2%",
+                        }}
+                      />
+                      High
+                    </MenuItem>
+                    <MenuItem value={3}>
+                      <InvertColorsIcon
+                        style={{
+                          background: "white",
+                          borderRadius: "20px",
+                          color: "#191919",
+                          marginRight: "2%",
+                        }}
+                      />
+                      Medium
+                    </MenuItem>
+                    <MenuItem value={4}>
+                      <InvertColorsIcon
+                        style={{
+                          color: "#238F51",
+                          background: "white",
+                          borderRadius: "20px",
+                          marginRight: "2%",
+                        }}
+                      />
+                      low
+                    </MenuItem>
+                    <MenuItem value={5}>
+                      <InvertColorsIcon
+                        style={{
+                          color: "#3b3654",
+                          background: "white",
+                          borderRadius: "20px",
+                          marginRight: "2%",
+                        }}
+                      />
+                      Lowest
+                    </MenuItem>
+                    <MenuItem value={6}>
+                      <InvertColorsIcon
+                        style={{
+                          color: "#3b3654",
+                          background: "white",
+                          borderRadius: "20px",
+                          marginRight: "2%",
+                        }}
+                      />
+                      Not Important
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
+              <br />
               <button
                 className="all-btns"
                 // onClick={addField2}
@@ -111,23 +205,6 @@ const ScheduleBuilder = () => {
               <div></div>
             </section>
           </div>
-
-          {seq.map((val, indx) => (
-            <>
-              <section className="content" key={indx}>
-                <div>{val}</div>
-                <div className="tasks">{task[indx]}</div>
-                <button>X</button>
-              </section>
-              <hr style={{ margin: "0" }} />
-            </>
-          ))}
-
-          <section className="bottom">
-            <div></div>
-            <div></div>
-            <div></div>
-          </section>
         </div>
       </section>
     </ScheduleStyleDiv>

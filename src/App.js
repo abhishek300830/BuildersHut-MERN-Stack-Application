@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppDiv } from "./AppStyle";
 import NotFound from "./components/fileNotFound/NotFound";
@@ -17,10 +17,14 @@ import MemeBuilder from "./components/workshopSubPages/meme/MemeBuilder";
 import ScheduleBuilder from "./components/workshopSubPages/schedule/ScheduleBuilder";
 
 import About from "./components/about/About";
+import builderContext from "./context/builderContext";
+import HorizontalPreview from "./components/workshopSubPages/resume/printables/horizontalFile/HorizontalPreview";
+import VerticalResume from "./components/workshopSubPages/resume/printables/VerticalDesign/VerticalResume";
 
 AOS.init();
 
 function App() {
+  const { alignment } = useContext(builderContext);
   return (
     <>
       <AppDiv>
@@ -46,6 +50,19 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* profile print */}
+          `$
+          {alignment === "horizontal" ? (
+            <Route
+              path="workshop/profile/printResume"
+              element={<HorizontalPreview />}
+            />
+          ) : (
+            <Route
+              path="workshop/profile/printResume"
+              element={<VerticalResume />}
+            />
+          )}
+          `
           {/* <Route path="workshop/profile/printResume" element={<PrintPage />} /> */}
           {/* <Route
             path="workshop/profile/printResume"

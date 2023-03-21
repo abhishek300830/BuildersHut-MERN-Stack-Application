@@ -52,7 +52,7 @@ export const ResumeStyleDiv = styled.div`
     button.flip {
       display: none;
     }
-    
+
     div.left {
       position: relative;
       padding: 2%;
@@ -123,7 +123,6 @@ export const ResumeStyleDiv = styled.div`
             .align-label {
               color: black;
               font-weight: bold;
-
             }
             .alignment {
               padding: 1% 4%;
@@ -132,133 +131,132 @@ export const ResumeStyleDiv = styled.div`
               width: 50%;
               margin-left: 20%;
             }
-           
+
             .templates {
               text-align: center;
               margin-top: 2%;
               width: 100%;
               padding: 1% 4%;
-              
+
               margin-left: 5%;
-              
+
               /* background-color: white; */
               .templeteClass {
                 width: 80%;
               }
-              }
-              .select-opt {
-                background: #595451;  
-              }
-              
-              .MuiFormLabel-root {
-                color: white;
-                background-color: #595451; 
-                padding: 0% 2%;
-                border-radius: 5px;
-                
-              }
-              .MuiSvgIcon-root {
-                color: white;
-              }
-              .MuiPaper-root {
-                background: #2c2c2c;
-                color: red;
-              }
-              .MuiSelect-select {
-                color: transparent;
-                text-shadow: -0px -4px 1px white;
-              }
             }
-            .begin-btn {
-              padding: 2% 4%;
+            .select-opt {
+              background: #595451;
+            }
+
+            .MuiFormLabel-root {
+              color: white;
+              background-color: #595451;
+              padding: 0% 2%;
               border-radius: 5px;
+            }
+            .MuiSvgIcon-root {
+              color: white;
+            }
+            .MuiPaper-root {
+              background: #2c2c2c;
+              color: red;
+            }
+            .MuiSelect-select {
+              color: transparent;
+              text-shadow: -0px -4px 1px white;
+            }
+          }
+          .begin-btn {
+            padding: 2% 4%;
+            border-radius: 5px;
+            position: relative;
+            margin-left: 40%;
+            width: 20%;
+            margin-top: 2%;
+            background-color: #81ee1d;
+            cursor: pointer;
+            box-shadow: 1px 1px 4px black;
+            transition: 0.1s;
+            span {
               position: relative;
-              margin-left: 40%;
-              width: 20%;
-              margin-top: 2%;
-              background-color: #81ee1d;
-              cursor: pointer;
-              box-shadow: 1px 1px 4px black;
-              transition: 0.1s;
-              span {
-                position: relative;
-                font-weight: bold;
-                z-index: 5;
-              }
-              div {
-                z-index: 4;
-                position: absolute;
-                opacity: 0.7;
-                background-color: #dcf87e;
-                width: 96%;
-                border-radius: 5px;
-                height: 50%;
-                top: 3%;
-                left: 2%;
-              }
+              font-weight: bold;
+              z-index: 5;
             }
-            .begin-btn:hover {
-              box-shadow: 0px 0px 2px black;
+            div {
+              z-index: 4;
+              position: absolute;
+              opacity: 0.7;
+              background-color: #dcf87e;
+              width: 96%;
+              border-radius: 5px;
+              height: 50%;
+              top: 3%;
+              left: 2%;
             }
+          }
+          .begin-btn:hover {
+            box-shadow: 0px 0px 2px black;
           }
         }
       }
-
-      div.subheads {
-        position: absolute;
-        font-weight: bold;
-        text-shadow: 1px 1px 2px black;
-        color: white;
-        text-align: left;
-        padding-left: 2%;
-        width: 100%;
-        height: 30px;
-        top: -30px;
-        left: 0;
-        background-color: transparent;
-      }
-
-      .scroll-x-y {
-        border-top: 1px solid black;
-        position: absolute;
-        border-top: 2px solid #565555;
-        z-index: 12;
-        width: 100%;
-        bottom: 0%;
-        left: 0%;
-      }
     }
 
-    div.left::before {
+    div.subheads {
       position: absolute;
-      content: "h";
-      color: transparent;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+      color: white;
+      text-align: left;
+      padding-left: 2%;
       width: 100%;
-      border-radius: 8px;
-      height: 20px;
-      left: 0%;
-      top: -38px;
-      opacity: 0.7;
-      background-color: #958e8c;
+      height: 30px;
+      top: -30px;
+      left: 0;
+      background-color: transparent;
     }
-  
+
+    .scroll-x-y {
+      border-top: 1px solid black;
+      position: absolute;
+      border-top: 2px solid #565555;
+      z-index: 12;
+      width: 100%;
+      bottom: 0%;
+      left: 0%;
+    }
+  }
+
+  div.left::before {
+    position: absolute;
+    content: "h";
+    color: transparent;
+    width: 100%;
+    border-radius: 8px;
+    height: 20px;
+    left: 0%;
+    top: -38px;
+    opacity: 0.7;
+    background-color: #958e8c;
+  }
 
   div.right {
     padding-top: 2%;
     position: relative;
     /* border:10px solid #d95144; */
-    margin-left:6%;
-    margin-right:6%;
-    border-radius:1%;
-    background-color: #d95144;
+    margin-left: 6%;
+    margin-right: 6%;
+    border-radius: 1%;
+    background-color: #ebc532;
+    border: #f1b226 2px solid;
     /* background:#4e8e2c87; */
-     img.clip{
-      position:absolute;
+    img.clip {
+      position: absolute;
       top: -9%;
       left: 35%;
       z-index: 20;
       width: 30%;
-     }
+    }
     div.a4 {
       /* width: 70px; */
       width: 385px;
@@ -293,10 +291,10 @@ export const ResumeStyleDiv = styled.div`
         }
       }
 
-      div.right{
+      div.right {
         padding-top: 0%;
         margin-left: 2%;
-        img.clip{
+        img.clip {
           top: -10%;
           left: 30%;
           width: 40%;
@@ -329,7 +327,6 @@ export const ResumeStyleDiv = styled.div`
       position: fixed;
       height: 90%;
       margin-left: 0.5%;
-     
 
       button.flip {
         display: block;
@@ -379,7 +376,7 @@ export const ResumeStyleDiv = styled.div`
         position: relative;
         height: 97%;
         display: none;
-        img.clip{
+        img.clip {
           top: -6%;
           left: 32%;
           width: 40%;
@@ -515,7 +512,7 @@ export const ResumeStyleDiv = styled.div`
         padding-top: 0%;
         border-radius: 5px;
         margin-right: 1%;
-        img.clip{
+        img.clip {
           top: -5%;
           left: 32%;
           width: 40%;
