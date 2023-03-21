@@ -49,7 +49,7 @@ const ScheduleBuilder = () => {
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-
+              
           <div className="generate-tables">
                 <section className="table-head">
                   <b className="b1">Sequence</b>
@@ -65,7 +65,7 @@ const ScheduleBuilder = () => {
                       <div className="tasks">{task[indx]}</div>
                       <button>X</button>                    
                     </section>
-                    <hr style={{margin:"0"}}/>
+                    {/* <hr style={{margin:"0"}}/> */}
                     </>
                   ))
                 }

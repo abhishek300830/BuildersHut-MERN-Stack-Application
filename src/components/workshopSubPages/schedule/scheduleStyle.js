@@ -74,10 +74,10 @@ section.sMain {
   div.right {
     padding: 2%;
     position: relative;
-    border: 1px solid black;
 
     .generate-tables{
-
+      border: 5px solid #bb0404;
+      border-radius: 10px;
         .table-head{
             position: relative;
             display: grid;
@@ -88,15 +88,15 @@ section.sMain {
             border-radius: 5px;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
-            background-color: #565555;
+            /* background-color: #565555; */
+            /* background-color: #0c5214; */
+            background-color: #1a1a1a;
+
             b{
                 padding: 3%;
             }
-            .b1{
-                border-right: 1px solid white;
-            }
             .b3{
-                border-left: 1px solid white;
+                /* border-left: 1px solid white; */
                 color: transparent;
             }
         }
@@ -121,9 +121,10 @@ section.sMain {
             align-items: center;
             color: white;
             border-radius: 0px;
-            background-color: #43cb4a;
+            background-color: #1a1a1a;
             border-top-right-radius: 0px;
             border-top-left-radius: 0px;
+
 
             div{
                 padding: 2%;
@@ -148,7 +149,11 @@ section.sMain {
             color: white;
             height: 30px;
             border-radius: 5px;
-            background-color: #4a4747;
+            /* background-color: black; */
+            background-color: #1a1a1a;
+
+            /* background-color: #042e09; */
+
             border-top-right-radius: 0px;
             border-top-left-radius: 0px;
         }
