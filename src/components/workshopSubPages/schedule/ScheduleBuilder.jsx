@@ -101,7 +101,7 @@ const ScheduleBuilder = () => {
                   <div className="tasks">{task[indx]}</div>
                   <button>X</button>
                 </section>
-                <hr style={{ margin: "0" }} />
+                {/* <hr style={{margin:"0"}}/> */}
               </>
             ))}
 
@@ -111,6 +111,23 @@ const ScheduleBuilder = () => {
               <div></div>
             </section>
           </div>
+
+          {seq.map((val, indx) => (
+            <>
+              <section className="content" key={indx}>
+                <div>{val}</div>
+                <div className="tasks">{task[indx]}</div>
+                <button>X</button>
+              </section>
+              <hr style={{ margin: "0" }} />
+            </>
+          ))}
+
+          <section className="bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+          </section>
         </div>
       </section>
     </ScheduleStyleDiv>

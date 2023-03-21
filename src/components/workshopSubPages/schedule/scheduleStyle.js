@@ -73,8 +73,13 @@ export const ScheduleStyleDiv = styled.div`
   div.right {
     padding: 2%;
     position: relative;
-    border: 1px solid black;
+    /* font-family: 'Fredericka the Great', cursive; */
+    /* font-family: 'Homemade Apple'; */
+    /* font-family: 'Nanum Pen Script', cursive; */
+    font-family: 'Over the Rainbow', cursive;
 
+
+<<<<<<< HEAD
     .generate-tables {
       .table-head {
         position: relative;
@@ -89,6 +94,32 @@ export const ScheduleStyleDiv = styled.div`
         background-color: #565555;
         b {
           padding: 3%;
+=======
+    .generate-tables{
+      border: 5px solid #bb0404;
+      border-radius: 10px;
+        .table-head{
+            position: relative;
+            display: grid;
+            grid-template-columns: 15% 75% 10%;
+            text-align: center;
+            align-items: center;
+            color: white;
+            border-radius: 5px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            /* background-color: #565555; */
+            /* background-color: #0c5214; */
+            background-color: #1a1a1a;
+
+            b{
+                padding: 3%;
+            }
+            .b3{
+                /* border-left: 1px solid white; */
+                color: transparent;
+            }
+>>>>>>> 497afd19f647d1f6782e4125432be05a36ed2a61
         }
         .b1 {
           border-right: 1px solid white;
@@ -112,6 +143,7 @@ export const ScheduleStyleDiv = styled.div`
             color: transparent;
         } */
 
+<<<<<<< HEAD
       .content {
         display: grid;
         grid-template-columns: 15% 75% 10%;
@@ -135,6 +167,50 @@ export const ScheduleStyleDiv = styled.div`
           background-color: #f82a2a;
           color: white;
           cursor: pointer;
+=======
+        .content{
+            display: grid;
+            grid-template-columns: 15% 75% 10%;
+            text-align: center;
+            align-items: center;
+            color: white;
+            border-radius: 0px;
+            background-color: #1a1a1a;
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+
+
+            div{
+                padding: 2%;
+            }
+            button{
+                border: 0;
+                width: 70%;
+                padding: 10% 0%;
+                margin: auto;
+                border-radius: 5px;
+                background-color: #f82a2a;
+                color: white;
+                cursor: pointer;
+            }
+            
+        }
+        .bottom{
+            display: grid;
+            grid-template-columns: 15% 75% 10%;
+            text-align: center;
+            align-items: center;
+            color: white;
+            height: 30px;
+            border-radius: 5px;
+            /* background-color: black; */
+            background-color: #1a1a1a;
+
+            /* background-color: #042e09; */
+
+            border-top-right-radius: 0px;
+            border-top-left-radius: 0px;
+>>>>>>> 497afd19f647d1f6782e4125432be05a36ed2a61
         }
       }
       .bottom {

@@ -244,11 +244,21 @@ export const ResumeStyleDiv = styled.div`
   
 
   div.right {
-    padding: 2%;
+    padding-top: 2%;
     position: relative;
-
+    /* border:10px solid #d95144; */
+    margin-left:6%;
+    margin-right:6%;
+    border-radius:1%;
+    background-color: #d95144;
     /* background:#4e8e2c87; */
-
+     img.clip{
+      position:absolute;
+      top: -9%;
+      left: 35%;
+      z-index: 20;
+      width: 30%;
+     }
     div.a4 {
       /* width: 70px; */
       width: 385px;
@@ -256,7 +266,6 @@ export const ResumeStyleDiv = styled.div`
       margin-top: 3%;
       height: 544.467px;
       position: relative;
-      background-color: #e4e1e1d3;
       div.align-me {
         position: absolute;
         scale: 0.5;
@@ -281,6 +290,16 @@ export const ResumeStyleDiv = styled.div`
               margin-left: 10% !important;
             }
           }
+        }
+      }
+
+      div.right{
+        padding-top: 0%;
+        margin-left: 2%;
+        img.clip{
+          top: -10%;
+          left: 30%;
+          width: 40%;
         }
       }
     }
@@ -310,6 +329,7 @@ export const ResumeStyleDiv = styled.div`
       position: fixed;
       height: 90%;
       margin-left: 0.5%;
+     
 
       button.flip {
         display: block;
@@ -355,13 +375,19 @@ export const ResumeStyleDiv = styled.div`
       div.right {
         background-color: #f1b226;
         padding: 2%;
+        padding-top: 0;
         position: relative;
         height: 97%;
         display: none;
+        img.clip{
+          top: -6%;
+          left: 32%;
+          width: 40%;
+        }
         div.a4 {
           width: 600px;
           margin: auto;
-          height: 848px;
+          height: 640px;
           background-color: transparent;
           z-index: 3;
           margin-top: 5%;
@@ -486,14 +512,20 @@ export const ResumeStyleDiv = styled.div`
         padding: 0%;
         position: relative;
         height: 90%;
-        padding-top: 8%;
+        padding-top: 0%;
         border-radius: 5px;
+        margin-right: 1%;
+        img.clip{
+          top: -5%;
+          left: 32%;
+          width: 40%;
+        }
         div.a4 {
           position: relative;
           margin: auto;
           margin-top: 8%;
           width: 350px;
-          height: 494px;
+          height: 450px;
           div.align-me {
             scale: 0.4;
             top: -75%;

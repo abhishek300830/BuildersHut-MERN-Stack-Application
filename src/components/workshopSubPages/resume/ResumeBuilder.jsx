@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import popUpMsg from "../../../images/left out/popupGirl.png";
+import board from '../../../images/left out/board1.png'
 import Steps from "./progress/Steps";
 import { ResumeStyleDiv } from "./resumeStyle";
 import Achievement from "./ResumeSubFiles/achievements/Achievement";
@@ -300,7 +301,9 @@ const ResumeBuilder = () => {
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-          <div className="a4" onClick={onClickA4}>
+
+          <img className="clip" src={board} alt="boardclip" />
+          <div className="a4" onClick={onClickA4} >
             {alignment === "horizontal" ? (
               <div className="align-me">
                 <HorizontalPreview />
