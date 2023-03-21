@@ -76,11 +76,11 @@ export const ScheduleStyleDiv = styled.div`
     /* font-family: 'Fredericka the Great', cursive; */
     /* font-family: 'Homemade Apple'; */
     /* font-family: 'Nanum Pen Script', cursive; */
-    font-family: 'Over the Rainbow', cursive;
+    font-family: "Over the Rainbow", cursive;
 
-
-<<<<<<< HEAD
     .generate-tables {
+      border: 5px solid #bb0404;
+      border-radius: 10px;
       .table-head {
         position: relative;
         display: grid;
@@ -91,46 +91,28 @@ export const ScheduleStyleDiv = styled.div`
         border-radius: 5px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
-        background-color: #565555;
+        /* background-color: #565555; */
+        /* background-color: #0c5214; */
+        background-color: #1a1a1a;
+
         b {
           padding: 3%;
-=======
-    .generate-tables{
-      border: 5px solid #bb0404;
-      border-radius: 10px;
-        .table-head{
-            position: relative;
-            display: grid;
-            grid-template-columns: 15% 75% 10%;
-            text-align: center;
-            align-items: center;
-            color: white;
-            border-radius: 5px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-            /* background-color: #565555; */
-            /* background-color: #0c5214; */
-            background-color: #1a1a1a;
-
-            b{
-                padding: 3%;
-            }
-            .b3{
-                /* border-left: 1px solid white; */
-                color: transparent;
-            }
->>>>>>> 497afd19f647d1f6782e4125432be05a36ed2a61
-        }
-        .b1 {
-          border-right: 1px solid white;
         }
         .b3 {
-          border-left: 1px solid white;
+          /* border-left: 1px solid white; */
           color: transparent;
         }
       }
+      .b1 {
+        border-right: 1px solid white;
+      }
+      .b3 {
+        border-left: 1px solid white;
+        color: transparent;
+      }
+    }
 
-      /* .table-head::before{
+    /* .table-head::before{
             content: "1";
             position: absolute;
             width: 99%;
@@ -143,88 +125,58 @@ export const ScheduleStyleDiv = styled.div`
             color: transparent;
         } */
 
-<<<<<<< HEAD
-      .content {
-        display: grid;
-        grid-template-columns: 15% 75% 10%;
-        text-align: center;
-        align-items: center;
-        color: white;
-        border-radius: 0px;
-        background-color: #43cb4a;
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
+    .content {
+      display: grid;
+      grid-template-columns: 15% 75% 10%;
+      text-align: center;
+      align-items: center;
+      color: white;
+      border-radius: 0px;
+      background-color: #1a1a1a;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
 
-        div {
-          padding: 2%;
-        }
-        button {
-          border: 0;
-          width: 70%;
-          padding: 10% 0%;
-          margin: auto;
-          border-radius: 5px;
-          background-color: #f82a2a;
-          color: white;
-          cursor: pointer;
-=======
-        .content{
-            display: grid;
-            grid-template-columns: 15% 75% 10%;
-            text-align: center;
-            align-items: center;
-            color: white;
-            border-radius: 0px;
-            background-color: #1a1a1a;
-            border-top-right-radius: 0px;
-            border-top-left-radius: 0px;
-
-
-            div{
-                padding: 2%;
-            }
-            button{
-                border: 0;
-                width: 70%;
-                padding: 10% 0%;
-                margin: auto;
-                border-radius: 5px;
-                background-color: #f82a2a;
-                color: white;
-                cursor: pointer;
-            }
-            
-        }
-        .bottom{
-            display: grid;
-            grid-template-columns: 15% 75% 10%;
-            text-align: center;
-            align-items: center;
-            color: white;
-            height: 30px;
-            border-radius: 5px;
-            /* background-color: black; */
-            background-color: #1a1a1a;
-
-            /* background-color: #042e09; */
-
-            border-top-right-radius: 0px;
-            border-top-left-radius: 0px;
->>>>>>> 497afd19f647d1f6782e4125432be05a36ed2a61
-        }
+      div {
+        padding: 2%;
       }
-      .bottom {
-        display: grid;
-        grid-template-columns: 15% 75% 10%;
-        text-align: center;
-        align-items: center;
-        color: white;
-        height: 30px;
+      button {
+        border: 0;
+        width: 70%;
+        padding: 10% 0%;
+        margin: auto;
         border-radius: 5px;
-        background-color: #4a4747;
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
+        background-color: #f82a2a;
+        color: white;
+        cursor: pointer;
       }
     }
+    .bottom {
+      display: grid;
+      grid-template-columns: 15% 75% 10%;
+      text-align: center;
+      align-items: center;
+      color: white;
+      height: 30px;
+      border-radius: 5px;
+      /* background-color: black; */
+      background-color: #1a1a1a;
+
+      /* background-color: #042e09; */
+
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 15% 75% 10%;
+    text-align: center;
+    align-items: center;
+    color: white;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #4a4747;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
   }
 `;
