@@ -1,30 +1,43 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
-import dusturImg from "../../../images/taskBuilder/duster.png";
+import dusturImg from "../../../images/taskBuilder/cross.png";
 import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 
 const ScheduleBuilder = () => {
-  const seq = [1, 2, 3, 4, 5];
-  const task = [
-    "I want ot complete my Assignments till MOnday.",
-    "I need to take a nap",
-    "I need to watch a movie",
-    "I will go to the restaurant for dinner",
-    "I will go to the restaurant for dinner at home",
-  ];
 
-  // const const [first, setfirst] = useState(second)
+  const [data_12, setData_12] = useState([
+    {id:1,task:"I want ot complete my Assignments till MOnday."},
+    {id:2,task:"I need to take a nap"},
+    {id:3,task:"I need to watch a movie"},
+    {id:4,task:"I will go to the restaurant for dinner"},
+    {id:5,task:"I will go to the restaurant for dinner at home"},
+    {id:6,task:"I will go to the restaurant for dinner at home"},
+  ])
 
-  const dusturAnimation = (indx) => {
-    document.getElementById(`display-dust-${indx}`).style.display = "block";
-    document.getElementById(`hide-dust-${indx}`).style.display = "none";
-  };
+  const [data_24, setData_24] = useState([
+    {id:1,task:"Sleep"},
+    {id:2,task:"I need to take a nap"},
+    {id:3,task:"I need to watch a movie"},
+    {id:4,task:"I will go to the restaurant for dinner"},
+    {id:5,task:"I will go to the restaurant for dinner at home"}
+  ])
+
+  const deleteTaskHandler_12 = (indx) => {
+    setData_12(data_12.filter(data=>data.id!==indx))
+  }
+
+  const deleteTaskHandler_24 = (indx) => {
+    setData_24(data_24.filter(data=>data.id!==indx))
+  }
+  
 
   return (
     <ScheduleStyleDiv>
       <section className="sMain">
+
+
         <div className="left">
           <div className="subheads">Schedule Builder</div>
 
@@ -128,6 +141,7 @@ const ScheduleBuilder = () => {
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
+          
           <div
             className="generate-tables"
             style={{ backgroundImage: `url(${blackBg})` }}
@@ -137,29 +151,25 @@ const ScheduleBuilder = () => {
               <b>Task ( 12 hours Table )</b>
               <b className="b3">asd</b>
             </section>
+                
+            {data_12.length === 0 && 
+              <section className="content">
+                <div></div>
+                <div className="tasks">Nothing...</div>
+              </section>
+            }
 
-            {seq.map((val, indx) => (
-              <>
+            {data_12.map((val, indx) => (
                 <section className="content" key={indx}>
-                  <div>{val}.</div>
-                  <div className="tasks">{task[indx]}</div>
-                  {/* <button>X</button> */}
+                  <div>{indx+1}.</div>
+                  <div className="tasks">{val.task}</div>
                   <img
                     src={dusturImg}
                     className="dusturImg"
-                    id={`hide-dust-${task[indx]}`}
-                    alt="dustur"
-                    onClick={() => dusturAnimation(task[indx])}
-                  />
-                  <img
-                    src={dusturImg}
-                    className="dusturImg-anim"
-                    id={`display-dust-${task[indx]}`}
-                    alt="dustur"
+                    alt="cross"
+                    onClick={() => deleteTaskHandler_12(val.id)}
                   />
                 </section>
-                {/* <hr style={{margin:"0"}}/> */}
-              </>
             ))}
 
             <section className="bottom">
@@ -183,16 +193,20 @@ const ScheduleBuilder = () => {
               <b className="b3">asd</b>
             </section>
 
-            {seq.map((val, indx) => (
-              <>
+            {data_24.map((val, indx) => (
                 <section className="content" key={indx}>
-                  <div>{val}.</div>
-                  <div className="tasks">{task[indx]}</div>
+                  <div>{indx+1}.</div>
+                  <div className="tasks">{val.task}</div>
                   {/* <button>X</button> */}
-                  <img src={dusturImg} className="dusturImg" alt="dustur" />
+                  {indx>0 && 
+                    <img src={dusturImg} 
+                    className="dusturImg" 
+                    alt="dustur" 
+                    onClick={()=>deleteTaskHandler_24(val.id)}
+                    />}
+                  
                 </section>
-                {/* <hr style={{margin:"0"}}/> */}
-              </>
+            
             ))}
 
             <section className="bottom">
