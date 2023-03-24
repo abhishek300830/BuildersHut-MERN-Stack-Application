@@ -42,6 +42,64 @@ export const ScheduleStyleDiv = styled.div`
         .templeteClass {
           width: 80%;
         }
+        // select button
+        .selectButton {
+          /* justify-content: center; */
+          width: 80%;
+          height: 50px;
+          background-color: grey;
+        }
+        // making selection list
+        .mainbutton {
+          background-color: white;
+          z-index: 10;
+          margin-top: 50px;
+          position: absolute;
+          width: 100%;
+          .selectPriority {
+            /* width: 100%; */
+
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            .box {
+              display: flex;
+              flex-direction: row;
+              margin: 5px;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              overflow: hidden;
+              border: 3px solid black;
+
+              .horizontal1 {
+                flex-grow: 2;
+                background-color: white;
+              }
+              .horizontal2 {
+                flex-grow: 1;
+
+                background-color: #dddaec;
+              }
+            }
+            .content {
+              margin-left: -5px;
+              padding: 7px;
+
+              padding-right: 20%;
+              background-color: #f75185;
+            }
+            .arrow {
+              width: 0;
+              height: 0;
+              /* background-color: red; */
+              border-left: 18px solid #e5384f;
+              border-top: 18px solid transparent;
+              border-bottom: 18px solid transparent;
+            }
+          }
+        }
       }
       .select-opt {
         /* background: #595451;   */
@@ -109,26 +167,24 @@ export const ScheduleStyleDiv = styled.div`
     }
 
     .generate-tables {
-        border: 10px solid #68440d;
-        border-radius: 10px;
-        background-size:auto;
-        background-position:center;
+      border: 10px solid #68440d;
+      border-radius: 10px;
+      background-size: auto;
+      background-position: center;
 
-
-        .table-head {
-          position: relative;
-          display: grid;
-          grid-template-columns: 15% 75% 10%;
-          text-align: center;
-          align-items: center;
-          color: white;
-          border-radius: 5px;
-          border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 0px;
-          border-bottom: 3px solid #e2e2e2;
+      .table-head {
+        position: relative;
+        display: grid;
+        grid-template-columns: 15% 75% 10%;
+        text-align: center;
+        align-items: center;
+        color: white;
+        border-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: 3px solid #e2e2e2;
 
         /* background-color: #242424; */
-
 
         b {
           padding: 3%;
@@ -139,31 +195,32 @@ export const ScheduleStyleDiv = styled.div`
         }
       }
 
-      .dusturImg,.dusturImg-anim{
-         width: 60%;
-         transition: 0.5s;
-         filter: drop-shadow(0px 3px #b8eabd);  
-         cursor: pointer;
+      .dusturImg,
+      .dusturImg-anim {
+        width: 60%;
+        transition: 0.5s;
+        filter: drop-shadow(0px 3px #b8eabd);
+        cursor: pointer;
       }
-      .dusturImg:hover{
+      .dusturImg:hover {
         width: 70%;
         transform: rotate(20deg);
       }
-      .dusturImg-anim{
+      .dusturImg-anim {
         display: none;
         position: absolute;
         width: 6%;
         right: 4%;
         animation: dustAnim 1s normal 0s 1 linear forwards;
       }
-      
+
       @keyframes dustAnim {
-          0%{
-            right: 4%;
-          }
-          100%{
-            right: 90%;
-          }
+        0% {
+          right: 4%;
+        }
+        100% {
+          right: 90%;
+        }
       }
     }
     .content {
@@ -178,11 +235,9 @@ export const ScheduleStyleDiv = styled.div`
       border-top-left-radius: 0px;
       text-shadow: 0.5px 0.2px white;
 
-
       div {
         padding: 2%;
       }
-      
     }
     .bottom {
       display: grid;
@@ -196,5 +251,4 @@ export const ScheduleStyleDiv = styled.div`
       border-top-left-radius: 0px;
     }
   }
- 
 `;

@@ -21,6 +21,18 @@ const ScheduleBuilder = () => {
     document.getElementById(`display-dust-${indx}`).style.display = "block";
     document.getElementById(`hide-dust-${indx}`).style.display = "none";
   };
+  var show = false;
+  const handleSelect = () => {
+    const view = document.getElementById("selectoptions");
+
+    if (show) {
+      view.style.display = "none";
+      show = false;
+    } else {
+      view.style.display = "block";
+      show = true;
+    }
+  };
 
   return (
     <ScheduleStyleDiv>
@@ -55,6 +67,7 @@ const ScheduleBuilder = () => {
               style={{
                 padding: "10px",
                 textAlign: "center",
+                justifyContent: "center",
                 marginTop: "20px",
               }}
             >
@@ -68,7 +81,7 @@ const ScheduleBuilder = () => {
                 color="success"
               />
               <br />
-              <Box
+              {/* <Box
                 sx={{
                   minWidth: 120,
                   display: "flex",
@@ -78,8 +91,18 @@ const ScheduleBuilder = () => {
                   marginLeft: "15%",
                 }}
                 className="templates"
-              >
-                <FormControl className="templeteClass">
+              > */}
+              {/* <FormControl
+                  className="templeteClass"
+                  style={{
+                    border: "1px solid black",
+                    borderTop: "2px solid black",
+                    padding: "0 !important",
+                    borderRadius: "5px",
+                    fontFamily: "'Ubuntu', sans-serif",
+                    fontWeight: "bold",
+                  }}
+                >
                   <InputLabel id="demo-simple-select-label">
                     Task Priority
                   </InputLabel>
@@ -91,15 +114,79 @@ const ScheduleBuilder = () => {
                     label="Template"
                     // onChange={handleChange}
                   >
-                    <MenuItem value={1}>Highest</MenuItem>
-                    <MenuItem value={2}>High</MenuItem>
-                    <MenuItem value={3}>Medium</MenuItem>
-                    <MenuItem value={4}>low</MenuItem>
-                    <MenuItem value={5}>Lowest</MenuItem>
-                    <MenuItem value={6}>Not Important</MenuItem>
+                    <MenuItem value={1} style={{ background: "green" }}>
+                      Highest
+                    </MenuItem>
+                    <MenuItem value={2} style={{ background: "lightgreen" }}>
+                      High
+                    </MenuItem>
+                    <MenuItem value={3} style={{ background: "orange" }}>
+                      Medium
+                    </MenuItem>
+                    <MenuItem value={4} style={{ background: "yellow" }}>
+                      low
+                    </MenuItem>
+                    <MenuItem value={5} style={{ background: "#fa7979" }}>
+                      Lowest
+                    </MenuItem>
+                    <MenuItem value={6} style={{ background: "red" }}>
+                      Not Important
+                    </MenuItem>
                   </Select>
-                </FormControl>
-              </Box>
+                </FormControl> */}
+              <div
+                className="selectionContainer"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <div className="selectButton" onClick={handleSelect}>
+                  Select Priority
+                </div>
+
+                <div className="mainbutton" id="selectoptions">
+                  <div className="selectPriority">
+                    <div className="box">
+                      <div className="horizontal1">1</div>
+                      <div className="horizontal2"></div>
+                    </div>
+                    <div className="content">Highest</div>
+                    <div className="arrow"></div>
+
+                    <div></div>
+                  </div>
+                  <div className="selectPriority">
+                    <div className="box">
+                      <div className="horizontal1">1</div>
+                      <div className="horizontal2"></div>
+                    </div>
+                    <div className="content">High</div>
+                    <div className="arrow"></div>
+                  </div>
+                  <div className="selectPriority">
+                    <div className="box">
+                      <div className="horizontal1"></div>
+                      <div className="horizontal2"></div>
+                    </div>
+                    <div className="content">Medium</div>
+                    <div className="arrow"></div>
+                  </div>
+                  <div className="selectPriority">
+                    <div className="box"></div>
+                    <div className="content">Low</div>
+                    <div className="arrow"></div>
+                  </div>
+                  <div className="selectPriority">
+                    <div className="box"></div>
+                    <div className="content">Lowest</div>
+                    <div className="arrow"></div>
+                  </div>
+                  <div className="selectPriority">
+                    <div className="box"></div>
+                    <div className="content">Not Important</div>
+                    <div className="arrow"></div>
+                  </div>
+                </div>
+              </div>
+              {/* </Box> */}
               <br />
               <button
                 className="all-btns"
