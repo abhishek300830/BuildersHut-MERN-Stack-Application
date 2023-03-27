@@ -4,6 +4,7 @@ import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
 import dusturImg from "../../../images/taskBuilder/cross.png";
 import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
 
 const ScheduleBuilder = () => {
   const [data_12, setData_12] = useState([
@@ -46,6 +47,17 @@ const ScheduleBuilder = () => {
   const deleteTaskHandler_24 = (indx) => {
     setData_24(data_24.filter((data) => data.id !== indx));
   };
+
+  // Priority
+
+  const priority = [
+    { p: "Highest", color: "#039b15" },
+    { p: "High", color: "#58c941" },
+    { p: "Medium", color: "#9bd28f" },
+    { p: "Low", color: "#ff9191" },
+    { p: "Lowest", color: "#fe6767" },
+    { p: "Not Important", color: "#ff0000" },
+  ];
 
   return (
     <ScheduleStyleDiv>
@@ -94,109 +106,50 @@ const ScheduleBuilder = () => {
                 color="success"
               />
               <br />
-              {/* <Box
-                sx={{
-                  minWidth: 120,
-                  display: "flex",
-                  gap: "10px",
-                  textAlign: "center",
-                  marginTop: "8%",
-                  marginLeft: "15%",
-                }}
-                className="templates"
-              > */}
-              {/* <FormControl
-                  className="templeteClass"
-                  style={{
-                    border: "1px solid black",
-                    borderTop: "2px solid black",
-                    padding: "0 !important",
-                    borderRadius: "5px",
-                    fontFamily: "'Ubuntu', sans-serif",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <InputLabel id="demo-simple-select-label">
-                    Task Priority
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    className="select-opt"
-                    // value={indx}
-                    label="Template"
-                    // onChange={handleChange}
-                  >
-                    <MenuItem value={1} style={{ background: "green" }}>
-                      Highest
-                    </MenuItem>
-                    <MenuItem value={2} style={{ background: "lightgreen" }}>
-                      High
-                    </MenuItem>
-                    <MenuItem value={3} style={{ background: "orange" }}>
-                      Medium
-                    </MenuItem>
-                    <MenuItem value={4} style={{ background: "yellow" }}>
-                      low
-                    </MenuItem>
-                    <MenuItem value={5} style={{ background: "#fa7979" }}>
-                      Lowest
-                    </MenuItem>
-                    <MenuItem value={6} style={{ background: "red" }}>
-                      Not Important
-                    </MenuItem>
-                  </Select>
-                </FormControl> */}
               <div
                 className="selectionContainer"
-                style={{ display: "flex", justifyContent: "center" }}
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "80%",
+                  margin: "auto",
+                }}
               >
                 <div className="selectButton" onClick={handleSelect}>
                   Select Priority
                 </div>
 
                 <div className="mainbutton" id="selectoptions">
-                  <div className="selectPriority">
-                    <div className="box">
-                      <div className="horizontal1">1</div>
-                      <div className="horizontal2"></div>
-                    </div>
-                    <div className="content">Highest</div>
-                    <div className="arrow"></div>
+                  {priority.map((val, idx) => {
+                    return (
+                      <div
+                        className="selectPriority"
+                        key={idx}
+                        data-aos="slide-right"
+                      >
+                        <div className="box">
+                          <div className="horizontal1">
+                            <TaskAltIcon className="tickIcon" />
+                          </div>
+                          <div className="horizontal2"></div>
+                        </div>
+                        <div
+                          className="content"
+                          style={{ backgroundColor: val.color }}
+                        >
+                          {val.p}
+                        </div>
+                        <div className="arrow"></div>
 
-                    <div></div>
-                  </div>
-                  <div className="selectPriority">
-                    <div className="box">
-                      <div className="horizontal1">1</div>
-                      <div className="horizontal2"></div>
-                    </div>
-                    <div className="content">High</div>
-                    <div className="arrow"></div>
-                  </div>
-                  <div className="selectPriority">
-                    <div className="box">
-                      <div className="horizontal1"></div>
-                      <div className="horizontal2"></div>
-                    </div>
-                    <div className="content">Medium</div>
-                    <div className="arrow"></div>
-                  </div>
-                  <div className="selectPriority">
-                    <div className="box"></div>
-                    <div className="content">Low</div>
-                    <div className="arrow"></div>
-                  </div>
-                  <div className="selectPriority">
-                    <div className="box"></div>
-                    <div className="content">Lowest</div>
-                    <div className="arrow"></div>
-                  </div>
-                  <div className="selectPriority">
-                    <div className="box"></div>
-                    <div className="content">Not Important</div>
-                    <div className="arrow"></div>
-                  </div>
+                        <div></div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* time period */}
+                <div className="selectButton" onClick={handleSelect}>
+                  Select Time
                 </div>
               </div>
               {/* </Box> */}
@@ -271,7 +224,8 @@ const ScheduleBuilder = () => {
             style={{
               marginTop: "5%",
               backgroundImage: `url(${blackBg})`,
-              borderColor: "#0f6d07",top:0,
+              borderColor: "#0f6d07",
+              top: 0,
             }}
             id="bb-2"
           >

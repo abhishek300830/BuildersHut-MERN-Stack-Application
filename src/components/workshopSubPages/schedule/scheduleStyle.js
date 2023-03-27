@@ -44,29 +44,31 @@ export const ScheduleStyleDiv = styled.div`
         }
         // select button
         .selectButton {
-          /* justify-content: center; */
-          width: 80%;
-          height: 50px;
-          background-color: grey;
+          width: 43%;
+          background-color: white;
+          border: 1px solid black;
+          border-top: 2px solid black;
+          padding: 2.5%;
+          border-radius: 5px;
+          cursor: pointer;
         }
         // making selection list
         .mainbutton {
-          background-color: white;
           z-index: 10;
           margin-top: 50px;
           position: absolute;
-          width: 100%;
+          width: 37%;
+          background: #f7f7f7;
+          display: none;
           .selectPriority {
-            /* width: 100%; */
-
             display: flex;
             position: relative;
-            justify-content: center;
             align-items: center;
+            /* animation: "p-anim" 0.5s normal 0s 1 linear; */
             .box {
               display: flex;
               flex-direction: row;
-              margin: 5px;
+              margin: 2px;
               width: 40px;
               height: 40px;
               border-radius: 5px;
@@ -74,29 +76,60 @@ export const ScheduleStyleDiv = styled.div`
               border: 3px solid black;
 
               .horizontal1 {
+                font-size: 1.2em;
+                display: flex;
                 flex-grow: 2;
+                align-items: center;
+                justify-content: center;
                 background-color: white;
+                .tickIcon {
+                  color: black;
+                  transition: 0.3s;
+                }
               }
               .horizontal2 {
-                flex-grow: 1;
-
+                flex-grow: 2;
                 background-color: #dddaec;
               }
             }
             .content {
-              margin-left: -5px;
-              padding: 7px;
-
-              padding-right: 20%;
-              background-color: #f75185;
+              text-align: left;
+              width: 70%;
+              margin-left: 0px;
+              padding: 7px 0px;
+              padding-left: 2%;
+              /* background-color: #f75185; */
+              color: white;
+              border: 2px solid black;
             }
+
             .arrow {
               width: 0;
               height: 0;
               /* background-color: red; */
-              border-left: 18px solid #e5384f;
+              border-left: 18px solid black;
               border-top: 18px solid transparent;
               border-bottom: 18px solid transparent;
+            }
+          }
+
+          @keyframes p-anim {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .selectPriority:hover {
+        cursor: pointer;
+        .box {
+          .horizontal1 {
+            .tickIcon {
+              color: green !important;
             }
           }
         }
@@ -204,7 +237,6 @@ export const ScheduleStyleDiv = styled.div`
         .dusturImg:hover {
           width: 45%;
         }
-
       }
       .content {
         position: relative;
@@ -222,43 +254,40 @@ export const ScheduleStyleDiv = styled.div`
           padding: 2%;
         }
       }
-      
     }
   }
 
-      @media (max-width: 820px) {
-        section.sMain {
-          display: block;
-          margin-top: 0;
-          overflow: auto;
-          height: 90%;
-          div.left {
-            height: auto;
-            width: 80%;
-            margin: auto;
-          }
-          div.right {
-            /* border: 1px solid black; */
-            height: auto;
-            width: 85%;
-            margin: auto;
-            margin-top: 5%;
-          }
-        }
+  @media (max-width: 820px) {
+    section.sMain {
+      display: block;
+      margin-top: 0;
+      overflow: auto;
+      height: 90%;
+      div.left {
+        height: auto;
+        width: 80%;
+        margin: auto;
       }
+      div.right {
+        /* border: 1px solid black; */
+        height: auto;
+        width: 85%;
+        margin: auto;
+        margin-top: 5%;
+      }
+    }
+  }
 
-      @media (max-width: 520px) {
-        section.sMain {
-          margin-top: -5%;
-          height: 88%;
-          div.left {
-            width: 90%;
-          }
-          div.right {
-            width: 95%;
-          }
-        }
+  @media (max-width: 520px) {
+    section.sMain {
+      margin-top: -5%;
+      height: 88%;
+      div.left {
+        width: 90%;
       }
-    
-  
+      div.right {
+        width: 95%;
+      }
+    }
+  }
 `;

@@ -6,8 +6,6 @@ import HomeScreen from "./components/home/HomeScreen";
 import Navbar from "./components/navbar/navbar";
 import Workshop from "./components/workshop/Workshop";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 import ResumeBuilder from "./components/workshopSubPages/resume/ResumeBuilder";
 import AuraBuilder from "./components/workshopSubPages/aura/AuraBuilder";
 import ChartBuilder from "./components/workshopSubPages/chart/ChartBuilder";
@@ -21,6 +19,9 @@ import builderContext from "./context/builderContext";
 import HorizontalPreview from "./components/workshopSubPages/resume/printables/horizontalFile/HorizontalPreview";
 import VerticalResume from "./components/workshopSubPages/resume/printables/VerticalDesign/VerticalResume";
 
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
 AOS.init();
 
 function App() {
