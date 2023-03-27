@@ -114,10 +114,13 @@ export const ScheduleStyleDiv = styled.div`
           background-position:center;
           min-height: 400px;
           box-shadow: 3px 3px 6px gray;
-  
+          position: -webkit-sticky;
+          position: sticky;
+          /* top: 0; */
   
           .table-head {
             position: relative;
+
             display: grid;
             grid-template-columns: 15% 75% 10%;
             text-align: center;

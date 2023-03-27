@@ -31,7 +31,7 @@ const ScheduleBuilder = () => {
   const deleteTaskHandler_24 = (indx) => {
     setData_24(data_24.filter(data=>data.id!==indx))
   }
-  
+
 
   return (
     <ScheduleStyleDiv>
@@ -145,6 +145,7 @@ const ScheduleBuilder = () => {
           <div
             className="generate-tables"
             style={{ backgroundImage: `url(${blackBg})` }}
+            id="bb-1"
           >
             <section className="table-head">
               <b className="b1">Priority</b>
@@ -184,8 +185,9 @@ const ScheduleBuilder = () => {
             style={{
               marginTop: "5%",
               backgroundImage: `url(${blackBg})`,
-              borderColor: "#0f6d07",
+              borderColor: "#0f6d07",top:0,
             }}
+            id="bb-2"
           >
             <section className="table-head">
               <b className="b1">Priority</b>
