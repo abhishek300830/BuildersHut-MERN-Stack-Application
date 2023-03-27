@@ -44,6 +44,7 @@ export const ScheduleStyleDiv = styled.div`
         }
         // select button
         .selectButton {
+          position: relative;
           width: 43%;
           background-color: white;
           border: 1px solid black;
@@ -51,6 +52,21 @@ export const ScheduleStyleDiv = styled.div`
           padding: 2.5%;
           border-radius: 5px;
           cursor: pointer;
+          user-select: none;
+
+          .selectIcon{
+            position:absolute;
+            right: 5%;
+            color: #252525;
+            transform: rotate(180deg);
+            transition: 0.2s;
+          }
+          .selectIcon2{
+            position:absolute;
+            right: 5%;
+            transition: 0.2s;
+            color: #252525;
+          }
         }
         // making selection list
         .mainbutton {
@@ -58,13 +74,16 @@ export const ScheduleStyleDiv = styled.div`
           margin-top: 50px;
           position: absolute;
           width: 37%;
-          background: #f7f7f7;
+          background: transparent;
           display: none;
+
           .selectPriority {
             display: flex;
             position: relative;
             align-items: center;
-            /* animation: "p-anim" 0.5s normal 0s 1 linear; */
+            animation: "p-anim" 0.5s normal 0s 1 linear;
+            transition: 0.3s;
+
             .box {
               display: flex;
               flex-direction: row;
@@ -83,14 +102,16 @@ export const ScheduleStyleDiv = styled.div`
                 justify-content: center;
                 background-color: white;
                 .tickIcon {
-                  color: black;
                   transition: 0.3s;
+                  color: black;
                 }
               }
               .horizontal2 {
                 flex-grow: 2;
                 background-color: #dddaec;
               }
+              
+              
             }
             .content {
               text-align: left;
@@ -98,18 +119,26 @@ export const ScheduleStyleDiv = styled.div`
               margin-left: 0px;
               padding: 7px 0px;
               padding-left: 2%;
-              /* background-color: #f75185; */
-              color: white;
+              color: #000000;
               border: 2px solid black;
+              border-right: 0;
+              user-select: none;
+              text-shadow: 0px 0px 3px white;
+              /* border-right-radius:2px ; */
+              border-top-right-radius: 2px;
+              border-bottom-right-radius: 2px;
             }
 
             .arrow {
               width: 0;
               height: 0;
+              margin-left: -0.4%;
               /* background-color: red; */
               border-left: 18px solid black;
               border-top: 18px solid transparent;
               border-bottom: 18px solid transparent;
+              transition: 0.3s;
+              filter: drop-shadow(2px 0px black);
             }
           }
 
@@ -121,18 +150,25 @@ export const ScheduleStyleDiv = styled.div`
               opacity: 1;
             }
           }
+
         }
       }
 
       .selectPriority:hover {
         cursor: pointer;
+        opacity: 0.8;
         .box {
           .horizontal1 {
             .tickIcon {
-              color: green !important;
+              color: #000000 !important;
+              filter: drop-shadow(-1px 1px black);
+              /* text-shadow: 1px 1px black !important; */
             }
-          }
+          }     
         }
+        /* .arrow{
+              border-left: 18px solid transparent !important;
+          } */
       }
       .select-opt {
         /* background: #595451;   */
