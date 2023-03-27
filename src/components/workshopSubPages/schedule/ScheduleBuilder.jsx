@@ -5,6 +5,7 @@ import { ScheduleStyleDiv } from "./scheduleStyle";
 import dusturImg from "../../../images/taskBuilder/cross.png";
 import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import EjectIcon from '@mui/icons-material/Eject';
 
 const ScheduleBuilder = () => {
   const [data_12, setData_12] = useState([
@@ -21,15 +22,22 @@ const ScheduleBuilder = () => {
     document.getElementById(`hide-dust-${indx}`).style.display = "none";
   };
   var show = false;
+  const [onSelect, setOnSelect] = useState(true)
+
+
   const handleSelect = () => {
     const view = document.getElementById("selectoptions");
 
     if (show) {
       view.style.display = "none";
       show = false;
+      setOnSelect(true)
+
     } else {
       view.style.display = "block";
       show = true;
+      setOnSelect(false)
+
     }
   };
   const [data_24, setData_24] = useState([
@@ -59,6 +67,8 @@ const ScheduleBuilder = () => {
     { p: "Not Important", color: "#ff0000" },
   ];
 
+
+  // select button 
   return (
     <ScheduleStyleDiv>
       <section className="sMain">
@@ -117,6 +127,8 @@ const ScheduleBuilder = () => {
               >
                 <div className="selectButton" onClick={handleSelect}>
                   Select Priority
+                  {onSelect ? <EjectIcon className="selectIcon" /> : <EjectIcon className="selectIcon2" />}
+                  
                 </div>
 
                 <div className="mainbutton" id="selectoptions">
@@ -125,7 +137,7 @@ const ScheduleBuilder = () => {
                       <div
                         className="selectPriority"
                         key={idx}
-                        data-aos="slide-right"
+                        style={{animationDelay:`${(idx+1)*0.1}s`}}
                       >
                         <div className="box">
                           <div className="horizontal1">
@@ -154,27 +166,21 @@ const ScheduleBuilder = () => {
               </div>
               {/* </Box> */}
               <br />
-              <button
-                className="all-btns"
-                // onClick={addField2}
-                // disabled={
-                //   maxField2 === 0 || type.length === 0 || txValue.length === 0
-                // }
-              >
-                <lord-icon
-                  src="https://cdn.lordicon.com/ynwbvguu.json"
-                  trigger="hover"
-                  colors="primary:#000000"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    // opacity:
-                    //   maxField2 === 0 || type.length === 0 || txValue.length === 0
-                    //     ? "0.6"
-                    //     : "1",
-                  }}
-                ></lord-icon>
-              </button>
+              
+              {onSelect &&
+                  <button className="all-btns">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/ynwbvguu.json"
+                    trigger="hover"
+                    colors="primary:#000000"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                    }}
+                  ></lord-icon>
+                </button>
+              }
+              
             </Box>
           </div>
         </div>
