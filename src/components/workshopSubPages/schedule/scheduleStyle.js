@@ -121,18 +121,24 @@ export const ScheduleStyleDiv = styled.div`
               padding-left: 2%;
               color: #000000;
               border: 2px solid black;
+              border-right: 0;
               user-select: none;
               text-shadow: 0px 0px 3px white;
+              /* border-right-radius:2px ; */
+              border-top-right-radius: 2px;
+              border-bottom-right-radius: 2px;
             }
 
             .arrow {
               width: 0;
               height: 0;
+              margin-left: -0.4%;
               /* background-color: red; */
               border-left: 18px solid black;
               border-top: 18px solid transparent;
               border-bottom: 18px solid transparent;
               transition: 0.3s;
+              filter: drop-shadow(2px 0px black);
             }
           }
 

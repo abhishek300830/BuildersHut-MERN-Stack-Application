@@ -151,7 +151,9 @@ const ScheduleBuilder = () => {
                         >
                           {val.p}
                         </div>
-                        <div className="arrow"></div>
+                        <div className="arrow" 
+                          style={{borderLeftColor:val.color}}
+                        ></div>
 
                         <div></div>
                       </div>
