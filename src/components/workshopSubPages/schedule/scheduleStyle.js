@@ -54,6 +54,33 @@ export const ScheduleStyleDiv = styled.div`
           cursor: pointer;
           user-select: none;
 
+          .box {
+              position: absolute;
+              display: flex;
+              flex-direction: row;
+              margin: -5%;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              overflow: hidden;
+              border: 3px solid black;
+              .horizontal1 {
+                font-size: 1.2em;
+                display: flex;
+                flex-grow: 2;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                .tickIcon {
+                  transition: 0.3s;
+                  color: black;
+                }
+              }
+              .horizontal2 {
+                flex-grow: 2;
+                background-color: #dddaec;
+              } 
+            }
           .selectIcon{
             position:absolute;
             right: 5%;

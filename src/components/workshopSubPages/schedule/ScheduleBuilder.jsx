@@ -126,6 +126,12 @@ const ScheduleBuilder = () => {
                 }}
               >
                 <div className="selectButton" onClick={handleSelect}>
+                  <div className="box">
+                    <div className="horizontal1">
+                      <TaskAltIcon className="tickIcon" />
+                    </div>
+                    <div className="horizontal2"></div>
+                  </div>
                   Select Priority
                   {onSelect ? <EjectIcon className="selectIcon" /> : <EjectIcon className="selectIcon2" />}
                   
