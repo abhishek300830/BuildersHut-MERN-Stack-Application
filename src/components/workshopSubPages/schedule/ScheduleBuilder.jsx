@@ -6,6 +6,7 @@ import dusturImg from "../../../images/taskBuilder/cross.png";
 import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import EjectIcon from '@mui/icons-material/Eject';
+import AvTimerIcon from '@mui/icons-material/AvTimer';
 
 const ScheduleBuilder = () => {
   const [data_12, setData_12] = useState([
@@ -17,27 +18,19 @@ const ScheduleBuilder = () => {
     { id: 6, task: "I will go to the restaurant for dinner at home" },
   ]);
 
-  const dusturAnimation = (indx) => {
-    document.getElementById(`display-dust-${indx}`).style.display = "block";
-    document.getElementById(`hide-dust-${indx}`).style.display = "none";
-  };
-  var show = false;
-  const [onSelect, setOnSelect] = useState(true)
 
+  const [onSelect, setOnSelect] = useState(true)
 
   const handleSelect = () => {
     const view = document.getElementById("selectoptions");
 
-    if (show) {
-      view.style.display = "none";
-      show = false;
-      setOnSelect(true)
-
-    } else {
+    if (onSelect) {
       view.style.display = "block";
-      show = true;
       setOnSelect(false)
 
+    } else {
+      view.style.display = "none";
+      setOnSelect(true)
     }
   };
   const [data_24, setData_24] = useState([
@@ -168,7 +161,17 @@ const ScheduleBuilder = () => {
                 </div>
 
                 {/* time period */}
-                <div className="selectButton">Select Time</div>
+                <div className="selectButton">
+
+                  <div className="box" >
+                    <div className="horizontal1">
+                      <AvTimerIcon style={{color:"blue"}} fontSize="large"/>
+                    </div>
+                    <div className="horizontal2"></div>
+                  </div>
+                  Select Time
+               </div>
+
               </div>
               {/* </Box> */}
               <br />

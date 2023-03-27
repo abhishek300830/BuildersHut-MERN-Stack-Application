@@ -58,7 +58,7 @@ export const ScheduleStyleDiv = styled.div`
               position: absolute;
               display: flex;
               flex-direction: row;
-              margin: -5%;
+              margin: -4.5%;
               width: 40px;
               height: 40px;
               border-radius: 5px;
@@ -73,7 +73,7 @@ export const ScheduleStyleDiv = styled.div`
                 background-color: white;
                 .tickIcon {
                   transition: 0.3s;
-                  color: black;
+                  color: #24b300;
                 }
               }
               .horizontal2 {
