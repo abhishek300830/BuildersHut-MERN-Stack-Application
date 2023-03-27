@@ -38,9 +38,9 @@ const Navbar = () => {
       <div className="main">
         <div className="left">
           {/* <button className="aboutusBtn">About</button> */}
-          <Button variant="contained" color="warning">
+          {/* <Button variant="contained" color="warning">
             About
-          </Button>
+          </Button> */}
         </div>
 
         <div className="mid">

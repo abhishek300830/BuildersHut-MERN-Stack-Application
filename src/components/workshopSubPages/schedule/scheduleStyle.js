@@ -42,6 +42,64 @@ export const ScheduleStyleDiv = styled.div`
         .templeteClass {
           width: 80%;
         }
+        // select button
+        .selectButton {
+          /* justify-content: center; */
+          width: 80%;
+          height: 50px;
+          background-color: grey;
+        }
+        // making selection list
+        .mainbutton {
+          background-color: white;
+          z-index: 10;
+          margin-top: 50px;
+          position: absolute;
+          width: 100%;
+          .selectPriority {
+            /* width: 100%; */
+
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            .box {
+              display: flex;
+              flex-direction: row;
+              margin: 5px;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              overflow: hidden;
+              border: 3px solid black;
+
+              .horizontal1 {
+                flex-grow: 2;
+                background-color: white;
+              }
+              .horizontal2 {
+                flex-grow: 1;
+
+                background-color: #dddaec;
+              }
+            }
+            .content {
+              margin-left: -5px;
+              padding: 7px;
+
+              padding-right: 20%;
+              background-color: #f75185;
+            }
+            .arrow {
+              width: 0;
+              height: 0;
+              /* background-color: red; */
+              border-left: 18px solid #e5384f;
+              border-top: 18px solid transparent;
+              border-bottom: 18px solid transparent;
+            }
+          }
+        }
       }
       .select-opt {
         /* background: #595451;   */
@@ -84,7 +142,7 @@ export const ScheduleStyleDiv = styled.div`
       left: 0;
       background-color: transparent;
     }
-  
+
     div.left::before {
       position: absolute;
       content: "h";
@@ -97,7 +155,7 @@ export const ScheduleStyleDiv = styled.div`
       opacity: 0.7;
       background-color: #958e8c;
     }
-  
+
     div.right {
       padding: 2%;
       position: relative;
@@ -106,49 +164,47 @@ export const ScheduleStyleDiv = styled.div`
       ::-webkit-scrollbar {
         width: 0px;
       }
-  
-      .generate-tables {
-          border: 10px solid #68440d;
-          border-radius: 10px;
-          background-size:auto;
-          background-position:center;
-          min-height: 400px;
-          box-shadow: 3px 3px 6px gray;
-          position: -webkit-sticky;
-          position: sticky;
-          /* top: 0; */
-  
-          .table-head {
-            position: relative;
 
-            display: grid;
-            grid-template-columns: 15% 75% 10%;
-            text-align: center;
-            align-items: center;
-            color: white;
-            border-radius: 5px;
-            border-bottom-left-radius: 0px;
-            border-bottom-right-radius: 0px;
-            border-bottom: 3px solid #e2e2e2;
-  
+      .generate-tables {
+        border: 10px solid #68440d;
+        border-radius: 10px;
+        background-size: auto;
+        background-position: center;
+        min-height: 350px;
+
+        .table-head {
+          position: relative;
+          display: grid;
+          grid-template-columns: 15% 75% 10%;
+          text-align: center;
+          align-items: center;
+          color: white;
+          border-radius: 5px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+          border-bottom: 3px solid #e2e2e2;
+
+          /* background-color: #242424; */
+
           b {
             padding: 3%;
-            /* font-size: 1.5vw; */
+            font-size: 1.5vw;
           }
           .b3 {
             color: transparent;
           }
         }
-  
-        .dusturImg,.dusturImg-anim{
-           width: 40%;
-           transition: 0.5s;
-           cursor: pointer;
+
+        .dusturImg {
+          width: 40%;
+          transition: 0.5s;
+          filter: drop-shadow(0px 1px #b8eabd);
+          cursor: pointer;
         }
-        .dusturImg:hover{
+        .dusturImg:hover {
           width: 45%;
-        } 
-        
+        }
+
       }
       .content {
         position: relative;
@@ -161,59 +217,48 @@ export const ScheduleStyleDiv = styled.div`
         border-top-right-radius: 0px;
         border-top-left-radius: 0px;
         text-shadow: 0.5px 0.2px white;
-        
+
         div {
           padding: 2%;
         }
-        
       }
-      .bottom {
-        display: grid;
-        grid-template-columns: 15% 75% 10%;
-        text-align: center;
-        align-items: center;
-        color: white;
-        height: 30px;
-        border-radius: 5px;
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
-      }
+      
     }
   }
 
- 
-@media (max-width:820px){
-  section.sMain {
-    display: block;
-    margin-top: 0;
-    overflow: auto;
-    height: 90%;
-      div.left{
-        height: auto;
-        width: 80%;
-        margin: auto;
+      @media (max-width: 820px) {
+        section.sMain {
+          display: block;
+          margin-top: 0;
+          overflow: auto;
+          height: 90%;
+          div.left {
+            height: auto;
+            width: 80%;
+            margin: auto;
+          }
+          div.right {
+            /* border: 1px solid black; */
+            height: auto;
+            width: 85%;
+            margin: auto;
+            margin-top: 5%;
+          }
+        }
       }
-      div.right{
-        /* border: 1px solid black; */
-        height: auto;
-        width: 85%;
-        margin: auto;
-        margin-top: 5%;
-      }
-  }
-}
 
-@media (max-width:520px){
-  section.sMain {
-    margin-top: -5%;
-    height: 88%;
-      div.left{
-        width: 90%;
+      @media (max-width: 520px) {
+        section.sMain {
+          margin-top: -5%;
+          height: 88%;
+          div.left {
+            width: 90%;
+          }
+          div.right {
+            width: 95%;
+          }
+        }
       }
-      div.right{
-        width: 95%;
-      }
-  }
-}
-
+    
+  
 `;
