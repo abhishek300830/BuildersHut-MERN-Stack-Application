@@ -53,43 +53,44 @@ export const ScheduleStyleDiv = styled.div`
           border-radius: 5px;
           cursor: pointer;
           user-select: none;
+          text-shadow: 0px 0px 3px white;
 
           .box {
-              position: absolute;
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            margin: -5%;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 3px solid black;
+            .horizontal1 {
+              font-size: 1.2em;
               display: flex;
-              flex-direction: row;
-              margin: -5%;
-              width: 40px;
-              height: 40px;
-              border-radius: 5px;
-              overflow: hidden;
-              border: 3px solid black;
-              .horizontal1 {
-                font-size: 1.2em;
-                display: flex;
-                flex-grow: 2;
-                align-items: center;
-                justify-content: center;
-                background-color: white;
-                .tickIcon {
-                  transition: 0.3s;
-                  color: black;
-                }
+              flex-grow: 2;
+              align-items: center;
+              justify-content: center;
+              background-color: white;
+              .tickIcon {
+                transition: 0.3s;
+                color: black;
               }
-              .horizontal2 {
-                flex-grow: 2;
-                background-color: #dddaec;
-              } 
             }
-          .selectIcon{
-            position:absolute;
+            .horizontal2 {
+              flex-grow: 2;
+              background-color: #dddaec;
+            }
+          }
+          .selectIcon {
+            position: absolute;
             right: 5%;
             color: #252525;
             transform: rotate(180deg);
             transition: 0.2s;
           }
-          .selectIcon2{
-            position:absolute;
+          .selectIcon2 {
+            position: absolute;
             right: 5%;
             transition: 0.2s;
             color: #252525;
@@ -137,8 +138,6 @@ export const ScheduleStyleDiv = styled.div`
                 flex-grow: 2;
                 background-color: #dddaec;
               }
-              
-              
             }
             .content {
               text-align: left;
@@ -177,7 +176,6 @@ export const ScheduleStyleDiv = styled.div`
               opacity: 1;
             }
           }
-
         }
       }
 
@@ -191,7 +189,7 @@ export const ScheduleStyleDiv = styled.div`
               filter: drop-shadow(-1px 1px black);
               /* text-shadow: 1px 1px black !important; */
             }
-          }     
+          }
         }
         /* .arrow{
               border-left: 18px solid transparent !important;

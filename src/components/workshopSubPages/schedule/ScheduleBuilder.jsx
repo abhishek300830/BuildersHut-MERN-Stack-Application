@@ -1,11 +1,11 @@
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useState } from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
 import dusturImg from "../../../images/taskBuilder/cross.png";
 import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import EjectIcon from '@mui/icons-material/Eject';
+import EjectIcon from "@mui/icons-material/Eject";
 
 const ScheduleBuilder = () => {
   const [data_12, setData_12] = useState([
@@ -22,8 +22,7 @@ const ScheduleBuilder = () => {
     document.getElementById(`hide-dust-${indx}`).style.display = "none";
   };
   var show = false;
-  const [onSelect, setOnSelect] = useState(true)
-
+  const [onSelect, setOnSelect] = useState(true);
 
   const handleSelect = () => {
     const view = document.getElementById("selectoptions");
@@ -31,13 +30,11 @@ const ScheduleBuilder = () => {
     if (show) {
       view.style.display = "none";
       show = false;
-      setOnSelect(true)
-
+      setOnSelect(true);
     } else {
       view.style.display = "block";
       show = true;
-      setOnSelect(false)
-
+      setOnSelect(false);
     }
   };
   const [data_24, setData_24] = useState([
@@ -58,7 +55,7 @@ const ScheduleBuilder = () => {
 
   // Priority
 
-  const priority = [
+  const priorityArray = [
     { p: "Highest", color: "#039b15" },
     { p: "High", color: "#58c941" },
     { p: "Medium", color: "#9bd28f" },
@@ -67,8 +64,13 @@ const ScheduleBuilder = () => {
     { p: "Not Important", color: "#ff0000" },
   ];
 
-
-  // select button 
+  // priority
+  const [priority, setPriority] = useState();
+  const handlePriority = (val, idx, color) => {
+    setPriority({ val, idx, color });
+    const changeColor = document.getElementById("colorChange");
+    changeColor.style.backgroundColor = color;
+  };
   return (
     <ScheduleStyleDiv>
       <section className="sMain">
@@ -125,25 +127,36 @@ const ScheduleBuilder = () => {
                   margin: "auto",
                 }}
               >
-                <div className="selectButton" onClick={handleSelect}>
+                <div
+                  className="selectButton"
+                  id="colorChange"
+                  onClick={handleSelect}
+                >
                   <div className="box">
                     <div className="horizontal1">
                       <TaskAltIcon className="tickIcon" />
                     </div>
                     <div className="horizontal2"></div>
                   </div>
-                  Select Priority
-                  {onSelect ? <EjectIcon className="selectIcon" /> : <EjectIcon className="selectIcon2" />}
-                  
+
+                  {priority ? priority.val : "Select Priority"}
+                  {onSelect ? (
+                    <EjectIcon className="selectIcon" />
+                  ) : (
+                    <EjectIcon className="selectIcon2" />
+                  )}
                 </div>
 
                 <div className="mainbutton" id="selectoptions">
-                  {priority.map((val, idx) => {
+                  {priorityArray.map((val, idx) => {
                     return (
                       <div
                         className="selectPriority"
                         key={idx}
-                        style={{animationDelay:`${(idx+1)*0.1}s`}}
+                        style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
+                        onClick={() => {
+                          handlePriority(val.p, idx + 1, val.color);
+                        }}
                       >
                         <div className="box">
                           <div className="horizontal1">
@@ -157,8 +170,9 @@ const ScheduleBuilder = () => {
                         >
                           {val.p}
                         </div>
-                        <div className="arrow" 
-                          style={{borderLeftColor:val.color}}
+                        <div
+                          className="arrow"
+                          style={{ borderLeftColor: val.color }}
                         ></div>
 
                         <div></div>
@@ -172,9 +186,9 @@ const ScheduleBuilder = () => {
               </div>
               {/* </Box> */}
               <br />
-              
-              {onSelect &&
-                  <button className="all-btns">
+
+              {onSelect && (
+                <button className="all-btns">
                   <lord-icon
                     src="https://cdn.lordicon.com/ynwbvguu.json"
                     trigger="hover"
@@ -185,8 +199,7 @@ const ScheduleBuilder = () => {
                     }}
                   ></lord-icon>
                 </button>
-              }
-              
+              )}
             </Box>
           </div>
         </div>
