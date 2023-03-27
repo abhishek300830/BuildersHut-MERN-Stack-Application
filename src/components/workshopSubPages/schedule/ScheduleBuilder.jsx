@@ -148,9 +148,7 @@ const ScheduleBuilder = () => {
                 </div>
 
                 {/* time period */}
-                <div className="selectButton" onClick={handleSelect}>
-                  Select Time
-                </div>
+                <div className="selectButton">Select Time</div>
               </div>
               {/* </Box> */}
               <br />
