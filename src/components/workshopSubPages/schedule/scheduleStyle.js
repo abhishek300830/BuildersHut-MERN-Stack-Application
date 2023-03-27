@@ -68,13 +68,24 @@ export const ScheduleStyleDiv = styled.div`
             .horizontal1 {
               font-size: 1.2em;
               display: flex;
-              flex-grow: 2;
-              align-items: center;
-              justify-content: center;
-              background-color: white;
-              .tickIcon {
-                transition: 0.3s;
-                color: black;
+              flex-direction: row;
+              margin: -4.5%;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              overflow: hidden;
+              border: 3px solid black;
+              .horizontal1 {
+                font-size: 1.2em;
+                display: flex;
+                flex-grow: 2;
+                align-items: center;
+                justify-content: center;
+                background-color: white;
+                .tickIcon {
+                  transition: 0.3s;
+                  color: #24b300;
+                }
               }
             }
             .horizontal2 {
