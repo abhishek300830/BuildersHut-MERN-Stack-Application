@@ -7,6 +7,10 @@ import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import EjectIcon from "@mui/icons-material/Eject";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
+import { TimePeriodContainer } from "./timePeriodStyle";
+
+// icons import
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const ScheduleBuilder = () => {
   const [data_12, setData_12] = useState([
@@ -140,7 +144,6 @@ const ScheduleBuilder = () => {
                     <EjectIcon className="selectIcon2" />
                   )}
                 </div>
-
                 <div className="mainbutton" id="selectoptions">
                   {priorityArray.map((val, idx) => {
                     return (
@@ -176,15 +179,24 @@ const ScheduleBuilder = () => {
                 </div>
 
                 {/* time period */}
-                <div className="selectButton">
-                  <div className="box">
-                    <div className="horizontal1">
-                      <AvTimerIcon style={{ color: "blue", fontSize:"1.8vw" }}/>
+                <TimePeriodContainer>
+                  <div className="box1">
+                    <div className="horizontal11">
+                      <AvTimerIcon
+                        style={{ color: "blue", fontSize: "1.8vw" }}
+                      />
                     </div>
-                    <div className="horizontal2"></div>
+                    <div className="horizontal22"></div>
                   </div>
-                  Select Time
-                </div>
+                  <div className="hours">Select</div>
+                  <div className="minutes">Time</div>
+                  <div className="prevTime">
+                    <PlayArrowIcon className="prevIcon" />
+                  </div>
+                  <div className="nextTime">
+                    <PlayArrowIcon className="nextIcon" />
+                  </div>
+                </TimePeriodContainer>
               </div>
               {/* </Box> */}
               <br />
