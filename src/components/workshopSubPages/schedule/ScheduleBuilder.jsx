@@ -179,7 +179,7 @@ const ScheduleBuilder = () => {
                 <div className="selectButton">
                   <div className="box">
                     <div className="horizontal1">
-                      <AvTimerIcon style={{ color: "blue" }} fontSize="large" />
+                      <AvTimerIcon style={{ color: "blue", fontSize:"1.8vw" }}/>
                     </div>
                     <div className="horizontal2"></div>
                   </div>
