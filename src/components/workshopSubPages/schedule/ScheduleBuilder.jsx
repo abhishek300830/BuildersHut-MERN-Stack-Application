@@ -13,6 +13,13 @@ import { TimePeriodContainer } from "./timePeriodStyle";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const ScheduleBuilder = () => {
+  // enter task-nname state
+
+
+  const [taskName, setTaskName] = useState("")
+
+
+  // dummy data
   const [data_12, setData_12] = useState([
     { id: 1, task: "I want ot complete my Assignments till MOnday." },
     { id: 2, task: "I need to take a nap" },
@@ -21,9 +28,40 @@ const ScheduleBuilder = () => {
     { id: 5, task: "I will go to the restaurant for dinner at home" },
     { id: 6, task: "I will go to the restaurant for dinner at home" },
   ]);
+  const [data_24, setData_24] = useState([
+    { id: 1, task: "Sleep" },
+    { id: 2, task: "I need to take a nap" },
+    { id: 3, task: "I need to watch a movie" },
+    { id: 4, task: "I will go to the restaurant for dinner" },
+    { id: 5, task: "I will go to the restaurant for dinner at home" },
+  ]);
+  const deleteTaskHandler_12 = (indx) => {
+    setData_12(data_12.filter((data) => data.id !== indx));
+  };
 
+  const deleteTaskHandler_24 = (indx) => {
+    setData_24(data_24.filter((data) => data.id !== indx));
+  };
+
+  // priority data
+  const [priority, setPriority] = useState("");
+  const handlePriority = (val, idx, color) => {
+    setPriority({ val, idx, color });
+    const changeColor = document.getElementById("colorChange");
+    changeColor.style.backgroundColor = color;
+    handleSelect()
+  };
+
+
+
+
+  
+ 
+
+ 
+
+  // Priority functions
   const [onSelect, setOnSelect] = useState(true);
-
   const handleSelect = () => {
     const view = document.getElementById("selectoptions");
 
@@ -35,24 +73,6 @@ const ScheduleBuilder = () => {
       setOnSelect(true);
     }
   };
-  const [data_24, setData_24] = useState([
-    { id: 1, task: "Sleep" },
-    { id: 2, task: "I need to take a nap" },
-    { id: 3, task: "I need to watch a movie" },
-    { id: 4, task: "I will go to the restaurant for dinner" },
-    { id: 5, task: "I will go to the restaurant for dinner at home" },
-  ]);
-
-  const deleteTaskHandler_12 = (indx) => {
-    setData_12(data_12.filter((data) => data.id !== indx));
-  };
-
-  const deleteTaskHandler_24 = (indx) => {
-    setData_24(data_24.filter((data) => data.id !== indx));
-  };
-
-  // Priority
-
   const priorityArray = [
     { p: "Highest", color: "#039b15" },
     { p: "High", color: "#58c941" },
@@ -62,13 +82,33 @@ const ScheduleBuilder = () => {
     { p: "Not Important", color: "#ff0000" },
   ];
 
-  // priority
-  const [priority, setPriority] = useState();
-  const handlePriority = (val, idx, color) => {
-    setPriority({ val, idx, color });
-    const changeColor = document.getElementById("colorChange");
-    changeColor.style.backgroundColor = color;
-  };
+
+  // time 
+  const totalTime= ['10' ,'30', '01', '02', '03', '04', '05'];
+  const [indxOfTime, setIndxOfTime] = useState(-1)
+
+  const increaseTimer=()=>{
+    if(indxOfTime <6){
+      setIndxOfTime(prev => ++prev);
+    }
+  }
+  const decreaseTimer=()=>{
+    if(indxOfTime >0){
+      setIndxOfTime(prev => --prev)
+    }
+  }
+
+  const flag=taskName.length === 0 || indxOfTime === -1 || priority.length === 0;
+  const handleOnclickButton=()=>{
+      if(flag){
+          // warning
+          document.getElementById('alert').innerHTML="Please Enter all Fields."
+      }else{
+        // submit
+        document.getElementById('alert').innerHTML=""
+      }
+  }
+
   return (
     <ScheduleStyleDiv>
       <section className="sMain">
@@ -111,9 +151,9 @@ const ScheduleBuilder = () => {
                 placeholder="Enter Here"
                 variant="outlined"
                 style={{ marginTop: "10px", textAlign: "center", width: "80%" }}
-                // value={personalData.name}
-                // onChange={(ev)=>(setPersonalData({...personalData,name:ev.target.value}))}
                 color="success"
+                value={taskName}
+                onChange={ev => setTaskName(ev.target.value)}
               />
               <br />
               <div
@@ -136,8 +176,8 @@ const ScheduleBuilder = () => {
                     </div>
                     <div className="horizontal2"></div>
                   </div>
-
-                  {priority ? priority.val : "Select Priority"}
+                  
+                  {priority ? priority.val : <span style={{color:"black",textShadow:"none"}}>Select Priority</span>}
                   {onSelect ? (
                     <EjectIcon className="selectIcon" />
                   ) : (
@@ -183,26 +223,48 @@ const ScheduleBuilder = () => {
                   <div className="box1">
                     <div className="horizontal11">
                       <AvTimerIcon
-                        style={{ color: "blue", fontSize: "1.8vw" }}
+
+                        style={{ color: "blue"}}
                       />
                     </div>
                     <div className="horizontal22"></div>
                   </div>
-                  <div className="hours">Select</div>
-                  <div className="minutes">Time</div>
-                  <div className="prevTime">
+                  
+                  {indxOfTime === -1 &&
+                    <>
+                      <div className="hours">Select</div>
+                      <div className="minutes">Time</div>
+                    </>
+                  }
+                  {
+                    indxOfTime >-1 && 
+                    <>
+                      <div className="hours">{totalTime[indxOfTime]}</div>
+                      <div className="minutes">
+                        {
+                          (indxOfTime === 0 || indxOfTime === 1) ?"minutes":"hours"
+                        }
+                      </div>
+                    </>
+                  }
+
+                  <div className="prevTime"  onClick={decreaseTimer}>
                     <PlayArrowIcon className="prevIcon" />
                   </div>
-                  <div className="nextTime">
-                    <PlayArrowIcon className="nextIcon" />
+                  <div className="nextTime" onClick={increaseTimer}>
+                    <PlayArrowIcon className="nextIcon"/>
                   </div>
                 </TimePeriodContainer>
               </div>
               {/* </Box> */}
               <br />
-
+              {flag && 
+                <div id="alert" style={{color:"red", textAlign:"center"}}></div>
+              }
               {onSelect && (
-                <button className="all-btns">
+                <button className="all-btns" 
+                  onClick={handleOnclickButton}
+                >
                   <lord-icon
                     src="https://cdn.lordicon.com/ynwbvguu.json"
                     trigger="hover"
@@ -210,10 +272,13 @@ const ScheduleBuilder = () => {
                     style={{
                       width: "40px",
                       height: "40px",
+                      opacity:(flag)? 0.6:1
                     }}
                   ></lord-icon>
                 </button>
               )}
+              
+
             </Box>
           </div>
         </div>

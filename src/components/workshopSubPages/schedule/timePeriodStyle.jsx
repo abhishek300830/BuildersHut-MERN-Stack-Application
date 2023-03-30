@@ -27,7 +27,7 @@ export const TimePeriodContainer = styled.div`
     overflow: hidden;
     border: 3px solid black;
     .horizontal11 {
-      font-size: 1.2em;
+      /* font-size: 1.2em; */
       display: flex;
       flex-direction: row;
       width: 40px;
@@ -87,4 +87,15 @@ export const TimePeriodContainer = styled.div`
     transition: 0.2s;
     color: #252525;
   } */
+
+  @media (max-width:520px) {
+      width: 98%;
+      margin-left: 0;
+      padding: 0.6%;
+      margin-top: 4%;
+
+      .box1{
+        width: 73%;
+      }
+}
 `;

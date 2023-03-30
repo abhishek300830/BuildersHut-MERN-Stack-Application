@@ -38,6 +38,8 @@ export const ScheduleStyleDiv = styled.div`
         .entertask {
           /* text-align: left; */
           padding: "10px";
+          color:#434343 ;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         .templeteClass {
           width: 80%;
@@ -53,8 +55,8 @@ export const ScheduleStyleDiv = styled.div`
           border-radius: 5px;
           cursor: pointer;
           user-select: none;
-          text-shadow: 0px 0px 3px white;
-
+          text-shadow: 0px 0px 3px black;
+          color: white;
           .box {
             position: absolute;
             display: flex;
@@ -144,6 +146,10 @@ export const ScheduleStyleDiv = styled.div`
                 flex-grow: 2;
                 background-color: #dddaec;
               }
+
+              .alert{
+                
+              }
             }
             .content {
               text-align: left;
@@ -151,11 +157,11 @@ export const ScheduleStyleDiv = styled.div`
               margin-left: 0px;
               padding: 7px 0px;
               padding-left: 2%;
-              color: #000000;
+              color: #ffffff;
               border: 2px solid black;
               border-right: 0;
               user-select: none;
-              text-shadow: 0px 0px 3px white;
+              text-shadow: 0px 0px 3px black;
               /* border-right-radius:2px ; */
               border-top-right-radius: 2px;
               border-bottom-right-radius: 2px;
@@ -331,7 +337,8 @@ export const ScheduleStyleDiv = styled.div`
       overflow: auto;
       height: 90%;
       div.left {
-        height: auto;
+        /* height: auto; */
+        height: 350px;
         width: 80%;
         margin: auto;
       }
@@ -351,7 +358,35 @@ export const ScheduleStyleDiv = styled.div`
       height: 88%;
       div.left {
         width: 90%;
-      }
+
+        div.user-input{
+          .selectionContainer{
+            display: flex;
+            flex-direction: column;
+          }
+          .selectButton {
+            width: 88.5%;
+            /* border: 1px solid black; */
+            /* border-top: 2px solid black; */
+            padding: 5.5%;
+
+            
+          }
+          .mainbutton {
+            width: 76%;
+            margin-top: 15%;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+            .selectPriority {
+              .box{
+                width: 15%;
+              }
+              .content {
+                width: 72%;
+              }
+            }
+          }
+      }}
       div.right {
         width: 95%;
       }
