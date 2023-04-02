@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/BuildersHut-MERN-Stack-Application/static/css/main.88730926.css",
-    "main.js": "/BuildersHut-MERN-Stack-Application/static/js/main.82b88d81.js",
+    "main.js": "/BuildersHut-MERN-Stack-Application/static/js/main.fb85cb9f.js",
     "static/media/robortBuilder.png": "/BuildersHut-MERN-Stack-Application/static/media/robortBuilder.1fdf30264832a373ab12.png",
     "static/media/popupGirl.png": "/BuildersHut-MERN-Stack-Application/static/media/popupGirl.5955aba681430144f179.png",
     "static/media/builder2_bg.png": "/BuildersHut-MERN-Stack-Application/static/media/builder2_bg.910e3bc3ab1d5887ae99.png",
-    "static/media/duster.png": "/BuildersHut-MERN-Stack-Application/static/media/duster.1a7e91a4b2763a2c1a79.png",
     "static/media/builder3.png": "/BuildersHut-MERN-Stack-Application/static/media/builder3.7114627af333ed48d338.png",
     "static/media/builder1.png": "/BuildersHut-MERN-Stack-Application/static/media/builder1.39fa839ad999cc2ab4d4.png",
     "static/media/workshop2.png": "/BuildersHut-MERN-Stack-Application/static/media/workshop2.18c4e5b6375e124ac8b1.png",
@@ -14,6 +13,7 @@
     "static/media/builderhut2.png": "/BuildersHut-MERN-Stack-Application/static/media/builderhut2.dd92111d375be3e124cc.png",
     "static/media/chart.png": "/BuildersHut-MERN-Stack-Application/static/media/chart.35cd35e50c2a504b3828.png",
     "static/media/bgBlackBoard.jpg": "/BuildersHut-MERN-Stack-Application/static/media/bgBlackBoard.49b5fba3ba8dd46f161f.jpg",
+    "static/media/cross.png": "/BuildersHut-MERN-Stack-Application/static/media/cross.a1eb540200b9d7b2817d.png",
     "static/media/aura_png.png": "/BuildersHut-MERN-Stack-Application/static/media/aura_png.7ab5aad51a8c29dc8c76.png",
     "static/media/color_png.png": "/BuildersHut-MERN-Stack-Application/static/media/color_png.19d8546235c9475bed8c.png",
     "static/media/meme.png": "/BuildersHut-MERN-Stack-Application/static/media/meme.bf44875a787ba6c75f64.png",
@@ -31,10 +31,10 @@
     "static/media/resume_png.png": "/BuildersHut-MERN-Stack-Application/static/media/resume_png.2644f5c3557760cd602f.png",
     "index.html": "/BuildersHut-MERN-Stack-Application/index.html",
     "main.88730926.css.map": "/BuildersHut-MERN-Stack-Application/static/css/main.88730926.css.map",
-    "main.82b88d81.js.map": "/BuildersHut-MERN-Stack-Application/static/js/main.82b88d81.js.map"
+    "main.fb85cb9f.js.map": "/BuildersHut-MERN-Stack-Application/static/js/main.fb85cb9f.js.map"
   },
   "entrypoints": [
     "static/css/main.88730926.css",
-    "static/js/main.82b88d81.js"
+    "static/js/main.fb85cb9f.js"
   ]
 }
