@@ -52,14 +52,6 @@ const ScheduleBuilder = () => {
     handleSelect()
   };
 
-
-
-
-  
- 
-
- 
-
   // Priority functions
   const [onSelect, setOnSelect] = useState(true);
   const handleSelect = () => {
