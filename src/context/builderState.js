@@ -72,6 +72,11 @@ const BuilderState = (props) => {
     " acheivements",
   ];
 
+  // Schedule BUilder
+  const [taskData, setTaskData] = useState([]) 
+  const [taskData_24, setTaskData_24] = useState([]) 
+  const [timePassed, setTimePassed] = useState(0)
+
   return (
     <builderContext.Provider
       value={{
@@ -110,6 +115,14 @@ const BuilderState = (props) => {
         setBackTheme,
         alignment,
         setAlignment,
+        taskData,
+        setTaskData,
+        taskData_24, 
+        setTaskData_24,
+        timePassed, 
+        setTimePassed,
+        timePassed,
+        setTimePassed
       }}
     >
       {props.children}

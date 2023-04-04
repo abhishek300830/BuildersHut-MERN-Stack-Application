@@ -1,46 +1,35 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
-import dusturImg from "../../../images/taskBuilder/cross.png";
-import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
-import TaskAltIcon from "@mui/icons-material/TaskAlt";
-import EjectIcon from "@mui/icons-material/Eject";
-import AvTimerIcon from "@mui/icons-material/AvTimer";
 import { TimePeriodContainer } from "./timePeriodStyle";
+import builderContext from "../../../context/builderContext";
 
 // icons import
+import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
+import AvTimerIcon from "@mui/icons-material/AvTimer";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import dusturImg from "../../../images/taskBuilder/cross.png";
+import EjectIcon from "@mui/icons-material/Eject";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 
 const ScheduleBuilder = () => {
   // enter task-nname state
 
+  const {taskData,setTaskData, taskData_24, setTaskData_24,timePassed,setTimePassed}= useContext(builderContext)
 
   const [taskName, setTaskName] = useState("")
 
 
-  // dummy data
-  const [data_12, setData_12] = useState([
-    { id: 1, task: "I want ot complete my Assignments till MOnday." },
-    { id: 2, task: "I need to take a nap" },
-    { id: 3, task: "I need to watch a movie" },
-    { id: 4, task: "I will go to the restaurant for dinner" },
-    { id: 5, task: "I will go to the restaurant for dinner at home" },
-    { id: 6, task: "I will go to the restaurant for dinner at home" },
-  ]);
-  const [data_24, setData_24] = useState([
-    { id: 1, task: "Sleep" },
-    { id: 2, task: "I need to take a nap" },
-    { id: 3, task: "I need to watch a movie" },
-    { id: 4, task: "I will go to the restaurant for dinner" },
-    { id: 5, task: "I will go to the restaurant for dinner at home" },
-  ]);
+  
   const deleteTaskHandler_12 = (indx) => {
-    setData_12(data_12.filter((data) => data.id !== indx));
+    setTimePassed(timePassed-taskData_24[indx].taskTime)
+    setTaskData(taskData.filter((data,indx1) => indx1 !== indx));
+    
   };
 
   const deleteTaskHandler_24 = (indx) => {
-    setData_24(data_24.filter((data) => data.id !== indx));
+    setTaskData_24(taskData_24.filter((data,indx1) => indx1 !== indx));
   };
 
   // priority data
@@ -85,19 +74,35 @@ const ScheduleBuilder = () => {
     }
   }
   const decreaseTimer=()=>{
-    if(indxOfTime >0){
+    if(indxOfTime > 0){
       setIndxOfTime(prev => --prev)
     }
   }
 
   const flag=taskName.length === 0 || indxOfTime === -1 || priority.length === 0;
+
   const handleOnclickButton=()=>{
       if(flag){
           // warning
           document.getElementById('alert').innerHTML="Please Enter all Fields."
       }else{
-        // submit
-        document.getElementById('alert').innerHTML=""
+
+        var timeTOadd = Number.parseInt(totalTime[indxOfTime]);
+        if(timeTOadd != 10 && timeTOadd != 30){
+            timeTOadd*=60;
+        }
+
+        setTimePassed(timePassed+timeTOadd)
+        
+        const cond = timePassed+timeTOadd
+        if(cond<=720){
+          setTaskData([...taskData,{taskName:taskName, taskPriority:priority.idx, taskTime:timeTOadd}])
+        }
+        setTaskData_24([...taskData_24,{taskName:taskName, taskPriority:priority.idx, taskTime:timeTOadd}])
+        setTaskName('')
+        setPriority('')
+        const changeColor = document.getElementById("colorChange");
+        changeColor.style.backgroundColor = 'white';
       }
   }
 
@@ -288,22 +293,22 @@ const ScheduleBuilder = () => {
               <b className="b3">asd</b>
             </section>
 
-            {data_12.length === 0 && (
+            {taskData.length === 0 && (
               <section className="content">
                 <div></div>
                 <div className="tasks">Nothing...</div>
               </section>
             )}
 
-            {data_12.map((val, indx) => (
+            {taskData.map((val, indx) => (
               <section className="content" key={indx}>
                 <div>{indx + 1}.</div>
-                <div className="tasks">{val.task}</div>
+                <div className="tasks">{val.taskName}</div>
                 <img
                   src={dusturImg}
                   className="dusturImg"
                   alt="cross"
-                  onClick={() => deleteTaskHandler_12(val.id)}
+                  onClick={() => deleteTaskHandler_12(indx)}
                 />
               </section>
             ))}
@@ -331,19 +336,23 @@ const ScheduleBuilder = () => {
               <b className="b3">asd</b>
             </section>
 
-            {data_24.map((val, indx) => (
+            {/* //sleep  */}
+            <section className="content" >
+                <div>1.</div>
+                <div className="tasks">sleep</div>
+              </section>
+
+            {taskData_24.map((val, indx) => (
               <section className="content" key={indx}>
-                <div>{indx + 1}.</div>
-                <div className="tasks">{val.task}</div>
+                <div>{indx + 2}.</div>
+                <div className="tasks">{val.taskName}</div>
                 {/* <button>X</button> */}
-                {indx > 0 && (
                   <img
                     src={dusturImg}
                     className="dusturImg"
                     alt="dustur"
-                    onClick={() => deleteTaskHandler_24(val.id)}
+                    onClick={() => deleteTaskHandler_24(indx)}
                   />
-                )}
               </section>
             ))}
 
