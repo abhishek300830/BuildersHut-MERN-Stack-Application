@@ -1,15 +1,11 @@
 import React from "react";
-// import Footer from "../../footer/Footer";
-import Button from "@mui/material/Button";
+import { AuraContainer } from "./auraStyle";
 
 const AuraBuilder = () => {
   return (
-    <>
-      <div>AuraBuilder</div>
-
-      
-      {/* <Footer/> */}
-    </>
+    <AuraContainer>
+      <div className="auraMainDiv">Hello aura</div>
+    </AuraContainer>
   );
 };
 

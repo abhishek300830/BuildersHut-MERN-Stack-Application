@@ -38,8 +38,9 @@ export const ScheduleStyleDiv = styled.div`
         .entertask {
           /* text-align: left; */
           padding: "10px";
-          color:#434343 ;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          color: #434343;
+          font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+            sans-serif;
         }
         .templeteClass {
           width: 80%;
@@ -77,16 +78,15 @@ export const ScheduleStyleDiv = styled.div`
               align-items: center;
               justify-content: center;
               background-color: white;
-                .tickIcon {
-                  transition: 0.3s;
-                  color: #24b300;
-                }
+              .tickIcon {
+                transition: 0.3s;
+                color: #24b300;
+              }
             }
             .horizontal2 {
               height: 100%;
               width: 20%;
               background-color: #dddaec;
-
             }
           }
           .selectIcon {
@@ -147,8 +147,7 @@ export const ScheduleStyleDiv = styled.div`
                 background-color: #dddaec;
               }
 
-              .alert{
-                
+              .alert {
               }
             }
             .content {
@@ -359,8 +358,8 @@ export const ScheduleStyleDiv = styled.div`
       div.left {
         width: 90%;
 
-        div.user-input{
-          .selectionContainer{
+        div.user-input {
+          .selectionContainer {
             display: flex;
             flex-direction: column;
           }
@@ -369,8 +368,6 @@ export const ScheduleStyleDiv = styled.div`
             /* border: 1px solid black; */
             /* border-top: 2px solid black; */
             padding: 5.5%;
-
-            
           }
           .mainbutton {
             width: 76%;
@@ -378,7 +375,7 @@ export const ScheduleStyleDiv = styled.div`
             border-radius: 5px;
             background-color: #f7f7f7;
             .selectPriority {
-              .box{
+              .box {
                 width: 15%;
               }
               .content {
@@ -386,7 +383,8 @@ export const ScheduleStyleDiv = styled.div`
               }
             }
           }
-      }}
+        }
+      }
       div.right {
         width: 95%;
       }
