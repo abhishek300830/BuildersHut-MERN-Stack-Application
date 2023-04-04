@@ -6,7 +6,6 @@ const AuraBuilder = () => {
   return (
     <>
       <div>AuraBuilder</div>
-      <Button variant="contained">hell</Button>
 
       
       {/* <Footer/> */}
