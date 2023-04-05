@@ -8,7 +8,6 @@ import sun from "../../images/favicon/sun.png";
 import moon from "../../images/favicon/moon.png";
 import { useContext } from "react";
 import builderContext from "../../context/builderContext";
-import { Button } from "@mui/material";
 
 const Navbar = () => {
   const { themebg, setThemebg, setFormbg, setBorderbg } =

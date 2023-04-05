@@ -77,6 +77,10 @@ const BuilderState = (props) => {
   const [taskData_24, setTaskData_24] = useState([]) 
   const [timePassed, setTimePassed] = useState(0)
 
+
+  // Aura Builder
+  const [indexOfColor, setIndexOfColor] = useState(0)
+
   return (
     <builderContext.Provider
       value={{
@@ -122,7 +126,8 @@ const BuilderState = (props) => {
         timePassed, 
         setTimePassed,
         timePassed,
-        setTimePassed
+        setTimePassed,
+        indexOfColor, setIndexOfColor,
       }}
     >
       {props.children}
