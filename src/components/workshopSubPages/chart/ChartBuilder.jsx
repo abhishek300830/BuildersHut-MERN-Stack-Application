@@ -1,18 +1,28 @@
-import React from "react";
+import React ,{ useEffect,useState }from "react";
 import { ChartStyleDiv } from "./chartStyle";
 import chartH from '../../../images/headers/chart.png'
 import ApexCharts from "apexcharts";
-import { useEffect } from "react";
 import CSVReader from "react-csv-reader";
-import { useState } from "react";
 
 const ChartBuilder = () => {    
   
-  const [csvData, setCsvData] = useState()
+  const [csvData, setCsvData] = useState([])
+
+  const [attributes, setAttributes] = useState([])
+
   useEffect(()=>{
-    console.log(csvData)
-    chart.render()
-  },)
+    // if(csvData.length > 0){
+    //   console.log(Number.isNaN(Number.parseInt(csvData[0].play)))
+    // }
+
+    if(csvData.length>0){
+      setAttributes(Object.keys(csvData[0]))
+      // console.log())
+    }
+
+    
+    // chart.render()
+  },[csvData])
 
   var options = {
     chart: {
@@ -28,8 +38,6 @@ const ChartBuilder = () => {
   }
   var chart = new ApexCharts(document.querySelector("#chart"), options);  
 
-
-
   return (
   <ChartStyleDiv>
 
@@ -44,7 +52,14 @@ const ChartBuilder = () => {
       />
     }
     </div>
-    <div id="chart" style={{width:"50%", border:'2px solid black',marginTop:'2%'}}></div>
+
+    {attributes.length>0 && 
+    attributes.map((val,indx)=>(
+      <div key={indx}>
+          {indx+1}. {val} - {(Number.isNaN(Number.parseInt(csvData[0][val])))?'String':'Number'}
+      </div>
+    ))}
+    {/* <div id="chart" style={{width:"50%", border:'2px solid black',marginTop:'2%'}}></div> */}
 
 
   </ChartStyleDiv>
