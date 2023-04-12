@@ -284,7 +284,6 @@ const ScheduleBuilder = () => {
         <div className="right" id="right-part">
           <div
             className="generate-tables"
-            style={{ backgroundImage: `url(${blackBg})` }}
             id="bb-1"
           >
             <section className="table-head">
@@ -306,7 +305,7 @@ const ScheduleBuilder = () => {
                 <div className="tasks">{val.taskName}</div>
                 <img
                   src={dusturImg}
-                  className="dusturImg"
+                  className="deleteImg"
                   alt="cross"
                   onClick={() => deleteTaskHandler_12(indx)}
                 />
@@ -324,8 +323,8 @@ const ScheduleBuilder = () => {
             className="generate-tables"
             style={{
               marginTop: "5%",
-              backgroundImage: `url(${blackBg})`,
-              borderColor: "#0f6d07",
+              // backgroundImage: `url(${blackBg})`,
+              // borderColor: "#0f6d07",
               top: 0,
             }}
             id="bb-2"
@@ -349,7 +348,7 @@ const ScheduleBuilder = () => {
                 {/* <button>X</button> */}
                   <img
                     src={dusturImg}
-                    className="dusturImg"
+                    className="deleteImg"
                     alt="dustur"
                     onClick={() => deleteTaskHandler_24(indx)}
                   />
