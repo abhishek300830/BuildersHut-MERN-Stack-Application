@@ -265,43 +265,55 @@ export const ScheduleStyleDiv = styled.div`
       padding: 2%;
       position: relative;
       overflow: auto;
-      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      /* border: 1px solid black; */
       ::-webkit-scrollbar {
         width: 0px;
       }
 
       .generate-tables {
-        /* border: 10px solid #68440d; */
-        /* background-position: center; */
+   
         border-radius: 10px;
         border:3px solid #595451;
         background-size: auto;
         min-height: 350px;
+        padding-bottom: 2%;
 
         .table-head {
           position: relative;
-          width:98%;
+          width:95%;
           margin: auto;
           display: grid;
           grid-template-columns: 15% 75% 10%;
           text-align: center;
           align-items: center;
-          color: black;
-          border-radius: 5px;
-          border-bottom-left-radius: 0px;
-          border-bottom-right-radius: 0px;
-          /* border-bottom: 3px solid #e2e2e2; */
+          color: white;
+          border-radius: 8px;
+          margin-top: 1%;
+          background-color: #595451;
 
-          background-color: transparent;
+
 
           b {
+            position: relative;
             padding: 2%;
-            font-size: 1.5vw;
+            font-size: 1.3vw;
+            z-index: 3;
+            font-weight: normal;
           }
           .b3 {
             color: transparent;
           }
+        }
+        .table-head::before{
+          content: '';
+          position: absolute;
+          background-color: #837d7a;
+          border-radius: 7px;
+          left: 0.5%;
+          width: 99%;
+          height: 45%;
+          top: 5%;
+          z-index: 2;
+
         }
       }
       .content {
@@ -317,17 +329,22 @@ export const ScheduleStyleDiv = styled.div`
         width: 95%;
         margin: auto;
         margin-top: 1%;
+        opacity: 0.8;
+        transition: 0.3s;
 
-        div {
-          padding: 2%;
-        }
+          div {
+            padding: 2%;
+          }
 
-        .deleteImg{
-          width:25%;
-          cursor: pointer;
-        }
+          .deleteImg{
+            width:25%;
+            cursor: pointer;
+          }
       }
 
+      .content:hover{
+        opacity: 1;
+      }
     }
   }
 
