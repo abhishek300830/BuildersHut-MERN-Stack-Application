@@ -107,34 +107,47 @@ const ChartBuilder = () => {
   };
   return (
     <ChartStyleDiv>
-      {/* header  */}
-
-     
-      <img src={chartH} alt="header" className="header" />
-      <div className="selectCsv">
-        <p>Choose your CSV file to plot different types of Charts.</p>  
-        <div className="selection">
-        {
-          <CSVReader
-            cssInputClass="example"
-            parserOptions={{ header: true }}
-            onFileLoaded={(data, fileInfo) => setCsvData(data)}
-            inputStyle={{color: 'black'}}
-          />
-        }
-      </div>
-      </div>
-      
-
-      {attributes.length > 0 &&
-        attributes.map((val, indx) => (
-          <div key={indx}>
-            {indx + 1}. {val} -{" "}
-            {Number.isNaN(Number.parseInt(csvData[0][val]))
-              ? "String"
-              : "Number"}
+      {/* header chart Builder  */}
+      {/* <img src={chartH} alt="header" className="header" /> */}
+      <div className="textFieldContainer">
+        <div className="selectFile">
+          <p>Choose your CSV file to plot different types of Charts.</p>
+          <div className="selection">
+            {
+              <CSVReader
+                cssInputClass="example"
+                parserOptions={{ header: true }}
+                onFileLoaded={(data, fileInfo) => setCsvData(data)}
+                inputStyle={{ color: "black" }}
+              />
+            }
           </div>
-        ))}
+        </div>
+        <div className="selectAttribute">
+          <p>SELECT ATMOST 2 ATTRIBUTES</p>
+          <p className="warning">
+            Atleast one Attribute should be of number type
+          </p>
+          <div className="inputAttribute">
+            <div>Attributes</div>
+            <div>Type</div>
+            {attributes.length > 0 &&
+              attributes.map((val, indx) => (
+                <>
+                  <div>
+                    {indx + 1}. {val}
+                  </div>
+                  <div key={indx}>
+                    {Number.isNaN(Number.parseInt(csvData[0][val]))
+                      ? "String"
+                      : "Number"}
+                  </div>
+                </>
+              ))}
+          </div>
+        </div>
+      </div>
+
       <div
         id="chart"
         style={{ width: "20%", border: "2px solid black", marginTop: "2%" }}
