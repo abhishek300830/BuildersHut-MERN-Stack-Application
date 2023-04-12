@@ -109,15 +109,22 @@ const ChartBuilder = () => {
     <ChartStyleDiv>
       {/* header  */}
 
+     
       <img src={chartH} alt="header" className="header" />
-      <div>
+      <div className="selectCsv">
+        <p>Choose your CSV file to plot different types of Charts.</p>  
+        <div className="selection">
         {
           <CSVReader
+            cssInputClass="example"
             parserOptions={{ header: true }}
             onFileLoaded={(data, fileInfo) => setCsvData(data)}
+            inputStyle={{color: 'black'}}
           />
         }
       </div>
+      </div>
+      
 
       {attributes.length > 0 &&
         attributes.map((val, indx) => (
