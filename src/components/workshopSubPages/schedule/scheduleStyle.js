@@ -265,49 +265,43 @@ export const ScheduleStyleDiv = styled.div`
       padding: 2%;
       position: relative;
       overflow: auto;
-      font-family: "Over the Rainbow", cursive;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      /* border: 1px solid black; */
       ::-webkit-scrollbar {
         width: 0px;
       }
 
       .generate-tables {
-        border: 10px solid #68440d;
+        /* border: 10px solid #68440d; */
+        /* background-position: center; */
         border-radius: 10px;
+        border:3px solid #595451;
         background-size: auto;
-        background-position: center;
         min-height: 350px;
 
         .table-head {
           position: relative;
+          width:98%;
+          margin: auto;
           display: grid;
           grid-template-columns: 15% 75% 10%;
           text-align: center;
           align-items: center;
-          color: white;
+          color: black;
           border-radius: 5px;
           border-bottom-left-radius: 0px;
           border-bottom-right-radius: 0px;
-          border-bottom: 3px solid #e2e2e2;
+          /* border-bottom: 3px solid #e2e2e2; */
 
-          /* background-color: #242424; */
+          background-color: transparent;
 
           b {
-            padding: 3%;
+            padding: 2%;
             font-size: 1.5vw;
           }
           .b3 {
             color: transparent;
           }
-        }
-
-        .dusturImg {
-          width: 40%;
-          transition: 0.5s;
-          filter: drop-shadow(0px 1px #b8eabd);
-          cursor: pointer;
-        }
-        .dusturImg:hover {
-          width: 45%;
         }
       }
       .content {
@@ -316,16 +310,24 @@ export const ScheduleStyleDiv = styled.div`
         grid-template-columns: 15% 75% 10%;
         text-align: center;
         align-items: center;
-        color: white;
-        border-radius: 0px;
-        border-top-right-radius: 0px;
-        border-top-left-radius: 0px;
+        color: #000000;
+        background-color: #bce3b2;
+        border-radius: 5px;
         text-shadow: 0.5px 0.2px white;
+        width: 95%;
+        margin: auto;
+        margin-top: 1%;
 
         div {
           padding: 2%;
         }
+
+        .deleteImg{
+          width:25%;
+          cursor: pointer;
+        }
       }
+
     }
   }
 
