@@ -112,12 +112,15 @@ const ChartBuilder = () => {
       {/* header chart Builder  */}
       {/* <img src={chartH} alt="header" className="header" /> */}
       <div className="textFieldContainer" id="chartMainDiv">
+        
+        
         <div className="selectFile">
+          <div className="headers"></div>
           <p>Choose your CSV file to plot different types of Charts.</p>
           <div className="selection">
             {
               <CSVReader
-                cssInputClass="example"
+                cssInputClass="select-input"
                 parserOptions={{ header: true }}
                 onFileLoaded={(data, fileInfo) => {
                   setCsvData(data);
@@ -126,35 +129,45 @@ const ChartBuilder = () => {
                     "chartMainDiv"
                   ).style.gridTemplateColumns = "50% 50%";
                 }}
-                inputStyle={{ color: "black" }}
               />
+
             }
           </div>
         </div>
 
         {attributeSelected && (
           <div className="selectAttribute">
-            <p>SELECT ATMOST 2 ATTRIBUTES</p>
-            <p className="warning">
-              Atleast one Attribute should be of number type
-            </p>
-            <div className="inputAttribute">
-              <div>Attributes</div>
-              <div>Type</div>
-              {attributes.length > 0 &&
-                attributes.map((val, indx) => (
-                  <>
-                    <div>
-                      {indx + 1}. {val}
-                    </div>
-                    <div key={indx}>
-                      {Number.isNaN(Number.parseInt(csvData[0][val]))
-                        ? "String"
-                        : "Number"}
-                    </div>
-                  </>
-                ))}
-            </div>
+            <div className="headers"></div>
+
+            <section>
+                <div className="fixed-info">
+                    <p className="warning">
+                      * Atleast one Attribute should be of number type
+                    </p>
+                </div>
+
+                <div className="inputAttribute">
+                  <div className="tableHead">Attributes</div>
+                  <div className="tableHead">Type</div>
+                  
+                  {attributes.length > 0 &&
+                    attributes.map((val, indx) => (
+                      <>
+                        <div className="tableContent"> 
+                          {val}
+                        </div>
+                        <div className="tableContent" key={indx}>
+                          {Number.isNaN(Number.parseInt(csvData[0][val]))
+                            ? "String"
+                            : "Number"}
+                        </div>
+                      </>
+                    ))}
+                </div>
+                
+            </section>
+
+            
           </div>
         )}
       </div>
