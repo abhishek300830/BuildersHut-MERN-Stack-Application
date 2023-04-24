@@ -33,6 +33,9 @@ const ChartBuilder = () => {
       pieChart.render();
       columnChart.render();
     }
+
+    console.log("csvData", csvData);
+    console.log("attributes", attributes);
   }, [csvData]);
 
   //  line chart
@@ -43,11 +46,17 @@ const ChartBuilder = () => {
     series: [
       {
         name: "sales",
-        data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+        // data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+        data: csvData.map((val, idx) => {
+          return parseInt(val.values);
+        }),
       },
     ],
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+      // categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+      categories: csvData.map((val, idx) => {
+        return val.outlook;
+      }),
     },
   };
 
