@@ -45,25 +45,44 @@ const ChartBuilder = () => {
     },
     series: [
       {
-        name: "sales",
-        // data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-        data: csvData.map((val, idx) => {
-          return parseInt(val.values);
-        }),
+        name: "value",
+        data:[10,45,12,43,64,12,66,76]
+        // data: csvData.map(val=> parseInt(val.play))
       },
     ],
     xaxis: {
-      // categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
-      categories: csvData.map((val, idx) => {
-        return val.outlook;
-      }),
+      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+      // categories: csvData.map(val=> val.temp),
     },
   };
 
   // Pie Chart
 
+  //TODO:  1st step - creating map and storing attributes as key and counts of attributes
+  let mp = new Map()
+     csvData.forEach((val)=>{
+      if(val.windy == undefined || val.windy == ''){
+        // missing values treatment
+      }
+      else if(mp.has(val.windy) == true){
+        mp.set(val.windy, mp.get(val.windy)+1)
+      }else{
+        mp.set(val.windy,2)
+      }
+    })
+
+  //TODO: 2nd step - creating array of keys and corresponding counts  
+  const pieData=[]
+  const pieLabels=[]
+  mp.forEach((val,key)=>{
+    pieData.push(val)
+    pieLabels.push(key)
+  })
+
+  // TODO: 3rd step - series = total count, labels - attrbute name
   var optionsPie = {
-    series: [44, 55, 41, 17, 15],
+    series: pieData,
+    labels: pieLabels,
     chart: {
       type: "donut",
     },
