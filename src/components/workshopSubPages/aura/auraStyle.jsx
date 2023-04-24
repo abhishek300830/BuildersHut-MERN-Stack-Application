@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const AuraContainer = styled.div`
-
-  #bg-change{
+  #bg-change {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -10,7 +9,7 @@ export const AuraContainer = styled.div`
     z-index: -3;
     transition: 0.4s;
   }
-  #circle{
+  #circle {
     position: fixed;
     border-radius: 50%;
     width: 5%;
@@ -22,19 +21,19 @@ export const AuraContainer = styled.div`
     animation: circle-anim 0.4s linear 0s 1;
   }
   @keyframes circle-anim {
-    0%{
+    0% {
       width: 5%;
       margin-top: 10%;
       height: 10%;
     }
-    100%{
+    100% {
       margin-top: -20%;
       left: 0%;
       width: 100%;
       height: 200%;
     }
   }
-  section{
+  section {
     position: absolute;
     width: 60%;
     height: 70%;
@@ -56,7 +55,6 @@ export const AuraContainer = styled.div`
     .top-left {
       left: 20%;
       animation: top-chakara-anim 5s ease-in-out 0s infinite;
-
     }
     .top-right {
       right: 20%;
@@ -94,13 +92,10 @@ export const AuraContainer = styled.div`
         margin-top: 20%;
       }
     }
-    .common:hover{
-
+    .common:hover {
       scale: 1.2;
     }
   }
-  
-
 
   .yoga-man {
     position: absolute;
@@ -111,7 +106,6 @@ export const AuraContainer = styled.div`
     animation: yoga-anim 5s ease-in-out 0s infinite;
     filter: drop-shadow(0px 0px 5px #ffffff70);
   }
-
 
   @keyframes yoga-anim {
     0% {
@@ -126,13 +120,13 @@ export const AuraContainer = styled.div`
   }
 
   @media (max-width: 1280px) {
-    section{
+    section {
       img.common {
         width: 130px;
         height: 130px;
       }
     }
-    
+
     .yoga-man {
       width: 50%;
       margin-left: 27%;
@@ -140,34 +134,34 @@ export const AuraContainer = styled.div`
   }
 
   @media (max-width: 820px) {
-    #bg-change{
+    #bg-change {
       margin-top: -12%;
     }
-    #circle{
+    #circle {
       margin-top: -10%;
       left: 80%;
     }
     @keyframes circle-anim {
-      0%{
+      0% {
         width: 10%;
         margin-top: 40%;
         height: 5%;
         left: 40%;
       }
-      100%{
+      100% {
         margin-top: -20%;
         left: -20%;
         width: 150%;
         height: 100%;
       }
     }
-    section{
+    section {
       width: 90%;
       margin-left: 3%;
-      height:40%;
+      height: 40%;
       margin-top: 10%;
     }
-   
+
     .yoga-man {
       width: 90%;
       margin-left: 6%;
@@ -187,33 +181,33 @@ export const AuraContainer = styled.div`
   }
 
   @media (max-width: 520px) {
-    #bg-change{
+    #bg-change {
       margin-top: -25%;
     }
     @keyframes circle-anim {
-      0%{
+      0% {
         width: 10%;
         margin-top: 40%;
         height: 5%;
         left: 40%;
       }
-      100%{
+      100% {
         margin-top: -20%;
         left: -50%;
         width: 200%;
         height: 100%;
       }
     }
-    section{
+    section {
       margin-top: 0%;
       img.common {
         width: 80px;
         height: 80px;
       }
-      .bottom-left{
+      .bottom-left {
         margin-top: 30%;
       }
-      .bottom-right{
+      .bottom-right {
         margin-top: 30%;
       }
       @keyframes bottom-chakara-anim {
@@ -226,7 +220,7 @@ export const AuraContainer = styled.div`
         100% {
           margin-top: 30%;
         }
-    }
+      }
     }
 
     .yoga-man {
