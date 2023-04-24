@@ -154,19 +154,21 @@ const ChartBuilder = () => {
               </div>
 
               <div className="inputAttribute">
-                <div className="tableHead">Attributes</div>
-                <div className="tableHead">Type</div>
+                <div className="heading-part">
+                  <div className="tableHead">Attributes</div>
+                  <div className="tableHead">Type</div>
+                </div>
 
                 {attributes.length > 0 &&
                   attributes.map((val, indx) => (
-                    <>
+                    <div className="table-content-part" key={indx}>
                       <div className="tableContent">{val}</div>
                       <div className="tableContent" key={indx}>
                         {Number.isNaN(Number.parseInt(csvData[0][val]))
                           ? "String"
                           : "Number"}
                       </div>
-                    </>
+                    </div>
                   ))}
               </div>
             </section>

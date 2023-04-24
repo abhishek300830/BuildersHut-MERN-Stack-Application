@@ -131,37 +131,50 @@ export const ChartStyleDiv = styled.div`
         text-align: center;
       }
       .inputAttribute {
-        padding: 10px;
-        display: grid;
-        justify-content: center;
-        grid-template-columns: 40% 40%;
         min-height: auto;
         max-height: 300px;
-        overflow: auto;
-        /* border: 1px solid black; */
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-left: 2px solid #3f3f3f;
+        border-right: 2px solid #3f3f3f;
+        border-radius: 5px;
 
         ::-webkit-scrollbar {
           width: 5px;
-          background-color: #e3dede;
+          background-color: #595451;
         }
 
-        gap: 1%;
-        div.tableHead {
-          margin: 3px;
-          background-color: white;
-          /* border: 1px solid black; */
-          text-align: center;
-          padding: 3%;
-          border: 1px solid gray;
+        div.heading-part{
+          display: grid;
+          justify-content: center;
+          grid-template-columns: 60% 40%;
+          gap: 1%;
+          background-color:#595451;
+          border-radius: 5pz;
+
+          div.tableHead {
+            color: white;
+            margin: 3px;
+            text-align: center;
+            padding: 1%;
+          }
         }
 
-        div.tableContent {
-          padding: 1.5%;
-          border-radius: 2px;
-          margin-top: 2%;
-          text-align: center;
-          background-color: #e2e1e1;
-          border-radius: 5px;
+        div.table-content-part{
+          display: grid;
+          justify-content: center;
+          grid-template-columns: 60% 40%;
+          gap: 1%;
+          border-bottom:2px solid #595451 ;
+          div.tableContent {
+            ::-webkit-scrollbar {
+              background-color: transparent;
+            }
+            overflow-y: auto;
+            padding: 2.5%;
+            text-align: center;
+            border-right: 1px solid #595451;
+          }
         }
       }
     }
