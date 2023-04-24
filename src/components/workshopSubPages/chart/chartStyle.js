@@ -8,7 +8,6 @@ export const ChartStyleDiv = styled.div`
   top: 15%;
   height: 78%;
   padding-bottom: 2%;
-  
 
   img.header {
     width: 20%;
@@ -22,7 +21,7 @@ export const ChartStyleDiv = styled.div`
     justify-content: center;
 
     .selectFile {
-
+      background-color: #f8f8f8;
       border: 5px solid #595451;
       border-radius: 5px;
       width: 80%;
@@ -30,13 +29,13 @@ export const ChartStyleDiv = styled.div`
       text-align: center;
       min-height: 400px;
 
-      .headers{
+      .headers {
         background-color: #595451;
         height: 30px;
         position: relative;
       }
-      .headers::before{
-        content: '';
+      .headers::before {
+        content: "";
         position: absolute;
         width: 100%;
         top: 0.5%;
@@ -45,9 +44,9 @@ export const ChartStyleDiv = styled.div`
         z-index: 2;
         height: 50%;
         border-radius: 8px;
-      } 
-      .headers::after{
-        content: 'Chart Builder';
+      }
+      .headers::after {
+        content: "Chart Builder";
         color: white;
         text-align: left;
         position: absolute;
@@ -64,14 +63,13 @@ export const ChartStyleDiv = styled.div`
         margin: auto;
         margin-top: 6%;
 
-        .select-input{
+        .select-input {
           border: 2px solid black;
           padding: 2%;
           border-radius: 7px;
           font-weight: bold;
-
         }
-        .select-input::-webkit-file-upload-button{
+        .select-input::-webkit-file-upload-button {
           border: 2px solid black;
           padding: 2% 4%;
           border-radius: 5px;
@@ -79,11 +77,9 @@ export const ChartStyleDiv = styled.div`
           transition: 0.2s;
           box-shadow: 1px 1px 2px gray;
         }
-        .select-input::-webkit-file-upload-button:hover{
+        .select-input::-webkit-file-upload-button:hover {
           box-shadow: -1px -1px 2px gray;
-
         }
-
       }
     }
 
@@ -97,17 +93,15 @@ export const ChartStyleDiv = styled.div`
       // Animation Attribute Appears
       animation: AttributeAppears 1s ease-out 0s 1;
 
-      
-        
-      .headers{
+      .headers {
         background-color: #595451;
         height: 30px;
         position: relative;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
       }
-      .headers::before{
-        content: '';
+      .headers::before {
+        content: "";
         position: absolute;
         width: 99%;
         top: 3%;
@@ -116,10 +110,9 @@ export const ChartStyleDiv = styled.div`
         z-index: 2;
         height: 50%;
         border-radius: 10px;
-
-      } 
-      .headers::after{
-        content: 'Select Attributes';
+      }
+      .headers::after {
+        content: "Select Attributes";
         color: white;
         text-align: left;
         position: absolute;
@@ -129,9 +122,8 @@ export const ChartStyleDiv = styled.div`
         top: 15%;
       }
 
-      section{
+      section {
         padding: 0% 2%;
-
       }
       .warning {
         color: red;
@@ -163,14 +155,13 @@ export const ChartStyleDiv = styled.div`
           border: 1px solid gray;
         }
 
-        div.tableContent{
+        div.tableContent {
           padding: 1.5%;
           border-radius: 2px;
           margin-top: 2%;
           text-align: center;
           background-color: #e2e1e1;
           border-radius: 5px;
-
         }
       }
     }
@@ -183,6 +174,18 @@ export const ChartStyleDiv = styled.div`
       }
     }
   }
+  .chartHeading {
+    margin-top: 2%;
+    text-align: center;
+  }
+  .chartContainer {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 45% 45%;
+    /* justify-content: center; */
+    gap: 10%;
+  }
 
   /* media queries ####### */
   @media (max-width: 1280px) {
@@ -190,12 +193,12 @@ export const ChartStyleDiv = styled.div`
       display: grid;
       grid-template-columns: 50% 50% !important;
     }
-    div.selectFile{
+    div.selectFile {
       width: 95% !important;
       margin-left: 3% !important;
     }
- 
-    .selectAttribute{
+
+    .selectAttribute {
       width: 95% !important;
       margin-left: 3% !important;
     }
@@ -209,12 +212,12 @@ export const ChartStyleDiv = styled.div`
       top: 0.3%;
       left: 1%;
     }
-    div.selectFile{
+    div.selectFile {
       width: 80% !important;
       margin-left: 10% !important;
     }
- 
-    .selectAttribute{
+
+    .selectAttribute {
       margin-top: 5%;
       width: 80% !important;
       margin-left: 10% !important;
@@ -222,7 +225,6 @@ export const ChartStyleDiv = styled.div`
     .textFieldContainer {
       display: block;
     }
-    
   }
   @media (max-width: 520px) {
     top: 12%;
@@ -233,12 +235,12 @@ export const ChartStyleDiv = styled.div`
       margin-left: 12%;
       margin-top: -5%;
     }
-    div.selectFile{
+    div.selectFile {
       width: 90% !important;
       margin-left: 5% !important;
     }
- 
-    .selectAttribute{
+
+    .selectAttribute {
       width: 90% !important;
       margin-left: 5% !important;
     }

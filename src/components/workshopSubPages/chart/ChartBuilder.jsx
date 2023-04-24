@@ -3,6 +3,7 @@ import { ChartStyleDiv } from "./chartStyle";
 import chartH from "../../../images/headers/chart.png";
 import ApexCharts from "apexcharts";
 import CSVReader from "react-csv-reader";
+import { Divider } from "@mui/material";
 
 const ChartBuilder = () => {
   const [csvData, setCsvData] = useState([]);
@@ -112,8 +113,6 @@ const ChartBuilder = () => {
       {/* header chart Builder  */}
       {/* <img src={chartH} alt="header" className="header" /> */}
       <div className="textFieldContainer" id="chartMainDiv">
-        
-        
         <div className="selectFile">
           <div className="headers"></div>
           <p>Choose your CSV file to plot different types of Charts.</p>
@@ -130,7 +129,6 @@ const ChartBuilder = () => {
                   ).style.gridTemplateColumns = "50% 50%";
                 }}
               />
-
             }
           </div>
         </div>
@@ -140,52 +138,64 @@ const ChartBuilder = () => {
             <div className="headers"></div>
 
             <section>
-                <div className="fixed-info">
-                    <p className="warning">
-                      * Atleast one Attribute should be of number type
-                    </p>
-                </div>
+              <div className="fixed-info">
+                <p className="warning">
+                  * Atleast one Attribute should be of number type
+                </p>
+              </div>
 
-                <div className="inputAttribute">
-                  <div className="tableHead">Attributes</div>
-                  <div className="tableHead">Type</div>
-                  
-                  {attributes.length > 0 &&
-                    attributes.map((val, indx) => (
-                      <>
-                        <div className="tableContent"> 
-                          {val}
-                        </div>
-                        <div className="tableContent" key={indx}>
-                          {Number.isNaN(Number.parseInt(csvData[0][val]))
-                            ? "String"
-                            : "Number"}
-                        </div>
-                      </>
-                    ))}
-                </div>
-                
+              <div className="inputAttribute">
+                <div className="tableHead">Attributes</div>
+                <div className="tableHead">Type</div>
+
+                {attributes.length > 0 &&
+                  attributes.map((val, indx) => (
+                    <>
+                      <div className="tableContent">{val}</div>
+                      <div className="tableContent" key={indx}>
+                        {Number.isNaN(Number.parseInt(csvData[0][val]))
+                          ? "String"
+                          : "Number"}
+                      </div>
+                    </>
+                  ))}
+              </div>
             </section>
-
-            
           </div>
         )}
       </div>
 
       {attributeSelected && (
         <>
-          <div
-            id="chart"
-            style={{ width: "20%", border: "2px solid black", marginTop: "2%" }}
-          ></div>
-          <div
-            id="pieChart"
-            style={{ width: "20%", border: "2px solid black", marginTop: "2%" }}
-          ></div>
-          <div
-            id="columnChart"
-            style={{ width: "20%", border: "2px solid black", marginTop: "2%" }}
-          ></div>
+          <br />
+          <Divider />
+          <h1 className="chartHeading">Charts Generated From Data</h1>
+          <div className="chartContainer">
+            <div
+              id="chart"
+              style={{
+                width: "100%",
+                border: "2px solid black",
+                marginTop: "2%",
+              }}
+            ></div>
+            <div
+              id="pieChart"
+              style={{
+                width: "100%",
+                border: "2px solid black",
+                marginTop: "2%",
+              }}
+            ></div>
+            {/* <div
+              id="columnChart"
+              style={{
+                width: "80%",
+                border: "2px solid black",
+                marginTop: "2%",
+              }}
+            ></div> */}
+          </div>
         </>
       )}
     </ChartStyleDiv>
