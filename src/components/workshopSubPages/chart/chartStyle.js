@@ -124,6 +124,24 @@ export const ChartStyleDiv = styled.div`
 
       section {
         padding: 0% 2%;
+
+        .build-chart{
+          padding: 1% 2%;
+          border-radius: 4px;
+          width:20%;
+          margin-left: 40%;
+          margin-top: 2%;
+          box-shadow: 1px 1px gray;
+          cursor: pointer;
+          transition: 0.4s;
+          font-weight: bold;
+          background-color: #595451;
+          color: white;
+        }
+        .build-chart:hover{
+          box-shadow: -1px -1px gray;
+
+        }
       }
       .warning {
         color: red;
@@ -132,11 +150,10 @@ export const ChartStyleDiv = styled.div`
       }
       .inputAttribute {
         min-height: auto;
-        max-height: 300px;
+        max-height: 260px;
         overflow-y: auto;
         overflow-x: hidden;
-        border-left: 2px solid #3f3f3f;
-        border-right: 2px solid #3f3f3f;
+        border: 2px solid #3f3f3f;
         border-radius: 5px;
 
         ::-webkit-scrollbar {

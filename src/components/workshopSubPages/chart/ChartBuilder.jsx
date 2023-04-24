@@ -11,6 +11,7 @@ const ChartBuilder = () => {
   const [attributes, setAttributes] = useState([]);
 
   const [attributeSelected, setAttributeSelected] = useState(false);
+  const [showGraphs, setShowGraphs] = useState(false);
 
   useEffect(() => {
     // if(csvData.length > 0){
@@ -36,8 +37,9 @@ const ChartBuilder = () => {
 
     console.log("csvData", csvData);
     console.log("attributes", attributes);
-  }, [csvData]);
+  }, [csvData,showGraphs]);
 
+  console.log(showGraphs)
   //  line chart
   var options = {
     chart: {
@@ -136,6 +138,18 @@ const ChartBuilder = () => {
       ],
     },
   };
+
+
+  // building chart handler 
+  const buildHandler=()=>{
+    setShowGraphs(true)
+  }
+  
+  const selectAttributeHandler=()=>{
+
+
+  }
+
   return (
     <ChartStyleDiv>
       {/* header chart Builder  */}
@@ -180,7 +194,8 @@ const ChartBuilder = () => {
 
                 {attributes.length > 0 &&
                   attributes.map((val, indx) => (
-                    <div className="table-content-part" key={indx}>
+                    <div className="table-content-part" key={indx} onClick={selectAttributeHandler}>
+
                       <div className="tableContent">{val}</div>
                       <div className="tableContent" key={indx}>
                         {Number.isNaN(Number.parseInt(csvData[0][val]))
@@ -190,12 +205,14 @@ const ChartBuilder = () => {
                     </div>
                   ))}
               </div>
+
+              <button className="build-chart" onClick={buildHandler}>Build Chart</button>
             </section>
           </div>
         )}
       </div>
 
-      {attributeSelected && (
+      {showGraphs && (
         <>
           <br />
           <Divider />
