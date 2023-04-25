@@ -13,14 +13,27 @@ const ChartBuilder = () => {
   const [attributeSelected, setAttributeSelected] = useState(false);
   const [showGraphs, setShowGraphs] = useState(false);
 
+
+
   useEffect(() => {
     // if(csvData.length > 0){
     //   console.log(Number.isNaN(Number.parseInt(csvData[0].play)))
     // }
 
     if (csvData.length > 0) {
-      setAttributes(Object.keys(csvData[0]));
-      // console.log())
+
+      // setting attributes
+      const tempAttr =Object.keys(csvData[0]) 
+      setAttributes(
+        tempAttr.map(val =>{
+          return ({
+            Att: val,
+            dataType: Number.isNaN(Number.parseInt(csvData[0][val]))? "String" : "Number",
+            selected: false 
+          })
+        })
+      );
+
       var chart = new ApexCharts(document.querySelector("#chart"), options);
       var pieChart = new ApexCharts(
         document.querySelector("#pieChart"),
@@ -35,11 +48,8 @@ const ChartBuilder = () => {
       columnChart.render();
     }
 
-    console.log("csvData", csvData);
-    console.log("attributes", attributes);
   }, [csvData,showGraphs]);
 
-  console.log(showGraphs)
   //  line chart
   var options = {
     chart: {
@@ -63,10 +73,10 @@ const ChartBuilder = () => {
   //TODO:  1st step - creating map and storing attributes as key and counts of attributes
   let mp = new Map()
      csvData.forEach((val)=>{
-      if(val.windy == undefined || val.windy == ''){
+      if(val.windy === undefined || val.windy === ''){
         // missing values treatment
       }
-      else if(mp.has(val.windy) == true){
+      else if(mp.has(val.windy) === true){
         mp.set(val.windy, mp.get(val.windy)+1)
       }else{
         mp.set(val.windy,2)
@@ -145,9 +155,18 @@ const ChartBuilder = () => {
     setShowGraphs(true)
   }
   
-  const selectAttributeHandler=()=>{
+  const selectAttributeHandler=(id)=>{
+    console.log(attributes)
 
+    setAttributes(
+      ...attributes,
+      attributes.forEach((val,idx) =>{
+        if(idx === id){
+          val.selected=true
+        }
+    }))
 
+    console.log(attributes)
   }
 
   return (
@@ -194,13 +213,15 @@ const ChartBuilder = () => {
 
                 {attributes.length > 0 &&
                   attributes.map((val, indx) => (
-                    <div className="table-content-part" key={indx} onClick={selectAttributeHandler}>
+                    <div className="table-content-part" 
+                      key={indx} 
+                      onClick={()=>selectAttributeHandler(indx)}
+                      // style={{backgroundColor:val.selected?"#c8f5b8":"#fff3f3"}}
+                      >
 
-                      <div className="tableContent">{val}</div>
+                      <div className="tableContent">{val.Att}</div>
                       <div className="tableContent" key={indx}>
-                        {Number.isNaN(Number.parseInt(csvData[0][val]))
-                          ? "String"
-                          : "Number"}
+                        {val.dataType}
                       </div>
                     </div>
                   ))}

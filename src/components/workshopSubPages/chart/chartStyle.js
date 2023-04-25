@@ -183,6 +183,7 @@ export const ChartStyleDiv = styled.div`
           grid-template-columns: 60% 40%;
           gap: 1%;
           border-bottom:2px solid #595451 ;
+          transition: 0.2s;
           div.tableContent {
             ::-webkit-scrollbar {
               background-color: transparent;
@@ -192,6 +193,12 @@ export const ChartStyleDiv = styled.div`
             text-align: center;
             border-right: 1px solid #595451;
           }
+        }
+
+        div.table-content-part:hover{
+          cursor: pointer;
+          box-shadow: 0px -1px 2px black;
+          background-color: #c8f5b8 !important;
         }
       }
     }
