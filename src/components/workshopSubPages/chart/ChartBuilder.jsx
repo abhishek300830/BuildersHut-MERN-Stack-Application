@@ -156,17 +156,8 @@ const ChartBuilder = () => {
   }
   
   const selectAttributeHandler=(id)=>{
-    console.log(attributes)
 
-    setAttributes(
-      ...attributes,
-      attributes.forEach((val,idx) =>{
-        if(idx === id){
-          val.selected=true
-        }
-    }))
-
-    console.log(attributes)
+    document.getElementById(`set-bg-${id}`).style.background="#c8f5b8";
   }
 
   return (
@@ -215,6 +206,7 @@ const ChartBuilder = () => {
                   attributes.map((val, indx) => (
                     <div className="table-content-part" 
                       key={indx} 
+                      id={`set-bg-${indx}`}
                       onClick={()=>selectAttributeHandler(indx)}
                       // style={{backgroundColor:val.selected?"#c8f5b8":"#fff3f3"}}
                       >
