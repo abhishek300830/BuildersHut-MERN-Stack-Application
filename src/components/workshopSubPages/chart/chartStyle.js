@@ -125,10 +125,10 @@ export const ChartStyleDiv = styled.div`
       section {
         padding: 0% 2%;
 
-        .build-chart{
+        .build-chart {
           padding: 1% 2%;
           border-radius: 4px;
-          width:20%;
+          width: 20%;
           margin-left: 40%;
           margin-top: 2%;
           box-shadow: 1px 1px gray;
@@ -138,9 +138,8 @@ export const ChartStyleDiv = styled.div`
           background-color: #595451;
           color: white;
         }
-        .build-chart:hover{
+        .build-chart:hover {
           box-shadow: -1px -1px gray;
-
         }
       }
       .warning {
@@ -161,12 +160,12 @@ export const ChartStyleDiv = styled.div`
           background-color: #595451;
         }
 
-        div.heading-part{
+        div.heading-part {
           display: grid;
           justify-content: center;
           grid-template-columns: 60% 40%;
           gap: 1%;
-          background-color:#595451;
+          background-color: #595451;
           border-radius: 5pz;
 
           div.tableHead {
@@ -177,12 +176,12 @@ export const ChartStyleDiv = styled.div`
           }
         }
 
-        div.table-content-part{
+        div.table-content-part {
           display: grid;
           justify-content: center;
           grid-template-columns: 60% 40%;
           gap: 1%;
-          border-bottom:2px solid #595451 ;
+          border-bottom: 2px solid #595451;
           transition: 0.2s;
           div.tableContent {
             ::-webkit-scrollbar {
@@ -195,7 +194,7 @@ export const ChartStyleDiv = styled.div`
           }
         }
 
-        div.table-content-part:hover{
+        div.table-content-part:hover {
           cursor: pointer;
           box-shadow: 0px -1px 2px black;
           background-color: #c8f5b8 !important;
@@ -222,6 +221,7 @@ export const ChartStyleDiv = styled.div`
     grid-template-columns: 45% 45%;
     /* justify-content: center; */
     gap: 10%;
+    margin-bottom: 100px;
   }
 
   /* media queries ####### */
