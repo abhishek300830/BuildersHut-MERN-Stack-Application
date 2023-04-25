@@ -124,22 +124,27 @@ export const ChartStyleDiv = styled.div`
 
       section {
         padding: 0% 2%;
+        .button-section{
 
-        .build-chart {
-          padding: 1% 2%;
-          border-radius: 4px;
-          width: 20%;
-          margin-left: 40%;
+          display: grid;
+          grid-template-columns: 40% 40%;
+          justify-content: right;
           margin-top: 2%;
-          box-shadow: 1px 1px gray;
-          cursor: pointer;
-          transition: 0.4s;
-          font-weight: bold;
-          background-color: #595451;
-          color: white;
-        }
-        .build-chart:hover {
-          box-shadow: -1px -1px gray;
+          .build-chart {
+            padding: 3%;
+            border-radius: 4px;
+            width: 50%;
+            box-shadow: 1px 1px gray;
+            cursor: pointer;
+            transition: 0.4s;
+            font-weight: bold;
+            background-color: #595451;
+            color: white;
+          }
+          .build-chart:hover {
+            box-shadow: -1px -1px gray;
+          }
+
         }
       }
       .warning {

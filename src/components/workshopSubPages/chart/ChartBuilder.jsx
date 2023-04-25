@@ -4,19 +4,22 @@ import chartH from "../../../images/headers/chart.png";
 import ApexCharts from "apexcharts";
 import CSVReader from "react-csv-reader";
 import { Divider } from "@mui/material";
+import LineChart from "./LineChart";
+import PieChart from "./PieChart";
+import ColumnChart from "./ColumnChart";
+import BarChart from "./BarChart";
 
 const ChartBuilder = () => {
   const [csvData, setCsvData] = useState([]);
-
   const [attributes, setAttributes] = useState([]);
-
   const [attributeSelected, setAttributeSelected] = useState(false);
   const [showGraphs, setShowGraphs] = useState(false);
 
+  const [selectedAttributes, setselectedAttributes] = useState([])
+  const [count, setcount] = useState(0)
+
+
   useEffect(() => {
-    // if(csvData.length > 0){
-    //   console.log(Number.isNaN(Number.parseInt(csvData[0].play)))
-    // }
 
     if (csvData.length > 0) {
       // setting attributes
@@ -33,234 +36,33 @@ const ChartBuilder = () => {
         })
       );
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
-      var pieChart = new ApexCharts(
-        document.querySelector("#pieChart"),
-        optionsPie
-      );
-      var columnChart = new ApexCharts(
-        document.querySelector("#columnChart"),
-        optionsColumn
-      );
-      var Barchart = new ApexCharts(
-        document.querySelector("#barChart"),
-        optionsBarChart
-      );
-      Barchart.render();
-      chart.render();
-      pieChart.render();
-      columnChart.render();
+ 
     }
   }, [csvData, showGraphs]);
+  
 
-  let arr = [];
-  csvData.forEach((val) => {
-    // change this to make generic
-    let num = parseInt(val.values);
-    if (!isNaN(num)) {
-      arr.push(num);
-    }
-  });
+  //TODO: building chart handler
 
-  //  line chart
-  var options = {
-    chart: {
-      type: "line",
-    },
-    series: [
-      {
-        name: "value",
-        // data: [10, 45, 12, 43, 64, 12, 66, 76],
-        data: arr,
-        // data: csvData.map(val=> parseInt(val.play))
-      },
-    ],
-    xaxis: {
-      // categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
-      categories: csvData.map((val) => val.temp),
-    },
-  };
-
-  // Pie Chart
-
-  //TODO:  1st step - creating map and storing attributes as key and counts of attributes
-  let mp = new Map();
-  csvData.forEach((val) => {
-    if (val.windy === undefined || val.windy === "") {
-      // missing values treatment
-    } else if (mp.has(val.windy) === true) {
-      mp.set(val.windy, mp.get(val.windy) + 1);
-    } else {
-      mp.set(val.windy, 2);
-    }
-  });
-
-  //TODO: 2nd step - creating array of keys and corresponding counts
-  const pieData = [];
-  const pieLabels = [];
-  mp.forEach((val, key) => {
-    pieData.push(val);
-    pieLabels.push(key);
-  });
-
-  // TODO: 3rd step - series = total count, labels - attrbute name
-  var optionsPie = {
-    series: pieData,
-    labels: pieLabels,
-    chart: {
-      type: "donut",
-    },
-    responsive: [
-      {
-        breakpoint: 480,
-        options: {
-          chart: {
-            width: 200,
-          },
-          legend: {
-            position: "bottom",
-          },
-        },
-      },
-    ],
-  };
-
-  // Column charts
-  var optionsColumn = {
-    series: [
-      {
-        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
-      },
-    ],
-    chart: {
-      type: "bar",
-      height: 350,
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 4,
-        horizontal: true,
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    xaxis: {
-      categories: [
-        "South Korea",
-        "Canada",
-        "United Kingdom",
-        "Netherlands",
-        "Italy",
-        "France",
-        "Japan",
-        "United States",
-        "China",
-        "Germany",
-      ],
-    },
-  };
-
-  var optionsBarChart = {
-    series: [
-      {
-        name: "Inflation",
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-    ],
-    chart: {
-      height: 350,
-      type: "bar",
-    },
-    plotOptions: {
-      bar: {
-        borderRadius: 10,
-        dataLabels: {
-          position: "top", // top, center, bottom
-        },
-      },
-    },
-    dataLabels: {
-      enabled: true,
-      formatter: function (val) {
-        return val + "%";
-      },
-      offsetY: -20,
-      style: {
-        fontSize: "12px",
-        colors: ["#304758"],
-      },
-    },
-
-    xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
-      position: "top",
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-      crosshairs: {
-        fill: {
-          type: "gradient",
-          gradient: {
-            colorFrom: "#D8E3F0",
-            colorTo: "#BED1E6",
-            stops: [0, 100],
-            opacityFrom: 0.4,
-            opacityTo: 0.5,
-          },
-        },
-      },
-      tooltip: {
-        enabled: true,
-      },
-    },
-    yaxis: {
-      axisBorder: {
-        show: false,
-      },
-      axisTicks: {
-        show: false,
-      },
-      labels: {
-        show: false,
-        formatter: function (val) {
-          return val + "%";
-        },
-      },
-    },
-    title: {
-      text: "Monthly Inflation in Argentina, 2002",
-      floating: true,
-      offsetY: 330,
-      align: "center",
-      style: {
-        color: "#444",
-      },
-    },
-  };
-  // building chart handler
   const buildHandler = () => {
     setShowGraphs(true);
   };
 
-  const selectAttributeHandler = (id) => {
-    document.getElementById(`set-bg-${id}`).style.background = "#c8f5b8";
+  const resetHandler=()=>{
+    setcount(0)
+    selectedAttributes.forEach(val=>{
+      document.getElementById(`set-bg-${val}`).style.background = "#ffffff";
+    })
+    setShowGraphs(false)
+
+  }
+
+  const selectAttributeHandler = (name) => {
+
+    if(count<2){
+      document.getElementById(`set-bg-${name}`).style.background = "#c8f5b8";
+      setselectedAttributes([...selectedAttributes,name])
+      setcount(count+1)
+    }
   };
 
   return (
@@ -310,8 +112,8 @@ const ChartBuilder = () => {
                     <div
                       className="table-content-part"
                       key={indx}
-                      id={`set-bg-${indx}`}
-                      onClick={() => selectAttributeHandler(indx)}
+                      id={`set-bg-${val.Att}`}
+                      onClick={() => selectAttributeHandler(val.Att)}
                       // style={{backgroundColor:val.selected?"#c8f5b8":"#fff3f3"}}
                     >
                       <div className="tableContent">{val.Att}</div>
@@ -322,12 +124,19 @@ const ChartBuilder = () => {
                   ))}
               </div>
 
-              <button className="build-chart" onClick={buildHandler}>
-                Build Chart
-              </button>
+              <div className="button-section">
+                  <button className="build-chart" style={{background:"#ee2f2fd7"}} onClick={resetHandler}>
+                    Reset
+                  </button>
+                  <button className="build-chart" onClick={buildHandler}>
+                    Build Chart
+                  </button>
+
+              </div>
             </section>
           </div>
         )}
+
       </div>
 
       {showGraphs && (
@@ -335,39 +144,23 @@ const ChartBuilder = () => {
           <br />
           <Divider />
           <h1 className="chartHeading">Charts Generated From Data</h1>
+
           <div className="chartContainer">
-            <div
-              id="chart"
-              style={{
-                width: "100%",
-                border: "2px solid black",
-                marginTop: "2%",
-              }}
-            ></div>
-            <div
-              id="pieChart"
-              style={{
-                width: "100%",
-                border: "2px solid black",
-                marginTop: "2%",
-              }}
-            ></div>
-            <div
-              id="columnChart"
-              style={{
-                width: "100%",
-                border: "2px solid black",
-                marginTop: "2%",
-              }}
-            ></div>
-            <div
-              id="barChart"
-              style={{
-                width: "100%",
-                border: "2px solid black",
-                marginTop: "2%",
-              }}
-            ></div>
+
+            {/* line chart */}
+            <LineChart csvData={csvData} data={selectedAttributes}/>
+
+            {/* pie chart  */}
+            <PieChart csvData={csvData} data={selectedAttributes}/>
+
+            {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
+
+            {/* column chart  */}
+            <ColumnChart csvData={csvData} data={selectedAttributes}/>
+
+            {/* Bar chart  */}
+            <BarChart csvData={csvData} data={selectedAttributes}/>
+            
           </div>
         </>
       )}
