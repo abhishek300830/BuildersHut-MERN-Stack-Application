@@ -13,6 +13,7 @@ const ColumnChart = ({csvData,data}) => {
         
     },[])
 
+    console.log(data)
 
     var optionsColumn = {
         series: [

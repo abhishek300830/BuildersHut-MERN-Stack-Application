@@ -16,11 +16,13 @@ export const ChartStyleDiv = styled.div`
     left: 2%;
   }
   .textFieldContainer {
+    position: relative;
     display: grid;
     grid-template-columns: 50%;
     justify-content: center;
 
     .selectFile {
+      position: relative;
       background-color: #f8f8f8;
       border: 5px solid #595451;
       border-radius: 5px;
@@ -81,6 +83,13 @@ export const ChartStyleDiv = styled.div`
           box-shadow: -1px -1px 2px gray;
         }
       }
+    }
+
+    .chart-builder{
+      width: 30%;
+      position: absolute;
+      bottom: 0%;
+      left: -4%;
     }
 
     .selectAttribute {
@@ -266,8 +275,24 @@ export const ChartStyleDiv = styled.div`
     }
     .textFieldContainer {
       display: block;
+
+      .chart-builder{
+        width: 35%;
+        position: absolute;
+        bottom: 0%;
+        left: -4%;
+      }
+    }
+
+    .chartContainer {
+      display: block;
+      div{
+        /* width: 50% !important; */
+        scale: 0.9;
+      }
     }
   }
+
   @media (max-width: 520px) {
     top: 12%;
     height: 85%;
@@ -281,10 +306,23 @@ export const ChartStyleDiv = styled.div`
       width: 90% !important;
       margin-left: 5% !important;
     }
-
+    .textFieldContainer {
+      .chart-builder{
+        width: 45%;
+      }
+    }
     .selectAttribute {
       width: 90% !important;
       margin-left: 5% !important;
+    }
+    .chartContainer {
+      display: block;
+      div{
+        /* width: 50% !important; */
+        scale: 1;
+      }
+      #pieChart{
+      }
     }
   }
 `;

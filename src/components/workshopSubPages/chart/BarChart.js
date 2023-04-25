@@ -111,9 +111,9 @@ const BarChart = ({csvData, data}) => {
     <div
         id="barChart"
         style={{
-        width: "100%",
-        border: "2px solid black",
-        marginTop: "2%",
+            width: "100%",
+            border: "2px solid black",
+            marginTop: "2%",
         }}
     ></div>
   )

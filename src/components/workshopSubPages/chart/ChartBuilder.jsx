@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { ChartStyleDiv } from "./chartStyle";
-import chartH from "../../../images/headers/chart.png";
-import ApexCharts from "apexcharts";
 import CSVReader from "react-csv-reader";
 import { Divider } from "@mui/material";
 import LineChart from "./LineChart";
 import PieChart from "./PieChart";
 import ColumnChart from "./ColumnChart";
 import BarChart from "./BarChart";
+import chartImg from '../../../images/subBuilders/chart.png'
 
 const ChartBuilder = () => {
   const [csvData, setCsvData] = useState([]);
@@ -70,6 +69,7 @@ const ChartBuilder = () => {
       {/* header chart Builder  */}
       {/* <img src={chartH} alt="header" className="header" /> */}
       <div className="textFieldContainer" id="chartMainDiv">
+
         <div className="selectFile">
           <div className="headers"></div>
           <p>Choose your CSV file to plot different types of Charts.</p>
@@ -88,6 +88,8 @@ const ChartBuilder = () => {
               />
             }
           </div>
+
+          <img src={chartImg} alt="chartbuilder" className="chart-builder" />
         </div>
 
         {attributeSelected && (
@@ -125,10 +127,10 @@ const ChartBuilder = () => {
               </div>
 
               <div className="button-section">
-                  <button className="build-chart" style={{background:"#ee2f2fd7"}} onClick={resetHandler}>
+                  <button className="build-chart"  style={{background:"#ee2f2fd7"}} onClick={resetHandler}>
                     Reset
                   </button>
-                  <button className="build-chart" onClick={buildHandler}>
+                  <button className="build-chart" disabled={count<2} onClick={buildHandler}>
                     Build Chart
                   </button>
 
