@@ -1,31 +1,45 @@
 import React, { useEffect } from "react";
 import ApexCharts from "apexcharts";
 
-const ColumnChart = ({ csvData, data }) => {
+const ColumnChart = ({ csvData, numberData, stringData }) => {
   var seriesDataArr = [];
-  useEffect(() => {
-    csvData.forEach((val) => {
-      let num = parseInt(val[data[0]]);
-      if (!isNaN(num)) {
-        seriesDataArr.push(num);
-      }
-      // console.log("val", val[data[0]]);
-    });
+  var catagoriesDataArr = [];
 
+  useEffect(() => {
+    // rendering charts
     var columnChart = new ApexCharts(
       document.querySelector("#columnChart"),
       optionsColumn
     );
     columnChart.render();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log("data", data);
-  console.log("csvData", csvData);
+  // for data to plot graph
+  csvData.forEach((val) => {
+    let num = parseInt(val[numberData]);
+    if (!isNaN(num)) {
+      seriesDataArr.push(num);
+    }
+  });
+  //  for xasix data
+  csvData.forEach((val) => {
+    let string = val[stringData];
+    // console.log("string", string.length);
+    if (string !== undefined && string.length > 0) {
+      catagoriesDataArr.push(string);
+    }
+  });
+
+  // larrge data solution
+  if (catagoriesDataArr.length > 20) {
+    catagoriesDataArr = null;
+    catagoriesDataArr = [];
+  }
 
   var optionsColumn = {
     series: [
       {
-        // data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380],
         data: seriesDataArr,
       },
     ],
@@ -43,23 +57,7 @@ const ColumnChart = ({ csvData, data }) => {
       enabled: false,
     },
     xaxis: {
-      // categories: [
-      //   "South Korea",
-      //   "Canada",
-      //   "United Kingdom",
-      //   "Netherlands",
-      //   "Italy",
-      //   "France",
-      //   "Japan",
-      //   "United States",
-      //   "China",
-      //   "Germany",
-      // ],
-      catagories: csvData.map((val) => {
-        // console.log("data[1]", data[1]);
-        // console.log("Valdata[1]", val[data[1]]);
-        return val[data[1]];
-      }),
+      categories: catagoriesDataArr,
     },
   };
 

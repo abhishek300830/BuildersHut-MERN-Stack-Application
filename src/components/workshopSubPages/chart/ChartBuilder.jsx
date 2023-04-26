@@ -6,20 +6,19 @@ import LineChart from "./LineChart";
 import PieChart from "./PieChart";
 import ColumnChart from "./ColumnChart";
 import BarChart from "./BarChart";
-import chartImg from '../../../images/subBuilders/chart.png'
+import chartImg from "../../../images/subBuilders/chart.png";
 
 const ChartBuilder = () => {
   const [csvData, setCsvData] = useState([]);
   const [attributes, setAttributes] = useState([]);
   const [attributeSelected, setAttributeSelected] = useState(false);
-  
+
   const [showGraphs, setShowGraphs] = useState(false);
 
-  const [selectedAttributes, setselectedAttributes] = useState([])
-  const [count, setcount] = useState(0)
-  
-  useEffect(() => {
+  const [selectedAttributes, setselectedAttributes] = useState([]);
+  const [count, setcount] = useState(0);
 
+  useEffect(() => {
     if (csvData.length > 0) {
       // setting attributes
       const tempAttr = Object.keys(csvData[0]);
@@ -34,44 +33,44 @@ const ChartBuilder = () => {
           };
         })
       );
-
- 
     }
   }, [csvData, showGraphs]);
-  
 
   //TODO: building chart handler
 
   const buildHandler = () => {
-    let flag = false
-    console.log(flag)
+    let flag = false;
+    console.log(flag);
 
-    selectedAttributes.forEach(val=>{
-      if(val.dtype === "Number") flag=true 
-    })
+    selectedAttributes.forEach((val) => {
+      if (val.dtype === "Number") flag = true;
+    });
 
-    if(flag){
+    if (flag) {
       setShowGraphs(true);
-    }else{
-      alert("please Select one Number Attribute")
+    } else {
+      alert("please Select one Number Attribute");
     }
   };
 
-  const resetHandler=()=>{
-    setcount(0)
-    selectedAttributes.forEach(val=>{
-      document.getElementById(`set-bg-${val.name}`).style.background = "#ffffff";
-    })
-    setselectedAttributes([])
-    setShowGraphs(false)
-  }
+  const resetHandler = () => {
+    setcount(0);
+    selectedAttributes.forEach((val) => {
+      document.getElementById(`set-bg-${val.name}`).style.background =
+        "#ffffff";
+    });
+    setselectedAttributes([]);
+    setShowGraphs(false);
+  };
 
-  const selectAttributeHandler = (name,dtype) => {
-
-    if(count<2){
+  const selectAttributeHandler = (name, dtype) => {
+    if (count < 2) {
       document.getElementById(`set-bg-${name}`).style.background = "#c8f5b8";
-      setselectedAttributes([...selectedAttributes,{name:name, dtype:dtype}])
-      setcount(count+1)
+      setselectedAttributes([
+        ...selectedAttributes,
+        { name: name, dtype: dtype },
+      ]);
+      setcount(count + 1);
     }
   };
 
@@ -80,7 +79,6 @@ const ChartBuilder = () => {
       {/* header chart Builder  */}
       {/* <img src={chartH} alt="header" className="header" /> */}
       <div className="textFieldContainer" id="chartMainDiv">
-
         <div className="selectFile">
           <div className="headers"></div>
           <p>Choose your CSV file to plot different types of Charts.</p>
@@ -126,7 +124,9 @@ const ChartBuilder = () => {
                       className="table-content-part"
                       key={indx}
                       id={`set-bg-${val.Att}`}
-                      onClick={() => selectAttributeHandler(val.Att, val.dataType)}
+                      onClick={() =>
+                        selectAttributeHandler(val.Att, val.dataType)
+                      }
                       // style={{backgroundColor:val.selected?"#c8f5b8":"#fff3f3"}}
                     >
                       <div className="tableContent">{val.Att}</div>
@@ -138,18 +138,25 @@ const ChartBuilder = () => {
               </div>
 
               <div className="button-section">
-                  <button className="build-chart"  style={{background:"#ee2f2fd7"}} onClick={resetHandler}>
-                    Reset
-                  </button>
-                  <button className="build-chart" disabled={count<2} onClick={buildHandler}>
-                    Build Chart
-                  </button>
+                <button
+                  className="build-chart"
+                  style={{ background: "#ee2f2fd7" }}
+                  onClick={resetHandler}
+                >
+                  Reset
+                </button>
+                <button
+                  className="build-chart"
+                  disabled={count < 2}
+                  onClick={buildHandler}
+                >
+                  Build Chart
+                </button>
               </div>
               <div id="show-error"></div>
             </section>
           </div>
         )}
-
       </div>
 
       {showGraphs && (
@@ -159,22 +166,67 @@ const ChartBuilder = () => {
           <h1 className="chartHeading">Charts Generated From Data</h1>
 
           <div className="chartContainer">
-
             {/* line chart */}
-            <LineChart csvData={csvData} data={selectedAttributes}/>
+            <LineChart
+              csvData={csvData}
+              numberData={
+                selectedAttributes[0].dtype === "Number"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+              stringData={
+                selectedAttributes[0].dtype === "String"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+            />
 
             {/* pie chart  */}
-            <PieChart csvData={csvData} data={selectedAttributes}/>
+            <PieChart
+              csvData={csvData}
+              numberData={
+                selectedAttributes[0].dtype === "Number"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+              stringData={
+                selectedAttributes[0].dtype === "String"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+            />
 
             {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
 
             {/* column chart  */}
-            <ColumnChart csvData={csvData}  numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
-              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
+            <ColumnChart
+              csvData={csvData}
+              numberData={
+                selectedAttributes[0].dtype === "Number"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+              stringData={
+                selectedAttributes[0].dtype === "String"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+            />
 
             {/* Bar chart  */}
-            <BarChart csvData={csvData} data={selectedAttributes}/>
-            
+            <BarChart
+              csvData={csvData}
+              numberData={
+                selectedAttributes[0].dtype === "Number"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+              stringData={
+                selectedAttributes[0].dtype === "String"
+                  ? selectedAttributes[0].name
+                  : selectedAttributes[1].name
+              }
+            />
           </div>
         </>
       )}
