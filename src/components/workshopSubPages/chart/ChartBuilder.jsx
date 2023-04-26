@@ -14,8 +14,9 @@ const ChartBuilder = () => {
   const [attributeSelected, setAttributeSelected] = useState(false);
   
   const [showGraphs, setShowGraphs] = useState(false);
-
+  
   const [selectedAttributes, setselectedAttributes] = useState([])
+  const [numAndString, setnumAndString] = useState([])
   const [count, setcount] = useState(0)
   
   useEffect(() => {
@@ -44,13 +45,16 @@ const ChartBuilder = () => {
 
   const buildHandler = () => {
     let flag = false
-    console.log(flag)
 
     selectedAttributes.forEach(val=>{
       if(val.dtype === "Number") flag=true 
     })
 
     if(flag){
+      setnumAndString([
+        selectedAttributes[0].dtype === 'Number'?selectedAttributes[0].name:selectedAttributes[1].name,
+        selectedAttributes[0].dtype === 'String'?selectedAttributes[0].name:selectedAttributes[1].name
+      ])
       setShowGraphs(true);
     }else{
       alert("please Select one Number Attribute")
@@ -161,22 +165,18 @@ const ChartBuilder = () => {
           <div className="chartContainer">
 
             {/* line chart */}
-            <LineChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
-              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
+            <LineChart csvData={csvData} numberData={numAndString[0]} stringData={numAndString[1]}/>
 
             {/* pie chart  */}
-            <PieChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
-              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
+            <PieChart csvData={csvData} numberData={numAndString[0]} stringData={numAndString[1]}/>
 
             {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
 
             {/* column chart  */}
-            <ColumnChart csvData={csvData}  numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
-              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
+            <ColumnChart csvData={csvData}  numberData={numAndString[0]} stringData={numAndString[1]}/>
 
             {/* Bar chart  */}
-            <BarChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
-              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
+            <BarChart csvData={csvData} numberData={numAndString[0]} stringData={numAndString[1]}/>
             
           </div>
         </>

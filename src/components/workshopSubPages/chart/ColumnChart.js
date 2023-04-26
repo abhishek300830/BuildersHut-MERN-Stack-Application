@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ApexCharts from "apexcharts";
 
-const ColumnChart = ({ csvData, data }) => {
+const ColumnChart = ({ csvData, numData, strData }) => {
   var seriesDataArr = [];
   useEffect(() => {
     csvData.forEach((val) => {

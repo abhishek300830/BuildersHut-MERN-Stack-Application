@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ApexCharts from 'apexcharts'
 
-const BarChart = ({csvData, data}) => {
+const BarChart = ({csvData, numData, strData}) => {
     useEffect(()=>{
         var Barchart = new ApexCharts(
             document.querySelector("#barChart"),
