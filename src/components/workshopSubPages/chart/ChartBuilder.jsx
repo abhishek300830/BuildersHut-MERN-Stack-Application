@@ -177,31 +177,15 @@ const ChartBuilder = () => {
             {/* line chart */}
             <LineChart
               csvData={csvData}
-              numberData={
-                selectedAttributes[0].dtype === "Number"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
-              stringData={
-                selectedAttributes[0].dtype === "String"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
+              numberData={numAndString[0]}
+              stringData={numAndString[1]}
             />
 
             {/* pie chart  */}
             <PieChart
               csvData={csvData}
-              numberData={
-                selectedAttributes[0].dtype === "Number"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
-              stringData={
-                selectedAttributes[0].dtype === "String"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
+              numberData={numAndString[0]}
+              stringData={numAndString[1]}
             />
 
             {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
@@ -209,31 +193,15 @@ const ChartBuilder = () => {
             {/* column chart  */}
             <ColumnChart
               csvData={csvData}
-              numberData={
-                selectedAttributes[0].dtype === "Number"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
-              stringData={
-                selectedAttributes[0].dtype === "String"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
+              numberData={numAndString[0]}
+              stringData={numAndString[1]}
             />
 
             {/* Bar chart  */}
             <BarChart
               csvData={csvData}
-              numberData={
-                selectedAttributes[0].dtype === "Number"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
-              stringData={
-                selectedAttributes[0].dtype === "String"
-                  ? selectedAttributes[0].name
-                  : selectedAttributes[1].name
-              }
+              numberData={numAndString[0]}
+              stringData={numAndString[1]}
             />
           </div>
         </>
