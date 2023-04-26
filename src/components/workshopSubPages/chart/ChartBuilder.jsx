@@ -12,12 +12,12 @@ const ChartBuilder = () => {
   const [csvData, setCsvData] = useState([]);
   const [attributes, setAttributes] = useState([]);
   const [attributeSelected, setAttributeSelected] = useState(false);
+  
   const [showGraphs, setShowGraphs] = useState(false);
 
   const [selectedAttributes, setselectedAttributes] = useState([])
   const [count, setcount] = useState(0)
-
-
+  
   useEffect(() => {
 
     if (csvData.length > 0) {
@@ -43,23 +43,34 @@ const ChartBuilder = () => {
   //TODO: building chart handler
 
   const buildHandler = () => {
-    setShowGraphs(true);
+    let flag = false
+    console.log(flag)
+
+    selectedAttributes.forEach(val=>{
+      if(val.dtype === "Number") flag=true 
+    })
+
+    if(flag){
+      setShowGraphs(true);
+    }else{
+      alert("please Select one Number Attribute")
+    }
   };
 
   const resetHandler=()=>{
     setcount(0)
     selectedAttributes.forEach(val=>{
-      document.getElementById(`set-bg-${val}`).style.background = "#ffffff";
+      document.getElementById(`set-bg-${val.name}`).style.background = "#ffffff";
     })
+    setselectedAttributes([])
     setShowGraphs(false)
-
   }
 
-  const selectAttributeHandler = (name) => {
+  const selectAttributeHandler = (name,dtype) => {
 
     if(count<2){
       document.getElementById(`set-bg-${name}`).style.background = "#c8f5b8";
-      setselectedAttributes([...selectedAttributes,name])
+      setselectedAttributes([...selectedAttributes,{name:name, dtype:dtype}])
       setcount(count+1)
     }
   };
@@ -115,7 +126,7 @@ const ChartBuilder = () => {
                       className="table-content-part"
                       key={indx}
                       id={`set-bg-${val.Att}`}
-                      onClick={() => selectAttributeHandler(val.Att)}
+                      onClick={() => selectAttributeHandler(val.Att, val.dataType)}
                       // style={{backgroundColor:val.selected?"#c8f5b8":"#fff3f3"}}
                     >
                       <div className="tableContent">{val.Att}</div>
@@ -133,8 +144,8 @@ const ChartBuilder = () => {
                   <button className="build-chart" disabled={count<2} onClick={buildHandler}>
                     Build Chart
                   </button>
-
               </div>
+              <div id="show-error"></div>
             </section>
           </div>
         )}
@@ -158,7 +169,8 @@ const ChartBuilder = () => {
             {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
 
             {/* column chart  */}
-            <ColumnChart csvData={csvData} data={selectedAttributes}/>
+            <ColumnChart csvData={csvData}  numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
+              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
 
             {/* Bar chart  */}
             <BarChart csvData={csvData} data={selectedAttributes}/>
