@@ -161,10 +161,12 @@ const ChartBuilder = () => {
           <div className="chartContainer">
 
             {/* line chart */}
-            <LineChart csvData={csvData} data={selectedAttributes}/>
+            <LineChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
+              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
 
             {/* pie chart  */}
-            <PieChart csvData={csvData} data={selectedAttributes}/>
+            <PieChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
+              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
 
             {/* <PieChart csvData={csvData} data={selectedAttributes}/> */}
 
@@ -173,7 +175,8 @@ const ChartBuilder = () => {
               stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
 
             {/* Bar chart  */}
-            <BarChart csvData={csvData} data={selectedAttributes}/>
+            <BarChart csvData={csvData} numberData={selectedAttributes[0].dtype === "Number"? selectedAttributes[0].name:selectedAttributes[1].name} 
+              stringData={selectedAttributes[0].dtype === "String"? selectedAttributes[0].name:selectedAttributes[1].name}/>
             
           </div>
         </>
