@@ -33,29 +33,6 @@ const Card = ({ name, desc, url, index, btn1, btn2, btn3 }) => {
                   {/* BUILD */}
                 </button>
               </NavLink>
-
-              {btn2 !== "" && (
-                <NavLink to={`${name}`}>
-                  <button>
-                    <img src={hathoda} alt="hathoda" />
-                    <div className="seperate"></div>
-                    <br />
-                    {btn2}
-                    {/* BUILD */}
-                  </button>
-                </NavLink>
-              )}
-              {btn3 !== "" && (
-                <NavLink to={`${name}`}>
-                  <button>
-                    <img src={hathoda} alt="hathoda" />
-                    <div className="seperate"></div>
-                    <br />
-                    {btn3}
-                    {/* BUILD */}
-                  </button>
-                </NavLink>
-              )}
             </div>
           </div>
         )}
