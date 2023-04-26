@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const StepsDiv = styled.div`
+  .buildbtns {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
   .print-btn {
     padding: 2% 4%;
     border-radius: 5px;

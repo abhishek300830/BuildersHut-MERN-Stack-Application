@@ -9,6 +9,8 @@ import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 
 import builderContext from "../../../../../context/builderContext";
 import { Button } from "@mui/material";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const VerticalResume = () => {
   // Context
@@ -31,6 +33,21 @@ const VerticalResume = () => {
     backTheme,
   } = useContext(builderContext);
 
+  // to download verticle
+  const downloadPdfDocument = (rootElementId) => {
+    const input = document.getElementById(rootElementId);
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+
+      var pdf = new jsPDF("p", "mm", "a4");
+      var width = pdf.internal.pageSize.getWidth();
+      var height = pdf.internal.pageSize.getHeight();
+      // const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0, width, height);
+      pdf.save("download.pdf");
+    });
+  };
+
   return (
     <>
       <div className="printdiv" style={{ textAlign: "center" }}>
@@ -40,7 +57,7 @@ const VerticalResume = () => {
             background: "red",
           }}
           className="noprint printButton"
-          onClick={window.print}
+          onClick={() => downloadPdfDocument("printThisVertical")}
         >
           Print Your Resume
         </Button>
@@ -48,7 +65,7 @@ const VerticalResume = () => {
 
       <VerticalResumeConatainer>
         <div className="page">
-          <div className="subpage">
+          <div className="subpage" id="printThisVertical">
             <div
               className="upper-part"
               style={{ background: backTheme.primary }}

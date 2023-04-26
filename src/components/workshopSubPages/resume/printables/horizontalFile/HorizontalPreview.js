@@ -7,6 +7,8 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { Button } from "@mui/material";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const HorizontalPreview = () => {
   const {
@@ -28,6 +30,20 @@ const HorizontalPreview = () => {
     backTheme,
   } = useContext(builderContext);
 
+  // to download pdf
+  const downloadPdfDocument = (rootElementId) => {
+    const input = document.getElementById(rootElementId);
+    html2canvas(input).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      var pdf = new jsPDF("p", "mm", "a4");
+      var width = pdf.internal.pageSize.getWidth();
+      var height = pdf.internal.pageSize.getHeight();
+      // const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0, width, height);
+      pdf.save("download.pdf");
+    });
+  };
+
   return (
     <>
       <div className="printdiv" style={{ textAlign: "center" }}>
@@ -37,7 +53,7 @@ const HorizontalPreview = () => {
             background: "red",
           }}
           className="noprint printButton"
-          onClick={window.print}
+          onClick={() => downloadPdfDocument("printThis")}
         >
           Print Your Resume
         </Button>
@@ -45,7 +61,7 @@ const HorizontalPreview = () => {
       <HorizontalPrevStyleDiv>
         <div class="Main">
           <div class="page-y">
-            <div class="horizontalPage">
+            <div class="horizontalPage" id="printThis">
               {/* left section of resume  */}
               <div className="left-section">
                 <div
