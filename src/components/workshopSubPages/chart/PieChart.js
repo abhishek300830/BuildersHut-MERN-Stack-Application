@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ApexCharts from 'apexcharts';
 
-const PieChart = ({csvData,data}) => {
+const PieChart = ({csvData,numData, strData}) => {
 
     useEffect(()=>{
         var pieChart = new ApexCharts(

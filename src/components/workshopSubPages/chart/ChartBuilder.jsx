@@ -16,6 +16,7 @@ const ChartBuilder = () => {
   const [showGraphs, setShowGraphs] = useState(false);
 
   const [selectedAttributes, setselectedAttributes] = useState([]);
+  const [numAndString, setnumAndString] = useState([]);
   const [count, setcount] = useState(0);
 
   useEffect(() => {
@@ -40,13 +41,20 @@ const ChartBuilder = () => {
 
   const buildHandler = () => {
     let flag = false;
-    console.log(flag);
 
     selectedAttributes.forEach((val) => {
       if (val.dtype === "Number") flag = true;
     });
 
     if (flag) {
+      setnumAndString([
+        selectedAttributes[0].dtype === "Number"
+          ? selectedAttributes[0].name
+          : selectedAttributes[1].name,
+        selectedAttributes[0].dtype === "String"
+          ? selectedAttributes[0].name
+          : selectedAttributes[1].name,
+      ]);
       setShowGraphs(true);
     } else {
       alert("please Select one Number Attribute");
