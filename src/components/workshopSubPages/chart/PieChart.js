@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import ApexCharts from 'apexcharts';
 
-const PieChart = ({csvData,numData, strData}) => {
+const PieChart = ({csvData,numberData, stringData}) => {
 
     useEffect(()=>{
         var pieChart = new ApexCharts(
@@ -12,16 +12,17 @@ const PieChart = ({csvData,numData, strData}) => {
     },[])
 
     // Pie Chart
+    console.log("numberData",numberData)
 
   //TODO:  1st step - creating map and storing attributes as key and counts of attributes
   let mp = new Map();
   csvData.forEach((val) => {
-    if (val.windy === undefined || val.windy === "") {
+    if (val[numberData] === undefined || val[numberData] === "") {
       // missing values treatment
-    } else if (mp.has(val.windy) === true) {
-      mp.set(val.windy, mp.get(val.windy) + 1);
+    } else if (mp.has(val[numberData]) === true) {
+      mp.set(val[numberData], mp.get(val[numberData]) + 1);
     } else {
-      mp.set(val.windy, 2);
+      mp.set(val[numberData], 2);
     }
   });
 
