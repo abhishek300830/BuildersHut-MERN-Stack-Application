@@ -3,24 +3,24 @@ import ApexCharts from "apexcharts";
 
 const ColumnChart = ({ csvData, numData, strData }) => {
   var seriesDataArr = [];
-  useEffect(() => {
-    csvData.forEach((val) => {
-      let num = parseInt(val[data[0]]);
-      if (!isNaN(num)) {
-        seriesDataArr.push(num);
-      }
-      // console.log("val", val[data[0]]);
-    });
+  // useEffect(() => {
+  //   csvData.forEach((val) => {
+  //     let num = parseInt(val[data[0]]);
+  //     if (!isNaN(num)) {
+  //       seriesDataArr.push(num);
+  //     }
+  //     // console.log("val", val[data[0]]);
+  //   });
 
-    var columnChart = new ApexCharts(
-      document.querySelector("#columnChart"),
-      optionsColumn
-    );
-    columnChart.render();
-  }, []);
+  //   var columnChart = new ApexCharts(
+  //     document.querySelector("#columnChart"),
+  //     optionsColumn
+  //   );
+  //   columnChart.render();
+  // }, []);
 
-  console.log("data", data);
-  console.log("csvData", csvData);
+  // console.log("data", data);
+  // console.log("csvData", csvData);
 
   var optionsColumn = {
     series: [
@@ -58,7 +58,7 @@ const ColumnChart = ({ csvData, numData, strData }) => {
       catagories: csvData.map((val) => {
         // console.log("data[1]", data[1]);
         // console.log("Valdata[1]", val[data[1]]);
-        return val[data[1]];
+        // return val[data[1]];
       }),
     },
   };
