@@ -43,8 +43,9 @@ export const VerticalResumeConatainer = styled.div`
 
         img {
           height: 182px;
-          /* width: 136.5px; */
-          width: auto;
+          width: 136.5px;
+          /* object-fit: cover; */
+          /* width: auto; */
 
           border: black 1px solid;
           box-shadow: 0 1px 1px 2px rgba(0, 0, 0, 0.1);
