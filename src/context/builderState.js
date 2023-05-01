@@ -19,6 +19,9 @@ const BuilderState = (props) => {
     email: "",
     other: "",
   });
+  // image state
+  const [image, setImage] = useState();
+
   // templete alignment
   const [alignment, setAlignment] = useState("horizontal");
 
@@ -73,13 +76,12 @@ const BuilderState = (props) => {
   ];
 
   // Schedule BUilder
-  const [taskData, setTaskData] = useState([]) 
-  const [taskData_24, setTaskData_24] = useState([]) 
-  const [timePassed, setTimePassed] = useState(0)
-
+  const [taskData, setTaskData] = useState([]);
+  const [taskData_24, setTaskData_24] = useState([]);
+  const [timePassed, setTimePassed] = useState(0);
 
   // Aura Builder
-  const [indexOfColor, setIndexOfColor] = useState(0)
+  const [indexOfColor, setIndexOfColor] = useState(0);
 
   return (
     <builderContext.Provider
@@ -121,13 +123,16 @@ const BuilderState = (props) => {
         setAlignment,
         taskData,
         setTaskData,
-        taskData_24, 
+        taskData_24,
         setTaskData_24,
-        timePassed, 
+        timePassed,
         setTimePassed,
         timePassed,
         setTimePassed,
-        indexOfColor, setIndexOfColor,
+        indexOfColor,
+        setIndexOfColor,
+        image,
+        setImage,
       }}
     >
       {props.children}

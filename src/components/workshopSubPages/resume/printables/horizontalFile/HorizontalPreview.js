@@ -12,6 +12,7 @@ import jsPDF from "jspdf";
 
 const HorizontalPreview = () => {
   const {
+    image,
     fields,
     personalData,
     addrData,
@@ -68,7 +69,7 @@ const HorizontalPreview = () => {
                   className="addrs"
                   style={{ background: backTheme.primary }}
                 >
-                  <img src={idphoto} alt="profilePhoto" />
+                  <img src={image ? image : idphoto} alt="profilePhoto" />
 
                   <div>
                     <LocationOnIcon fontSize="large" />

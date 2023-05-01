@@ -11,6 +11,7 @@ import builderContext from "../../../../../context/builderContext";
 import { Button } from "@mui/material";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import idphoto from "../../../../../images/left out/idcard.jpg";
 
 const VerticalResume = () => {
   // Context
@@ -31,6 +32,7 @@ const VerticalResume = () => {
     extracurr,
     // setExtracurr,
     backTheme,
+    image,
   } = useContext(builderContext);
 
   // to download verticle
@@ -71,10 +73,7 @@ const VerticalResume = () => {
               style={{ background: backTheme.primary }}
             >
               <div className="upper-part1">
-                <img
-                  src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-business-user-profile-vector-png-image_1541960.jpg"
-                  alt=""
-                />
+                <img src={image ? image : idphoto} alt="profilePhoto" />
               </div>
               <div className="upper-part2">
                 <h2 className="firstName">{personalData.name.split(" ", 1)}</h2>

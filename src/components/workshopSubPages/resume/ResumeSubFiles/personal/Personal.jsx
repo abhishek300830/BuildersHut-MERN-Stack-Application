@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { TextField } from "@mui/material";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 
 import { LocalizationProvider, MobileDatePicker } from "@mui/x-date-pickers";
 import { PersonalSection } from "./personalStyle";
@@ -10,7 +10,7 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 import builderContext from "../../../../../context/builderContext";
 
 const Personal = () => {
-  const { personalData, setPersonalData, addrData, setAddrData } =
+  const { personalData, setPersonalData, addrData, setAddrData, setImage } =
     useContext(builderContext);
 
   const [value, setValue] = useState("Aug 5, 2022");
@@ -40,6 +40,13 @@ const Personal = () => {
     setPersonalData({ ...personalData, dob: tempDate });
   };
 
+  // handle Image Change Here
+
+  const handleImageChange = (e) => {
+    // console.log(e.target.files);
+    setImage(URL.createObjectURL(e.target.files[0]));
+  };
+
   return (
     <PersonalSection>
       <div className="personal" style={{ marginLeft: "2%" }}>
@@ -63,6 +70,19 @@ const Personal = () => {
             renderInput={(params) => <TextField {...params} />}
           />
         </LocalizationProvider>
+
+        <label className="imageLabel" htmlFor="image">
+          Photo:{" "}
+        </label>
+        {/* <input type="image" src="" alt="" /> */}
+        <input
+          type="file"
+          id="image"
+          src=""
+          alt="image"
+          accept="image/*"
+          onChange={handleImageChange}
+        />
       </div>
 
       <section className="merge-2">
