@@ -113,6 +113,7 @@ const ResumeBuilder = () => {
         className="pop-up-girl"
         alt="welcomemsgimage"
         id="pp-girl"
+        onClick={onPopUpClick}
       />
       <div
         className="blur-bg"
