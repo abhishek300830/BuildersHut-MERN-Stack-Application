@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import AvatarEditor from "react-avatar-editor";
 import ImageBuilderContainer from "./imageBuilderStyle";
 import Dropzone from "react-dropzone";
+import ScrollBar from "./ScrollBar";
+import { Button } from "@mui/material";
+
 const ImageBuilder = () => {
   // dropzone state
   const [image, setImage] = useState({
@@ -11,38 +14,97 @@ const ImageBuilder = () => {
   const handleDropImage = (dropped) => {
     setImage({ link: dropped[0] });
   };
+
+  // state to edit image
+  const [rotate, setRotate] = useState(0);
+  const [borderRadius, setBorderRadius] = useState(10);
+  const [zoom, setZoom] = useState(1.1);
   return (
     <ImageBuilderContainer>
       <div className="left">
         {/* dropzone */}
-        <Dropzone
-          onDrop={handleDropImage}
-          noClick
-          noKeyboard
-          style={{ width: "250px", height: "250px" }}
-        >
-          {({ getRootProps, getInputProps }) => (
-            <div {...getRootProps()}>
-              {/* <AvatarEditor width={250} height={250} image={image.link} /> */}
-              <AvatarEditor
-                image={image.link}
-                width={400}
-                height={400}
-                border={50}
-                borderRadius={10}
-                // color={[255, 255, 255, 0.6]} // RGBA
-                color={[0, 0, 0, 0.4]} // RGBA
-                scale={1.2}
-                rotate={0}
-              />
-              <input {...getInputProps()} />
-            </div>
-          )}
-        </Dropzone>
+        <div className="photoView">
+          <Dropzone
+            onDrop={handleDropImage}
+            noClick
+            noKeyboard
+            style={{ width: "250px", height: "250px" }}
+          >
+            {({ getRootProps, getInputProps }) => (
+              <div {...getRootProps()}>
+                {/* <AvatarEditor width={250} height={250} image={image.link} /> */}
+                <AvatarEditor
+                  image={image.link}
+                  width={450}
+                  height={450}
+                  border={20}
+                  borderRadius={borderRadius}
+                  // color={[255, 255, 255, 0.6]} // RGBA
+                  color={[0, 0, 0, 0.4]} // RGBA
+                  scale={zoom}
+                  rotate={rotate}
+                />
+                <input {...getInputProps()} />
+              </div>
+            )}
+          </Dropzone>
+        </div>
       </div>
       <div className="right">
         <h1>Image Editor</h1>
-        <div className="editorContainer"></div>
+        <div className="editorContainer">
+          <div className="changeType">
+            <div className="typeName">Zoom : </div>
+            <div className="typeChange">
+              <ScrollBar
+                borderRadius={borderRadius}
+                setBorderRadius={setBorderRadius}
+                isZoom
+                zoom={zoom}
+                setZoom={setZoom}
+              />
+            </div>
+          </div>
+          <div className="changeType">
+            <div className="typeName">Border Radius : </div>
+            <div className="typeChange">
+              <ScrollBar
+                borderRadius={borderRadius}
+                setBorderRadius={setBorderRadius}
+                zoom={zoom}
+                setZoom={setZoom}
+              />
+            </div>
+          </div>
+          <div className="changeType">
+            <div className="typeName">Rotate : </div>
+            <div className="typeChange">
+              <Button
+                color="success"
+                variant="outlined"
+                style={{ marginRight: "10px" }}
+                onClick={() => setRotate(rotate - 2)}
+              >
+                LEFT
+              </Button>
+              <Button
+                color="success"
+                variant="outlined"
+                style={{ marginRight: "10px" }}
+                onClick={() => setRotate(rotate + 2)}
+              >
+                RIGHT
+              </Button>
+              <Button
+                color="error"
+                variant="outlined"
+                onClick={() => setRotate(0)}
+              >
+                Reset
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </ImageBuilderContainer>
   );
