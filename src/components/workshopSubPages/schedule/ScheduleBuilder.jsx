@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CssTextField } from "../../orangeTextBox/CssTextField";
 import { ScheduleStyleDiv } from "./scheduleStyle";
 import { TimePeriodContainer } from "./timePeriodStyle";
 import builderContext from "../../../context/builderContext";
 
 // icons import
-import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
+// import blackBg from "../../../images/taskBuilder/bgBlackBoard.jpg";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import dusturImg from "../../../images/taskBuilder/cross.png";
@@ -16,20 +16,24 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 const ScheduleBuilder = () => {
   // enter task-nname state
 
-  const {taskData,setTaskData, taskData_24, setTaskData_24,timePassed,setTimePassed}= useContext(builderContext)
+  const {
+    taskData,
+    setTaskData,
+    taskData_24,
+    setTaskData_24,
+    timePassed,
+    setTimePassed,
+  } = useContext(builderContext);
 
-  const [taskName, setTaskName] = useState("")
+  const [taskName, setTaskName] = useState("");
 
-
-  
   const deleteTaskHandler_12 = (indx) => {
-    setTimePassed(timePassed-taskData_24[indx].taskTime)
-    setTaskData(taskData.filter((data,indx1) => indx1 !== indx));
-    
+    setTimePassed(timePassed - taskData_24[indx].taskTime);
+    setTaskData(taskData.filter((data, indx1) => indx1 !== indx));
   };
 
   const deleteTaskHandler_24 = (indx) => {
-    setTaskData_24(taskData_24.filter((data,indx1) => indx1 !== indx));
+    setTaskData_24(taskData_24.filter((data, indx1) => indx1 !== indx));
   };
 
   // priority data
@@ -38,7 +42,7 @@ const ScheduleBuilder = () => {
     setPriority({ val, idx, color });
     const changeColor = document.getElementById("colorChange");
     changeColor.style.backgroundColor = color;
-    handleSelect()
+    handleSelect();
   };
 
   // Priority functions
@@ -63,48 +67,57 @@ const ScheduleBuilder = () => {
     { p: "Not Important", color: "#ff0000" },
   ];
 
+  // time
+  const totalTime = ["10", "30", "01", "02", "03", "04", "05"];
+  const [indxOfTime, setIndxOfTime] = useState(-1);
 
-  // time 
-  const totalTime= ['10' ,'30', '01', '02', '03', '04', '05'];
-  const [indxOfTime, setIndxOfTime] = useState(-1)
-
-  const increaseTimer=()=>{
-    if(indxOfTime <6){
-      setIndxOfTime(prev => ++prev);
+  const increaseTimer = () => {
+    if (indxOfTime < 6) {
+      setIndxOfTime((prev) => ++prev);
     }
-  }
-  const decreaseTimer=()=>{
-    if(indxOfTime > 0){
-      setIndxOfTime(prev => --prev)
+  };
+  const decreaseTimer = () => {
+    if (indxOfTime > 0) {
+      setIndxOfTime((prev) => --prev);
     }
-  }
+  };
 
-  const flag=taskName.length === 0 || indxOfTime === -1 || priority.length === 0;
+  const flag =
+    taskName.length === 0 || indxOfTime === -1 || priority.length === 0;
 
-  const handleOnclickButton=()=>{
-      if(flag){
-          // warning
-          document.getElementById('alert').innerHTML="Please Enter all Fields."
-      }else{
-
-        var timeTOadd = Number.parseInt(totalTime[indxOfTime]);
-        if(timeTOadd != 10 && timeTOadd != 30){
-            timeTOadd*=60;
-        }
-
-        setTimePassed(timePassed+timeTOadd)
-        
-        const cond = timePassed+timeTOadd
-        if(cond<=720){
-          setTaskData([...taskData,{taskName:taskName, taskPriority:priority.idx, taskTime:timeTOadd}])
-        }
-        setTaskData_24([...taskData_24,{taskName:taskName, taskPriority:priority.idx, taskTime:timeTOadd}])
-        setTaskName('')
-        setPriority('')
-        const changeColor = document.getElementById("colorChange");
-        changeColor.style.backgroundColor = 'white';
+  const handleOnclickButton = () => {
+    if (flag) {
+      // warning
+      document.getElementById("alert").innerHTML = "Please Enter all Fields.";
+    } else {
+      var timeTOadd = Number.parseInt(totalTime[indxOfTime]);
+      if (timeTOadd !== 10 && timeTOadd !== 30) {
+        timeTOadd *= 60;
       }
-  }
+
+      setTimePassed(timePassed + timeTOadd);
+
+      const cond = timePassed + timeTOadd;
+      if (cond <= 720) {
+        setTaskData([
+          ...taskData,
+          {
+            taskName: taskName,
+            taskPriority: priority.idx,
+            taskTime: timeTOadd,
+          },
+        ]);
+      }
+      setTaskData_24([
+        ...taskData_24,
+        { taskName: taskName, taskPriority: priority.idx, taskTime: timeTOadd },
+      ]);
+      setTaskName("");
+      setPriority("");
+      const changeColor = document.getElementById("colorChange");
+      changeColor.style.backgroundColor = "white";
+    }
+  };
 
   return (
     <ScheduleStyleDiv>
@@ -150,7 +163,7 @@ const ScheduleBuilder = () => {
                 style={{ marginTop: "10px", textAlign: "center", width: "80%" }}
                 color="success"
                 value={taskName}
-                onChange={ev => setTaskName(ev.target.value)}
+                onChange={(ev) => setTaskName(ev.target.value)}
               />
               <br />
               <div
@@ -173,8 +186,14 @@ const ScheduleBuilder = () => {
                     </div>
                     <div className="horizontal2"></div>
                   </div>
-                  
-                  {priority ? priority.val : <span style={{color:"black",textShadow:"none"}}>Select Priority</span>}
+
+                  {priority ? (
+                    priority.val
+                  ) : (
+                    <span style={{ color: "black", textShadow: "none" }}>
+                      Select Priority
+                    </span>
+                  )}
                   {onSelect ? (
                     <EjectIcon className="selectIcon" />
                   ) : (
@@ -219,49 +238,46 @@ const ScheduleBuilder = () => {
                 <TimePeriodContainer>
                   <div className="box1">
                     <div className="horizontal11">
-                      <AvTimerIcon
-
-                        style={{ color: "blue"}}
-                      />
+                      <AvTimerIcon style={{ color: "blue" }} />
                     </div>
                     <div className="horizontal22"></div>
                   </div>
-                  
-                  {indxOfTime === -1 &&
+
+                  {indxOfTime === -1 && (
                     <>
                       <div className="hours">Select</div>
                       <div className="minutes">Time</div>
                     </>
-                  }
-                  {
-                    indxOfTime >-1 && 
+                  )}
+                  {indxOfTime > -1 && (
                     <>
                       <div className="hours">{totalTime[indxOfTime]}</div>
                       <div className="minutes">
-                        {
-                          (indxOfTime === 0 || indxOfTime === 1) ?"minutes":"hours"
-                        }
+                        {indxOfTime === 0 || indxOfTime === 1
+                          ? "minutes"
+                          : "hours"}
                       </div>
                     </>
-                  }
+                  )}
 
-                  <div className="prevTime"  onClick={decreaseTimer}>
+                  <div className="prevTime" onClick={decreaseTimer}>
                     <PlayArrowIcon className="prevIcon" />
                   </div>
                   <div className="nextTime" onClick={increaseTimer}>
-                    <PlayArrowIcon className="nextIcon"/>
+                    <PlayArrowIcon className="nextIcon" />
                   </div>
                 </TimePeriodContainer>
               </div>
               {/* </Box> */}
               <br />
-              {flag && 
-                <div id="alert" style={{color:"red", textAlign:"center"}}></div>
-              }
+              {flag && (
+                <div
+                  id="alert"
+                  style={{ color: "red", textAlign: "center" }}
+                ></div>
+              )}
               {onSelect && (
-                <button className="all-btns" 
-                  onClick={handleOnclickButton}
-                >
+                <button className="all-btns" onClick={handleOnclickButton}>
                   <lord-icon
                     src="https://cdn.lordicon.com/ynwbvguu.json"
                     trigger="hover"
@@ -269,23 +285,18 @@ const ScheduleBuilder = () => {
                     style={{
                       width: "40px",
                       height: "40px",
-                      opacity:(flag)? 0.6:1
+                      opacity: flag ? 0.6 : 1,
                     }}
                   ></lord-icon>
                 </button>
               )}
-              
-
             </Box>
           </div>
         </div>
 
         {/* a4 size template  */}
         <div className="right" id="right-part">
-          <div
-            className="generate-tables"
-            id="bb-1"
-          >
+          <div className="generate-tables" id="bb-1">
             <section className="table-head">
               <b className="b1">Priority</b>
               <b>Task ( 12 hours Table )</b>
@@ -336,22 +347,22 @@ const ScheduleBuilder = () => {
             </section>
 
             {/* //sleep  */}
-            <section className="content" >
-                <div>1.</div>
-                <div className="tasks">sleep</div>
-              </section>
+            <section className="content">
+              <div>1.</div>
+              <div className="tasks">sleep</div>
+            </section>
 
             {taskData_24.map((val, indx) => (
               <section className="content" key={indx}>
                 <div>{indx + 2}.</div>
                 <div className="tasks">{val.taskName}</div>
                 {/* <button>X</button> */}
-                  <img
-                    src={dusturImg}
-                    className="deleteImg"
-                    alt="dustur"
-                    onClick={() => deleteTaskHandler_24(indx)}
-                  />
+                <img
+                  src={dusturImg}
+                  className="deleteImg"
+                  alt="dustur"
+                  onClick={() => deleteTaskHandler_24(indx)}
+                />
               </section>
             ))}
 

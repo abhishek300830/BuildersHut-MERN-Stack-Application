@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import React, { useContext } from "react";
 import { useState } from "react";
 import builderContext from "../../../../../context/builderContext";
@@ -6,7 +5,8 @@ import { CssTextField } from "../../../../orangeTextBox/CssTextField";
 import { AcheivStyleDiv } from "./acheiStyle";
 
 const Achievement = () => {
-  const { borderbg, fields, setFields,extracurr, setExtracurr } = useContext(builderContext);
+  const { borderbg, fields, setFields, extracurr, setExtracurr } =
+    useContext(builderContext);
   const [val, setVal] = useState("");
   const [val2, setVal2] = useState("");
 
@@ -32,7 +32,7 @@ const Achievement = () => {
       addField2();
     }
   };
-  console.log(extracurr)
+  console.log(extracurr);
 
   return (
     <AcheivStyleDiv>
@@ -63,47 +63,45 @@ const Achievement = () => {
           ))}
         </div>
 
-        <div className="btn-center" style={{textAlign:"center"}}>
+        <div className="btn-center" style={{ textAlign: "center" }}>
+          <button
+            // variant="contained"
+            // size="large"
+            className="all-btns"
+            onClick={addField}
+            disabled={maxFields === 0 || val.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#0c0c0c"
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: val.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
 
-        <button
-          // variant="contained"
-          // size="large"
-          className="all-btns"
-          onClick={addField}
-          disabled={maxFields === 0 || val.length === 0}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/ynwbvguu.json"
-            trigger="hover"
-            colors="primary:#0c0c0c"
-            style={{
-              width: "40px",
-              height: "40px",
-              opacity: val.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </button>
-
-        <button
-          // variant="contained"
-          // size="large"
-          className="all-btns2"
-          onClick={() => setFields([])}
-          disabled={fields.length === 0}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/akuwjdzh.json"
-            trigger="hover"
-            colors={`primary:#141414`}
-            style={{
-              width: "40px",
-              height: "40px",
-              opacity: fields.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </button>
+          <button
+            // variant="contained"
+            // size="large"
+            className="all-btns2"
+            onClick={() => setFields([])}
+            disabled={fields.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#141414`}
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: fields.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
         </div>
-
       </section>
       <hr />
       <section className="acheiv" style={{ borderColor: borderbg }}>
@@ -133,47 +131,45 @@ const Achievement = () => {
           ))}
         </div>
 
-        <div className="btn-center" style={{textAlign:"center"}}>
+        <div className="btn-center" style={{ textAlign: "center" }}>
+          <button
+            // variant="contained"
+            // size="large"
+            className="all-btns"
+            onClick={addField2}
+            disabled={maxFields2 === 0 || val2.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/ynwbvguu.json"
+              trigger="hover"
+              colors="primary:#0c0c0c"
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: val2.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
 
-        <button
-          // variant="contained"
-          // size="large"
-          className="all-btns"
-          onClick={addField2}
-          disabled={maxFields2 === 0 || val2.length === 0}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/ynwbvguu.json"
-            trigger="hover"
-            colors="primary:#0c0c0c"
-            style={{
-              width: "40px",
-              height: "40px",
-              opacity: val2.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </button>
-
-        <button
-          // variant="contained"
-          // size="large"
-          className="all-btns2"
-          onClick={() => setExtracurr([])}
-          disabled={extracurr.length === 0}
-        >
-          <lord-icon
-            src="https://cdn.lordicon.com/akuwjdzh.json"
-            trigger="hover"
-            colors={`primary:#141414`}
-            style={{
-              width: "40px",
-              height: "40px",
-              opacity: extracurr.length === 0 ? "0.6" : "1",
-            }}
-          ></lord-icon>
-        </button>
+          <button
+            // variant="contained"
+            // size="large"
+            className="all-btns2"
+            onClick={() => setExtracurr([])}
+            disabled={extracurr.length === 0}
+          >
+            <lord-icon
+              src="https://cdn.lordicon.com/akuwjdzh.json"
+              trigger="hover"
+              colors={`primary:#141414`}
+              style={{
+                width: "40px",
+                height: "40px",
+                opacity: extracurr.length === 0 ? "0.6" : "1",
+              }}
+            ></lord-icon>
+          </button>
         </div>
-
       </section>
     </AcheivStyleDiv>
   );

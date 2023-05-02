@@ -1,18 +1,18 @@
-import React, { useEffect } from 'react'
-import ApexCharts from 'apexcharts';
+import React, { useEffect } from "react";
+import ApexCharts from "apexcharts";
 
-const PieChart = ({csvData,numberData, stringData}) => {
+const PieChart = ({ csvData, numberData, stringData }) => {
+  useEffect(() => {
+    var pieChart = new ApexCharts(
+      document.querySelector("#pieChart"),
+      optionsPie
+    );
+    pieChart.render();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    useEffect(()=>{
-        var pieChart = new ApexCharts(
-            document.querySelector("#pieChart"),
-            optionsPie
-          );
-        pieChart.render();
-    },[])
-
-    // Pie Chart
-    console.log("numberData",numberData)
+  // Pie Chart
+  console.log("numberData", numberData);
 
   //TODO:  1st step - creating map and storing attributes as key and counts of attributes
   let mp = new Map();
@@ -58,16 +58,16 @@ const PieChart = ({csvData,numberData, stringData}) => {
 
   return (
     <>
-        <div
-            id="pieChart"
-            style={{
-            width: "100%",
-            border: "2px solid black",
-            marginTop: "2%",
-            }}
-        ></div>
+      <div
+        id="pieChart"
+        style={{
+          width: "100%",
+          border: "2px solid black",
+          marginTop: "2%",
+        }}
+      ></div>
     </>
-  )
-}
+  );
+};
 
-export default PieChart
+export default PieChart;

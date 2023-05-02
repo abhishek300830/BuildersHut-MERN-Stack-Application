@@ -29,7 +29,7 @@ import HorizontalPreview from "./printables/horizontalFile/HorizontalPreview";
 import VerticalResume from "./printables/VerticalDesign/VerticalResume";
 
 const ResumeBuilder = () => {
-  const { headings, backTheme, setBackTheme } = useContext(builderContext);
+  const { headings, setBackTheme } = useContext(builderContext);
 
   // theme color of resume
 

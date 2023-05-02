@@ -127,8 +127,6 @@ const BuilderState = (props) => {
         setTaskData_24,
         timePassed,
         setTimePassed,
-        timePassed,
-        setTimePassed,
         indexOfColor,
         setIndexOfColor,
         image,
