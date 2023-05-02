@@ -21,7 +21,7 @@ const ScrollBar = ({
             setBorderRadius(event.target.value * 3);
           }
           if (isZoom) {
-            setZoom(event.target.value / 10 + 0.1);
+            setZoom(event.target.value / 20 + 0.1);
           }
         }}
       />

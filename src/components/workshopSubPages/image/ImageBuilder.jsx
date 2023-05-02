@@ -48,6 +48,7 @@ const ImageBuilder = () => {
               </div>
             )}
           </Dropzone>
+          <h2>Drop Your Image Here</h2>
         </div>
       </div>
       <div className="right">
