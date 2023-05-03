@@ -13,19 +13,21 @@ const MemeContainer = styled.div`
     position: relative;
     border: 2px solid black;
     border-radius: 8px;
-    background-color: aliceblue;
-    /* overflow: scroll; */
-    /* align-items: center; */
+    /* background-color: #413c3c; */
+
     ::-webkit-scrollbar {
       display: none;
     }
     .leftArrow {
+      /* background-color: black; */
+      /* color: white; */
       margin: auto;
       svg {
         font-size: 60px;
       }
     }
     .meme-images {
+      padding: 0.5%;
       border-left: 3px solid black;
       border-right: 3px solid black;
       display: flex;
@@ -33,9 +35,18 @@ const MemeContainer = styled.div`
       ::-webkit-scrollbar {
         display: none;
       }
+      img {
+        transition: 300ms;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.845);
+        border-radius: 4px;
+        &:hover {
+          overflow: visible;
+          cursor: pointer;
+          scale: 0.9;
+        }
+      }
     }
     .rightArrow {
-      /* border-left: 2px solid black; */
       margin: auto;
       svg {
         font-size: 60px;
@@ -52,7 +63,26 @@ const MemeContainer = styled.div`
     }
   }
   .lower {
-    background-color: aqua;
+    display: grid;
+    width: 90%;
+    grid-template-columns: 50% 50%;
+    .lower-left {
+      margin: auto;
+      h2 {
+        text-align: center;
+        border: 1px solid black;
+        margin-bottom: 0;
+        border-radius: 50px 50px 0 0;
+      }
+      img {
+        margin-top: 0;
+        height: 350px;
+        width: auto;
+        border: 1px solid black;
+      }
+    }
+    .lower-right {
+    }
   }
   @media (max-width: 1280px) {
     .upper {
