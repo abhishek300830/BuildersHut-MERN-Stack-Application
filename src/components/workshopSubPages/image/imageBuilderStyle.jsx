@@ -7,6 +7,7 @@ const ImageBuilderContainer = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   padding: 2%;
+  
   .left {
     width: 90%;
     .photoView {
@@ -16,6 +17,7 @@ const ImageBuilderContainer = styled.div`
       border: 2px solid black;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-bottom: 5px solid black;
     }
   }
 
@@ -25,20 +27,33 @@ const ImageBuilderContainer = styled.div`
     border: 5px solid #595451;
     border-radius: 8px;
     border-top: 40px solid #595451;
-    .editorContainer {
+    padding: 2%;
+    
+    h3{
+      text-align:left;
+      padding-left:5%;
+      color:#403f3f;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+    }
+    .editorContainer {
+      padding: 1%;
+      border: 3px solid #535353;
+      border-bottom: 6px solid #535353;
       display: grid;
       grid-template-columns: 1fr;
+      border-radius: 8px;
+      width: 90%;
+      background-color: #837d7a;
+      margin: auto;
+      color: white;
+      text-shadow: 0px 0px 3px black;
       
-      h3{
-        text-align: left;
-        padding-left: 5%;
-      }
       .changeType {
         display: grid;
         justify-content: start;
-        align-items: center;
         grid-template-columns: 30% 70%;
+        align-items: center;
         .typeName {
           margin: 3%;
           margin-left: 20%;
@@ -48,6 +63,30 @@ const ImageBuilderContainer = styled.div`
           margin: 2%;
           margin-right: 10%;
         }
+        .typeChange-3 {
+          text-align: left;
+          padding-left: 2%;
+          button{
+            position: relative;
+            padding: 2% 0%;
+            width: 15%;
+            margin-right: 5%;
+          }
+          button::before{
+            position: absolute;
+            content: "";
+            width: 94%;
+            height: 45%;
+            background-color: #ffffff36;
+            top: 3%;
+            left: 3%;
+            border-radius: 5px;
+          }
+
+
+        }
+
+
       }
     }
   }
@@ -71,6 +110,39 @@ const ImageBuilderContainer = styled.div`
     text-shadow: 1px 1px 2px black;
   }
 
+  .downloadBtn{
+    position: relative;
+    padding: 1.5% 2.5%;
+    font-weight: bold;
+    margin-top: 5%;
+    border-radius: 5px;
+    border: 2px solid black;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+    background-color: #48e45d;
+    color: #000000;
+    text-shadow: 0px 0px 2px white;
+    transition: 0.2s;
+    z-index: 3;
+
+  }
+  .downloadBtn::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 96%;
+    height: 45%;
+    top: 4%;
+    left: 2%;
+    border-radius: 4px;
+    background-color: #ffffff61;
+  }
+
+  .downloadBtn:hover{
+    scale: 0.98;
+
+  }
+
   @media (max-width:1280px) {
     grid-template-columns:45% 55%;
   }
@@ -89,32 +161,20 @@ const ImageBuilderContainer = styled.div`
       width: 80%;
     }
   }
+
   @media (max-width:520px) {
     margin-top: -15%;
-     .left{
-       margin-left: -8.5%;
-       scale: 0.8;
-      }
-
-      .right{
-        width: 98%;
-        margin: auto;
+    .left{
+      margin-left: -8.5%;
+      scale: 0.8;
+    }
+    
+    .right{
+        width: 95%;
         margin-bottom: 5%;
 
-        .typeChange-3{
-          margin-top: 10%;
-          display: grid;
-          grid-template-columns: 50% 50%;
-
-          button{
-            margin: auto;
-            margin-bottom: 5%;
-            width: 80%;
-          }
-          .button-3{
-            grid-column: 1 / span 2;
-            width: 40%;
-          }
+        .editorContainer{
+          padding-bottom: 5%;
         }
       }
   }

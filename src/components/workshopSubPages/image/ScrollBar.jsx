@@ -32,7 +32,7 @@ const ScrollBar = ({
 export default ScrollBar;
 
 const PrettoSlider = styled(Slider)({
-  color: "#52af77",
+  color: "#f0f0f0",
   height: 8,
   "& .MuiSlider-track": {
     border: "none",
@@ -57,7 +57,7 @@ const PrettoSlider = styled(Slider)({
     width: 32,
     height: 32,
     borderRadius: "50% 50% 50% 0",
-    backgroundColor: "#52af77",
+    backgroundColor: "#ed6c02",
     transformOrigin: "bottom left",
     transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
     "&:before": { display: "none" },

@@ -58,8 +58,11 @@ const ImageBuilder = () => {
 
       <div className="right">
 
+          {/* transform properties  */}
+          <h3 style={{}}>
+            TRANSFORM PROPERTIES
+          </h3>
           <div className="editorContainer">
-            <h3>Transform Properties</h3>
 
             <div className="changeType">
               <div className="typeName">Zoom : </div>
@@ -90,18 +93,16 @@ const ImageBuilder = () => {
               <div className="typeName">Rotate : </div>
               <div className="typeChange-3">
                 <Button
-                  color="success"
+                  color="warning"
                   variant="contained"
-                  style={{ marginRight: "10px" }}
                   onClick={() => setRotate(rotate - 2)}
                 >
                   <RotateLeftIcon/>
                 </Button>
 
                 <Button
-                  color="success"
+                  color="warning"
                   variant="contained"
-                  style={{ marginRight: "10px" }}
                   onClick={() => setRotate(rotate + 2)}
                 >
                   <RotateRightIcon/>
@@ -116,8 +117,21 @@ const ImageBuilder = () => {
                   <ChangeCircleIcon/>
                 </Button>
               </div>
+              
             </div>
           </div>
+
+          {/* Filters  */}
+          <br />
+          <h3>FILTERS</h3>
+          <div className="editorContainer">
+            TODO : Add filters here
+          </div>
+
+
+          <button className="downloadBtn">Download Image</button>
+
+
 
       </div>
     </ImageBuilderContainer>
