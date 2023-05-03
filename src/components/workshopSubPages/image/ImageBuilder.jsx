@@ -4,6 +4,9 @@ import ImageBuilderContainer from "./imageBuilderStyle";
 import Dropzone from "react-dropzone";
 import ScrollBar from "./ScrollBar";
 import { Button } from "@mui/material";
+import RotateLeftIcon from '@mui/icons-material/RotateLeft';
+import RotateRightIcon from '@mui/icons-material/RotateRight';
+import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
 
 const ImageBuilder = () => {
   // dropzone state
@@ -51,61 +54,71 @@ const ImageBuilder = () => {
           <h2>Drop Your Image Here</h2>
         </div>
       </div>
+
+
       <div className="right">
-        <h1>Image Editor</h1>
-        <div className="editorContainer">
-          <div className="changeType">
-            <div className="typeName">Zoom : </div>
-            <div className="typeChange">
-              <ScrollBar
-                borderRadius={borderRadius}
-                setBorderRadius={setBorderRadius}
-                isZoom
-                zoom={zoom}
-                setZoom={setZoom}
-              />
+
+          <div className="editorContainer">
+            <h3>Transform Properties</h3>
+
+            <div className="changeType">
+              <div className="typeName">Zoom : </div>
+              <div className="typeChange">
+                <ScrollBar
+                  borderRadius={borderRadius}
+                  setBorderRadius={setBorderRadius}
+                  isZoom
+                  zoom={zoom}
+                  setZoom={setZoom}
+                />
+              </div>
+            </div>
+
+            <div className="changeType">
+              <div className="typeName">Border Radius : </div>
+              <div className="typeChange">
+                <ScrollBar
+                  borderRadius={borderRadius}
+                  setBorderRadius={setBorderRadius}
+                  zoom={zoom}
+                  setZoom={setZoom}
+                />
+              </div>
+            </div>
+
+            <div className="changeType">
+              <div className="typeName">Rotate : </div>
+              <div className="typeChange-3">
+                <Button
+                  color="success"
+                  variant="contained"
+                  style={{ marginRight: "10px" }}
+                  onClick={() => setRotate(rotate - 2)}
+                >
+                  <RotateLeftIcon/>
+                </Button>
+
+                <Button
+                  color="success"
+                  variant="contained"
+                  style={{ marginRight: "10px" }}
+                  onClick={() => setRotate(rotate + 2)}
+                >
+                  <RotateRightIcon/>
+                </Button>
+
+                <Button
+                  className="button-3"
+                  color="error"
+                  variant="contained"
+                  onClick={() => setRotate(0)}
+                >
+                  <ChangeCircleIcon/>
+                </Button>
+              </div>
             </div>
           </div>
-          <div className="changeType">
-            <div className="typeName">Border Radius : </div>
-            <div className="typeChange">
-              <ScrollBar
-                borderRadius={borderRadius}
-                setBorderRadius={setBorderRadius}
-                zoom={zoom}
-                setZoom={setZoom}
-              />
-            </div>
-          </div>
-          <div className="changeType">
-            <div className="typeName">Rotate : </div>
-            <div className="typeChange">
-              <Button
-                color="success"
-                variant="outlined"
-                style={{ marginRight: "10px" }}
-                onClick={() => setRotate(rotate - 2)}
-              >
-                LEFT
-              </Button>
-              <Button
-                color="success"
-                variant="outlined"
-                style={{ marginRight: "10px" }}
-                onClick={() => setRotate(rotate + 2)}
-              >
-                RIGHT
-              </Button>
-              <Button
-                color="error"
-                variant="outlined"
-                onClick={() => setRotate(0)}
-              >
-                Reset
-              </Button>
-            </div>
-          </div>
-        </div>
+
       </div>
     </ImageBuilderContainer>
   );
