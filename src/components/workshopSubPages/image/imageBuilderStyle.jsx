@@ -114,6 +114,7 @@ const ImageBuilderContainer = styled.div`
     position: relative;
     padding: 1.5% 2.5%;
     font-weight: bold;
+    margin: auto;
     margin-top: 5%;
     border-radius: 5px;
     border: 2px solid black;
@@ -123,24 +124,26 @@ const ImageBuilderContainer = styled.div`
     color: #000000;
     text-shadow: 0px 0px 2px white;
     transition: 0.2s;
-    z-index: 3;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    text-align: left;
 
   }
   .downloadBtn::before{
     content: "";
     position: absolute;
-    z-index: 0;
     width: 96%;
     height: 45%;
     top: 4%;
     left: 2%;
     border-radius: 4px;
-    background-color: #ffffff61;
+    background-color: #ffffff5a;
   }
 
+  
   .downloadBtn:hover{
     scale: 0.98;
-
   }
 
   @media (max-width:1280px) {

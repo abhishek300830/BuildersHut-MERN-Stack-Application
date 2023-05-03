@@ -7,11 +7,13 @@ import { Button } from "@mui/material";
 import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 import RotateRightIcon from '@mui/icons-material/RotateRight';
 import ChangeCircleIcon from '@mui/icons-material/ChangeCircle';
+import templateImage from '../../../images/left out/dragDrop.png'
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const ImageBuilder = () => {
   // dropzone state
   const [image, setImage] = useState({
-    link: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png",
+    link: templateImage,
   });
   // handle drop Image
   const handleDropImage = (dropped) => {
@@ -24,6 +26,7 @@ const ImageBuilder = () => {
   const [zoom, setZoom] = useState(1.1);
   return (
     <ImageBuilderContainer>
+
       <div className="left">
         {/* dropzone */}
         <div className="photoView">
@@ -129,7 +132,12 @@ const ImageBuilder = () => {
           </div>
 
 
-          <button className="downloadBtn">Download Image</button>
+          <button className="downloadBtn">
+            Download Image
+            {/* <span> */}
+              <CloudDownloadIcon/>
+            {/* </span> */}
+          </button>
 
 
 
