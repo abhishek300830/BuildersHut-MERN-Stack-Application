@@ -7,10 +7,12 @@ const ImageBuilderContainer = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   padding: 2%;
-  
+
   .left {
     width: 90%;
     .photoView {
+      /* filter: brightness(1.15); */
+
       background-color: white;
       overflow: hidden;
       display: inline-block;
@@ -28,13 +30,12 @@ const ImageBuilderContainer = styled.div`
     border-radius: 8px;
     border-top: 40px solid #595451;
     padding: 2%;
-    
-    h3{
-      text-align:left;
-      padding-left:5%;
-      color:#403f3f;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+    h3 {
+      text-align: left;
+      padding-left: 5%;
+      color: #403f3f;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .editorContainer {
       padding: 1%;
@@ -48,7 +49,7 @@ const ImageBuilderContainer = styled.div`
       margin: auto;
       color: white;
       text-shadow: 0px 0px 3px black;
-      
+
       .changeType {
         display: grid;
         justify-content: start;
@@ -66,13 +67,13 @@ const ImageBuilderContainer = styled.div`
         .typeChange-3 {
           text-align: left;
           padding-left: 2%;
-          button{
+          button {
             position: relative;
             padding: 2% 0%;
             width: 15%;
             margin-right: 5%;
           }
-          button::before{
+          button::before {
             position: absolute;
             content: "";
             width: 94%;
@@ -82,17 +83,32 @@ const ImageBuilderContainer = styled.div`
             left: 3%;
             border-radius: 5px;
           }
-
-
         }
-
-
       }
     }
   }
-  .right::before{
+  .chipContainer {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    .chip {
+      background-color: white;
+      text-shadow: none;
+      font-size: 15px;
+      svg {
+      }
+    }
+    .chipOnClick {
+      background-color: #ff6a00;
+      color: white;
+      svg {
+        color: white;
+      }
+    }
+  }
+  .right::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: #837d7a;
     width: 99%;
     height: 4%;
@@ -100,9 +116,9 @@ const ImageBuilderContainer = styled.div`
     top: -36px;
     border-radius: 8px;
   }
-  .right::after{
+  .right::after {
     position: absolute;
-    content: 'Image Builder';
+    content: "Image Builder";
     color: white;
     left: 2%;
     top: -30px;
@@ -110,7 +126,7 @@ const ImageBuilderContainer = styled.div`
     text-shadow: 1px 1px 2px black;
   }
 
-  .downloadBtn{
+  .downloadBtn {
     position: relative;
     padding: 1.5% 2.5%;
     font-weight: bold;
@@ -128,9 +144,8 @@ const ImageBuilderContainer = styled.div`
     grid-template-columns: 90% 10%;
     align-items: center;
     text-align: left;
-
   }
-  .downloadBtn::before{
+  .downloadBtn::before {
     content: "";
     position: absolute;
     width: 96%;
@@ -141,45 +156,44 @@ const ImageBuilderContainer = styled.div`
     background-color: #ffffff5a;
   }
 
-  
-  .downloadBtn:hover{
+  .downloadBtn:hover {
     scale: 0.98;
   }
 
-  @media (max-width:1280px) {
-    grid-template-columns:45% 55%;
+  @media (max-width: 1280px) {
+    grid-template-columns: 45% 55%;
   }
-  @media (max-width:1030px) {
-    grid-template-columns:55% 45%;
+  @media (max-width: 1030px) {
+    grid-template-columns: 55% 45%;
   }
 
-  @media (max-width:820px) {
+  @media (max-width: 820px) {
     display: block;
-    .left{
+    .left {
       margin: auto;
     }
-    .right{
+    .right {
       margin: auto;
       margin-top: 5%;
       width: 80%;
     }
   }
 
-  @media (max-width:520px) {
+  @media (max-width: 520px) {
     margin-top: -15%;
-    .left{
+    .left {
       margin-left: -8.5%;
       scale: 0.8;
     }
-    
-    .right{
-        width: 95%;
-        margin-bottom: 5%;
 
-        .editorContainer{
-          padding-bottom: 5%;
-        }
+    .right {
+      width: 95%;
+      margin-bottom: 5%;
+
+      .editorContainer {
+        padding-bottom: 5%;
       }
+    }
   }
 `;
 
