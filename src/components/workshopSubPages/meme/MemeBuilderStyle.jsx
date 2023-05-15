@@ -64,7 +64,7 @@ const MemeContainer = styled.div`
   }
   .lower {
     display: grid;
-    width: 90%;
+    width: 100%;
     grid-template-columns: 50% 50%;
     .lower-left {
       margin: auto;
@@ -80,8 +80,29 @@ const MemeContainer = styled.div`
         width: auto;
         border: 1px solid black;
       }
+      .when-not-image {
+        background-color: #d1d1d1;
+        height: 350px;
+        width: 350px;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 0px 0px 30px 30px;
+        font-size: 25px;
+        .selectImage {
+          margin-top: 80px;
+        }
+      }
     }
     .lower-right {
+      .memeEditorContainer {
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 380px;
+        width: 90%;
+        margin-top: 40px;
+        background-color: #c0c0c0;
+        text-align: center;
+      }
     }
   }
   @media (max-width: 1280px) {
